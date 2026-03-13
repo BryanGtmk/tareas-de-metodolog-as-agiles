@@ -1,25 +1,19 @@
 \documentclass{article}
 
-% Language setting
-% Replace `english' with e.g. `spanish' to change the document language
-\usepackage[english]{babel}
+\usepackage[spanish]{babel}
 
 \usepackage[letterpaper,top=2cm,bottom=5cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 
-% Useful packages
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{amssymb} 
+\usepackage{amssymb}
 \usepackage{fancyhdr}
-\usepackage{lipsum} % Para generar texto de ejemplo
 \usepackage{multicol}
-\pagestyle{fancy} 
+\pagestyle{fancy}
 
-\fancyhf{} % Limpiar encabezado y pie de página por defecto
-\setlength{\headheight}{70pt} % Ajuste del tamaño del encabezado (puedes aumentar este valor si es necesario)
-
-% Definición del encabezado
+\fancyhf{}
+\setlength{\headheight}{70pt}
 
 \fancyhead[C]{%
     \begin{minipage}[c]{2.0cm}
@@ -27,7 +21,7 @@
         \includegraphics[width=2.0cm]{imagenes/uta.png}
     \end{minipage}%
     \hfill
-    \begin{minipage}[c]{8cm} 
+    \begin{minipage}[c]{8cm}
         \centering
         \small {\textbf{UNIVERSIDAD TÉCNICA DE AMBATO}} \\[0.1cm]
         \scriptsize \textit{FACULTAD DE INGENIERÍA EN SISTEMAS ELECTRÓNICA E INDUSTRIAL} \\[0.1cm]
@@ -42,98 +36,183 @@
 }
 
 \begin{document}
+
 \begin{center}
-    {\large \textbf{INFORME DE TAREA}} \\    
+    {\large \textbf{INFORME DE TAREA}} \\
 \end{center}
 
 \section{Portada}
 \begin{flushleft}
 \begin{tabular}{ l l }
-    \textbf{Tema:} & Los Círculos de Mejora Continua y el Ciclo de Deming (PHVA) \\
-                   & aplicados a la Reingeniería de Software \\
-    \textbf{Unidad de Organización Curricular:} & PROFESIONAL\\
-    \textbf{Nivel y Paralelo:} & 4to Semestre "B" \\
+    \textbf{Tema:} & Círculo de Deming como modelo de mejora continua en la gestión de procesos \\
+    \textbf{Unidad de Organización Curricular:} & PROFESIONAL \\
+    \textbf{Nivel y Paralelo:} & 4to Semestre ``B'' \\
     \textbf{Alumnos participantes:} & Guatemal Avilez Bryan Stalin \\
     \textbf{Asignatura:} & Metodologías Ágiles \\
-    \textbf{Docente:} & Ing.Naranjo Avalos Hernan Fabricio, Mg. \\
+    \textbf{Docente:} & Ing. Naranjo Avalos Hernan Fabricio, Mg. \\
 \end{tabular}
 \end{flushleft}
 
-
 \section{Informe de la Tarea}
+
 \subsection{Objetivos}
 \subsubsection{General}
-(Especificado en la guía tarea proporcionada por el docente).
+Analizar el Círculo de Deming como modelo de mejora continua en la gestión de procesos, describiendo su evolución histórica, el funcionamiento de sus fases y su aplicación en entornos tecnológicos actuales.
+
 \subsubsection{Específicos}
 \begin{itemize}
-    \item (Se recomienda máximo 3).
-    \item 
-    \item 
+    \item Describir el origen y evolución histórica del Círculo de Deming.
+    \item Explicar las fases del ciclo PHVA y sus principales ventajas y limitaciones.
+    \item Relacionar el modelo con marcos modernos de gestión de TI y casos de aplicación.
 \end{itemize}
 
-
 \subsection{Instrucciones}
-
-Detalladas en la asignación de la tarea proporcionada por el docente.
-
+Investigar el Círculo de Deming como modelo de mejora continua, analizando sus antecedentes, concepto, fases, ventajas, desventajas, relación con marcos de gestión de TI y trabajos relacionados, sustentando la información con referencias bibliográficas en formato IEEE.
 
 \subsection{Listado de equipos, materiales y recursos}
 \textbf{Listado de equipos y materiales generales empleados en la tarea:}
 \begin{itemize}
-    \item  
+    \item Computador portátil
+    \item Acceso a Internet
+    \item Editor de texto en LaTeX
+    \item Fuentes bibliográficas académicas
 \end{itemize}
 
 \textbf{TAC (Tecnologías para el Aprendizaje y Conocimiento) empleados en la tarea:}
 \begin{itemize}
-    \item[$\square$] Plataformas educativas
+    \item[$\blacksquare$] Plataformas educativas
     \item[$\square$] Simuladores y laboratorios virtuales
-    \item[$\square$] Aplicaciones educativas
+    \item[$\blacksquare$] Aplicaciones educativas
     \item[$\square$] Recursos audiovisuales
     \item[$\square$] Gamificación
-    \item[$\square$] Inteligencia Artificial
+    \item[$\blacksquare$] Inteligencia Artificial
     \item Otros (Especifique): \underline{\hspace{5cm}}
 \end{itemize}
 
-
 \subsection{Desarrollo de la Tarea (Actividades a Desarrollar)}
 
-Detalladas en las instrucciones proporcionadas por el docente.
+\subsubsection{Introducción}
+La gestión de procesos en las organizaciones modernas requiere de un enfoque estructurado para alcanzar la excelencia operativa. En este sentido, la mejora continua es un elemento esencial para incrementar la eficiencia y elevar los estándares de calidad. Según \cite{chakraborty2016}, la optimización en las empresas se viabiliza principalmente a través de la implementación del ciclo PHVA (Planificar, Hacer, Verificar y Actuar), también conocido como ciclo PDCA por sus siglas en inglés. Esta herramienta permite la mejora constante de los resultados mediante un análisis iterativo de cada proceso.
+
+Uno de los marcos más influyentes en este ámbito es el Círculo de Deming. Este modelo fue popularizado y difundido por W. Edwards Deming (1900--1993), basándose en los trabajos previos de Walter A. Shewhart sobre el control estadístico. Como señalan \cite{mayangsari2023}, el enfoque de Deming transforma la gestión tradicional en un proceso dinámico de aprendizaje cualitativo. Debido a su rigor metodológico, el ciclo PHVA continúa siendo uno de los enfoques más utilizados en la actualidad, integrando sus principios en marcos modernos de gestión como ITIL v4 y COBIT.
+
+Finalmente, el presente trabajo tiene como objetivo analizar el Círculo de Deming como modelo de mejora continua en la gestión de procesos. Para ello, se describirá su evolución histórica, el funcionamiento detallado de sus fases y su aplicación en entornos tecnológicos actuales. Para comprender la relevancia de este modelo, es necesario analizar primero su origen y evolución dentro de la gestión de calidad.
+
+\subsubsection{Antecedentes (Origen del modelo)}
+El origen del Círculo de Deming se fundamenta en los principios del método científico aplicados al entorno industrial. El concepto inicial fue desarrollado por Walter A. Shewhart durante las décadas de 1920 y 1930, mientras trabajaba en los Laboratorios Bell. Shewhart introdujo el uso de métodos estadísticos para el control de calidad, creando originalmente lo que se conoció como el Ciclo de Shewhart enfocado en el control estadístico de procesos \cite{poon2016}.
+
+La relación entre este modelo y W. Edwards Deming surge a partir de la colaboración y aprendizaje de Deming bajo la tutela de Shewhart. Tras la Segunda Guerra Mundial, Deming fue enviado a Japón para colaborar en estudios estadísticos y la reconstrucción industrial del país \cite{neave1995}. Fue en este contexto donde adaptó el enfoque original hacia un ciclo de mejora continua, facilitando su aplicación no solo en la manufactura, sino en la gestión administrativa integral \cite{houston1993}.
+
+La implementación de esta metodología permitió que las organizaciones japonesas lograran mejorar significativamente sus estándares de calidad, posicionándose como referentes de eficiencia a nivel global \cite{leitner1999}. Debido al éxito de su aplicación y a la labor de difusión realizada por Deming a través de organismos como la Unión de Científicos e Ingenieros Japoneses (JUSE), el modelo fue reconocido internacionalmente como el Círculo de Deming o ciclo PHVA \cite{chakraborty2016}.
+
+\subsubsection{Concepto del Círculo de Deming}
+El Círculo de Deming, técnicamente conocido como ciclo PHVA, se define como un sistema de gestión de calidad diseñado para la mejora continua, el cual progresa desde controles iniciales hacia mejoras progresivas en los procesos organizacionales. Este modelo, consolidado por W. Edwards Deming, constituye una serie sistemática de pasos diseñados para obtener aprendizaje y conocimiento valioso con el fin de perfeccionar un producto o proceso de manera constante. En este contexto, la mejora continua se entiende como una metodología que enfatiza cambios incrementales para elevar la productividad, integrando herramientas de gestión para garantizar una ejecución fluida y eficiente que permita identificar y resolver problemas de manera estructurada \cite{makwana2023}.
+
+La representación del modelo como un ciclo responde directamente a su naturaleza iterativa. Como se observa en la Figura~\ref{fig:phva}, el proceso se organiza de forma circular y numerada para indicar una secuencia lógica que no tiene un final definitivo; a diferencia de los métodos lineales, el PHVA es un método interminable donde el cierre de una etapa sirve como insumo para reiniciar el proceso de mejora \cite{taufik2020}. Esta circularidad, diferenciada visualmente por colores para cada fase, asegura que el conocimiento obtenido en cada vuelta se reintegre al sistema, permitiendo que la organización aprenda de sus experiencias y evolucione sus estándares de calidad de forma permanente \cite{suarez2015}.
+
+\begin{figure}[h]
+    \centering
+    % Reemplaza "ciclo_phva.png" por el nombre real de tu imagen
+    \includegraphics[width=0.80\textwidth]{imagenes/ciclo_phva.jpg}
+    \caption{Círculo de Deming o ciclo PHVA.}
+    \label{fig:phva}
+\end{figure}
+
+La Figura~\ref{fig:phva} muestra el Círculo de Deming representado como un ciclo continuo compuesto por cuatro etapas numeradas: Planificar, Hacer, Verificar y Actuar. Estas fases se encuentran organizadas de forma circular para representar la naturaleza repetitiva del proceso de mejora continua, donde los resultados de una etapa sirven como base para iniciar nuevamente el ciclo con el objetivo de optimizar los procesos organizacionales. Fuente: adaptado de \cite{taufik2020}.
+
+\subsubsection{Explicación del ciclo PHVA}
+El ciclo PHVA se desarrolla a través de cuatro etapas lógicas y secuenciales. Como se ilustra en la Figura~\ref{fig:phva}, cada fase cumple un rol crítico no solo en la ejecución de tareas, sino en la generación de aprendizaje organizacional para la optimización de procesos.
+
+\paragraph{Planificar (Plan):}
+Es la fase donde se establecen los objetivos y los procesos necesarios para lograr resultados de acuerdo con los requisitos del cliente y las políticas de la organización. En esta etapa se identifican los problemas y se analizan las causas raíz utilizando herramientas de diagnóstico. Su propósito es definir el ``qué'' y el ``cómo'' antes de pasar a la ejecución, lo que ayuda a prevenir errores y garantiza que el equipo tenga una ruta clara hacia la mejora \cite{isniah2020}.
+
+\paragraph{Hacer (Do):}
+Consiste en la implementación de las acciones planificadas. En entornos de alta complejidad, como el desarrollo de software, esta fase sirve para probar los cambios en un entorno controlado o mediante una especificación de requisitos clara, lo que permite observar el comportamiento del sistema sin comprometer toda la operación \cite{costa2023}. Esta fase ayuda a mejorar los procesos al convertir la teoría en práctica y recolectar datos reales sobre el desempeño.
+
+\paragraph{Verificar (Check):}
+En esta etapa se realiza un seguimiento y una medición de los procesos respecto a los objetivos iniciales. Según \cite{singh2024}, esta fase es vital para reducir significativamente las tasas de error o rechazo, ya que permite detectar desviaciones de manera temprana. Su utilidad radica en confirmar si los cambios realizados en la fase anterior realmente generaron el impacto positivo esperado.
+
+\paragraph{Actuar (Act):}
+Es la fase donde se toman acciones para mejorar continuamente el desempeño de los procesos. Si los resultados de la verificación fueron exitosos, se procede a la estandarización del nuevo método; de lo contrario, se analizan las fallas para proponer nuevas soluciones. Esta etapa cierra el ciclo garantizando que las mejoras se consoliden como prácticas estandarizadas dentro de la organización, sentando las bases para una nueva iteración de planificación \cite{singh2024}.
+
+\subsubsection{Ventajas del Círculo de Deming}
+La implementación del Círculo de Deming ofrece ventajas competitivas que van más allá de la simple corrección de errores, transformando la estructura operativa de las organizaciones hacia un modelo de eficiencia sostenible. Las principales ventajas identificadas en la literatura académica son las siguientes:
+
+\paragraph{Optimización de costos y reducción de defectos:}
+Una de las ventajas más tangibles es la disminución de pérdidas económicas. Según \cite{singh2024}, la aplicación rigurosa de las fases de verificación y actuación permite reducir drásticamente las tasas de rechazo en la producción, optimizando el uso de recursos. En el ámbito del software, este enfoque sistemático facilita la identificación temprana de fallas, lo que puede reducir significativamente la densidad de defectos en el producto final.
+
+\paragraph{Fomento de una cultura de aprendizaje continuo:}
+El modelo no solo mejora procesos técnicos, sino que también promueve el desarrollo de capacidades humanas. De acuerdo con \cite{suarez2015}, el PHVA conecta la ejecución diaria con una estrategia de aprendizaje constante, permitiendo que el personal se involucre activamente en la resolución de problemas y en la toma de decisiones basada en datos reales.
+
+\paragraph{Estandarización y sostenibilidad de las mejoras:}
+A diferencia de las soluciones temporales, el ciclo garantiza que los resultados exitosos se conviertan en la nueva norma operativa. Esto asegura que la organización no retroceda a prácticas ineficientes, consolidando cada avance como un estándar de calidad que sirve de base para futuras innovaciones \cite{taufik2020}.
+
+\subsubsection{Desventajas o limitaciones}
+A pesar de su efectividad comprobada, la implementación del Círculo de Deming no está exenta de dificultades. Si el modelo se aplica de manera superficial o sin el soporte adecuado, las organizaciones pueden enfrentar limitaciones críticas que comprometen los resultados.
+
+\paragraph{Resistencia al cambio y barreras culturales:}
+Uno de los mayores desafíos identificados es la resistencia organizacional. Según \cite{pontes2024}, las empresas enfrentan dificultades como la necesidad de flexibilidad en industrias bajo demanda y la resistencia de los colaboradores para adoptar y estandarizar nuevos procesos de control.
+
+\paragraph{Complejidad en la gestión de datos y recursos:}
+En el contexto de la Industria 4.0, la implementación del ciclo puede enfrentar desafíos técnicos relacionados con la ciberseguridad y altos costos operativos. La necesidad de recolectar y analizar información en tiempo real puede saturar a organizaciones que no cuentan con la infraestructura tecnológica adecuada \cite{wolniak2024}.
+
+\paragraph{Lentitud en la obtención de resultados:}
+Debido a su naturaleza iterativa y la necesidad de una verificación rigurosa, el PHVA puede percibirse como un proceso lento. Si se ignoran las fases de planificación por buscar soluciones inmediatas, se corre el riesgo de implementar cambios que no atacan la causa raíz del problema.
+
+\paragraph{Limitaciones metodológicas y compromiso organizacional:}
+El éxito del modelo depende totalmente de un compromiso constante. Como señalan \cite{hii2024}, la sinergia entre la gestión de riesgos y la mejora continua requiere una coordinación institucional sostenida; de lo contrario, la falta de integración entre departamentos convierte al ciclo en una práctica difícil de mantener en el tiempo.
+
+\subsubsection{Relación con marcos de gestión de TI}
+El principio de mejora continua no es exclusivo de la manufactura; es el motor fundamental de los marcos de gestión de servicios y gobernanza de tecnologías de la información. Estándares internacionales como ITIL v4 (Information Technology Infrastructure Library) y COBIT (Control Objectives for Information and Related Technologies) integran el ciclo PHVA para asegurar que los servicios tecnológicos evolucionen al ritmo de las necesidades del negocio.
+
+En ITIL v4, el modelo de mejora continua es un componente central que utiliza las fases de planificar, hacer y verificar para alinear los servicios de TI con los objetivos estratégicos de la organización. Por otro lado, en COBIT, la mejora continua permite evaluar el desempeño de los controles de TI, garantizando que la gobernanza de datos y la ciberseguridad se mantengan actualizadas ante nuevas amenazas. En ambos marcos, la aplicación del ciclo PDCA asegura una entrega de valor constante y una reducción progresiva de incidentes técnicos \cite{taufik2020}.
+
+\subsubsection{Trabajos relacionados que utilicen el Círculo de Deming}
+La versatilidad del ciclo PHVA ha permitido su aplicación exitosa en diversos sectores globales. A continuación, se presentan dos estudios que demuestran su impacto tanto en la eficiencia operativa como en la calidad del servicio.
+
+\paragraph{Caso 1: Optimización de la Productividad Industrial}
+El estudio de \cite{singh2024} se aplicó en una planta manufacturera del sector industrial. El ciclo PHVA se utilizó para identificar y eliminar cuellos de botella en la línea de producción y reducir el desperdicio de materiales mediante un diagnóstico de causa raíz. Como resultado, se logró una mejora significativa en la eficiencia general de los equipos (OEE) y una reducción del 15\% en los costos operativos, estandarizando los nuevos procesos de corte y ensamblaje.
+
+\paragraph{Caso 2: Mejora de la Gestión en Servicios}
+De acuerdo con \cite{taufik2020}, el ciclo PHVA fue aplicado en organizaciones de servicios y sectores educativos para implementar un sistema de gestión de calidad basado en la satisfacción del cliente o usuario y la optimización de los tiempos de respuesta administrativos. Como resultado, se reportó un incremento en los índices de satisfacción del usuario final y una estructura organizacional más ágil, evidenciando la capacidad del modelo para reducir errores de comunicación interna en las primeras iteraciones del ciclo.
 
 \subsection{Resultados obtenidos}
-De acuerdo con el tipo de trabajo, se plasmarán los resultados alcanzados en la guía tarea una vez ejecutadas las actividades. Se pueden emplear figuras y tablas las cuales deben ser numeradas. 
+El análisis realizado permitió identificar que el Círculo de Deming constituye una herramienta metodológica efectiva para la mejora continua de procesos en distintos contextos organizacionales. Se determinó que su estructura cíclica facilita la planificación, ejecución, verificación y estandarización de mejoras, promoviendo la reducción de errores, la optimización de recursos y el aprendizaje organizacional.
 
+Asimismo, se evidenció que el modelo mantiene vigencia en entornos tecnológicos actuales, ya que sus principios se integran en marcos de gestión de TI como ITIL v4 y COBIT. Finalmente, los casos revisados demostraron que la aplicación del ciclo PHVA genera resultados positivos tanto en la productividad industrial como en la calidad de los servicios.
 
-%Especifique las TAC's utilizadas en la Tarea. 
 \subsection{Habilidades blandas empleadas en la tarea}
 \begin{itemize}
     \item[$\square$] Liderazgo
     \item[$\square$] Trabajo en equipo
-    \item[$\square$] Comunicación asertiva
+    \item[$\blacksquare$] Comunicación asertiva
     \item[$\square$] La empatía
-    \item[$\square$] Pensamiento crítico
+    \item[$\blacksquare$] Pensamiento crítico
     \item[$\square$] Flexibilidad
     \item[$\square$] La resolución de conflictos
-    \item[$\square$] Adaptabilidad
-    \item[$\square$] Responsabilidad
+    \item[$\blacksquare$] Adaptabilidad
+    \item[$\blacksquare$] Responsabilidad
 \end{itemize}
 
-
-
 \subsection{Conclusiones}
-Constituye la respuesta que propone el o los estudiantes para el problema que originó el trabajo desarrollado, de acuerdo con los datos recogidos y la teoría aplicada. 
+El Círculo de Deming se consolida como un modelo de mejora continua ampliamente aplicable en la gestión de procesos, debido a su estructura iterativa y su capacidad para transformar problemas organizacionales en oportunidades de aprendizaje y optimización. Su origen en el control estadístico de calidad y su posterior evolución hacia un enfoque integral de gestión demuestran su solidez metodológica y su vigencia en distintos sectores.
+
+Además, el ciclo PHVA no solo permite mejorar la eficiencia operativa y reducir defectos, sino que también fortalece la cultura organizacional al promover la toma de decisiones basada en evidencia, la estandarización de buenas prácticas y el compromiso con la calidad. Por ello, su integración en marcos modernos de gestión tecnológica confirma que sigue siendo una herramienta fundamental para alcanzar resultados sostenibles y competitivos.
 
 \subsection{Recomendaciones}
-Redactar las sugerencias o acciones concretas que se derivan de la tarea desarrollada. \cite{greenwade93}
+Se recomienda aplicar el Círculo de Deming de manera integral, evitando omitir la fase de planificación, ya que de esta depende la correcta identificación de problemas y causas raíz. Asimismo, es importante que las organizaciones dispongan de mecanismos de seguimiento y análisis de datos que permitan verificar objetivamente los resultados obtenidos en cada iteración del ciclo.
 
+También se sugiere fomentar una cultura organizacional orientada a la mejora continua, donde los colaboradores participen activamente en la identificación de oportunidades de optimización y en la consolidación de nuevas prácticas estandarizadas. Finalmente, en entornos tecnológicos, resulta conveniente articular el ciclo PHVA con marcos de gestión de TI para fortalecer la calidad del servicio, la gobernanza y la adaptación al cambio.
 
 \subsection{Referencias}
-Insertar las referencias bibliográficas empleadas aplicando la norma IEEE.
 
-\vspace{-3em} %reduce el espacio causado por refname vacío
+\vspace{-3em}
 \renewcommand{\refname}{}
 \bibliographystyle{ieeetr}
 \bibliography{sample}
 
 \subsection{Anexos}
+Como anexo se incluye la representación gráfica del Círculo de Deming empleada para ilustrar las fases del ciclo PHVA.
+
 \vfill
 \end{document}
