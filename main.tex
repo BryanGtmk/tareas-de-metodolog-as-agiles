@@ -1,284 +1,273 @@
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
-% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
-\usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{balance}
+
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
 \begin{document}
 
-\title{Conference Paper Title*\\
-{\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
-should not be used}
-\thanks{Identify applicable funding agency here. If none, delete this.}
-}
+\title{Análisis de los modelos de ciclo de vida\\
+en proyectos de software}
 
-\author{\IEEEauthorblockN{1\textsuperscript{st} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{3\textsuperscript{rd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{5\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\author{
+\IEEEauthorblockN{Bryan Gutemal}
+\IEEEauthorblockA{
+Carrera de Ingeniería de Software\\
+Universidad Técnica de Ambato\\
+Ambato, Ecuador\\
+correo@ejemplo.com
+}
 }
 
 \maketitle
 
 \begin{abstract}
-This document is a model and instructions for \LaTeX.
-This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, 
-or Math in Paper Title or Abstract.
+El ciclo de vida de los proyectos de software constituye una base fundamental para planificar, organizar, ejecutar y controlar el desarrollo de sistemas informáticos. A lo largo del tiempo se han propuesto diversos modelos de ciclo de vida con el propósito de responder a distintos niveles de complejidad, riesgo, cambio de requisitos y formas de organización del trabajo. En este artículo se analizan los principales modelos de ciclo de vida aplicados en proyectos de software: cascada, modelo en V, incremental, iterativo, espiral y ágil. Para cada modelo se estudian su definición, estructura, ventajas, desventajas, contexto de aplicación y relación con variables como presupuesto, incertidumbre y organización del equipo. Además, se realiza una comparación general entre estos enfoques con el fin de identificar sus diferencias y determinar en qué contextos resultan más convenientes. Los resultados muestran que no existe un modelo universalmente superior para todos los proyectos, ya que la selección depende de factores como la estabilidad de los requisitos, el nivel de riesgo, la necesidad de documentación, la participación del cliente y la dinámica del entorno. En consecuencia, la elección adecuada del modelo de ciclo de vida representa una decisión estratégica que influye directamente en la calidad del producto final y en el éxito del proyecto.
 \end{abstract}
 
 \begin{IEEEkeywords}
-component, formatting, style, styling, insert
+ciclo de vida, ingeniería de software, modelo en cascada, modelo en V, modelo incremental, modelo iterativo, modelo espiral, modelo ágil
 \end{IEEEkeywords}
 
-\section{Introduction}
-This document is a model and instructions for \LaTeX.
-Please observe the conference page limits. 
+\section{Introducción}
 
-\section{Ease of Use}
+El desarrollo de software es una actividad compleja que involucra análisis, diseño, construcción, validación, despliegue y mantenimiento de soluciones informáticas. En la actualidad, los proyectos de software se ejecutan en contextos cada vez más dinámicos, con cambios frecuentes en los requisitos, restricciones de tiempo, limitaciones presupuestarias y exigencias crecientes de calidad. Bajo estas condiciones, la manera en que se organiza el trabajo influye directamente en la eficiencia del proceso y en la calidad del producto final.
 
-\subsection{Maintaining the Integrity of the Specifications}
+En este escenario, el ciclo de vida del software se convierte en un elemento central de la ingeniería de software, ya que proporciona una estructura para ordenar las actividades del proyecto y definir la relación entre sus fases. Los modelos de ciclo de vida permiten determinar cómo se planifica el trabajo, cuándo se valida, cómo se incorporan los cambios y qué grado de participación tienen el cliente y el equipo durante el proceso \cite{royce1970,sommerville2016}.
 
-The IEEEtran class file is used to format your paper and style the text. All margins, 
-column widths, line spaces, and text fonts are prescribed; please do not 
-alter them. You may note peculiarities. For example, the head margin
-measures proportionately more than is customary. This measurement 
-and others are deliberate, using specifications that anticipate your paper 
-as one part of the entire proceedings, and not as an independent document. 
-Please do not revise any of the current designations.
+A lo largo de la evolución de la disciplina han surgido diferentes enfoques. Algunos modelos privilegian la secuencia ordenada de etapas, la documentación formal y el control estricto del alcance. Otros, en cambio, se orientan a la iteración, la retroalimentación frecuente, la adaptación al cambio y la entrega temprana de valor \cite{boehm1988,beck2001}. Esta diversidad ha llevado a que la elección del modelo de ciclo de vida ya no pueda considerarse una simple decisión técnica, sino una decisión estratégica vinculada con el tipo de sistema, el riesgo, los recursos disponibles y la naturaleza del entorno organizacional.
 
-\section{Prepare Your Paper Before Styling}
-Before you begin to format your paper, first write and save the content as a 
-separate text file. Complete all content and organizational editing before 
-formatting. Please note sections \ref{AA}--\ref{SCM} below for more information on 
-proofreading, spelling and grammar.
+El presente artículo tiene como objetivo analizar los principales modelos de ciclo de vida utilizados en proyectos de software, considerando sus características esenciales, ventajas, desventajas y contexto de aplicación. Asimismo, se comparan estos modelos en función de criterios como presupuesto, incertidumbre y organización del equipo, con el propósito de aportar una visión clara que facilite la selección del enfoque más conveniente según las necesidades del proyecto.
 
-Keep your text and graphic files separate until after the text has been 
-formatted and styled. Do not number text heads---{\LaTeX} will do that 
-for you.
+\section{Antecedentes}
 
-\subsection{Abbreviations and Acronyms}\label{AA}
-Define abbreviations and acronyms the first time they are used in the text, 
-even after they have been defined in the abstract. Abbreviations such as 
-IEEE, SI, MKS, CGS, ac, dc, and rms do not have to be defined. Do not use 
-abbreviations in the title or heads unless they are unavoidable.
+La necesidad de estructurar el desarrollo de software surgió a medida que los sistemas informáticos se volvieron más grandes, costosos y difíciles de controlar. En los primeros años del desarrollo de software, muchos proyectos eran ejecutados sin una metodología claramente definida, lo que generaba retrasos, sobrecostos, fallos de calidad y dificultades de mantenimiento. Como respuesta a estos problemas, se propusieron modelos formales que buscaban ordenar las actividades del desarrollo y mejorar la gestión del proceso.
 
-\subsection{Units}
+Uno de los antecedentes más influyentes es el trabajo de Royce, quien describió un enfoque secuencial para el desarrollo de grandes sistemas de software \cite{royce1970}. Aunque con el tiempo su propuesta fue interpretada como el modelo en cascada clásico, su contribución marcó el inicio de la formalización del ciclo de vida del software. Posteriormente, la ingeniería de software amplió estas ideas y propuso nuevos modelos, entre ellos el modelo en V, orientado a reforzar la verificación y validación, y el modelo espiral, centrado en la gestión del riesgo \cite{durmus2018,boehm1988}.
+
+Con el avance de la tecnología y la creciente necesidad de responder a cambios rápidos del entorno, comenzaron a tomar fuerza modelos más flexibles, como el incremental, el iterativo y el ágil. Estos enfoques reconocen que, en muchos proyectos de software, los requisitos no permanecen estables durante todo el proceso, por lo que la adaptación se vuelve una necesidad más que una opción \cite{sommerville2016,scacchi2001}. En este sentido, el desarrollo ágil consolidó una visión distinta del ciclo de vida, basada en entregas frecuentes, colaboración con el cliente y mejora continua \cite{beck2001,jalali2012}.
+
+En consecuencia, la evolución de los modelos de ciclo de vida refleja también la evolución de la propia ingeniería de software: desde procesos fuertemente planificados hasta enfoques más adaptativos y colaborativos. Esta diversidad de propuestas hace necesario comprender sus diferencias para seleccionar de manera adecuada el modelo más conveniente según las características del proyecto.
+
+\section{Metodología}
+
+La presente investigación se desarrolló bajo un enfoque documental y bibliográfico. Se realizó una revisión de literatura relacionada con el ciclo de vida de proyectos de software y sus principales modelos, utilizando como base textos clásicos de ingeniería de software, artículos académicos y trabajos comparativos. La información recopilada permitió identificar un conjunto de modelos recurrentes y representativos en la literatura especializada.
+
+Para el análisis se seleccionaron seis modelos principales: cascada, modelo en V, incremental, iterativo, espiral y ágil. Esta selección se realizó porque dichos modelos representan enfoques distintos y ampliamente reconocidos dentro del desarrollo de software. Algunos de ellos responden a una lógica secuencial, otros a una lógica evolutiva, y otros se orientan explícitamente a la gestión del riesgo o a la adaptación continua.
+
+Posteriormente, la información fue organizada con base en criterios homogéneos de análisis:
 \begin{itemize}
-\item Use either SI (MKS) or CGS as primary units. (SI units are encouraged.) English units may be used as secondary units (in parentheses). An exception would be the use of English units as identifiers in trade, such as ``3.5-inch disk drive''.
-\item Avoid combining SI and CGS units, such as current in amperes and magnetic field in oersteds. This often leads to confusion because equations do not balance dimensionally. If you must use mixed units, clearly state the units for each quantity that you use in an equation.
-\item Do not mix complete spellings and abbreviations of units: ``Wb/m\textsuperscript{2}'' or ``webers per square meter'', not ``webers/m\textsuperscript{2}''. Spell out units when they appear in text: ``. . . a few henries'', not ``. . . a few H''.
-\item Use a zero before decimal points: ``0.25'', not ``.25''. Use ``cm\textsuperscript{3}'', not ``cc''.)
+    \item definición general del modelo,
+    \item características estructurales,
+    \item ventajas principales,
+    \item desventajas o limitaciones,
+    \item contexto de aplicación,
+    \item relación con el presupuesto,
+    \item tolerancia a la incertidumbre,
+    \item organización del equipo de trabajo.
 \end{itemize}
 
-\subsection{Equations}
-Number equations consecutively. To make your 
-equations more compact, you may use the solidus (~/~), the exp function, or 
-appropriate exponents. Italicize Roman symbols for quantities and variables, 
-but not Greek symbols. Use a long dash rather than a hyphen for a minus 
-sign. Punctuate equations with commas or periods when they are part of a 
-sentence, as in:
-\begin{equation}
-a+b=\gamma\label{eq}
-\end{equation}
+Este procedimiento permitió comparar los modelos de forma consistente y construir una visión más amplia sobre sus implicaciones prácticas. El estudio no busca proponer un modelo único como solución universal, sino examinar las condiciones bajo las cuales cada enfoque puede ser más apropiado.
 
-Be sure that the 
-symbols in your equation have been defined before or immediately following 
-the equation. Use ``\eqref{eq}'', not ``Eq.~\eqref{eq}'' or ``equation \eqref{eq}'', except at 
-the beginning of a sentence: ``Equation \eqref{eq} is . . .''
+\section{Concepto de ciclo de vida de proyectos de software}
 
-\subsection{\LaTeX-Specific Advice}
+El ciclo de vida de proyectos de software puede entenderse como el conjunto estructurado de fases y actividades que orientan el desarrollo de un sistema informático desde la identificación de la necesidad hasta su mantenimiento o reemplazo. En términos prácticos, el ciclo de vida establece cómo se planifica el proyecto, cómo se recogen los requisitos, cómo se diseña la solución, cómo se implementa, cómo se prueba y cómo se entrega el software al usuario final \cite{sommerville2016}.
 
-Please use ``soft'' (e.g., \verb|\eqref{Eq}|) cross references instead
-of ``hard'' references (e.g., \verb|(1)|). That will make it possible
-to combine sections, add equations, or change the order of figures or
-citations without having to go through the file line by line.
+La importancia del ciclo de vida radica en que permite dar orden al trabajo técnico y administrativo. Un proyecto de software sin una estructura clara corre el riesgo de sufrir inconsistencias, duplicidad de esfuerzos, mala comunicación entre integrantes del equipo y dificultades para controlar tiempos y costos. Por ello, el ciclo de vida no solo tiene una función técnica, sino también una función de gestión.
 
-Please don't use the \verb|{eqnarray}| equation environment. Use
-\verb|{align}| or \verb|{IEEEeqnarray}| instead. The \verb|{eqnarray}|
-environment leaves unsightly spaces around relation symbols.
+Además, el ciclo de vida influye directamente en la forma en que se entienden y resuelven los problemas del proyecto. Un modelo secuencial, por ejemplo, supone que los requisitos pueden definirse con claridad desde etapas tempranas. En cambio, un modelo iterativo o ágil parte de la idea de que el conocimiento del problema se construye progresivamente y que el producto puede refinarse en función de la retroalimentación obtenida durante el desarrollo \cite{scacchi2001,beck2001}.
 
-Please note that the \verb|{subequations}| environment in {\LaTeX}
-will increment the main equation counter even when there are no
-equation numbers displayed. If you forget that, you might write an
-article in which the equation numbers skip from (17) to (20), causing
-the copy editors to wonder if you've discovered a new method of
-counting.
+En términos generales, los modelos de ciclo de vida buscan responder a preguntas como las siguientes: ¿en qué orden deben ejecutarse las actividades?, ¿cuándo se validan los resultados?, ¿qué tan fácil es introducir cambios?, ¿cómo se organiza el equipo?, ¿qué tipo de documentación se necesita?, ¿qué riesgos existen y cómo se gestionan? La respuesta a estas preguntas varía según el modelo adoptado y determina, en gran medida, la dinámica del proyecto.
 
-{\BibTeX} does not work by magic. It doesn't get the bibliographic
-data from thin air but from .bib files. If you use {\BibTeX} to produce a
-bibliography you must send the .bib files. 
+\section{Principales modelos de ciclo de vida}
 
-{\LaTeX} can't read your mind. If you assign the same label to a
-subsubsection and a table, you might find that Table I has been cross
-referenced as Table IV-B3. 
+\subsection{Modelo en cascada}
 
-{\LaTeX} does not have precognitive abilities. If you put a
-\verb|\label| command before the command that updates the counter it's
-supposed to be using, the label will pick up the last counter to be
-cross referenced instead. In particular, a \verb|\label| command
-should not go before the caption of a figure or a table.
+El modelo en cascada es uno de los enfoques más tradicionales dentro de la ingeniería de software. Su estructura es lineal y secuencial, lo que significa que el proyecto avanza de una fase a otra en un orden preestablecido. Entre las etapas más comunes de este modelo se encuentran el análisis de requisitos, diseño, implementación, pruebas, despliegue y mantenimiento \cite{royce1970,saravanos2023}.
 
-Do not use \verb|\nonumber| inside the \verb|{array}| environment. It
-will not stop equation numbers inside \verb|{array}| (there won't be
-any anyway) and it might stop a wanted equation number in the
-surrounding equation.
+Una de las principales características del modelo en cascada es que cada fase debe completarse antes de pasar a la siguiente. Esto favorece la organización del trabajo y permite definir con claridad entregables específicos en cada etapa. Asimismo, su fuerte orientación a la documentación lo convierte en un modelo especialmente útil en contextos donde el control formal del proceso es prioritario \cite{sommerville2016}.
 
-\subsection{Some Common Mistakes}\label{SCM}
-\begin{itemize}
-\item The word ``data'' is plural, not singular.
-\item The subscript for the permeability of vacuum $\mu_{0}$, and other common scientific constants, is zero with subscript formatting, not a lowercase letter ``o''.
-\item In American English, commas, semicolons, periods, question and exclamation marks are located within quotation marks only when a complete thought or name is cited, such as a title or full quotation. When quotation marks are used, instead of a bold or italic typeface, to highlight a word or phrase, punctuation should appear outside of the quotation marks. A parenthetical phrase or statement at the end of a sentence is punctuated outside of the closing parenthesis (like this). (A parenthetical sentence is punctuated within the parentheses.)
-\item A graph within a graph is an ``inset'', not an ``insert''. The word alternatively is preferred to the word ``alternately'' (unless you really mean something that alternates).
-\item Do not use the word ``essentially'' to mean ``approximately'' or ``effectively''.
-\item In your paper title, if the words ``that uses'' can accurately replace the word ``using'', capitalize the ``u''; if not, keep using lower-cased.
-\item Be aware of the different meanings of the homophones ``affect'' and ``effect'', ``complement'' and ``compliment'', ``discreet'' and ``discrete'', ``principal'' and ``principle''.
-\item Do not confuse ``imply'' and ``infer''.
-\item The prefix ``non'' is not a word; it should be joined to the word it modifies, usually without a hyphen.
-\item There is no period after the ``et'' in the Latin abbreviation ``et al.''.
-\item The abbreviation ``i.e.'' means ``that is'', and the abbreviation ``e.g.'' means ``for example''.
-\end{itemize}
-An excellent style manual for science writers is \cite{b7}.
+Entre sus ventajas se destacan la claridad estructural, la facilidad de planificación y la posibilidad de realizar un seguimiento ordenado del proyecto. Este modelo funciona bien cuando los requisitos son estables, el entorno es predecible y se necesita una documentación completa del proceso. También es útil cuando la organización desea mantener un control estricto sobre tiempos, recursos y actividades.
 
-\subsection{Authors and Affiliations}
-\textbf{The class file is designed for, but not limited to, six authors.} A 
-minimum of one author is required for all conference articles. Author names 
-should be listed starting from left to right and then moving down to the 
-next line. This is the author sequence that will be used in future citations 
-and by indexing services. Names should not be listed in columns nor group by 
-affiliation. Please keep your affiliations as succinct as possible (for 
-example, do not differentiate among departments of the same organization).
+No obstante, presenta limitaciones importantes. La rigidez del modelo dificulta la incorporación de cambios tardíos y retrasa la detección de ciertos errores, ya que muchas veces los problemas se evidencian cuando el proyecto ha avanzado considerablemente. Además, la participación del cliente suele concentrarse en etapas iniciales y finales, lo que puede reducir la retroalimentación continua \cite{sommerville2016,saravanos2023}.
 
-\subsection{Identify the Headings}
-Headings, or heads, are organizational devices that guide the reader through 
-your paper. There are two types: component heads and text heads.
+En cuanto a su aplicación, el modelo en cascada es recomendable en proyectos con requisitos claramente definidos, sistemas estables, entornos regulados y organizaciones que necesitan mucha formalidad documental. En relación con el presupuesto, facilita la estimación inicial de costos, aunque cambios posteriores pueden elevar significativamente el gasto. Su tolerancia a la incertidumbre es baja y se adapta mejor a equipos con roles formales y responsabilidades claramente delimitadas.
 
-Component heads identify the different components of your paper and are not 
-topically subordinate to each other. Examples include Acknowledgments and 
-References and, for these, the correct style to use is ``Heading 5''. Use 
-``figure caption'' for your Figure captions, and ``table head'' for your 
-table title. Run-in heads, such as ``Abstract'', will require you to apply a 
-style (in this case, italic) in addition to the style provided by the drop 
-down menu to differentiate the head from the text.
+\subsection{Modelo en V}
 
-Text heads organize the topics on a relational, hierarchical basis. For 
-example, the paper title is the primary text head because all subsequent 
-material relates and elaborates on this one topic. If there are two or more 
-sub-topics, the next level head (uppercase Roman numerals) should be used 
-and, conversely, if there are not at least two sub-topics, then no subheads 
-should be introduced.
+El modelo en V es una evolución de los enfoques secuenciales y se caracteriza por vincular explícitamente cada fase de desarrollo con una fase de prueba asociada. Por ello, es conocido también como un modelo de verificación y validación. En su representación gráfica, el lado izquierdo de la “V” corresponde a las fases de definición y diseño, mientras que el lado derecho corresponde a los procesos de prueba e integración \cite{durmus2018,alphonce2023}.
 
-\subsection{Figures and Tables}
-\paragraph{Positioning Figures and Tables} Place figures and tables at the top and 
-bottom of columns. Avoid placing them in the middle of columns. Large 
-figures and tables may span across both columns. Figure captions should be 
-below the figures; table heads should appear above the tables. Insert 
-figures and tables after they are cited in the text. Use the abbreviation 
-``Fig.~\ref{fig}'', even at the beginning of a sentence.
+Una ventaja importante del modelo en V es que la calidad no se deja exclusivamente para el final del desarrollo, sino que se planifica desde etapas tempranas. Cada nivel de especificación o diseño se relaciona con un nivel particular de prueba, como pruebas unitarias, de integración, de sistema y de aceptación. Esta estructura mejora la trazabilidad y fortalece el control de calidad \cite{durmus2018}.
 
-\begin{table}[htbp]
-\caption{Table Type Styles}
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
+Las fortalezas del modelo en V incluyen su orden lógico, la claridad entre fases, la vinculación rigurosa entre requisitos y validación, y la posibilidad de identificar inconsistencias de manera más sistemática que en otros modelos puramente secuenciales. Estas características lo hacen especialmente valioso en sistemas críticos, industriales, médicos o regulados, donde la calidad y la seguridad tienen un peso determinante.
+
+Sin embargo, el modelo en V conserva una importante rigidez frente a cambios. Al requerir una planificación detallada y una relación estructurada entre fases y pruebas, cualquier modificación significativa en los requisitos puede generar retrabajo considerable. También exige documentación extensa y una disciplina organizacional elevada, lo que puede dificultar su aplicación en contextos muy dinámicos \cite{sommerville2016}.
+
+Desde la perspectiva del presupuesto, el modelo en V puede demandar una inversión inicial importante en planificación, verificación y validación, aunque esta inversión ayuda a prevenir errores costosos en etapas posteriores. Su tolerancia a la incertidumbre es limitada, por lo que se adapta mejor a proyectos donde los requisitos pueden especificarse con claridad desde el inicio. En cuanto al equipo, requiere coordinación formal entre analistas, diseñadores, desarrolladores, probadores y responsables de calidad.
+
+\subsection{Modelo incremental}
+
+El modelo incremental propone desarrollar el sistema mediante una serie de entregas parciales. En lugar de construir todo el software en una sola secuencia completa, este enfoque divide el producto en incrementos funcionales que se incorporan progresivamente hasta alcanzar la versión final \cite{sommerville2016,scacchi2001}.
+
+Una característica fundamental de este modelo es que permite entregar valor al usuario desde etapas tempranas del proyecto. Cada incremento puede representar un subconjunto útil del sistema, lo que favorece la obtención de retroalimentación real sobre el funcionamiento del producto. Esta estrategia reduce el riesgo de desarrollar durante mucho tiempo una solución que luego no responda a las necesidades del usuario.
+
+Entre sus principales ventajas se encuentran la posibilidad de mostrar avances tempranos, medir el progreso con mayor facilidad, distribuir el esfuerzo en etapas y facilitar la adaptación a cambios moderados. Además, permite priorizar funcionalidades, de modo que las más importantes puedan construirse primero, mientras que las secundarias se incorporan en incrementos posteriores.
+
+No obstante, el modelo incremental exige una buena arquitectura general desde el comienzo. Si el sistema no está bien concebido en su estructura, la integración de nuevos incrementos puede generar problemas técnicos y sobrecostos. También requiere disciplina en la gestión de versiones y en la definición de prioridades para que las entregas parciales mantengan coherencia con el producto final \cite{scacchi2001}.
+
+Este modelo resulta apropiado en proyectos donde se necesita entregar resultados funcionales de manera gradual, como aplicaciones empresariales, sistemas web o productos en evolución. Desde el punto de vista presupuestario, permite distribuir recursos en fases sucesivas y obtener beneficios parciales antes de completar todo el sistema. Su tolerancia a la incertidumbre es media, superior a la de cascada y V, pero depende de una adecuada planificación técnica. Respecto al equipo, funciona bien cuando el trabajo puede organizarse por módulos y existe comunicación constante entre quienes construyen e integran los incrementos.
+
+\subsection{Modelo iterativo}
+
+El modelo iterativo se basa en la idea de que el software puede perfeccionarse mediante repeticiones sucesivas. En cada iteración se construye, revisa y refina una versión del sistema, incorporando mejoras a partir del aprendizaje obtenido en ciclos anteriores \cite{sommerville2016,scacchi2001}.
+
+A diferencia de un enfoque lineal, el modelo iterativo no parte de la suposición de que todos los requisitos pueden conocerse perfectamente desde el comienzo. Por el contrario, reconoce que el conocimiento sobre el problema y la solución puede evolucionar durante el proyecto. Esto lo vuelve especialmente útil en contextos donde el aprendizaje progresivo forma parte natural del desarrollo.
+
+Entre sus ventajas se destacan la flexibilidad, la posibilidad de revisar decisiones tempranas, la detección temprana de fallos y la mejora continua del producto. Cada iteración ofrece una oportunidad para evaluar el estado del sistema y reajustar el rumbo en función de la retroalimentación técnica o del cliente. Esta dinámica reduce el riesgo de alejarse de las necesidades reales del proyecto.
+
+Como desventajas, el modelo iterativo puede volverse difícil de controlar si no se definen claramente los objetivos de cada ciclo. El exceso de iteraciones, la falta de cierre de alcance o una arquitectura débil pueden incrementar el tiempo y el costo total del proyecto. Además, requiere una gestión cuidadosa para que los cambios no afecten negativamente la coherencia técnica del sistema.
+
+Este enfoque es adecuado en proyectos innovadores, soluciones complejas o desarrollos donde los requisitos evolucionan a medida que se comprende mejor el problema. En términos de presupuesto, permite distribuir el esfuerzo en ciclos, aunque una mala gestión iterativa puede elevar costos. Su tolerancia a la incertidumbre es alta y se adapta bien a equipos colaborativos, capaces de revisar y mejorar continuamente su trabajo.
+
+\subsection{Modelo espiral}
+
+El modelo espiral fue propuesto como una alternativa capaz de integrar control, evolución progresiva y gestión del riesgo. Su característica esencial es que cada ciclo de desarrollo se estructura alrededor de la identificación y resolución de riesgos, lo que lo convierte en un enfoque guiado por riesgos \cite{boehm1988,boehm2000}.
+
+En este modelo, cada vuelta de la espiral incluye cuatro grandes actividades: definición de objetivos y alternativas, análisis de riesgos, desarrollo y validación del producto, y planificación de la siguiente iteración. Esta lógica permite abordar el proyecto de forma progresiva, pero sin perder de vista las amenazas técnicas, económicas y organizativas que podrían comprometer su éxito.
+
+Su mayor ventaja es precisamente su orientación al riesgo. En proyectos de alta complejidad, gran tamaño o elevado impacto, el modelo espiral permite tomar decisiones de manera más informada, ya que obliga a considerar tempranamente los factores que podrían afectar el desarrollo. Además, combina beneficios de modelos iterativos y secuenciales, añadiendo una capa explícita de análisis crítico \cite{boehm1988}.
+
+Sin embargo, el modelo espiral no es simple de aplicar. Requiere experiencia en gestión de riesgos, capacidad técnica para evaluar alternativas y una organización suficientemente madura como para sostener revisiones periódicas de alto nivel. También puede resultar costoso para proyectos pequeños o de baja complejidad, donde un enfoque tan elaborado no siempre se justifica \cite{boehm2000}.
+
+El modelo espiral es recomendable en proyectos grandes, críticos, innovadores o inciertos, donde el costo de fallar es alto y donde conviene validar progresivamente tanto el producto como los riesgos asociados. Desde el punto de vista presupuestario, suele implicar una inversión inicial mayor, aunque ayuda a evitar fallos costosos a largo plazo. Presenta alta tolerancia a la incertidumbre y requiere equipos experimentados, con fuerte capacidad técnica y de gestión.
+
+\subsection{Modelo ágil}
+
+El modelo ágil representa una visión distinta del ciclo de vida del software. En lugar de priorizar una secuencia rígida y una planificación exhaustiva desde el inicio, este enfoque se centra en entregas frecuentes, colaboración continua con el cliente, trabajo en equipo y adaptación rápida al cambio \cite{beck2001,jalali2012}.
+
+El Manifiesto Ágil estableció principios que transformaron la manera de comprender el desarrollo de software, al valorar más a las personas y sus interacciones, el software funcionando, la colaboración con el cliente y la respuesta al cambio \cite{beck2001}. A partir de esta base surgieron diversos marcos de trabajo, como Scrum, XP y Kanban, que comparten una lógica iterativa e incremental.
+
+Entre sus principales ventajas se encuentran la flexibilidad frente a cambios, la rápida incorporación de retroalimentación, la posibilidad de entregar valor desde etapas tempranas y la mejora continua del producto. Este modelo resulta especialmente apropiado en entornos cambiantes, donde las necesidades del usuario pueden evolucionar de forma constante durante el proyecto.
+
+No obstante, el enfoque ágil también presenta limitaciones. Puede resultar menos adecuado cuando se requiere documentación formal extensa, cuando los equipos son demasiado grandes o distribuidos, o cuando el cliente no puede participar activamente. Además, si no existe disciplina en la priorización del trabajo, el proyecto puede perder claridad en su alcance \cite{jalali2012,sommerville2016}.
+
+En términos de aplicación, el modelo ágil se adapta bien a proyectos web, móviles, productos digitales innovadores y soluciones con fuerte necesidad de adaptación. Respecto al presupuesto, permite orientar el esfuerzo a las funcionalidades de mayor valor, aunque también puede dificultar una estimación cerrada del costo total si el alcance cambia continuamente. Presenta alta tolerancia a la incertidumbre y se ajusta mejor a equipos pequeños o medianos, colaborativos y con capacidad de autoorganización.
+
+\section{Comparación general de los modelos}
+
+La comparación entre modelos de ciclo de vida permite advertir que sus diferencias no son meramente teóricas, sino que afectan directamente la forma en que se planifica, ejecuta y controla un proyecto de software. Los modelos secuenciales, como cascada y V, ofrecen orden, formalidad y trazabilidad, pero reducen la capacidad de respuesta frente a cambios. En contraste, los modelos incremental, iterativo y ágil priorizan la evolución progresiva del producto, la retroalimentación continua y una mayor adaptación.
+
+Por su parte, el modelo espiral ocupa una posición particular, ya que combina la lógica evolutiva con una atención explícita a la gestión del riesgo. Esto le permite abordar proyectos complejos donde los problemas potenciales deben analizarse cuidadosamente antes de comprometer recursos de manera definitiva.
+
+\begin{table*}[htbp]
+\caption{Comparación de modelos de ciclo de vida de proyectos de software}
+\centering
+\scriptsize
+\begin{tabular}{|p{1.7cm}|p{2.2cm}|p{2.3cm}|p{2.3cm}|p{2.0cm}|p{2.0cm}|p{2.2cm}|}
 \hline
-\textbf{Table}&\multicolumn{3}{|c|}{\textbf{Table Column Head}} \\
-\cline{2-4} 
-\textbf{Head} & \textbf{\textit{Table column subhead}}& \textbf{\textit{Subhead}}& \textbf{\textit{Subhead}} \\
-\hline
-copy& More table copy$^{\mathrm{a}}$& &  \\
-\hline
-\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+\textbf{Modelo} & \textbf{Estructura} & \textbf{Ventajas principales} & \textbf{Desventajas principales} & \textbf{Presupuesto} & \textbf{Incertidumbre} & \textbf{Contexto recomendado} \\ \hline
+Cascada & Secuencial y lineal & Orden, documentación, control, previsibilidad & Rigidez, baja adaptación al cambio, retroalimentación tardía & Facilita estimación inicial, pero el retrabajo es costoso & Baja & Proyectos estables, regulados y con requisitos claros \\ \hline
+V & Secuencial con fases de prueba asociadas & Calidad, trazabilidad, verificación y validación rigurosas & Cambios costosos, planificación pesada, poca flexibilidad & Mayor inversión en pruebas y validación & Baja & Sistemas críticos, industriales o regulados \\ \hline
+Incremental & Entregas parciales del sistema & Valor temprano, retroalimentación, progreso medible & Riesgos de integración, requiere buena arquitectura & Distribuye recursos por entregas & Media & Sistemas empresariales, web y productos evolutivos \\ \hline
+Iterativo & Refinamiento progresivo en ciclos & Aprendizaje continuo, flexibilidad, mejora gradual & Requiere control de ciclos, posible aumento de tiempo & Puede optimizar recursos, pero depende del control iterativo & Alta & Proyectos innovadores o con requisitos evolutivos \\ \hline
+Espiral & Iterativo guiado por riesgos & Gestión de riesgo, adecuada para alta complejidad & Mayor costo, complejidad de gestión, exige experiencia & Alta inversión inicial, con prevención de fallos mayores & Alta & Proyectos grandes, críticos o inciertos \\ \hline
+Ágil & Iterativo e incremental con entregas cortas & Adaptación al cambio, colaboración, valor temprano & Menor formalidad documental, dificultad en equipos muy grandes & Flexible, centrado en prioridades de valor & Muy alta & Proyectos dinámicos, móviles, web e innovadores \\ \hline
 \end{tabular}
-\label{tab1}
-\end{center}
-\end{table}
+\label{tab:comparacion_general}
+\end{table*}
 
+La Tabla \ref{tab:comparacion_general} resume estas diferencias. Se observa que el presupuesto y la incertidumbre son variables clave al momento de seleccionar el modelo. Por ejemplo, si el proyecto tiene requisitos bien definidos y recursos delimitados, un enfoque secuencial puede resultar suficiente. En cambio, si el contexto es cambiante o de alto riesgo, los enfoques iterativos, espirales o ágiles ofrecen mayor capacidad de respuesta.
 
+\section{Discusión}
 
-Figure Labels: Use 8 point Times New Roman for Figure labels. Use words 
-rather than symbols or abbreviations when writing Figure axis labels to 
-avoid confusing the reader. As an example, write the quantity 
-``Magnetization'', or ``Magnetization, M'', not just ``M''. If including 
-units in the label, present them within parentheses. Do not label axes only 
-with units. In the example, write ``Magnetization (A/m)'' or ``Magnetization 
-\{A[m(1)]\}'', not just ``A/m''. Do not label axes with a ratio of 
-quantities and units. For example, write ``Temperature (K)'', not 
-``Temperature/K''.
+Los resultados del análisis permiten afirmar que la elección del modelo de ciclo de vida depende de una combinación de factores técnicos y organizacionales. No existe un enfoque único que garantice el éxito en todos los contextos. Más bien, cada modelo resuelve de mejor manera determinados problemas y presenta limitaciones frente a otros.
 
-\section*{Acknowledgment}
+Los modelos tradicionales, como cascada y V, siguen siendo relevantes en escenarios donde la trazabilidad, la documentación y la previsibilidad son esenciales. Esto ocurre con frecuencia en sistemas regulados, aplicaciones industriales o proyectos donde la seguridad y la validación formal tienen un peso determinante. En estos casos, la rigidez del proceso no necesariamente es una desventaja, sino parte de una necesidad de control.
 
-The preferred spelling of the word ``acknowledgment'' in America is without 
-an ``e'' after the ``g''. Avoid the stilted expression ``one of us (R. B. 
-G.) thanks $\ldots$''. Instead, try ``R. B. G. thanks$\ldots$''. Put sponsor 
-acknowledgments in the unnumbered footnote on the first page.
+Por otro lado, en muchos proyectos contemporáneos, especialmente en productos digitales, aplicaciones móviles y soluciones web, los requisitos evolucionan continuamente. En dichos contextos, un enfoque rígido puede generar retrabajo excesivo y dificultar la respuesta al cambio. Por ello, los modelos incremental, iterativo y ágil se presentan como opciones más coherentes con entornos dinámicos y procesos de innovación continua.
 
-\section*{References}
+El modelo espiral merece una consideración especial, ya que aborda un problema que no siempre se trata de manera explícita en otros enfoques: el riesgo. Cuando el proyecto involucra incertidumbre tecnológica, alto impacto económico o consecuencias críticas ante fallos, la identificación sistemática del riesgo se vuelve indispensable. Sin embargo, esto implica contar con una organización madura y con equipos técnicamente capaces de sostener ese nivel de análisis.
 
-Please number citations consecutively within brackets \cite{b1}. The 
-sentence punctuation follows the bracket \cite{b2}. Refer simply to the reference 
-number, as in \cite{b3}---do not use ``Ref. \cite{b3}'' or ``reference \cite{b3}'' except at 
-the beginning of a sentence: ``Reference \cite{b3} was the first $\ldots$''
+También debe considerarse la organización del equipo. Un modelo secuencial puede funcionar mejor con estructuras jerárquicas y roles claramente definidos, mientras que los enfoques ágiles requieren mayor interacción, comunicación constante y capacidad de autoorganización. Por tanto, la cultura organizacional influye tanto como las características técnicas del sistema.
 
-Number footnotes separately in superscripts. Place the actual footnote at 
-the bottom of the column in which it was cited. Do not put footnotes in the 
-abstract or reference list. Use letters for table footnotes.
+En síntesis, la discusión evidencia que la selección del modelo de ciclo de vida debe responder a un análisis contextual. Más que adoptar una metodología por tendencia o costumbre, las organizaciones deberían considerar la estabilidad de los requisitos, el nivel de riesgo, el grado de formalidad requerido, la dinámica del cliente y la capacidad del equipo antes de decidir.
 
-Unless there are six authors or more give all authors' names; do not use 
-``et al.''. Papers that have not been published, even if they have been 
-submitted for publication, should be cited as ``unpublished'' \cite{b4}. Papers 
-that have been accepted for publication should be cited as ``in press'' \cite{b5}. 
-Capitalize only the first word in a paper title, except for proper nouns and 
-element symbols.
+\section{Recomendaciones}
 
-For papers published in translation journals, please give the English 
-citation first, followed by the original foreign-language citation \cite{b6}.
+Con base en el análisis realizado, se proponen las siguientes recomendaciones:
+
+\begin{itemize}
+    \item Utilizar el modelo en cascada cuando el proyecto tenga requisitos estables, bajo nivel de cambio y necesidad de documentación formal.
+    \item Emplear el modelo en V en sistemas donde la verificación, validación y trazabilidad sean críticas.
+    \item Optar por el modelo incremental cuando se requiera entregar funcionalidad útil de manera progresiva.
+    \item Aplicar el modelo iterativo en proyectos donde el aprendizaje progresivo y la revisión frecuente sean necesarios.
+    \item Considerar el modelo espiral en proyectos de alta complejidad o elevado riesgo.
+    \item Adoptar enfoques ágiles cuando el entorno sea dinámico, el cliente participe activamente y los requisitos evolucionen durante el desarrollo.
+\end{itemize}
+
+Asimismo, se recomienda que la selección del modelo no se base únicamente en preferencias del equipo o en modas tecnológicas, sino en un diagnóstico claro del proyecto. En muchos casos, la solución más adecuada puede incluso combinar elementos de distintos enfoques, siempre que dicha combinación mantenga coherencia metodológica y responda a las necesidades reales del desarrollo.
+
+\section{Conclusiones}
+
+El ciclo de vida de proyectos de software constituye un componente esencial para orientar y controlar el desarrollo de sistemas informáticos. Su importancia radica en que ofrece una estructura que organiza las actividades del proyecto, define la relación entre sus fases y permite gestionar de mejor manera los recursos, la calidad y los tiempos de entrega.
+
+A partir del análisis realizado, se identificó que los modelos en cascada y en V representan enfoques de carácter secuencial, adecuados para contextos estables, regulados y con fuerte necesidad de documentación y control. En contraste, los modelos incremental e iterativo ofrecen una evolución progresiva del producto y se adaptan mejor a escenarios donde existe aprendizaje continuo o cambios moderados en los requisitos.
+
+Por su parte, el modelo espiral destaca por su énfasis en la gestión del riesgo, lo que lo hace especialmente útil en proyectos grandes, complejos o críticos. Finalmente, el modelo ágil sobresale por su capacidad de adaptación, su orientación a la entrega temprana de valor y su compatibilidad con entornos dinámicos e innovadores.
+
+En consecuencia, puede concluirse que no existe un modelo universalmente superior para todos los proyectos. La selección más adecuada depende de la naturaleza del sistema, el nivel de incertidumbre, el presupuesto disponible, el grado de participación del cliente y la forma en que se organiza el equipo de trabajo. Elegir correctamente el modelo de ciclo de vida constituye, por tanto, una decisión estratégica que influye directamente en la probabilidad de éxito del proyecto.
+
+\section*{Agradecimientos}
+
+Se agradece al docente de la asignatura por las orientaciones proporcionadas para la elaboración del presente artículo y por el seguimiento académico realizado durante el desarrollo del trabajo.
 
 \begin{thebibliography}{00}
-\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
-\end{thebibliography}
-\vspace{12pt}
-\color{red}
-IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
 
+\bibitem{royce1970}
+W. Royce, ``Managing the development of large software systems,'' in \textit{Proceedings of IEEE WESCON}, 1970, pp. 1--9.
+
+\bibitem{sommerville2016}
+I. Sommerville, \textit{Software Engineering}, 10th ed. Pearson, 2016.
+
+\bibitem{saravanos2023}
+A. Saravanos \textit{et al.}, ``Simulating the software development lifecycle: The waterfall model,'' \textit{Systems}, vol. 6, no. 6, p. 108, 2023.
+
+\bibitem{durmus2018}
+M. S. Durmuş and U. Ozkaya, ``Enhanced V-Model,'' \textit{Informatica}, vol. 42, no. 4, 2018.
+
+\bibitem{alphonce2023}
+M. A. Alphonce, \textit{Improving software verification and validation state of practices in software development organizations}, 2023.
+
+\bibitem{scacchi2001}
+W. Scacchi, \textit{Process models in software engineering}. University of California, Irvine, 2001.
+
+\bibitem{boehm1988}
+B. W. Boehm, ``A spiral model of software development and enhancement,'' \textit{Computer}, vol. 21, no. 5, pp. 61--72, 1988.
+
+\bibitem{boehm2000}
+B. W. Boehm, \textit{Spiral development: Experience, principles, and refinements}. Carnegie Mellon University, Software Engineering Institute, 2000.
+
+\bibitem{beck2001}
+K. Beck \textit{et al.}, ``Manifesto for Agile Software Development,'' 2001.
+
+\bibitem{jalali2012}
+S. Jalali and C. Wohlin, ``Global software engineering and agile practices: A systematic review,'' \textit{Journal of Software: Evolution and Process}, 2012.
+
+\end{thebibliography}
+
+\balance
 \end{document}
