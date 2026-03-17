@@ -65,7 +65,9 @@ En consecuencia, la evolución de los modelos de ciclo de vida refleja también 
 
 \section{Metodología}
 
-La presente investigación se desarrolló bajo un enfoque documental y bibliográfico. Se realizó una revisión de literatura relacionada con el ciclo de vida de proyectos de software y sus principales modelos, utilizando como base textos clásicos de ingeniería de software, artículos académicos y trabajos comparativos. La información recopilada permitió identificar un conjunto de modelos recurrentes y representativos en la literatura especializada.
+La presente investigación se desarrolló bajo un enfoque documental y bibliográfico, orientado al análisis comparativo de los principales modelos de ciclo de vida empleados en proyectos de software. Para ello, se consultó literatura especializada en bases de datos y repositorios académicos reconocidos, entre ellos IEEE Xplore, Scopus y Google Scholar, complementados con textos clásicos de ingeniería de software y documentos técnicos de referencia. La selección de estas fuentes respondió a su relevancia disciplinar, su reconocimiento académico y su utilidad para contextualizar tanto los enfoques tradicionales como los evolutivos y ágiles.
+
+El proceso de revisión consideró criterios de inclusión relacionados con la pertinencia temática, la actualidad de las publicaciones, el impacto académico de los trabajos y la recurrencia de determinados modelos en la literatura científica. En particular, se priorizaron estudios que abordaran definiciones conceptuales, comparaciones metodológicas, implicaciones prácticas y reflexiones sobre la aplicación de los modelos en entornos reales. De este modo, se procuró evitar una revisión meramente descriptiva y favorecer un análisis más consistente desde la perspectiva de la ingeniería de software.
 
 Para el análisis se seleccionaron seis modelos principales: cascada, modelo en V, incremental, iterativo, espiral y ágil. Esta selección se realizó porque dichos modelos representan enfoques distintos y ampliamente reconocidos dentro del desarrollo de software. Algunos de ellos responden a una lógica secuencial, otros a una lógica evolutiva, y otros se orientan explícitamente a la gestión del riesgo o a la adaptación continua.
 
@@ -81,7 +83,7 @@ Posteriormente, la información fue organizada con base en criterios homogéneos
     \item organización del equipo de trabajo.
 \end{itemize}
 
-Este procedimiento permitió comparar los modelos de forma consistente y construir una visión más amplia sobre sus implicaciones prácticas. El estudio no busca proponer un modelo único como solución universal, sino examinar las condiciones bajo las cuales cada enfoque puede ser más apropiado.
+Este procedimiento permitió comparar los modelos de forma consistente y construir una visión más amplia sobre sus implicaciones prácticas. El estudio no busca proponer un modelo único como solución universal, sino examinar las condiciones bajo las cuales cada enfoque puede ser más apropiado. Desde una perspectiva metodológica, también se reconoce que la literatura sobre ciclo de vida del software combina aportes históricos, revisiones conceptuales y experiencias prácticas, por lo que el análisis exigió integrar fuentes de distinta naturaleza bajo un criterio comparativo coherente.
 
 \section{Concepto de ciclo de vida de proyectos de software}
 
@@ -115,6 +117,8 @@ No obstante, presenta limitaciones importantes. La rigidez del modelo dificulta 
 
 En cuanto a su aplicación, el modelo en cascada es recomendable en proyectos con requisitos claramente definidos, sistemas estables, entornos regulados y organizaciones que necesitan mucha formalidad documental. En relación con el presupuesto, facilita la estimación inicial de costos, aunque cambios posteriores pueden elevar significativamente el gasto. Su tolerancia a la incertidumbre es baja y se adapta mejor a equipos con roles formales y responsabilidades claramente delimitadas.
 
+Desde una perspectiva crítica, el modelo en cascada ofrece una sensación de orden y control que puede resultar atractiva desde la gestión, pero esa misma rigidez se convierte en su principal debilidad cuando el proyecto se desarrolla en contextos reales, donde los requisitos rara vez permanecen intactos. Técnicamente, su mayor limitación no consiste solo en la secuencialidad, sino en la suposición de que el conocimiento inicial del problema es suficiente para sostener todo el proceso. En proyectos modernos, esa premisa suele ser poco realista, por lo que el modelo puede generar una falsa percepción de certidumbre metodológica.
+
 \subsection{Modelo en V}
 
 El modelo en V es una evolución de los enfoques secuenciales y se caracteriza por vincular explícitamente cada fase de desarrollo con una fase de prueba asociada. Por ello, es conocido también como un modelo de verificación y validación. En su representación gráfica, el lado izquierdo de la “V” corresponde a las fases de definición y diseño, mientras que el lado derecho corresponde a los procesos de prueba e integración \cite{durmus2018,alphonce2023}.
@@ -135,6 +139,8 @@ Sin embargo, el modelo en V conserva una importante rigidez frente a cambios. Al
 
 Desde la perspectiva del presupuesto, el modelo en V puede demandar una inversión inicial importante en planificación, verificación y validación, aunque esta inversión ayuda a prevenir errores costosos en etapas posteriores. Su tolerancia a la incertidumbre es limitada, por lo que se adapta mejor a proyectos donde los requisitos pueden especificarse con claridad desde el inicio. En cuanto al equipo, requiere coordinación formal entre analistas, diseñadores, desarrolladores, probadores y responsables de calidad.
 
+Desde una perspectiva crítica, el modelo en V corrige parcialmente una de las debilidades más visibles de la cascada al integrar la lógica de pruebas desde etapas tempranas; sin embargo, no resuelve completamente el problema de fondo: la dependencia de requisitos estables y la dificultad de adaptación. En términos técnicos, puede considerarse un refinamiento del control de calidad más que una transformación profunda del paradigma secuencial. Por ello, su valor es alto en contextos regulados, pero su aplicabilidad disminuye cuando el cambio constante deja de ser una excepción y pasa a ser parte del entorno natural del proyecto.
+
 \subsection{Modelo incremental}
 
 El modelo incremental propone desarrollar el sistema mediante una serie de entregas parciales. En lugar de construir todo el software en una sola secuencia completa, este enfoque divide el producto en incrementos funcionales que se incorporan progresivamente hasta alcanzar la versión final \cite{sommerville2016,scacchi2001}.
@@ -147,6 +153,8 @@ No obstante, el modelo incremental exige una buena arquitectura general desde el
 
 Este modelo resulta apropiado en proyectos donde se necesita entregar resultados funcionales de manera gradual, como aplicaciones empresariales, sistemas web o productos en evolución. Desde el punto de vista presupuestario, permite distribuir recursos en fases sucesivas y obtener beneficios parciales antes de completar todo el sistema. Su tolerancia a la incertidumbre es media, superior a la de cascada y V, pero depende de una adecuada planificación técnica. Respecto al equipo, funciona bien cuando el trabajo puede organizarse por módulos y existe comunicación constante entre quienes construyen e integran los incrementos.
 
+Desde una perspectiva crítica, el modelo incremental representa un avance metodológico relevante porque introduce una lógica más realista de entrega de valor; no obstante, su efectividad depende fuertemente de la calidad de la arquitectura inicial. Si dicha arquitectura no está bien resuelta, la promesa de flexibilidad puede degradarse en una secuencia de integraciones problemáticas. Técnicamente, no basta con dividir el producto en partes; también es necesario que esas partes respondan a una estrategia coherente de ensamblaje, evolución y mantenimiento. En otras palabras, la incrementalidad sin una visión sistémica puede transformarse en fragmentación.
+
 \subsection{Modelo iterativo}
 
 El modelo iterativo se basa en la idea de que el software puede perfeccionarse mediante repeticiones sucesivas. En cada iteración se construye, revisa y refina una versión del sistema, incorporando mejoras a partir del aprendizaje obtenido en ciclos anteriores \cite{sommerville2016,scacchi2001}.
@@ -158,6 +166,8 @@ Entre sus ventajas se destacan la flexibilidad, la posibilidad de revisar decisi
 Como desventajas, el modelo iterativo puede volverse difícil de controlar si no se definen claramente los objetivos de cada ciclo. El exceso de iteraciones, la falta de cierre de alcance o una arquitectura débil pueden incrementar el tiempo y el costo total del proyecto. Además, requiere una gestión cuidadosa para que los cambios no afecten negativamente la coherencia técnica del sistema.
 
 Este enfoque es adecuado en proyectos innovadores, soluciones complejas o desarrollos donde los requisitos evolucionan a medida que se comprende mejor el problema. En términos de presupuesto, permite distribuir el esfuerzo en ciclos, aunque una mala gestión iterativa puede elevar costos. Su tolerancia a la incertidumbre es alta y se adapta bien a equipos colaborativos, capaces de revisar y mejorar continuamente su trabajo.
+
+Desde una perspectiva crítica, el modelo iterativo es metodológicamente más honesto que los enfoques puramente secuenciales, porque asume que el conocimiento del problema es incompleto y que la solución madura con el tiempo. Sin embargo, esa fortaleza también puede volverse una fuente de ambigüedad si la organización interpreta la iteración como ausencia de disciplina. Técnicamente, iterar no significa improvisar; por el contrario, exige mecanismos sólidos de control, evaluación y cierre parcial. Cuando esos mecanismos faltan, la iteración puede degenerar en ciclos repetitivos sin aprendizaje real ni consolidación del producto.
 
 \subsection{Modelo espiral}
 
@@ -173,11 +183,13 @@ En la Fig.~\ref{fig:espiral} se aprecia la naturaleza iterativa del modelo espir
 
 En este modelo, cada vuelta de la espiral incluye cuatro grandes actividades: definición de objetivos y alternativas, análisis de riesgos, desarrollo y validación del producto, y planificación de la siguiente iteración. Esta lógica permite abordar el proyecto de forma progresiva, pero sin perder de vista las amenazas técnicas, económicas y organizativas que podrían comprometer su éxito.
 
-Su mayor ventaja es precisamente su orientación al riesgo. En proyectos de alta complejidad, gran tamaño o elevado impacto, el modelo espiral permite tomar decisiones de manera más informada, ya que obliga a considerar tempranamente los factores que podrían afectar el desarrollo. Además, combina beneficios de modelos iterativos y secuenciales, añadiendo una capa explícita de análisis crítico \cite{boehm1988}.
+Su mayor ventaja es precisamente su orientación al riesgo. En proyectos de alta complejidad, gran tamaño o elevado impacto, el modelo espiral permite tomar decisiones de manera más informada, ya que obliga a considerar tempranamente los factores que podrían afectar el desarrollo. Además, combina beneficios de modelos iterativos y secuenciales, incorporando de forma explícita actividades sistemáticas de análisis y mitigación de riesgos \cite{boehm1988}.
 
 Sin embargo, el modelo espiral no es simple de aplicar. Requiere experiencia en gestión de riesgos, capacidad técnica para evaluar alternativas y una organización suficientemente madura como para sostener revisiones periódicas de alto nivel. También puede resultar costoso para proyectos pequeños o de baja complejidad, donde un enfoque tan elaborado no siempre se justifica \cite{boehm2000}.
 
 El modelo espiral es recomendable en proyectos grandes, críticos, innovadores o inciertos, donde el costo de fallar es alto y donde conviene validar progresivamente tanto el producto como los riesgos asociados. Desde el punto de vista presupuestario, suele implicar una inversión inicial mayor, aunque ayuda a evitar fallos costosos a largo plazo. Presenta alta tolerancia a la incertidumbre y requiere equipos experimentados, con fuerte capacidad técnica y de gestión.
+
+Desde una perspectiva crítica, el modelo espiral puede considerarse uno de los enfoques conceptualmente más robustos, porque reconoce que el riesgo no es un elemento periférico, sino una dimensión central del desarrollo de software. Sin embargo, su sofisticación metodológica también constituye una barrera de adopción. En términos prácticos, muchas organizaciones valoran sus principios, pero no siempre disponen del nivel de madurez necesario para aplicarlo rigurosamente. Por ello, su principal limitación no es teórica, sino operativa: es un modelo potente, pero exigente, y precisamente por eso su uso real suele ser menor que su relevancia conceptual.
 
 \subsection{Modelo ágil}
 
@@ -190,6 +202,8 @@ Entre sus principales ventajas se encuentran la flexibilidad frente a cambios, l
 No obstante, el enfoque ágil también presenta limitaciones. Puede resultar menos adecuado cuando se requiere documentación formal extensa, cuando los equipos son demasiado grandes o distribuidos, o cuando el cliente no puede participar activamente. Además, si no existe disciplina en la priorización del trabajo, el proyecto puede perder claridad en su alcance \cite{jalali2012,sommerville2016}.
 
 En términos de aplicación, el modelo ágil se adapta bien a proyectos web, móviles, productos digitales innovadores y soluciones con fuerte necesidad de adaptación. Respecto al presupuesto, permite orientar el esfuerzo a las funcionalidades de mayor valor, aunque también puede dificultar una estimación cerrada del costo total si el alcance cambia continuamente. Presenta alta tolerancia a la incertidumbre y se ajusta mejor a equipos pequeños o medianos, colaborativos y con capacidad de autoorganización.
+
+Desde una perspectiva crítica, el modelo ágil ha demostrado gran capacidad para responder a entornos dinámicos, pero también ha sido objeto de interpretaciones simplificadas o superficiales en la práctica. Con frecuencia se asume que la agilidad equivale a menor formalidad o a mayor velocidad, cuando en realidad exige alta disciplina, comunicación sostenida y una fuerte responsabilidad compartida. Técnicamente, su mayor riesgo no reside en el modelo mismo, sino en su adopción acrítica. Cuando la organización no comprende sus principios y solo imita sus ceremonias, la agilidad deja de ser una estrategia adaptativa y se convierte en una etiqueta sin profundidad metodológica.
 
 \section{Comparación general de los modelos}
 
@@ -228,6 +242,10 @@ El modelo espiral merece una consideración especial, ya que aborda un problema 
 
 También debe considerarse la organización del equipo. Un modelo secuencial puede funcionar mejor con estructuras jerárquicas y roles claramente definidos, mientras que los enfoques ágiles requieren mayor interacción, comunicación constante y capacidad de autoorganización. Por tanto, la cultura organizacional influye tanto como las características técnicas del sistema.
 
+Desde una perspectiva crítica, la comparación entre modelos evidencia que sus diferencias no solo residen en el orden de las fases, sino en la forma en que cada uno interpreta la incertidumbre, el control, el aprendizaje y la relación con el cliente. Los modelos secuenciales tienden a ofrecer mayor estabilidad formal, pero lo hacen a costa de flexibilidad; los enfoques evolutivos y ágiles, en cambio, incorporan mejor la variabilidad del entorno, aunque exigen mayor madurez de gestión y coordinación. Esta tensión sugiere que la superioridad de un modelo no puede juzgarse de forma aislada, sino en relación con el contexto en que se aplica.
+
+Asimismo, en la práctica profesional es frecuente que las organizaciones no adopten un modelo en estado puro, sino combinaciones o adaptaciones híbridas. Es común encontrar proyectos que conservan planificación formal en fases iniciales, pero incorporan iteraciones de validación, entregas incrementales o prácticas ágiles durante la construcción. Esta realidad confirma que no existe un modelo universal capaz de responder por sí solo a todas las exigencias del desarrollo contemporáneo. Más bien, la experiencia muestra que la combinación razonada de enfoques puede ofrecer mejores resultados, siempre que no se trate de una mezcla improvisada, sino de una integración metodológica sustentada en criterios técnicos claros.
+
 En síntesis, la discusión evidencia que la selección del modelo de ciclo de vida debe responder a un análisis contextual. Más que adoptar una metodología por tendencia o costumbre, las organizaciones deberían considerar la estabilidad de los requisitos, el nivel de riesgo, el grado de formalidad requerido, la dinámica del cliente y la capacidad del equipo antes de decidir.
 
 \section{Recomendaciones}
@@ -253,7 +271,9 @@ A partir del análisis realizado, se identificó que los modelos en cascada y en
 
 Por su parte, el modelo espiral destaca por su énfasis en la gestión del riesgo, lo que lo hace especialmente útil en proyectos grandes, complejos o críticos. Finalmente, el modelo ágil sobresale por su capacidad de adaptación, su orientación a la entrega temprana de valor y su compatibilidad con entornos dinámicos e innovadores.
 
-En consecuencia, puede concluirse que no existe un modelo universalmente superior para todos los proyectos. La selección más adecuada depende de la naturaleza del sistema, el nivel de incertidumbre, el presupuesto disponible, el grado de participación del cliente y la forma en que se organiza el equipo de trabajo. Elegir correctamente el modelo de ciclo de vida constituye, por tanto, una decisión estratégica que influye directamente en la probabilidad de éxito del proyecto.
+Desde una perspectiva crítica final, puede afirmarse que la discusión sobre modelos de ciclo de vida no debe reducirse a una comparación entre metodologías “antiguas” y “modernas”, sino a la comprensión de qué problemas resuelve cada enfoque y bajo qué condiciones deja de ser eficaz. La calidad de un proyecto no depende únicamente del modelo adoptado, sino de la coherencia entre dicho modelo, la realidad organizacional, la complejidad técnica y la capacidad del equipo para aplicarlo con disciplina.
+
+En consecuencia, puede concluirse que no existe un modelo universalmente superior para todos los proyectos. La selección más adecuada depende de la naturaleza del sistema, el nivel de incertidumbre, el presupuesto disponible, el grado de participación del cliente y la forma en que se organiza el equipo de trabajo. Elegir correctamente el modelo de ciclo de vida constituye, por tanto, una decisión estratégica que influye directamente en la probabilidad de éxito del proyecto. Bajo esta lógica, la adopción del modelo deja de ser una preferencia metodológica y pasa a ser una definición estratégica de ingeniería y gestión.
 
 \section*{Agradecimientos}
 
