@@ -24,12 +24,12 @@
 en proyectos de software}
 
 \author{
-\IEEEauthorblockN{Bryan Gutemal}
+\IEEEauthorblockN{Bryan Stalin Guatemal Avilez}
 \IEEEauthorblockA{
 Carrera de Ingeniería de Software\\
 Universidad Técnica de Ambato\\
 Ambato, Ecuador\\
-correo@ejemplo.com
+bguatemal3993@uta.edu.ec
 }
 }
 
@@ -99,6 +99,14 @@ En términos generales, los modelos de ciclo de vida buscan responder a pregunta
 
 El modelo en cascada es uno de los enfoques más tradicionales dentro de la ingeniería de software. Su estructura es lineal y secuencial, lo que significa que el proyecto avanza de una fase a otra en un orden preestablecido. Entre las etapas más comunes de este modelo se encuentran el análisis de requisitos, diseño, implementación, pruebas, despliegue y mantenimiento \cite{royce1970,saravanos2023}.
 
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.42\textwidth]{imagenes/cascada.png}}
+\caption{Representación del modelo en cascada y sus principales fases.}
+\label{fig:cascada}
+\end{figure}
+
+Como se observa en la Fig.~\ref{fig:cascada}, el modelo en cascada sigue una secuencia lineal de fases bien definidas, en la que cada etapa debe completarse antes de continuar con la siguiente.
+
 Una de las principales características del modelo en cascada es que cada fase debe completarse antes de pasar a la siguiente. Esto favorece la organización del trabajo y permite definir con claridad entregables específicos en cada etapa. Asimismo, su fuerte orientación a la documentación lo convierte en un modelo especialmente útil en contextos donde el control formal del proceso es prioritario \cite{sommerville2016}.
 
 Entre sus ventajas se destacan la claridad estructural, la facilidad de planificación y la posibilidad de realizar un seguimiento ordenado del proyecto. Este modelo funciona bien cuando los requisitos son estables, el entorno es predecible y se necesita una documentación completa del proceso. También es útil cuando la organización desea mantener un control estricto sobre tiempos, recursos y actividades.
@@ -110,6 +118,14 @@ En cuanto a su aplicación, el modelo en cascada es recomendable en proyectos co
 \subsection{Modelo en V}
 
 El modelo en V es una evolución de los enfoques secuenciales y se caracteriza por vincular explícitamente cada fase de desarrollo con una fase de prueba asociada. Por ello, es conocido también como un modelo de verificación y validación. En su representación gráfica, el lado izquierdo de la “V” corresponde a las fases de definición y diseño, mientras que el lado derecho corresponde a los procesos de prueba e integración \cite{durmus2018,alphonce2023}.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.44\textwidth]{imagenes/v.png}}
+\caption{Representación del modelo en V y la relación entre desarrollo y pruebas.}
+\label{fig:modelov}
+\end{figure}
+
+La Fig.~\ref{fig:modelov} muestra cómo el modelo en V relaciona cada etapa de desarrollo con una etapa de prueba correspondiente, fortaleciendo así la verificación y validación del sistema.
 
 Una ventaja importante del modelo en V es que la calidad no se deja exclusivamente para el final del desarrollo, sino que se planifica desde etapas tempranas. Cada nivel de especificación o diseño se relaciona con un nivel particular de prueba, como pruebas unitarias, de integración, de sistema y de aceptación. Esta estructura mejora la trazabilidad y fortalece el control de calidad \cite{durmus2018}.
 
@@ -146,6 +162,14 @@ Este enfoque es adecuado en proyectos innovadores, soluciones complejas o desarr
 \subsection{Modelo espiral}
 
 El modelo espiral fue propuesto como una alternativa capaz de integrar control, evolución progresiva y gestión del riesgo. Su característica esencial es que cada ciclo de desarrollo se estructura alrededor de la identificación y resolución de riesgos, lo que lo convierte en un enfoque guiado por riesgos \cite{boehm1988,boehm2000}.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.40\textwidth]{imagenes/spiral.png}}
+\caption{Representación del modelo espiral orientado a la gestión del riesgo.}
+\label{fig:espiral}
+\end{figure}
+
+En la Fig.~\ref{fig:espiral} se aprecia la naturaleza iterativa del modelo espiral, así como su énfasis en la planificación, evaluación, ingeniería y análisis de riesgos en cada ciclo.
 
 En este modelo, cada vuelta de la espiral incluye cuatro grandes actividades: definición de objetivos y alternativas, análisis de riesgos, desarrollo y validación del producto, y planificación de la siguiente iteración. Esta lógica permite abordar el proyecto de forma progresiva, pero sin perder de vista las amenazas técnicas, económicas y organizativas que podrían comprometer su éxito.
 
@@ -235,39 +259,7 @@ En consecuencia, puede concluirse que no existe un modelo universalmente superio
 
 Se agradece al docente de la asignatura por las orientaciones proporcionadas para la elaboración del presente artículo y por el seguimiento académico realizado durante el desarrollo del trabajo.
 
-\begin{thebibliography}{00}
-
-\bibitem{royce1970}
-W. Royce, ``Managing the development of large software systems,'' in \textit{Proceedings of IEEE WESCON}, 1970, pp. 1--9.
-
-\bibitem{sommerville2016}
-I. Sommerville, \textit{Software Engineering}, 10th ed. Pearson, 2016.
-
-\bibitem{saravanos2023}
-A. Saravanos \textit{et al.}, ``Simulating the software development lifecycle: The waterfall model,'' \textit{Systems}, vol. 6, no. 6, p. 108, 2023.
-
-\bibitem{durmus2018}
-M. S. Durmuş and U. Ozkaya, ``Enhanced V-Model,'' \textit{Informatica}, vol. 42, no. 4, 2018.
-
-\bibitem{alphonce2023}
-M. A. Alphonce, \textit{Improving software verification and validation state of practices in software development organizations}, 2023.
-
-\bibitem{scacchi2001}
-W. Scacchi, \textit{Process models in software engineering}. University of California, Irvine, 2001.
-
-\bibitem{boehm1988}
-B. W. Boehm, ``A spiral model of software development and enhancement,'' \textit{Computer}, vol. 21, no. 5, pp. 61--72, 1988.
-
-\bibitem{boehm2000}
-B. W. Boehm, \textit{Spiral development: Experience, principles, and refinements}. Carnegie Mellon University, Software Engineering Institute, 2000.
-
-\bibitem{beck2001}
-K. Beck \textit{et al.}, ``Manifesto for Agile Software Development,'' 2001.
-
-\bibitem{jalali2012}
-S. Jalali and C. Wohlin, ``Global software engineering and agile practices: A systematic review,'' \textit{Journal of Software: Evolution and Process}, 2012.
-
-\end{thebibliography}
-
+\bibliographystyle{IEEEtran}
+\bibliography{sample}
 \balance
 \end{document}
