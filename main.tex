@@ -1,138 +1,109 @@
-\documentclass{article}
+\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
 
-% Language setting
-% Replace `english' with e.g. `spanish' to change the document language
-\usepackage[english]{babel}
-
-\usepackage[letterpaper,top=2cm,bottom=5cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
-
-% Useful packages
-\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
 \usepackage{graphicx}
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{amssymb} 
-\usepackage{fancyhdr}
-\usepackage{lipsum} % Para generar texto de ejemplo
-\usepackage{multicol}
-\pagestyle{fancy} 
+\usepackage{multirow}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage[title]{appendix}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{manyfoot}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{listings}
 
-\fancyhf{} % Limpiar encabezado y pie de página por defecto
-\setlength{\headheight}{70pt} % Ajuste del tamaño del encabezado (puedes aumentar este valor si es necesario)
-
-% Definición del encabezado
-
-\fancyhead[C]{%
-    \begin{minipage}[c]{2.0cm}
-        \centering
-        \includegraphics[width=2.0cm]{imagenes/uta.png}
-    \end{minipage}%
-    \hfill
-    \begin{minipage}[c]{8cm} 
-        \centering
-        \small {\textbf{UNIVERSIDAD TÉCNICA DE AMBATO}} \\[0.1cm]
-        \scriptsize \textit{FACULTAD DE INGENIERÍA EN SISTEMAS ELECTRÓNICA E INDUSTRIAL} \\[0.1cm]
-        \scriptsize \textbf{CARRERA SOFTWARE - METODOLOGÍAS AGILES} \\[0.1cm]
-        \scriptsize \textbf{CICLO ACADÉMICO: ENERO 2026 - JULIO 2026}
-    \end{minipage}%
-    \hfill
-    \begin{minipage}[c]{2.0cm}
-        \centering
-        \includegraphics[width=2.0cm]{imagenes/fisei.png}
-    \end{minipage}%
-}
+\raggedbottom
 
 \begin{document}
-\begin{center}
-    {\large \textbf{INFORME DE TAREA}} \\    
-\end{center}
 
-\section{Portada}
-\begin{flushleft}
-\begin{tabular}{ l l }
-    \textbf{Tema:} & \\
-    \textbf{Unidad de Organización Curricular:} & PROFECIONAL\\
-    \textbf{Nivel y Paralelo:} & 4to Semestre "B" \\
-    \textbf{Alumnos participantes:} & Guatemal Avilez Bryan Stalin \\
-    \textbf{Asignatura:} & Metodologias Agiles \\
-    \textbf{Docente:} & Ing.Naranjo Avalos Hernan Fabricio, Mg. \\
-\end{tabular}
-\end{flushleft}
+\title[Título corto del artículo]{Título de la investigación}
 
+\author*[1]{\fnm{Bryan Stalin} \sur{Guatemal Avilez}}\email{bryan@email.com}
 
-\section{Informe de la Tarea}
-\subsection{Objetivos}
-\subsubsection{General}
-(Especificado en la guía tarea proporcionada por el docente).
-\subsubsection{Específicos}
+\affil*[1]{\orgdiv{Carrera de Software}, \orgname{Universidad Técnica de Ambato}, \orgaddress{\city{Ambato}, \country{Ecuador}}}
+
+\abstract{
+Este documento presenta una investigación desarrollada en el contexto de la asignatura de Metodologías Ágiles. El propósito del trabajo es analizar el tema propuesto por el docente, organizar la información de forma académica y exponer los principales hallazgos de manera estructurada. Para ello, se recopilaron fuentes bibliográficas relevantes, se revisaron conceptos fundamentales y se sintetizó la información más importante para su presentación en formato científico. Los resultados permiten identificar los elementos clave del tema estudiado y establecer conclusiones basadas en la evidencia consultada.
+}
+
+\keywords{metodologías ágiles, investigación, software, revisión bibliográfica}
+
+\maketitle
+
+\section{Introducción}
+
+La presente investigación se desarrolla con el objetivo de estudiar y documentar de forma académica un tema relacionado con la asignatura de Metodologías Ágiles. La estructura del artículo sigue un formato científico basado en la plantilla Springer Nature, lo que permite presentar la información de manera formal, ordenada y adecuada para un trabajo de investigación.
+
+La elaboración del documento requiere la consulta de fuentes bibliográficas confiables, el análisis de conceptos principales y la redacción de resultados y conclusiones sustentadas en la literatura revisada \cite{greenwade93}.
+
+\section{Objetivo general}
+
+Analizar el tema de investigación asignado, mediante la revisión de información bibliográfica pertinente, con el fin de comprender sus fundamentos, aplicaciones e importancia dentro del área de software.
+
+\section{Objetivos específicos}
+
 \begin{itemize}
-    \item (Se recomienda máximo 3).
-    \item 
-    \item 
+    \item Identificar los conceptos principales relacionados con el tema de estudio.
+    \item Describir las características, componentes o etapas más relevantes del tema investigado.
+    \item Sintetizar los hallazgos obtenidos en una estructura académica clara y formal.
 \end{itemize}
 
+\section{Metodología}
 
-\subsection{Instrucciones}
+Para el desarrollo de esta investigación se aplicó una metodología de revisión bibliográfica. En primer lugar, se definió el tema central del trabajo. Posteriormente, se realizó la búsqueda de información en fuentes académicas y técnicas. Luego, se seleccionaron los contenidos más relevantes, se organizaron por apartados y se redactó el documento en formato \LaTeX{} utilizando la plantilla Springer Nature.
 
-Detalladas en la asignación de la tarea proporcionada por el docente.
+\section{Desarrollo}
 
+\subsection{Conceptos fundamentales}
 
-\subsection{Listado de equipos, materiales y recursos}
-\textbf{Listado de equipos y materiales generales empleados en la tarea:}
-\begin{itemize}
-    \item  
-\end{itemize}
+En esta subsección se deben desarrollar los conceptos principales del tema investigado. Se recomienda incluir definiciones claras, autores o referencias relevantes y una explicación académica de cada elemento importante.
 
-\textbf{TAC (Tecnologías para el Aprendizaje y Conocimiento) empleados en la tarea:}
-\begin{itemize}
-    \item[$\square$] Plataformas educativas
-    \item[$\square$] Simuladores y laboratorios virtuales
-    \item[$\square$] Aplicaciones educativas
-    \item[$\square$] Recursos audiovisuales
-    \item[$\square$] Gamificación
-    \item[$\square$] Inteligencia Artificial
-    \item Otros (Especifique): \underline{\hspace{5cm}}
-\end{itemize}
+\subsection{Características del tema}
 
+Aquí se pueden describir las propiedades, principios, ventajas, desventajas o clasificación del tema estudiado, según corresponda.
 
-\subsection{Desarrollo de la Tarea (Actividades a Desarrollar)}
+\subsection{Aplicaciones o contexto de uso}
 
-Detalladas en las instrucciones proporcionadas por el docente.
+En este apartado se deben explicar los escenarios en los que el tema investigado se aplica, su relevancia actual y su aporte dentro del área de software o tecnología.
 
-\subsection{Resultados obtenidos}
-De acuerdo con el tipo de trabajo, se plasmarán los resultados alcanzados en la guía tarea una vez ejecutadas las actividades. Se pueden emplear figuras y tablas las cuales deben ser numeradas. 
+\section{Resultados}
 
+Como resultado de la investigación, se logró estructurar la información principal del tema en un formato académico. La revisión realizada permitió reconocer los conceptos más importantes, así como su utilidad y relación con el campo de estudio. Además, se evidenció la importancia de emplear referencias bibliográficas para fundamentar adecuadamente la redacción del trabajo.
 
-%Especifique las TAC's utilizadas en la Tarea. 
-\subsection{Habilidades blandas empleadas en la tarea}
-\begin{itemize}
-    \item[$\square$] Liderazgo
-    \item[$\square$] Trabajo en equipo
-    \item[$\square$] Comunicación asertiva
-    \item[$\square$] La empatía
-    \item[$\square$] Pensamiento crítico
-    \item[$\square$] Flexibilidad
-    \item[$\square$] La resolución de conflictos
-    \item[$\square$] Adaptabilidad
-    \item[$\square$] Responsabilidad
-\end{itemize}
+\section{Discusión}
 
+La organización del contenido en formato científico facilita la comprensión del tema y mejora la presentación del trabajo académico. Asimismo, el uso de una plantilla estandarizada como Springer Nature permite desarrollar competencias en redacción técnica, citación bibliográfica y estructuración formal de investigaciones.
 
+\section{Conclusiones}
 
-\subsection{Conclusiones}
-Constituye la respuesta que propone el o los estudiantes para el problema que originó el trabajo desarrollado, de acuerdo con los datos recogidos y la teoría aplicada. 
+A partir de la revisión realizada, se concluye que el tema investigado posee relevancia académica y práctica dentro del ámbito del software. La investigación permitió identificar sus fundamentos principales y presentar la información de manera clara y ordenada. Finalmente, el uso de \LaTeX{} y del formato Springer contribuye al desarrollo de habilidades en elaboración de documentos científicos.
 
-\subsection{Recomendaciones}
-Redactar las sugerencias o acciones concretas que se derivan de la tarea desarrollada. \cite{greenwade93}
+\section*{Declarations}
 
+\textbf{Funding} Not applicable.
 
-\subsection{Referencias}
-Insertar las referencias bibliográficas empleadas aplicando la norma IEEE.
+\textbf{Conflict of interest} The author declares that there is no conflict of interest.
 
-\vspace{-3em} %reduce el espacio causado por refname vacío
-\renewcommand{\refname}{}
-\bibliographystyle{ieeetr}
+\textbf{Ethics approval} Not applicable.
+
+\textbf{Consent to participate} Not applicable.
+
+\textbf{Consent for publication} Not applicable.
+
+\textbf{Data availability} Not applicable.
+
+\textbf{Materials availability} Not applicable.
+
+\textbf{Code availability} Not applicable.
+
+\textbf{Author contribution} Bryan Stalin Guatemal Avilez developed the complete research, literature review, writing and formatting of the manuscript.
+
 \bibliography{sample}
 
-\subsection{Anexos}
-\vfill
 \end{document}
