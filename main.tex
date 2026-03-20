@@ -13,96 +13,148 @@
 \usepackage{textcomp}
 \usepackage{manyfoot}
 \usepackage{booktabs}
-\usepackage{algorithm}
-\usepackage{algorithmicx}
-\usepackage{algpseudocode}
-\usepackage{listings}
+\usepackage{url}
+\usepackage{hyperref}
 
 \raggedbottom
 
 \begin{document}
 
-\title[Título corto del artículo]{Título de la investigación}
+\title[Justicia 2.0 y No Silver Bullet]{Análisis del caso Justicia 2.0 en Ecuador y del artículo \textit{No Silver Bullet} }
 
-\author*[1]{\fnm{Bryan Stalin} \sur{Guatemal Avilez}}\email{bryan@email.com}
+\author*[1]{\fnm{Bryan Stalin} \sur{Guatemal Avilez}}\email{bguatemal3993@uta.edu.ec}
 
 \affil*[1]{\orgdiv{Carrera de Software}, \orgname{Universidad Técnica de Ambato}, \orgaddress{\city{Ambato}, \country{Ecuador}}}
 
 \abstract{
-Este documento presenta una investigación desarrollada en el contexto de la asignatura de Metodologías Ágiles. El propósito del trabajo es analizar el tema propuesto por el docente, organizar la información de forma académica y exponer los principales hallazgos de manera estructurada. Para ello, se recopilaron fuentes bibliográficas relevantes, se revisaron conceptos fundamentales y se sintetizó la información más importante para su presentación en formato científico. Los resultados permiten identificar los elementos clave del tema estudiado y establecer conclusiones basadas en la evidencia consultada.
+El presente artículo analiza dos ejes vinculados con la asignatura de Metodologías Ágiles. En primer lugar, se examina el caso ecuatoriano Justicia 2.0 como un proyecto de modernización tecnológica de la administración de justicia que no logró consolidarse como un sistema nacional operativo. En segundo lugar, se estudia el artículo clásico \textit{No Silver Bullet} de Frederick P. Brooks, Jr., con énfasis en su tesis sobre la imposibilidad de encontrar una solución única e infalible para los problemas del software. La investigación se desarrolló mediante revisión bibliográfica de fuentes institucionales, periodísticas y académicas. Los resultados muestran que el caso Justicia 2.0 presentó fallas en la evaluación técnica, en la definición de procesos, en la validación, en las pruebas y en el control contractual. A la vez, el análisis de Brooks permite comprender que las dificultades esenciales del software impiden asumir que una herramienta, plataforma o metodología pueda garantizar por sí sola el éxito de un proyecto. Finalmente, se concluye que ambos ejes convergen en una misma lección: el software madura mediante disciplina, mejora continua, prototipado, refinamiento de requisitos y responsabilidad técnica, no mediante soluciones mágicas.
 }
 
-\keywords{metodologías ágiles, investigación, software, revisión bibliográfica}
+\keywords{ingeniería de software, Justicia 2.0, No Silver Bullet, Frederick P. Brooks, gestión de proyectos, software judicial}
 
 \maketitle
 
 \section{Introducción}
 
-La presente investigación se desarrolla con el objetivo de estudiar y documentar de forma académica un tema relacionado con la asignatura de Metodologías Ágiles. La estructura del artículo sigue un formato científico basado en la plantilla Springer Nature, lo que permite presentar la información de manera formal, ordenada y adecuada para un trabajo de investigación.
+En la ingeniería de software, los proyectos de gran escala no solo exigen desarrollo técnico, sino también claridad de requisitos, comprensión del dominio, validación con usuarios, pruebas rigurosas y control institucional. Cuando uno o varios de estos elementos fallan, el resultado suele traducirse en sobrecostos, retrasos, sistemas incompletos o implementaciones que no logran consolidarse. Desde esa perspectiva, el caso \textit{Justicia 2.0} constituye un ejemplo relevante de análisis, ya que se presentó como una solución de modernización judicial, pero terminó siendo cuestionado por su escasa utilidad operativa, sus fallas de implementación y las responsabilidades administrativas y judiciales posteriores \cite{indra2011,expreso2016,contraloria2018}.
 
-La elaboración del documento requiere la consulta de fuentes bibliográficas confiables, el análisis de conceptos principales y la redacción de resultados y conclusiones sustentadas en la literatura revisada \cite{greenwade93}.
+De forma complementaria, el artículo \textit{No Silver Bullet: Essence and Accident in Software Engineering}, publicado por Frederick P. Brooks, Jr. en 1986, sostiene que no existe una técnica única capaz de eliminar los problemas fundamentales del desarrollo de software. Esta tesis resulta pertinente para interpretar el caso ecuatoriano, porque permite comprender que el éxito de un sistema no depende solo de adquirir una gran plataforma o contratar a un proveedor reconocido, sino de enfrentar adecuadamente la complejidad esencial del software \cite{brooks1986}.
 
-\section{Objetivo general}
-
-Analizar el tema de investigación asignado, mediante la revisión de información bibliográfica pertinente, con el fin de comprender sus fundamentos, aplicaciones e importancia dentro del área de software.
-
-\section{Objetivos específicos}
-
-\begin{itemize}
-    \item Identificar los conceptos principales relacionados con el tema de estudio.
-    \item Describir las características, componentes o etapas más relevantes del tema investigado.
-    \item Sintetizar los hallazgos obtenidos en una estructura académica clara y formal.
-\end{itemize}
+En consecuencia, el objetivo del presente trabajo es analizar el estado actual, las fallas y las responsabilidades derivadas del proyecto Justicia 2.0 en Ecuador, así como estudiar críticamente el planteamiento de Brooks sobre la no infalibilidad del software y la ausencia de una ``bala de plata''. A partir de ambos ejes, se busca establecer una reflexión académica sobre la madurez de los sistemas de software y sobre las lecciones que estos casos ofrecen para la gestión de proyectos tecnológicos.
 
 \section{Metodología}
 
-Para el desarrollo de esta investigación se aplicó una metodología de revisión bibliográfica. En primer lugar, se definió el tema central del trabajo. Posteriormente, se realizó la búsqueda de información en fuentes académicas y técnicas. Luego, se seleccionaron los contenidos más relevantes, se organizaron por apartados y se redactó el documento en formato \LaTeX{} utilizando la plantilla Springer Nature.
+La investigación se desarrolló mediante una revisión bibliográfica de carácter descriptivo y analítico. En una primera fase, se recopiló información sobre el caso Justicia 2.0 a partir de fuentes institucionales, periodísticas y documentales, con el propósito de identificar el contexto del contrato, el estado del sistema, los principales errores detectados y las consecuencias administrativas o judiciales derivadas del proyecto \cite{funcionjudicial2016,lahora2016,lahora2018,cc7392023}. En una segunda fase, se analizó el artículo \textit{No Silver Bullet} de Brooks para determinar su tesis principal, su explicación sobre la complejidad del software y su postura frente a la posibilidad de construir sistemas infalibles \cite{brooks1986}.
 
-\section{Desarrollo}
+Posteriormente, se organizaron los hallazgos en dos apartados centrales y se realizó una discusión crítica orientada a relacionar el caso ecuatoriano con los planteamientos teóricos de Brooks. De esta manera, el trabajo no se limitó a describir hechos, sino que procuró interpretarlos desde la ingeniería de software y desde la gestión de proyectos.
 
-\subsection{Conceptos fundamentales}
+\section{Caso en Ecuador: Justicia 2.0}
 
-En esta subsección se deben desarrollar los conceptos principales del tema investigado. Se recomienda incluir definiciones claras, autores o referencias relevantes y una explicación académica de cada elemento importante.
+\subsection{Contexto del proyecto}
 
-\subsection{Características del tema}
+Justicia 2.0 fue un proyecto de modernización tecnológica de la administración de justicia en Ecuador. Según la información institucional difundida por Indra, el sistema debía proporcionar una plataforma tecnológica y un sistema de gestión judicial para dar seguimiento a expedientes, apoyar a los operadores de justicia y fortalecer principios como la oralidad, la publicidad, la transparencia y la eficiencia. La solución incluía módulos de portal judicial, gestión de identidades, participación ciudadana, seguimiento de expedientes, notificaciones electrónicas y grabación de audiencias \cite{indra2011}.
 
-Aquí se pueden describir las propiedades, principios, ventajas, desventajas o clasificación del tema estudiado, según corresponda.
+El contrato se firmó el 22 de diciembre de 2011, en el contexto de la emergencia judicial, durante la gestión del Consejo de la Judicatura de Transición integrado por Paulo Rodríguez, Fernando Yávar y Tania Arias. La adjudicación fue para Indra por un monto de USD 23.760.000 y el sistema debía implementarse en 390 días, es decir, aproximadamente en trece meses. Además, su objetivo era sustituir al Sistema Automático de Trámite Judicial Ecuatoriano (SATJE) \cite{expreso2016,lahora2016}.
 
-\subsection{Aplicaciones o contexto de uso}
+\subsection{Estado actual del proceso}
 
-En este apartado se deben explicar los escenarios en los que el tema investigado se aplica, su relevancia actual y su aporte dentro del área de software o tecnología.
+La evidencia revisada muestra que Justicia 2.0 no llegó a consolidarse como un sistema nacional operativo. En la investigación periodística reproducida por la Contraloría se indicó que el sistema permanecía apagado en el Data Center de la Corte Nacional de Justicia, que en una inspección judicial realizada en 2016 no pudo comprobarse su funcionamiento porque no estaba encendido y que el plan piloto en Santa Elena terminó el 31 de mayo de 2014 sin que existiera otra puesta en marcha posterior \cite{lahora2018,contraloria2018}.
 
-\section{Resultados}
+Además, las plataformas oficiales vigentes de la Función Judicial continúan ofreciendo como servicios activos el sistema SATJE, la Oficina de Gestión Judicial Electrónica y la consulta de procesos judiciales, incluso bajo la denominación E-SATJE 2020. Esto permite inferir que el ecosistema operativo actual de la Función Judicial sigue basándose en SATJE y no en Justicia 2.0 \cite{satje,esatje2020}.
 
-Como resultado de la investigación, se logró estructurar la información principal del tema en un formato académico. La revisión realizada permitió reconocer los conceptos más importantes, así como su utilidad y relación con el campo de estudio. Además, se evidenció la importancia de emplear referencias bibliográficas para fundamentar adecuadamente la redacción del trabajo.
+\subsection{Análisis de errores: dónde estuvo la falla}
 
-\section{Discusión}
+La falla del proyecto no estuvo en un único punto, sino en varias etapas del ciclo de vida del software y de la gestión contractual. Desde la fase de contratación ya existían alertas técnicas. Según la documentación periodística revisada, un miembro técnico de la Comisión Calificadora formuló observaciones a la propuesta de Indra y expresó que no se debería evaluar a la empresa; sin embargo, pese a ese criterio, el contrato siguió adelante \cite{eluniverso2016}.
 
-La organización del contenido en formato científico facilita la comprensión del tema y mejora la presentación del trabajo académico. Asimismo, el uso de una plantilla estandarizada como Springer Nature permite desarrollar competencias en redacción técnica, citación bibliográfica y estructuración formal de investigaciones.
+Posteriormente, durante la implementación y validación, aparecieron problemas funcionales y de control. En las fuentes revisadas se reportó que la Contraloría encontró 133 incidencias no resueltas en el software, mientras que otras notas indicaron que en las pruebas se detectaron alrededor de 280 incidencias, algunas corregidas y otras no. Incluso se señaló que la empresa pidió cuatro millones de dólares adicionales para corregir determinados errores, solicitud a la que la Judicatura se opuso \cite{eluniverso2016,expreso2016}.
+
+A ello se sumaron errores más estructurales. Se concluyó que no se definieron adecuadamente los modelos de procesos y flujos para todas las materias y etapas procesales, que no se incorporaron ciertas infraestructuras y plataformas digitales previstas, que algunas herramientas no pudieron utilizarse porque no se logró definir, diseñar, optimizar, controlar y monitorear correctamente las etapas de los procesos judiciales, y que el módulo de gestión procesal no reunió las características técnicas y funcionales exigidas en los pliegos. También se reportó que la empresa no entregó la certificación de venta del código fuente ni registró el sistema como producto propio para garantizar adecuadamente los derechos de uso del Consejo de la Judicatura \cite{lahora2016,lahora2018,contraloria2018}.
+
+\subsection{Por qué no se debió actuar así}
+
+No se debió actuar de esa manera porque un proyecto público de software de alto impacto no puede ser recibido, pagado ni respaldado únicamente con base en entregas formales si no se comprueba su funcionamiento real. Desde la ingeniería de software, el caso refleja fallas de levantamiento de requisitos, modelado de procesos, validación con usuarios, pruebas de aceptación, gestión de incidencias y control contractual. Si un sistema no se implementó a nivel nacional, si acumulaba incidencias no resueltas y si no respondía adecuadamente a los procesos judiciales reales, entonces no debía considerarse un producto exitoso ni apto para ser recibido como solución terminada \cite{lahora2016,lahora2018,eluniverso2016}.
+
+Además, tampoco se debió actuar así porque se comprometieron recursos públicos muy altos en una solución que no cumplió su propósito principal. La misma investigación recogió que no se reportó al SERCOP el incumplimiento contractual para inhabilitar a la contratista, lo que evidencia debilidad institucional en el seguimiento del proyecto y en la reacción frente al incumplimiento detectado \cite{lahora2018,contraloria2018}.
+
+\subsection{Qué se debió hacer en su lugar}
+
+En su lugar, se debió aplicar una estrategia mucho más rigurosa de gestión e implantación. Primero, era necesario definir de forma completa los procesos y flujos judiciales antes de construir el sistema. Segundo, se debía involucrar a jueces, secretarios y personal operativo en la validación temprana de requisitos. Tercero, debían ejecutarse pruebas funcionales, operativas y de desempeño suficientes antes de la recepción definitiva. Cuarto, el pago final debía condicionarse a resultados verificables en funcionamiento real y no solo a documentos de entrega. Finalmente, debía existir una administración contractual más estricta, con trazabilidad completa de incidencias, correcciones obligatorias antes de la aceptación final y activación oportuna de sanciones o terminación si el sistema no cumplía lo ofertado \cite{lahora2018,expreso2016,contraloria2018}.
+
+\subsection{Responsabilidades: empresa y responsables legales}
+
+Sí existieron consecuencias administrativas y judiciales. La investigación revisada señala que la Contraloría estableció una glosa superior a USD 23 millones contra Indra y, de manera solidaria, contra el administrador del contrato, Luis Estrada Osejo. También se informó que ambos presentaron demandas ante el Tribunal Contencioso Administrativo y que, al menos en el caso de Estrada, una de esas acciones se resolvió en su contra \cite{lahora2018,contraloria2018}.
+
+En cuanto al destino posterior de uno de los responsables, la Corte Constitucional del Ecuador registra que Luis Federman Estrada Osejos presentó una acción extraordinaria de protección dentro de la causa 739-23-EP contra la sentencia de 8 de febrero de 2023. Sin embargo, la Sala de Admisión resolvió inadmitir la acción el 12 de mayo de 2023, por lo que esa vía de impugnación no prosperó \cite{cc7392023}.
+
+Respecto de la empresa contratista, el Consejo de la Judicatura informó oficialmente en 2016 que presentó una demanda por USD 32 millones por incumplimiento contractual contra Indra. Además, CIAR Global reportó en 2018 que la empresa notificó su intención de acudir a arbitraje internacional por los desacuerdos surgidos alrededor del contrato Justicia 2.0 y de la glosa impuesta en Ecuador \cite{funcionjudicial2016,ciar2018}.
+
+\section{Análisis del artículo \textit{No Silver Bullet}}
+
+\subsection{Datos del artículo e idea principal}
+
+El artículo \textit{No Silver Bullet: Essence and Accident in Software Engineering}, de Frederick P. Brooks, Jr., fue publicado en 1986 y constituye uno de los textos clásicos de la ingeniería de software. Su tesis central sostiene que no existe un avance único, ni en tecnología ni en gestión, capaz de producir por sí solo una mejora de un orden de magnitud en productividad, confiabilidad y simplicidad del software en un plazo corto. En otras palabras, Brooks afirma que no existe una ``bala de plata'' que elimine de manera súbita y definitiva los problemas fundamentales del desarrollo de software \cite{brooks1986}.
+
+Esta idea no implica una postura pesimista sobre el progreso tecnológico. Más bien, el autor reconoce que sí pueden lograrse mejoras importantes, pero aclara que tales avances serán graduales, acumulativos y disciplinados, no milagrosos. Por ello, el texto se ha mantenido vigente como una advertencia frente a la tendencia de sobrevalorar herramientas, lenguajes o metodologías como si pudieran resolver la totalidad de los problemas del software \cite{brooks1986}.
+
+\subsection{Qué plantea sobre los sistemas de software}
+
+El artículo plantea que los sistemas de software no son infalibles porque su dificultad principal no radica solo en escribir instrucciones en un lenguaje de programación, sino en especificar, diseñar y probar la estructura conceptual del sistema. Dicho de otro modo, los errores más graves no son necesariamente los sintácticos, sino los conceptuales: definir mal el problema, modelarlo de forma incompleta o construir una solución que no representa adecuadamente la realidad que se intenta automatizar \cite{brooks1986}.
+
+Desde esta perspectiva, un sistema puede compilar, ejecutarse e incluso parecer funcional, y aun así contener errores profundos en su lógica, sus requisitos o su diseño. Por ello, la confiabilidad del software depende de comprender con precisión un dominio complejo, tarea que rara vez puede resolverse de forma perfecta y definitiva \cite{brooks1986}.
+
+\subsection{Problemas esenciales y accidentales}
+
+Brooks distingue entre dificultades accidentales y dificultades esenciales. Las dificultades accidentales provienen de las herramientas, los lenguajes, el hardware o el entorno de trabajo; por tanto, pueden reducirse considerablemente mediante avances técnicos. En cambio, las dificultades esenciales pertenecen a la naturaleza misma del software: concebirlo, especificarlo, diseñarlo y probar una estructura conceptual compleja \cite{brooks1986}.
+
+Dentro de estas propiedades esenciales, Brooks identifica la complejidad, la conformidad, la cambiabilidad y la invisibilidad. La complejidad se relaciona con la enorme cantidad de elementos diferentes e interacciones que aparecen cuando el sistema crece. La conformidad alude a la necesidad de adaptarse a reglas, instituciones, procesos y restricciones externas. La cambiabilidad expresa que todo software exitoso evoluciona constantemente porque los usuarios y el contexto cambian. La invisibilidad señala que el software no posee una forma geométrica simple que permita visualizarlo por completo, lo que dificulta su comprensión y comunicación \cite{brooks1986}.
+
+\subsection{Por qué no existe una solución mágica}
+
+La ausencia de una ``bala de plata'' se explica precisamente porque muchas innovaciones solo reducen dificultades accidentales, pero no eliminan el núcleo esencial del problema. Brooks revisa distintas promesas tecnológicas de su época, como los lenguajes de alto nivel, la programación orientada a objetos, la inteligencia artificial, la programación automática y la verificación formal. Aunque reconoce que estas técnicas pueden ser útiles, insiste en que ninguna resuelve por sí sola la complejidad conceptual del software ni garantiza la eliminación total de errores \cite{brooks1986}.
+
+Por ello, el autor cuestiona la idea de que una sola herramienta, metodología o paradigma pueda volver el desarrollo casi perfecto. La mejora real del software no depende de una innovación milagrosa, sino de la combinación de buenas prácticas, aprendizaje continuo y diseño cuidadoso. En consecuencia, hablar de sistemas completamente infalibles resulta irreal, porque los problemas fundamentales del software no desaparecen con una única solución técnica \cite{brooks1986}.
+
+\subsection{Qué significa desarrollar software más maduro}
+
+Aunque Brooks niega la existencia de una solución mágica, sí propone caminos prometedores para desarrollar software más maduro. Entre ellos se encuentran aprovechar software existente cuando sea conveniente, refinar requisitos de manera iterativa, utilizar prototipos rápidos, desarrollar incrementalmente y formar grandes diseñadores capaces de concebir soluciones más limpias, pequeñas y coherentes \cite{brooks1986}.
+
+Estas propuestas reflejan una idea central: la madurez del software no se alcanza esperando perfección desde la primera versión, sino mediante ciclos de retroalimentación, prueba, ajuste y mejora continua. Por tanto, un producto maduro no es uno completamente libre de fallos, sino uno cuyo proceso de construcción ha logrado controlar mejor la complejidad, adaptarse al cambio y elevar progresivamente la calidad \cite{brooks1986}.
+
+\section{Discusión crítica: relación entre Justicia 2.0 y \textit{No Silver Bullet}}
+
+El caso Justicia 2.0 y el artículo de Brooks convergen en una misma enseñanza. En ambos se observa que el software no puede tratarse como si su éxito dependiera únicamente de contratar una gran plataforma tecnológica, incorporar nuevas herramientas o asumir que el proveedor resolverá por sí mismo la complejidad del problema. El proyecto ecuatoriano fue concebido como una solución integral para transformar la administración de justicia, pero las fallas documentadas muestran que la tecnología, por sí sola, no sustituyó la necesidad de definir procesos, validar requisitos, ejecutar pruebas rigurosas y controlar institucionalmente la implantación \cite{lahora2018,contraloria2018,brooks1986}.
+
+Desde la perspectiva de Brooks, el núcleo del problema no estuvo solamente en el código o en la herramienta contratada, sino en la complejidad esencial del sistema judicial que se intentaba modelar. La administración de justicia implica procesos, materias, etapas, actores, restricciones normativas y condiciones organizacionales diversas. Por ello, asumir que una solución de gran escala podía implementarse sin una comprensión exhaustiva de los flujos judiciales y sin validación suficiente con los usuarios reales constituía una expectativa técnicamente poco realista \cite{brooks1986,lahora2016,lahora2018}.
+
+Asimismo, la experiencia de Justicia 2.0 confirma que la madurez del software no surge de una promesa tecnológica aislada. Lo que Brooks propone como refinamiento iterativo de requisitos, prototipado rápido y desarrollo incremental coincide precisamente con lo que faltó fortalecer en este proyecto. En consecuencia, la principal lección académica es que la calidad y confiabilidad de los sistemas no se obtienen mediante una solución mágica, sino mediante disciplina técnica, control continuo, aprendizaje progresivo y responsabilidad de quienes diseñan, contratan, validan y reciben el producto \cite{brooks1986,expreso2016,contraloria2018}.
 
 \section{Conclusiones}
 
-A partir de la revisión realizada, se concluye que el tema investigado posee relevancia académica y práctica dentro del ámbito del software. La investigación permitió identificar sus fundamentos principales y presentar la información de manera clara y ordenada. Finalmente, el uso de \LaTeX{} y del formato Springer contribuye al desarrollo de habilidades en elaboración de documentos científicos.
+A partir del análisis realizado, se concluye que el caso Justicia 2.0 representa un fracaso relevante de gestión tecnológica en el sector público ecuatoriano. Aunque el proyecto fue presentado como una gran solución de modernización judicial, la evidencia revisada indica que no llegó a consolidarse como un sistema nacional operativo, que el ecosistema vigente de la Función Judicial continuó apoyándose en SATJE y que las principales fallas estuvieron en la evaluación técnica inicial, en la definición de procesos, en la validación, en las pruebas, en la recepción del sistema y en el control contractual \cite{satje,esatje2020,contraloria2018}.
 
-\section*{Declarations}
+Asimismo, el análisis de \textit{No Silver Bullet} permite concluir que los sistemas de software no son infalibles, porque sus principales dificultades no dependen solo de herramientas deficientes, sino de la complejidad esencial del propio software. Brooks demuestra que no existe una técnica única capaz de eliminar completamente los errores, simplificar radicalmente el desarrollo o garantizar productos perfectos. Sin embargo, sí es posible construir software más maduro mediante estrategias acumulativas como el refinamiento de requisitos, el prototipado rápido, el desarrollo incremental y la formación de buenos diseñadores \cite{brooks1986}.
 
-\textbf{Funding} Not applicable.
+Finalmente, la relación entre ambos ejes confirma una lección central para la ingeniería de software: el éxito de un proyecto no puede descansar en promesas de perfección tecnológica, sino en una combinación de análisis del dominio, gestión rigurosa, validación continua y responsabilidad técnica e institucional. En proyectos públicos de alto impacto, firmar contratos y actas de recepción no es un simple trámite, sino un acto con consecuencias administrativas, económicas y sociales cuando el sistema no cumple lo ofrecido \cite{funcionjudicial2016,cc7392023,contraloria2018}.
 
-\textbf{Conflict of interest} The author declares that there is no conflict of interest.
+\section*{Declaraciones}
 
-\textbf{Ethics approval} Not applicable.
+\textbf{Financiamiento} No aplicable.
 
-\textbf{Consent to participate} Not applicable.
+\textbf{Conflicto de intereses} El autor declara que no existe conflicto de intereses.
 
-\textbf{Consent for publication} Not applicable.
+\textbf{Aprobación ética} No aplicable.
 
-\textbf{Data availability} Not applicable.
+\textbf{Consentimiento para participar} No aplicable.
 
-\textbf{Materials availability} Not applicable.
+\textbf{Consentimiento para publicación} No aplicable.
 
-\textbf{Code availability} Not applicable.
+\textbf{Disponibilidad de datos} No aplicable.
 
-\textbf{Author contribution} Bryan Stalin Guatemal Avilez developed the complete research, literature review, writing and formatting of the manuscript.
+\textbf{Disponibilidad de materiales} No aplicable.
+
+\textbf{Disponibilidad de código} No aplicable.
+
+\textbf{Contribución del autor} Bryan Stalin Guatemal Avilez desarrolló la investigación completa, la revisión bibliográfica, la redacción y el formateo del manuscrito.
 
 \bibliography{sample}
 
