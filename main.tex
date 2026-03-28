@@ -1,25 +1,42 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 
-% Language setting
-% Replace `english' with e.g. `spanish' to change the document language
-\usepackage[english]{babel}
-
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
 \usepackage[letterpaper,top=2cm,bottom=5cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
-
-% Useful packages
-\usepackage{amsmath}
+\usepackage{amsmath,amssymb}
 \usepackage{graphicx}
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{amssymb} 
+\usepackage{hyperref}
 \usepackage{fancyhdr}
-\usepackage{lipsum} % Para generar texto de ejemplo
-\usepackage{multicol}
-\pagestyle{fancy} 
+\usepackage{cite}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{titlesec}
 
-\fancyhf{} % Limpiar encabezado y pie de página por defecto
-\setlength{\headheight}{70pt} % Ajuste del tamaño del encabezado (puedes aumentar este valor si es necesario)
+\hypersetup{colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+\setlength{\headheight}{76pt}
+\setstretch{1.18}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
 
-% Definición del encabezado
+\newlist{detalle}{description}{2}
+\setlist[detalle,1]{style=nextline,font=\normalfont\bfseries,leftmargin=0cm,labelsep=0.5em,itemsep=0.7em,topsep=0.3em}
+\setlist[detalle,2]{style=nextline,font=\normalfont\bfseries,leftmargin=0.7cm,labelsep=0.5em,itemsep=0.55em,topsep=0.2em}
+\setlist[itemize]{leftmargin=1.2cm}
+
+\newcommand{\datosestudio}[5]{%
+\begin{flushleft}
+\textbf{Título:} #1\\
+\textbf{Autores:} #2\\
+\textbf{Año de publicación:} #3\\
+\textbf{Fuente:} #4\\[0.35em]
+\textbf{DOI:}\\
+#5
+\end{flushleft}
+}
 
 \fancyhead[C]{%
     \begin{minipage}[c]{2.0cm}
@@ -27,12 +44,12 @@
         \includegraphics[width=2.0cm]{imagenes/uta.png}
     \end{minipage}%
     \hfill
-    \begin{minipage}[c]{8cm} 
+    \begin{minipage}[c]{8cm}
         \centering
-        \small {\textbf{UNIVERSIDAD TÉCNICA DE AMBATO}} \\[0.1cm]
-        \scriptsize \textit{FACULTAD DE INGENIERÍA EN SISTEMAS ELECTRÓNICA E INDUSTRIAL} \\[0.1cm]
-        \scriptsize \textbf{CARRERA SOFTWARE - METODOLOGÍAS AGILES} \\[0.1cm]
-        \scriptsize \textbf{CICLO ACADÉMICO: ENERO 2026 - JULIO 2026}
+        \small \textbf{UNIVERSIDAD TÉCNICA DE AMBATO}\\[0.05cm]
+        \scriptsize \textit{FACULTAD DE INGENIERÍA EN SISTEMAS, ELECTRÓNICA E INDUSTRIAL}\\[0.05cm]
+        \scriptsize \textbf{CARRERA DE SOFTWARE -- METODOLOGÍAS ÁGILES}\\[0.05cm]
+        \scriptsize \textbf{CICLO ACADÉMICO: ENERO 2026 -- JULIO 2026}
     \end{minipage}%
     \hfill
     \begin{minipage}[c]{2.0cm}
@@ -41,98 +58,361 @@
     \end{minipage}%
 }
 
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titlespacing*{\section}{0pt}{1.2em}{0.7em}
+\titlespacing*{\subsection}{0pt}{1em}{0.5em}
+\titlespacing*{\subsubsection}{0pt}{0.9em}{0.45em}
+\titleformat{\paragraph}[block]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}{0pt}{0.75em}{0.35em}
+\setcounter{secnumdepth}{4}
+
 \begin{document}
+
 \begin{center}
-    {\large \textbf{INFORME DE TAREA}} \\    
+    {\large \textbf{INFORME DE TAREA}}
 \end{center}
 
 \section{Portada}
 \begin{flushleft}
 \begin{tabular}{ l l }
-    \textbf{Tema:} & \\
-    \textbf{Unidad de Organización Curricular:} & PROFECIONAL\\
-    \textbf{Nivel y Paralelo:} & 4to Semestre "B" \\
+    \textbf{Tema:} & Análisis comparativo de seis metodologías\\
+                   &  ágiles de desarrollo de software \\
+    \textbf{Unidad de Organización Curricular:} & Profesional \\
+    \textbf{Nivel y Paralelo:} & 4to Semestre ``B'' \\
     \textbf{Alumnos participantes:} & Guatemal Avilez Bryan Stalin \\
-    \textbf{Asignatura:} & Metodologias Agiles \\
-    \textbf{Docente:} & Ing.Naranjo Avalos Hernan Fabricio, Mg. \\
+    \textbf{Asignatura:} & Metodologías Ágiles \\
+    \textbf{Docente:} & Ing. Naranjo Avalos Hernan Fabricio, Mg. \\
 \end{tabular}
 \end{flushleft}
 
-
 \section{Informe de la Tarea}
+
 \subsection{Objetivos}
 \subsubsection{General}
-(Especificado en la guía tarea proporcionada por el docente).
+Analizar de manera crítica y comparativa seis metodologías ágiles ampliamente utilizadas en el desarrollo de software, identificando sus fundamentos conceptuales, su enfoque principal, su ciclo de vida, sus roles, sus artefactos, sus prácticas más representativas, sus ventajas, sus desventajas y la evidencia investigativa reportada en estudios académicos.
+
 \subsubsection{Específicos}
 \begin{itemize}
-    \item (Se recomienda máximo 3).
-    \item 
-    \item 
+    \item Describir las características teóricas y operativas de Scrum, Kanban, Extreme Programming, Scrumban, Feature-Driven Development y Crystal.
+    \item Examinar la relación de cada metodología con el Manifiesto Ágil, resaltando su orientación central y sus principios de trabajo.
+    \item Analizar dos trabajos de investigación por metodología, identificando contexto de aplicación, método de implementación, valores referenciales y resultados alcanzados.
 \end{itemize}
 
-
 \subsection{Instrucciones}
-
-Detalladas en la asignación de la tarea proporcionada por el docente.
-
+El desarrollo del informe se realizó a partir de la guía APE proporcionada por el docente y de una investigación bibliográfica enfocada en seis metodologías ágiles. Para cada una de ellas se examinó su descripción general, su convergencia con el Manifiesto Ágil, su enfoque principal, sus principios, su ciclo de vida, sus roles, sus artefactos, sus prácticas, sus ventajas, sus desventajas y dos trabajos de investigación aplicados.
 
 \subsection{Listado de equipos, materiales y recursos}
 \textbf{Listado de equipos y materiales generales empleados en la tarea:}
 \begin{itemize}
-    \item  
+    \item Computadora personal.
+    \item Editor \LaTeX{} y herramientas ofimáticas.
+    \item Aula virtual.
+    \item Servicio de Internet.
+    \item Artículos científicos, libros y material académico especializado.
 \end{itemize}
 
-\textbf{TAC (Tecnologías para el Aprendizaje y Conocimiento) empleados en la tarea:}
+\textbf{TAC (Tecnologías para el Aprendizaje y el Conocimiento) empleadas en la tarea:}
 \begin{itemize}
-    \item[$\square$] Plataformas educativas
+    \item[$\boxtimes$] Plataformas educativas
     \item[$\square$] Simuladores y laboratorios virtuales
-    \item[$\square$] Aplicaciones educativas
+    \item[$\boxtimes$] Aplicaciones educativas
     \item[$\square$] Recursos audiovisuales
     \item[$\square$] Gamificación
-    \item[$\square$] Inteligencia Artificial
-    \item Otros (Especifique): \underline{\hspace{5cm}}
+    \item[$\boxtimes$] Inteligencia Artificial
+    \item Otros (Especifique): bases de datos académicas y gestor bibliográfico.
 \end{itemize}
 
-
 \subsection{Desarrollo de la Tarea (Actividades a Desarrollar)}
+Se realizó la búsqueda, selección, organización y análisis de bibliografía académica confiable para construir un estudio comparativo de las metodologías Scrum, Kanban, XP, Scrumban, FDD y Crystal. En cada caso se examinó la parte teórica y la evidencia empírica proveniente de dos investigaciones aplicadas, con el propósito de identificar beneficios, limitaciones y condiciones de uso.
 
-Detalladas en las instrucciones proporcionadas por el docente.
-
+\subsubsection{Scrum}
+\paragraph{Descripción general.}
+Scrum es un marco de trabajo ágil utilizado en el desarrollo de software para gestionar proyectos de forma iterativa e incremental, especialmente en contextos donde los requisitos cambian con rapidez. Su propósito principal es organizar el trabajo en ciclos cortos que permitan entregar valor de manera frecuente, obtener retroalimentación continua y adaptarse a nuevas necesidades durante el proceso. Este enfoque fue impulsado principalmente por Jeff Sutherland y Ken Schwaber como respuesta a las limitaciones de los modelos secuenciales tradicionales, particularmente por su rigidez frente a entornos dinámicos. Asimismo, Scrum toma inspiración de la estructura colaborativa del rugby, promoviendo la autoorganización, la comunicación constante y la mejora continua. Por ello, suele emplearse en proyectos de software complejos o cambiantes, donde se requiere flexibilidad, rapidez de respuesta e interacción permanente entre los miembros del equipo y las partes interesadas \cite{hema2020,rizky2022}.
+\paragraph{Concordancia con el Manifiesto Ágil.}
+Scrum mantiene una relación directa con el Manifiesto Ágil, ya que su estructura de trabajo prioriza la colaboración constante entre los miembros del equipo, la entrega frecuente de incrementos funcionales y la adaptación continua frente a cambios en los requisitos del proyecto. Este marco promueve ciclos cortos de desarrollo, revisiones periódicas y retroalimentación continua del cliente, lo que se relaciona con valores ágiles como la preferencia por el software funcionando, la interacción entre personas y la respuesta al cambio por encima de los procesos rígidos. Además, Scrum se apoya en principios de control empírico, especialmente transparencia, inspección y adaptación, lo que fortalece su coherencia con la filosofía ágil \cite{hema2020,kumar2020,bhavsar2020}.
+\paragraph{Enfoque principal.}
+El enfoque principal de Scrum se orienta a la gestión iterativa e incremental del trabajo, con el propósito de entregar valor de manera continua durante el desarrollo del software. Esta metodología centra su atención en organizar el trabajo en ciclos cortos, facilitar la adaptación frente a cambios en los requisitos y promover la retroalimentación frecuente entre el equipo y las partes interesadas. De esta manera, Scrum no solo busca mejorar la coordinación del trabajo, sino también favorecer una respuesta rápida ante problemas complejos, manteniendo como eje central la colaboración, la flexibilidad y la entrega progresiva de resultados funcionales \cite{hema2020}.
+\paragraph{Principios.}
+Los principios que sostienen Scrum se fundamentan en la teoría del control empírico, según la cual el conocimiento se obtiene a partir de la experiencia y de la observación continua del trabajo realizado. Desde esta perspectiva, Scrum se apoya principalmente en tres pilares: transparencia, que permite que la información relevante del proyecto sea visible; inspección, que facilita la revisión constante del progreso y de los resultados; y adaptación, que posibilita realizar ajustes oportunos cuando se detectan desviaciones o nuevas necesidades. A estos principios se suman el desarrollo iterativo e incremental, la autoorganización del equipo y la orientación hacia la mejora continua \cite{bhavsar2020}.
+\paragraph{Ciclo de vida.}
+El ciclo de vida de Scrum se desarrolla de forma iterativa e incremental mediante una secuencia de actividades y artefactos que organizan el trabajo en períodos cortos llamados \textit{sprints}. El proceso inicia con el \textit{Product Backlog}, donde se registran y priorizan las necesidades del producto. A partir de ello se realiza la \textit{Sprint Planning}, reunión en la que el equipo selecciona los elementos que se trabajarán durante el sprint y define el objetivo a alcanzar. Luego se ejecuta el sprint, dentro del cual se lleva a cabo el \textit{Daily Scrum} para coordinar actividades, identificar obstáculos y revisar el avance diario. Al finalizar se realizan la \textit{Sprint Review} y la \textit{Sprint Retrospective}, y como resultado se obtiene un incremento funcional del producto \cite{hema2020,bhavsar2020}.
+\paragraph{Roles.}
+En Scrum, el \textit{Product Owner} es la persona responsable de maximizar el valor del producto, expresar con claridad los elementos del backlog y priorizarlos según las necesidades de los interesados. El \textit{Scrum Master} cumple la función de facilitador del marco Scrum, guiando al equipo para que respete la teoría, las prácticas y las reglas del enfoque, además de coordinar reuniones y apoyar la planificación. Por su parte, los \textit{Developers} o equipo de desarrollo trabajan de manera conjunta en análisis, diseño, implementación y pruebas, con el fin de transformar los requisitos priorizados en incrementos funcionales \cite{sudarsono2020}.
+\paragraph{Artefactos.}
+Los artefactos principales de Scrum son el \textit{Product Backlog}, el \textit{Sprint Backlog} y el incremento. El primero constituye la lista priorizada de requisitos o funcionalidades; el segundo reúne los elementos seleccionados para desarrollarse en un sprint específico junto con las tareas necesarias; y el tercero representa el resultado funcional obtenido al final del sprint. En conjunto, estos artefactos permiten ordenar, controlar y evidenciar el avance del proyecto \cite{sudarsono2020}.
+\paragraph{Prácticas.}
+Entre las prácticas más comunes asociadas al uso de Scrum se encuentran la planificación del sprint, las reuniones diarias, la revisión del sprint, la retrospectiva, la priorización continua del backlog y la orientación hacia entregas incrementales. Estas prácticas permiten dar seguimiento al avance, coordinar tareas, recibir retroalimentación y proponer mejoras para el siguiente ciclo. Además, son elementos centrales para evaluar la madurez de adopción del marco \cite{panjaitan2022}.
+\paragraph{Ventajas.}
+Entre las principales ventajas de Scrum se encuentra su capacidad para adaptarse con rapidez a cambios en los requisitos del proyecto, lo que resulta especialmente útil en entornos dinámicos de desarrollo de software. También favorece la entrega continua de incrementos funcionales, permite obtener retroalimentación frecuente, fortalece la colaboración entre los miembros del equipo, incrementa la visibilidad del avance y mejora la satisfacción del cliente al mantenerlo involucrado durante el proceso \cite{hema2020,sudarsono2020}.
+\paragraph{Desventajas.}
+A pesar de sus beneficios, Scrum también presenta algunas limitaciones. Su aplicación depende en gran medida del compromiso, la experiencia y la comunicación constante de los integrantes del equipo, por lo que puede resultar difícil de implementar correctamente en contextos donde no existe disciplina de trabajo colaborativo. Además, si la planificación del sprint, la definición del backlog o la revisión de tareas no se realizan de forma adecuada, pueden surgir retrasos, desviaciones en el alcance o dificultades para mantener el ritmo de entrega \cite{bhavsar2020,panjaitan2022}.
+\paragraph{Trabajo de investigación 1.}
+        \datosestudio{Evaluation of Scrum Implementation and Recommendation Improvement in Software Development: A Case Study of Logistic Company XYZ}{Muhammad Fadly Tanjung, Betty Purwandari, Alex Ferdinansyah y Ni Wayan Trisnawaty}{2024}{\textit{The Indonesian Journal of Computer Science}}{10.33022/ijcs.v13i5.4236}
+\paragraph{Contexto del estudio.}
+El estudio se desarrolló en PT XYZ, una empresa de logística de Indonesia que ofrece una plataforma digital para el ecosistema logístico nacional y conecta su operación con una red global. La empresa utiliza Scrum dentro de su proceso de desarrollo de software para responder a requisitos dinámicos y apoyar su transformación digital. El caso se centró especialmente en el análisis del \textit{Fulfillment squad}, ya que este equipo no lograba cumplir adecuadamente sus objetivos de sprint \cite{tanjung2024}.
+\paragraph{Método de implementación.}
+La implementación de Scrum fue evaluada a partir de un enfoque de métodos mixtos. En la parte cuantitativa se aplicó un cuestionario basado en \textit{Scrum Evaluation Metrics}, construido a partir de la \textit{Scrum Guide 2020} y \textit{Essential Scrum}. En la parte cualitativa se realizaron entrevistas con el \textit{Scrum Master}, el \textit{Product Manager} y otros interesados, además de revisión documental y análisis de causa mediante diagrama de Ishikawa. La empresa trabajaba con \textit{Product Backlog}, \textit{Sprint Planning}, ejecución del sprint, \textit{Daily Scrum}, \textit{Sprint Review} y \textit{Sprint Retrospective} \cite{tanjung2024}.
+\paragraph{Valores referenciales.}
+El estudio evaluó la implementación de Scrum mediante varios referentes: \textit{Scrum Evaluation Metrics}, \textit{Agile Maturity Model}, \textit{Key Process Area Rating}, además de evaluación de roles, eventos, artefactos y pilares de Scrum. El instrumento incluyó 86 preguntas distribuidas en cuatro áreas y diecisiete objetivos, utilizando respuestas \textit{Yes}, \textit{No}, \textit{Partial} y \textit{N/A} para medir el grado de implementación \cite{tanjung2024}.
+\paragraph{Resultados.}
+Los resultados mostraron que la implementación general de Scrum en PT XYZ alcanzó un \textit{KPA rating} de 87.39\%, interpretado como \textit{Fully Achieved}. Por áreas, se reportaron 86.21\% en \textit{Scrum Team}, 86.53\% en \textit{Scrum Events}, 92.39\% en \textit{Scrum Artifacts} y 90.64\% en \textit{Scrum Pillars and Values}. Sin embargo, el \textit{Fulfillment squad} presentó un desempeño inferior, se identificaron 61 prácticas que requerían mejora y se formularon 27 recomendaciones validadas, 15 de ellas de alta prioridad \cite{tanjung2024}.
+\paragraph{Trabajo de investigación 2.}
+        \datosestudio{Evaluating Scrum to Increase Software Development Projects Success: A Case Study of Digital Bank Company}{Andrean Taufiq, T. Raharjo y Andi Wahbi}{2020}{\textit{International Conference on Advanced Computer Science and Information Systems}}{10.1109/ICACSIS51025.2020.9263235}
+\paragraph{Contexto del estudio.}
+El estudio se realizó en XYZ Digital Bank, una empresa de banca digital en Indonesia que utilizaba Scrum como metodología de desarrollo de software dentro de un entorno altamente competitivo y orientado a la entrega rápida de funcionalidades. El problema principal del caso era que varias tareas comprometidas no se completaban dentro del sprint y se trasladaban a iteraciones posteriores, afectando el tiempo de entrega del proyecto \cite{taufiq2020}.
+\paragraph{Método de implementación.}
+La investigación se desarrolló como estudio de caso apoyado en revisión de literatura y análisis de datos secundarios de la organización. Los autores recopilaron información de entrega correspondiente a nueve sprints, equivalentes a cuatro meses y dos semanas, comparando tareas comprometidas y realmente completadas mediante gráficos de velocidad. Además, analizaron problemas de ejecución relacionados con autoorganización, multifuncionalidad, cambios a mitad del desarrollo, ampliación del alcance y mala planificación de pruebas \cite{taufiq2020}.
+\paragraph{Valores referenciales.}
+El estudio tomó como referencias principales el tiempo de entrega del sprint, el tiempo total de entrega del proyecto, el cumplimiento de tareas comprometidas, el gráfico de velocidad, la calidad del producto, la capacidad de adaptación a cambios, la autoorganización del equipo, la interfuncionalidad, la alineación con la estrategia del negocio y la satisfacción de las partes interesadas \cite{taufiq2020}.
+\paragraph{Resultados.}
+Los resultados identificaron cinco problemas principales que afectaban la ejecución de Scrum: deficiencias en la autoorganización del equipo, falta de colaboración interfuncional, cambios a mitad del proceso, ampliación del alcance y mala planificación de la etapa de pruebas. A partir de ello, los autores propusieron ocho recomendaciones para mejorar la ejecución de Scrum. El estudio concluyó que Scrum puede contribuir al éxito del proyecto, pero su efectividad depende de cómo se gestionen los problemas de ejecución dentro del sprint \cite{taufiq2020}.
+    
+\subsubsection{Kanban}
+\paragraph{Descripción general.}
+Kanban es una metodología ágil orientada a la gestión visual del trabajo y al control del flujo continuo de tareas dentro del desarrollo de software. Su origen se remonta al sistema de producción de Toyota en la industria manufacturera japonesa durante la década de 1950, donde fue concebido como un mecanismo de producción \textit{just in time} impulsado por la demanda. Posteriormente fue adaptado al desarrollo de software, especialmente a partir de los aportes de David J. Anderson, con el propósito de visualizar actividades, limitar el trabajo en progreso y mejorar la eficiencia del proceso. En este contexto, Kanban se utiliza para optimizar la coordinación del equipo, reducir cuellos de botella, mejorar la calidad, incrementar la visibilidad del flujo de trabajo y facilitar entregas más consistentes \cite{riaz2020}.
+\paragraph{Concordancia con el Manifiesto Ágil.}
+Kanban mantiene una relación estrecha con el Manifiesto Ágil porque favorece la adaptación continua del trabajo, la mejora progresiva del proceso y la entrega constante de valor. Su enfoque en la visualización del flujo, la limitación del trabajo en curso y la detección de cuellos de botella permite responder con flexibilidad a cambios en las prioridades, al mismo tiempo que fortalece la colaboración y la coordinación del equipo \cite{riaz2020}.
+\paragraph{Enfoque principal.}
+El enfoque principal de Kanban se orienta a la gestión visual del trabajo y al flujo continuo de tareas, con el objetivo de mejorar la eficiencia del proceso y optimizar la entrega de valor. En lugar de organizar el trabajo mediante iteraciones fijas, Kanban busca estabilizar el flujo de actividades, controlar el trabajo en curso y detectar de manera temprana los cuellos de botella que afectan el rendimiento del equipo \cite{castillo2024}.
+\paragraph{Principios.}
+Los principios que sostienen Kanban se centran en la visualización del trabajo, la limitación del trabajo en curso (WIP), la gestión del flujo y la mejora continua del sistema. A través de estos fundamentos, Kanban busca que el equipo pueda observar el avance real de las tareas, identificar cuellos de botella, equilibrar la carga de trabajo y optimizar el proceso de manera progresiva. En este sentido, Kanban no solo organiza el trabajo de forma visible, sino que también promueve ajustes constantes para mejorar la eficiencia, la coordinación y la calidad \cite{riaz2020}.
+\paragraph{Ciclo de vida.}
+El ciclo de trabajo en Kanban se desarrolla mediante un flujo continuo de tareas representado visualmente en un tablero. En este sistema las actividades ingresan primero al backlog, luego avanzan a estados como \textit{En progreso} y finalmente pasan a \textit{Listo}, según su nivel de ejecución. Durante este recorrido el equipo supervisa el movimiento de las tareas entre columnas, controla el trabajo en curso mediante límites WIP y ajusta la carga de trabajo para evitar cuellos de botella. A diferencia de otras metodologías ágiles con iteraciones fijas, Kanban organiza el trabajo a través de un flujo visual y permanente que permite seguimiento, control y mejora progresiva \cite{castillo2024}.
+\paragraph{Roles.}
+Kanban no define roles estrictos o rígidos de la misma forma que otras metodologías ágiles, como Scrum. Su aplicación se centra principalmente en la gestión visual del trabajo, el control del flujo y la mejora continua del proceso, más que en la asignación formal de cargos específicos. Por ello, los integrantes suelen conservar sus responsabilidades organizacionales habituales mientras colaboran en el seguimiento de tareas, la administración del tablero y la optimización del trabajo en curso \cite{castillo2024}.
+\paragraph{Artefactos.}
+Los artefactos más representativos de Kanban son el tablero Kanban, las columnas o etapas del flujo de trabajo, el backlog o lista de tareas pendientes y los límites de trabajo en curso. El tablero permite visualizar el estado real de las actividades, mientras que las columnas muestran el avance de las tareas a través de fases como pendiente, en progreso y listo. Por su parte, los límites WIP ayudan a controlar la cantidad de trabajo que puede mantenerse simultáneamente en ejecución, evitando sobrecargas y favoreciendo un flujo más equilibrado \cite{castillo2024}.
+\paragraph{Prácticas.}
+Entre las prácticas más representativas de Kanban se encuentran la visualización del trabajo mediante tableros, el seguimiento del flujo de tareas a través de diferentes etapas, el control del trabajo en curso para evitar sobrecarga y la optimización continua del proceso. Estas prácticas permiten que el equipo observe con claridad el estado de las actividades, identifique bloqueos, mantenga un flujo de trabajo más estable y ajuste progresivamente la gestión de tareas según las necesidades del proyecto \cite{castillo2024}.
+\paragraph{Ventajas.}
+Entre las principales ventajas de Kanban se encuentra la visualización clara del trabajo, lo que permite a los equipos identificar rápidamente el estado de las tareas y detectar posibles cuellos de botella. También favorece un mejor control del flujo de trabajo, facilita la coordinación entre los miembros del equipo y contribuye a una mejora continua del proceso. Asimismo, su aplicación puede ayudar a elevar la calidad del producto, reducir defectos y optimizar el rendimiento general del desarrollo de software \cite{riaz2020,castillo2024}.
+\paragraph{Desventajas.}
+A pesar de sus beneficios, Kanban también presenta algunas limitaciones. Su aplicación puede resultar difícil si el equipo no mantiene suficiente disciplina en el seguimiento del flujo de trabajo o si no existen políticas claras para gestionar las tareas y los límites de trabajo en curso. Además, su flexibilidad puede convertirse en una desventaja en entornos que requieren una estructura más rígida de planificación y control \cite{riaz2020,castillo2024}.
+\paragraph{Trabajo de investigación 1.}
+        \datosestudio{Systems Thinking Approach to Implementing Kanban: A Case Study}{Mali Senapathi y Meghann L. Drury-Grogan}{2021}{\textit{Journal of Software: Evolution and Process}}{10.1002/smr.2322}
+\paragraph{Contexto del estudio.}
+El estudio se desarrolló en una organización gubernamental, específicamente en un equipo de desarrollo de software que necesitaba mejorar la eficiencia del trabajo, optimizar sus procesos y adaptarse a un entorno dinámico. Este contexto es relevante porque las organizaciones gubernamentales suelen presentar estructuras más rígidas que dificultan la adopción de cambios ágiles \cite{senapathi2021}.
+\paragraph{Método de implementación.}
+La implementación de Kanban se realizó de manera adaptativa, combinando principios de \textit{Systems Thinking} y \textit{Design Thinking} para ajustarlos a las necesidades reales del equipo. Para ello se utilizaron tablero Kanban, visualización de tareas, límites WIP, control del flujo y reuniones periódicas para dar seguimiento al avance del trabajo. Esto muestra que Kanban no se aplicó como una receta rígida, sino como un sistema flexible ajustado al contexto de la organización \cite{senapathi2021}.
+\paragraph{Valores referenciales.}
+El estudio analizó varios indicadores: \textit{lead time} o tiempo de ciclo, eficiencia del flujo de trabajo, nivel de colaboración del equipo, visibilidad del trabajo y gestión del trabajo en progreso. Estos valores permitieron observar no solo el rendimiento del proceso, sino también el comportamiento organizacional y la forma en que el equipo se adaptó a la nueva metodología \cite{senapathi2021}.
+\paragraph{Resultados.}
+Los resultados mostraron mayor visibilidad del proceso, mejora en la colaboración del equipo, reducción del tiempo de entrega y mejor comprensión del flujo de trabajo. Sin embargo, también se reportaron dificultades importantes, como resistencia al cambio, problemas para definir límites WIP y dependencia de apoyo externo, especialmente de un \textit{coach} o facilitador \cite{senapathi2021}.
+\paragraph{Trabajo de investigación 2.}
+        \datosestudio{Evaluation of Kanban Implementation in an Information Technology Service Provider}{Mila Shania, Putu Wuri Handayani y Nabila Clydea Harahap}{2024}{\textit{Proceedings of the 2024 International Conference on Information Management and Technology (ICIMTech)}}{10.1109/ICIMTech63123.2024.10780920}
+\paragraph{Contexto del estudio.}
+Este estudio se desarrolló en una empresa proveedora de servicios de tecnología de la información, vinculada al desarrollo de software. El trabajo parte de una situación organizacional en la que, pese al uso de Kanban dentro de un enfoque ágil, seguían existiendo retrasos en los proyectos, lo cual motivó la evaluación formal de su implementación \cite{shania2024}.
+\paragraph{Método de implementación.}
+La investigación empleó un enfoque cualitativo para evaluar la implementación de Kanban en la organización. Además, el análisis fue complementado con el modelo CMMI-Dev 1.3, utilizado para examinar la madurez de procesos. Para recoger información se realizaron entrevistas a distintos actores del entorno organizacional, entre ellos líderes de equipo, \textit{project managers} y analistas de sistemas \cite{shania2024}.
+\paragraph{Valores referenciales.}
+Los valores referenciales evaluados se relacionan con el nivel de madurez de procesos, las causas raíz de los retrasos, la capacidad organizacional, la eficiencia del flujo de trabajo y la forma en que Kanban estaba siendo realmente aplicado dentro de la empresa. En otras palabras, no se analizaron únicamente resultados visibles del tablero, sino también condiciones estructurales que afectaban la efectividad de la metodología \cite{shania2024}.
+\paragraph{Resultados.}
+Los autores identificaron siete causas raíz vinculadas con los problemas observados en la implementación de Kanban. También determinaron que seis áreas de proceso permanecían en nivel 0, lo que evidenciaba una madurez organizacional baja. A partir de estos hallazgos, el estudio propuso 32 acciones de mejora para fortalecer la implementación futura y concluyó que Kanban, por sí solo, no garantiza mejoras automáticas cuando existen problemas organizacionales más profundos \cite{shania2024}.
+    
+\subsubsection{Extreme Programming (XP)}
+\paragraph{Descripción general.}
+Extreme Programming (XP) es una metodología ágil de desarrollo de software orientada a mejorar la capacidad de respuesta ante cambios frecuentes en los requisitos, reducir riesgos durante el proceso y elevar la calidad del producto mediante prácticas técnicas y colaborativas. Fue creada por Kent Beck en 1997 como respuesta a las limitaciones de los enfoques tradicionales de desarrollo, especialmente en proyectos caracterizados por incertidumbre, plazos cortos y necesidad de adaptación rápida. XP se considera una metodología ligera dentro del movimiento ágil y se aplica principalmente en entornos donde se requiere retroalimentación constante, participación activa del cliente y un proceso de desarrollo iterativo con fuerte énfasis en pruebas y comunicación \cite{tracz2002,santos2023}.
+\paragraph{Concordancia con el Manifiesto Ágil.}
+Extreme Programming mantiene una relación directa con el Manifiesto Ágil, ya que sus prácticas reflejan de forma clara varios de sus valores fundamentales. XP prioriza los individuos e interacciones mediante el trabajo colaborativo, la comunicación constante y la cercanía entre desarrolladores y cliente. Asimismo, favorece el software funcionando por encima de la documentación excesiva, pues promueve entregas frecuentes, pruebas continuas y mejora progresiva del código. También fortalece la colaboración con el cliente y permite una respuesta rápida al cambio gracias al uso de iteraciones cortas y retroalimentación continua \cite{rogers2023,lowell2023}.
+\paragraph{Enfoque principal.}
+El enfoque principal de XP se orienta a la calidad técnica del software, la retroalimentación rápida y la adaptación continua frente a cambios en los requisitos. A diferencia de otras metodologías que se centran más en la gestión del trabajo, XP pone especial énfasis en prácticas de desarrollo que permitan construir software funcional, confiable y fácil de mejorar de manera progresiva. Por ello, su orientación central está en combinar disciplina técnica, comunicación constante con el cliente y ciclos cortos de desarrollo para reducir riesgos y aumentar la capacidad de respuesta del equipo \cite{tracz2002}.
+\paragraph{Principios.}
+Los principios que sostienen XP se basan en la comunicación, la simplicidad, la retroalimentación y el coraje, considerados como los valores fundamentales de esta metodología. La comunicación favorece la coordinación constante entre desarrolladores y cliente; la simplicidad busca construir únicamente lo necesario para resolver el problema actual; la retroalimentación se obtiene mediante pruebas continuas, entregas frecuentes y participación activa del cliente; y el coraje implica la disposición de modificar, refactorizar o replantear el código cuando el proyecto lo requiera. A estos principios se suma una orientación clara hacia la mejora continua, la calidad técnica del software y la adaptación constante a los cambios \cite{tracz2002,santos2023}.
+\paragraph{Ciclo de vida.}
+El ciclo de vida de XP se desarrolla de manera iterativa e incremental, a partir de ciclos cortos de trabajo que permiten incorporar retroalimentación constante y responder rápidamente a cambios en los requisitos. El proceso suele iniciar con la planificación, donde se definen las funcionalidades necesarias mediante historias de usuario y se organizan las prioridades. Después, el equipo trabaja en iteraciones cortas dentro de las cuales se aplican diseño simple, codificación, pruebas continuas e integración frecuente del software. Al final de cada iteración se obtiene una versión funcional del producto, la cual puede ser evaluada por el cliente para generar nueva retroalimentación y ajustar el siguiente ciclo \cite{tracz2002}.
+\paragraph{Roles.}
+En XP participan varios roles que colaboran de manera cercana durante todo el desarrollo. El cliente define necesidades, prioridades y criterios de aceptación a través de historias de usuario y retroalimentación constante. Los programadores son responsables de diseñar, codificar, probar y mejorar continuamente el software. El \textit{tester} apoya en la definición y ejecución de pruebas para verificar la calidad del producto. El \textit{coach} guía al equipo en la correcta aplicación de las prácticas de XP, mientras que el \textit{tracker} da seguimiento al avance del trabajo y ayuda a medir el cumplimiento de los objetivos. Finalmente, el \textit{manager} facilita las condiciones organizacionales necesarias para que el equipo pueda trabajar de manera efectiva \cite{tracz2002}.
+\paragraph{Artefactos.}
+Los artefactos más representativos de XP son las historias de usuario, las tareas de desarrollo, las pruebas y las iteraciones que estructuran el avance del proyecto. Las historias de usuario permiten expresar de manera simple los requerimientos del cliente, mientras que las tareas descomponen ese trabajo en actividades concretas para el equipo. Las pruebas unitarias y de aceptación funcionan como un elemento central para validar la calidad del software y verificar el cumplimiento de los requisitos. Asimismo, las iteraciones y las pequeñas liberaciones actúan como estructuras de trabajo que permiten organizar el desarrollo en ciclos cortos y mantener una entrega continua de valor \cite{tracz2002}.
+\paragraph{Prácticas.}
+Entre las prácticas más representativas de XP se encuentran la programación en parejas, el desarrollo guiado por pruebas (TDD), la refactorización, la integración continua, la propiedad colectiva del código, el diseño simple, el cliente in situ y las pequeñas liberaciones. Estas prácticas muestran que XP se caracteriza sobre todo por combinar disciplina técnica con colaboración constante, de modo que la calidad del producto y la comunicación del equipo evolucionen de manera simultánea \cite{tracz2002}.
+\paragraph{Ventajas.}
+Entre las principales ventajas de XP se encuentra la mejora de la calidad del software, debido al uso constante de pruebas, refactorización e integración continua. También favorece la detección temprana de errores, la adaptación rápida a cambios en los requisitos y una comunicación más fluida entre desarrolladores y cliente. Asimismo, XP contribuye a mantener un código más claro y mantenible, promueve entregas frecuentes y reduce riesgos durante el desarrollo \cite{tracz2002}.
+\paragraph{Desventajas.}
+A pesar de sus beneficios, XP también presenta algunas limitaciones. Su aplicación exige un alto nivel de disciplina técnica y compromiso constante del equipo, lo que puede resultar difícil en entornos donde no existe experiencia previa con prácticas como programación en parejas, pruebas continuas o refactorización. Además, depende en gran medida de la participación activa del cliente, por lo que su efectividad disminuye si esta colaboración no se mantiene de forma continua \cite{tracz2002}.
+\paragraph{Trabajo de investigación 1.}
+        \datosestudio{Agile and Extreme Programming (XP) and their Relationship with Stress and Trust in Distributed Programming Environments}{B. Q. Rogers, W. J. Sawaya y M. H. Brodke}{2023}{SSRN}{10.2139/ssrn.4591952}
+\paragraph{Contexto del estudio.}
+El estudio se desarrolló en equipos de desarrollo de software en entornos distribuidos, con la participación de 134 profesionales e ingenieros que aplicaban prácticas ágiles, incluyendo Extreme Programming. El interés principal estaba en examinar la relación entre uso de XP, confianza en el equipo y niveles de estrés en ambientes distribuidos \cite{rogers2023}.
+\paragraph{Método de implementación.}
+Los autores aplicaron encuestas y análisis de percepción en equipos para evaluar la adherencia a prácticas de XP y a valores del Manifiesto Ágil. La investigación se enfocó en el uso de XP, la comunicación del equipo, la colaboración y la retroalimentación como elementos centrales del proceso \cite{rogers2023}.
+\paragraph{Valores referenciales.}
+Los valores referenciales considerados incluyeron colaboración, comunicación, retroalimentación, confianza en el equipo, alineación con principios ágiles y nivel de estrés. Estos indicadores permitieron examinar no solo el aspecto técnico, sino también factores humanos del desarrollo \cite{rogers2023}.
+\paragraph{Resultados.}
+Los resultados mostraron que un mayor uso de XP se relacionó con mayor confianza dentro del equipo y menor nivel de estrés. También se identificó una relación positiva entre prácticas de XP, valores ágiles y desempeño colaborativo del equipo, lo que refuerza el aporte de XP más allá del plano puramente técnico \cite{rogers2023}.
+\paragraph{Trabajo de investigación 2.}
+        \datosestudio{Enhancing Collaboration and Code Quality using Pair Programming}{Autor no especificado}{2024}{Zenodo}{10.5281/zenodo.14557575}
+\paragraph{Contexto del estudio.}
+El estudio se sitúa en equipos de desarrollo de software que trabajan en entornos tradicionales, ágiles y remotos o híbridos. El eje central de la investigación es la aplicación de \textit{pair programming}, considerada una de las prácticas más representativas de XP, dentro de contextos reales de colaboración técnica \cite{pairprogramming2024}.
+\paragraph{Método de implementación.}
+La implementación consistió en la aplicación de programación en pareja, con colaboración en tiempo real entre desarrolladores y apoyo de herramientas colaborativas modernas. Esta práctica se integró con enfoques ágiles de trabajo, observando cómo influía en la construcción del software, en la resolución conjunta de problemas y en la interacción técnica entre miembros del equipo \cite{pairprogramming2024}.
+\paragraph{Valores referenciales.}
+Los valores e indicadores analizados incluyen comunicación constante, colaboración, aprendizaje compartido, calidad del código, mantenibilidad del software, coordinación del equipo y resolución de problemas. Estos elementos permitieron evaluar tanto el impacto técnico como el colaborativo de la práctica \cite{pairprogramming2024}.
+\paragraph{Resultados.}
+Los resultados muestran una mejora en la calidad del software, una mayor mantenibilidad del código y mejores niveles de resolución de problemas. También se identificaron beneficios adicionales como la transferencia de conocimiento y una mejor coordinación del equipo. No obstante, el estudio señala ciertas limitaciones, entre ellas el mayor esfuerzo requerido y la necesidad de coordinación constante entre quienes participan en la programación en pareja \cite{pairprogramming2024}.
+    
+\subsubsection{Scrumban}
+\paragraph{Descripción general.}
+Scrumban es un marco de trabajo híbrido que combina elementos de Scrum y Kanban con el objetivo de mejorar el proceso de desarrollo de software y optimizar la entrega del producto. Su surgimiento responde a la necesidad de equilibrar la estructura, la planificación y la organización propias de Scrum con la flexibilidad, la visualización del trabajo y el flujo continuo característicos de Kanban. En este sentido, aparece como una alternativa adecuada en contextos donde Scrum puede resultar demasiado rígido y Kanban demasiado abierto si no se acompaña de cierta estructura. Su propósito principal es incrementar la productividad, mejorar la calidad del software y favorecer una entrega continua en proyectos con cambios frecuentes \cite{donthi2025}.
+\paragraph{Concordancia con el Manifiesto Ágil.}
+Scrumban refleja los valores ágiles porque favorece la adaptación al cambio, la colaboración del equipo, la entrega continua de valor, la mejora progresiva del proceso y la flexibilidad metodológica. Al combinar iteración, flujo y adaptación, esta metodología híbrida busca materializar en la práctica la respuesta rápida a nuevas necesidades sin perder visibilidad ni coordinación \cite{donthi2025}.
+\paragraph{Enfoque principal.}
+El enfoque principal de Scrumban se orienta a combinar la estructura de Scrum con la flexibilidad y el flujo continuo de Kanban, con el propósito de optimizar el desarrollo de software y mejorar la entrega del producto. Esta metodología busca equilibrar la planificación organizada con la capacidad de adaptación rápida, permitiendo que el trabajo avance de forma visible, controlada y ajustable según las necesidades del proyecto \cite{donthi2025}.
+\paragraph{Principios.}
+Los principios de Scrumban se orientan a combinar la estructura organizada de Scrum con la flexibilidad del flujo continuo de Kanban. Entre sus fundamentos más importantes se encuentran la visualización del trabajo, la limitación del trabajo en curso, la mejora continua, la adaptabilidad y la colaboración del equipo. En conjunto, estos principios permiten que Scrumban funcione como una metodología híbrida enfocada en equilibrio, transparencia y eficiencia \cite{donthi2025}.
+\paragraph{Ciclo de vida.}
+El ciclo de vida de Scrumban se desarrolla mediante una combinación entre la planificación estructurada de Scrum y el flujo continuo de Kanban. El proceso suele iniciar con un backlog de trabajo priorizado, del cual se seleccionan las tareas que deben incorporarse al sistema. Luego, estas actividades se representan en un tablero visual, donde avanzan progresivamente a través de distintas etapas del flujo. Durante este recorrido, el equipo controla el WIP para evitar sobrecarga, dar seguimiento al avance y detectar posibles bloqueos. Así, su ciclo de vida combina organización, visibilidad, adaptación y entrega progresiva de valor \cite{donthi2025}.
+\paragraph{Roles.}
+En Scrumban, los roles tienden a ser más flexibles que en Scrum, ya que la metodología no siempre exige una definición rígida de cargos formales. En muchos casos puede conservar algunos elementos organizativos de Scrum, como responsables de priorización o coordinación, pero adaptados a una dinámica más fluida y menos estructurada. De esta manera, los miembros del equipo participan de forma colaborativa en la gestión del backlog, el seguimiento del tablero y el control del flujo de trabajo \cite{donthi2025}.
+\paragraph{Artefactos.}
+Los artefactos más representativos de Scrumban incluyen el backlog priorizado, el tablero visual de trabajo, las columnas de flujo, las tarjetas de tareas y los límites de trabajo en curso. El backlog permite organizar y priorizar las actividades pendientes, mientras que el tablero visual muestra el avance de las tareas a través de diferentes etapas. Las tarjetas representan unidades concretas de trabajo y los límites WIP ayudan a controlar la cantidad de tareas activas para evitar sobrecarga y mantener un flujo más estable \cite{donthi2025}.
+\paragraph{Prácticas.}
+Entre las prácticas más representativas de Scrumban se encuentran la visualización del trabajo mediante tableros, la priorización continua del backlog, el control del trabajo en curso, el seguimiento constante del flujo de tareas y la mejora continua del proceso. A estas se suma la combinación de elementos de Scrum, como cierta planificación organizada, con la flexibilidad de Kanban para ajustar el trabajo según nuevas necesidades \cite{donthi2025}.
+\paragraph{Ventajas.}
+Scrumban ofrece equilibrio entre estructura y flexibilidad, mejor visualización del trabajo, control del flujo, reducción de bloqueos y mejora de la productividad y la calidad del software. Además, puede ser especialmente útil en entornos donde se requiere adaptación rápida, pero sin renunciar por completo a mecanismos mínimos de organización \cite{donthi2025}.
+\paragraph{Desventajas.}
+Su implementación puede generar ambigüedad si no se definen políticas claras para combinar Scrum y Kanban. También requiere cierta experiencia para equilibrar planificación estructurada y flujo continuo sin caer en desorganización. Por ello, aunque es flexible, no siempre resulta sencilla su adopción inicial \cite{donthi2025}.
+\paragraph{Trabajo de investigación 1.}
+        \datosestudio{Implementasi Metode Agile Scrumban dalam Penjualan Jasa Pembuatan Aplikasi pada PT. Labani}{Lusiana Aliran Pinta Wati Gea y Leni Marlina}{2024}{\textit{Jurnal Mahajana Informasi}}{10.51544/jurnalmi.v9i1.5157}
+\paragraph{Contexto del estudio.}
+El estudio se desarrolló en PT. Labani, una empresa dedicada al desarrollo de software y a la venta de servicios de creación de aplicaciones. El problema identificado estaba relacionado con baja eficiencia de los procesos, dificultad para adaptarse a cambios solicitados por el cliente, falta de flexibilidad en desarrollo y ventas, y limitada visibilidad sobre el progreso de los proyectos \cite{gea2024}.
+\paragraph{Método de implementación.}
+La implementación de Scrumban se realizó de forma progresiva en proyectos reales de la empresa, integrando elementos de Scrum y Kanban. El proceso comenzó con la capacitación del equipo y el entrenamiento en la metodología, seguido por la incorporación gradual de nuevas prácticas tanto en el desarrollo de software como en los procesos de ventas. Entre las acciones aplicadas destacaron el uso de tableros, el seguimiento de tareas, el control del flujo, la priorización de actividades y el fortalecimiento de la comunicación entre áreas \cite{gea2024}.
+\paragraph{Valores referenciales.}
+El estudio tomó como referentes principales la colaboración entre equipos, la comunicación constante, la adaptabilidad, la transparencia del trabajo, la mejora continua, el control del flujo, el tiempo de entrega (\textit{lead time}) y el seguimiento del progreso. Estos valores permitieron observar el impacto de Scrumban tanto en la gestión interna del trabajo como en la relación con el cliente \cite{gea2024}.
+\paragraph{Resultados.}
+Los resultados mostraron mejora en la coordinación del equipo, mayor visibilidad del proceso, reducción del tiempo de entrega, mejor integración entre ventas y desarrollo y mayor satisfacción del cliente. En términos generales, el estudio evidenció que Scrumban permitió hacer más flexible y eficiente el trabajo organizacional de PT. Labani \cite{gea2024}.
+\paragraph{Trabajo de investigación 2.}
+        \datosestudio{A Scrumban Integrated Gamification Approach to Guide Software Process Improvement: A Turkish Case Study}{Murat Yilmaz y Rory V. O'Connor}{2025}{Documento académico con DOI registrado}{10.34961/1083}
+\paragraph{Contexto del estudio.}
+La investigación se realizó en una empresa tecnológica pequeña o mediana dedicada al desarrollo de software, donde existía la necesidad de mejorar procesos, incrementar la eficiencia y fortalecer la motivación del equipo. El trabajo se orientó a evaluar no solo la utilidad de Scrumban, sino también el efecto adicional de integrar gamificación en el proceso \cite{yilmaz2025}.
+\paragraph{Método de implementación.}
+La implementación incluyó una evaluación inicial del proceso, la adopción de Scrumban y una fase posterior de integración con gamificación. Los resultados de cada etapa fueron comparados mediante encuestas y análisis estadístico, con la participación de 30 profesionales. De esta manera, el estudio contrastó la situación previa, la mejora asociada al uso de Scrumban y el impacto adicional de la capa de gamificación \cite{yilmaz2025}.
+\paragraph{Valores referenciales.}
+Como valores referenciales se consideraron la colaboración, la motivación, la mejora continua, la eficiencia, la adaptación, la productividad y el rendimiento organizacional. Estos indicadores permitieron valorar tanto el flujo de trabajo como los factores humanos del equipo \cite{yilmaz2025}.
+\paragraph{Resultados.}
+Los resultados mostraron que Scrumban mejoró la organización del trabajo y la eficiencia del flujo, mientras que la combinación con gamificación aumentó todavía más la motivación, el compromiso y el desempeño del equipo. El estudio reconoce limitaciones relacionadas con el tamaño de la muestra y el contexto único de aplicación, pero concluye que Scrumban es una metodología adaptable y eficaz para mejorar el flujo de trabajo \cite{yilmaz2025}.
+    
+\subsubsection{Feature-Driven Development (FDD)}
+\paragraph{Descripción general.}
+Feature-Driven Development (FDD) es una metodología ágil de desarrollo de software centrada en la construcción del sistema a partir de funcionalidades pequeñas, concretas y valiosas para el cliente. Su propósito principal es organizar el trabajo en torno a \textit{features} claramente identificables, de modo que el progreso pueda medirse mediante resultados funcionales y no solo por tareas técnicas aisladas. Surgió a finales de los años noventa en un proyecto bancario en Singapur, impulsada por Jeff De Luca con el apoyo de Peter Coad, y suele aplicarse en proyectos medianos o grandes que requieren organización técnica definida, seguimiento preciso del avance y una estructura clara de responsabilidades \cite{nawaz2017}.
+\paragraph{Concordancia con el Manifiesto Ágil.}
+FDD mantiene concordancia con el agilismo porque promueve entregas frecuentes de valor mediante funcionalidades pequeñas, desarrollo incremental y colaboración entre el equipo técnico y los expertos del dominio. Aunque posee una estructura más marcada que otros enfoques ágiles, sigue conservando la idea de producir valor de manera progresiva y visible \cite{nawaz2017}.
+\paragraph{Enfoque principal.}
+Su orientación central está en el desarrollo incremental guiado por funcionalidades útiles y medibles. De esta manera, el progreso puede verificarse según resultados funcionales concretos y no únicamente por tareas técnicas, lo que proporciona visibilidad del avance y cercanía con el valor de negocio \cite{nawaz2017}.
+\paragraph{Principios.}
+Entre sus principios destacan el modelado previo del dominio, la construcción por funcionalidades, la visibilidad del progreso, la responsabilidad clara del trabajo y el énfasis en la calidad del producto mediante inspecciones e integración regular. Estos principios hacen que FDD combine orden técnico con desarrollo incremental \cite{nawaz2017}.
+\paragraph{Ciclo de vida.}
+FDD organiza el trabajo en cinco procesos: desarrollo del modelo general, construcción de la lista de funcionalidades, planificación por funcionalidad, diseño por funcionalidad y construcción por funcionalidad. Esta secuencia permite pasar de una comprensión amplia del dominio a la entrega progresiva de partes funcionales del sistema \cite{nawaz2017}.
+\paragraph{Roles.}
+FDD define roles como \textit{chief architect}, \textit{chief programmer}, \textit{class owner}, \textit{development manager} y expertos del dominio. Esta estructura permite coordinar de manera explícita la responsabilidad técnica y organizativa, lo cual resulta útil en equipos medianos o grandes con mayor necesidad de control \cite{nawaz2017}.
+\paragraph{Artefactos.}
+Entre sus artefactos principales se encuentran el modelo del dominio, la lista de funcionalidades, los planes por funcionalidad, los paquetes de diseño y las versiones construidas del sistema. Estos artefactos permiten planificar, dar seguimiento y evidenciar el progreso de manera ordenada \cite{nawaz2017}.
+\paragraph{Prácticas.}
+Sus prácticas más representativas incluyen el modelado del dominio, el desarrollo por funcionalidades, la propiedad individual de clases, las inspecciones, la construcción incremental y los reportes de progreso medidos por funcionalidades terminadas. Con ello, FDD busca mantener una visión técnica clara sin perder la orientación al valor para el cliente \cite{nawaz2017}.
+\paragraph{Ventajas.}
+FDD ofrece progreso visible, organización clara del trabajo, buena escalabilidad en equipos medianos o grandes, control arquitectónico y orientación al cliente a través de funcionalidades con valor de negocio. Su estructura puede ser especialmente útil cuando el proyecto requiere seguimiento técnico riguroso y una distribución explícita de responsabilidades \cite{nawaz2017}.
+\paragraph{Desventajas.}
+Puede requerir experiencia sólida en modelado, roles técnicos bien definidos y una estructura organizativa clara. Además, tiende a ser más pesado en proyectos pequeños o altamente cambiantes, donde sus prácticas y formalidad pueden convertirse en una carga mayor que el beneficio obtenido \cite{nawaz2017}.
+\paragraph{Trabajo de investigación 1.}
+        \datosestudio{Using FDD for Small Project: An Empirical Case Study}{Shabib Aftab y colaboradores}{2019}{\textit{International Journal of Advanced Computer Science and Applications}}{10.14569/IJACSA.2019.0100319}
+\paragraph{Contexto del estudio.}
+El estudio analizó la aplicación de FDD en un proyecto web pequeño de gestión de recursos humanos. El interés principal fue determinar si una metodología con estructura relativamente formal como FDD podía resultar adecuada para proyectos de pequeña escala \cite{aftab2019}.
+\paragraph{Método de implementación.}
+La implementación se realizó mediante un proyecto de desarrollo con cuatro iteraciones y un equipo de cinco integrantes, usando tecnologías orientadas a objetos como C\# y ASP.NET. El proceso siguió la lógica de FDD, pasando por modelado inicial, lista de funcionalidades, planificación por funcionalidad, diseño por funcionalidad y construcción por funcionalidad. Posteriormente, los resultados del caso fueron comparados con un estudio previo basado en XP para examinar diferencias de desempeño \cite{aftab2019}.
+\paragraph{Valores referenciales.}
+El estudio tomó como referencia distintos elementos asociados a la calidad y al desempeño del proceso, con el fin de valorar la adecuación de FDD en proyectos pequeños. Entre los aspectos analizados estuvieron métricas relacionadas con la efectividad del desarrollo, la calidad general del producto y el comportamiento del modelo frente a un enfoque ágil alternativo como XP \cite{aftab2019}.
+\paragraph{Resultados.}
+Los resultados mostraron que FDD obtuvo un rendimiento inferior a XP en casi todas las métricas de calidad consideradas dentro del estudio. Los autores atribuyeron este resultado a factores como la estructura pesada del método, la complejidad de sus prácticas y la rigidez organizativa que introduce en contextos pequeños. En conclusión, el estudio sugiere que FDD puede no ser la mejor alternativa para proyectos de pequeña escala \cite{aftab2019}.
+\paragraph{Trabajo de investigación 2.}
+        \datosestudio{Developing Secure Websites Using Feature Driven Development (FDD): A Case Study}{Adila Firdaus, Imran Ghani y Nor Izzaty Mohd Yasin}{2013}{\textit{Journal of Clean Energy Technologies}}{10.7763/JOCET.2013.V1.73}
+\paragraph{Contexto del estudio.}
+El análisis se realizó en un entorno académico controlado, específicamente en un curso de desarrollo de aplicaciones en la Universiti Teknologi Malaysia. La investigación surgió porque los autores identificaron que varias metodologías ágiles, entre ellas FDD, Scrum y XP, habían sido cuestionadas por no ofrecer una base suficientemente sólida para el desarrollo seguro de software. Por ello, decidieron examinar si FDD podía aplicarse en proyectos web considerando simultáneamente seguridad y cambios de requisitos \cite{firdaus2013}.
+\paragraph{Método de implementación.}
+La implementación se realizó dividiendo la clase en siete grupos de trabajo, de los cuales dos grupos utilizaron FDD como metodología de desarrollo. Primero, los estudiantes recibieron una introducción al enfoque FDD y luego adaptaron su proceso a los requerimientos del proyecto. Más adelante, también fueron introducidos a conceptos básicos de seguridad para incorporarlos en el desarrollo del sitio web. De esta manera, el estudio combinó el uso de FDD con una orientación específica hacia la construcción de software más seguro \cite{firdaus2013}.
+\paragraph{Valores referenciales.}
+Los valores de referencia del estudio estuvieron orientados principalmente a la capacidad del modelo para manejar cambios de requisitos, su utilidad como marco para el desarrollo seguro y la respuesta de los estudiantes frente a la adopción de FDD. Aunque el resumen del estudio muestra un énfasis más cualitativo que cuantitativo, sí permite identificar que el interés central estuvo en analizar la viabilidad del método en términos de seguridad, adaptabilidad y experiencia de uso \cite{firdaus2013}.
+\paragraph{Resultados.}
+Los resultados mostraron que la experiencia despertó interés en los estudiantes y que el uso de FDD permitió explorar una forma estructurada de desarrollar sitios web con atención a requisitos de seguridad. El estudio concluyó que FDD puede utilizarse como base para proyectos educativos orientados al desarrollo seguro, aunque también dejó ver que el equipo necesita orientación adicional en temas de seguridad para aprovechar mejor el enfoque \cite{firdaus2013}.
+    
+\subsubsection{Crystal}
+\paragraph{Descripción general.}
+Crystal es una familia de metodologías ágiles centrada en las personas, la comunicación y la adaptación del proceso según el tamaño del equipo y la criticidad del sistema. Fue propuesta por Alistair Cockburn en la década de 1990 como respuesta a la rigidez de los modelos tradicionales. A diferencia de otros enfoques que definen un conjunto más estable de ceremonias y artefactos, Crystal plantea que el proceso debe ajustarse al contexto real del proyecto. Por ello, se le considera una metodología humanocéntrica y altamente adaptable \cite{cockburn2004,dingsoyr2012}.
+\paragraph{Concordancia con el Manifiesto Ágil.}
+Crystal se alinea de forma clara con el Manifiesto Ágil porque prioriza a las personas y sus interacciones, la comunicación frecuente, la entrega continua de software útil y la adaptación del proceso según el contexto del proyecto. En lugar de imponer una estructura pesada, busca que el equipo aprenda, ajuste prácticas y mantenga una colaboración cercana para sostener el desarrollo \cite{dingsoyr2012}.
+\paragraph{Enfoque principal.}
+El enfoque principal de Crystal se centra en las personas, la comunicación y la adaptación del proceso según el contexto del proyecto. Su orientación no está en imponer una metodología pesada, sino en construir un entorno de trabajo efectivo donde el equipo pueda colaborar, entregar valor con frecuencia y ajustar sus prácticas conforme cambian las necesidades. Por eso, Crystal se considera una metodología ágil humanocéntrica, flexible y altamente dependiente del contexto real del desarrollo \cite{cockburn2004}.
+\paragraph{Principios.}
+Los principios de Crystal se fundamentan en la idea de que el éxito del desarrollo de software depende más de las personas, de su comunicación y de su capacidad de adaptación que del cumplimiento estricto de un proceso formal. Entre sus fundamentos más importantes se encuentran la entrega frecuente, la comunicación cercana, la mejora reflexiva, la seguridad personal dentro del equipo y la adaptación de la metodología según el tamaño y la criticidad del proyecto \cite{cockburn2004}.
+\paragraph{Ciclo de vida.}
+El ciclo de vida de Crystal no se plantea como una secuencia rígida y cerrada, sino como un proceso adaptable que normalmente inicia con una definición general del proyecto, la organización del equipo y la identificación del nivel de criticidad del sistema. A partir de ello, el trabajo se desarrolla mediante iteraciones cortas, con entregas frecuentes de software funcional y revisiones periódicas del progreso. Después de cada ciclo, el equipo reflexiona sobre lo realizado, detecta problemas, ajusta prácticas y adapta el proceso según las necesidades reales del proyecto \cite{cockburn2004}.
+\paragraph{Roles.}
+Crystal no fija roles tan estrictos como otros enfoques ágiles. Las responsabilidades se distribuyen según las necesidades del proyecto, el tamaño del equipo y la criticidad del sistema. Esta flexibilidad permite que el equipo se organice de manera más natural, aunque también exige madurez y buena coordinación entre sus integrantes \cite{cockburn2004}.
+\paragraph{Artefactos.}
+Sus artefactos suelen ser ligeros: entregables incrementales, notas de iteración, listas de tareas, registros de seguimiento y la documentación mínima necesaria para sostener la comunicación y la continuidad del trabajo. Crystal no persigue una carga documental excesiva, sino la cantidad justa de soporte para que el equipo mantenga claridad y colaboración \cite{cockburn2004}.
+\paragraph{Prácticas.}
+Entre las prácticas más representativas de Crystal destacan la comunicación cara a cara, la entrega frecuente de software funcional, la reflexión periódica del equipo, la mejora continua y la adaptación constante del proceso de trabajo. También son centrales el trabajo colaborativo, la cercanía con los usuarios y la creación de un entorno en el que los miembros del equipo puedan compartir ideas y problemas sin temor \cite{cockburn2004}.
+\paragraph{Ventajas.}
+Entre las principales ventajas de Crystal se encuentra su alta adaptabilidad, ya que permite ajustar el proceso al tamaño del equipo, al entorno de trabajo y a la criticidad del sistema. También favorece una comunicación más fuerte entre los integrantes, impulsa la mejora continua y ofrece una flexibilidad metodológica que puede resultar útil en proyectos donde los cambios son frecuentes. Asimismo, su enfoque humano permite que el equipo trabaje con menos burocracia y mayor cercanía \cite{dingsoyr2012}.
+\paragraph{Desventajas.}
+A pesar de sus fortalezas, Crystal también presenta algunas limitaciones. Su menor estructura formal puede generar ambigüedad si el equipo no tiene suficiente experiencia o madurez para autogestionarse. Además, depende en gran medida de la calidad de la comunicación y de la colaboración entre los miembros, por lo que puede resultar difícil de aplicar en entornos distribuidos, en organizaciones muy rígidas o en equipos donde no exista confianza y coordinación \cite{anwer2017,dingsoyr2012}.
+\paragraph{Trabajo de investigación 1.}
+        \datosestudio{Rescue of a Whole-Farm System: Crystal Clear in Action}{Pablo Mangudo, Mauricio Arroqui, Claudia Marcos y Claudio F. Machado}{2012}{\textit{International Journal of Agile and Extreme Software Development}}{Sin DOI especificado en la bibliografía utilizada}
+\paragraph{Contexto del estudio.}
+El estudio se desarrolló en un proyecto del sector agrícola, orientado a construir un simulador web de sistema productivo integral. Inicialmente el proyecto había avanzado con un enfoque tradicional tipo cascada, pero se detectaron diversos problemas y el desarrollo fracasó. Ante esta situación, los autores retomaron el proyecto y aplicaron Crystal Clear como alternativa más adecuada a los requisitos y al contexto del sistema \cite{mangudo2012}.
+\paragraph{Método de implementación.}
+La implementación se realizó en una tercera etapa del proyecto, luego del fracaso del ciclo de vida en cascada. En esta nueva fase se aplicó Crystal Clear, enfatizando la comunicación eficiente del equipo, la entrega frecuente de código utilizable y una dinámica de trabajo más cercana a las necesidades reales del patrocinador. El cambio metodológico buscó rescatar el proyecto mediante una forma de trabajo más flexible, colaborativa y apropiada para el contexto del desarrollo \cite{mangudo2012}.
+\paragraph{Valores referenciales.}
+Los valores referenciales considerados estuvieron vinculados con la comunicación del equipo, la frecuencia de entrega, la satisfacción del patrocinador, la capacidad de adaptación y la recuperación del proyecto tras el fracaso previo. Más que centrarse solo en métricas numéricas tradicionales, la investigación valoró el impacto del método sobre la viabilidad práctica del desarrollo y la percepción positiva del cliente respecto al avance del sistema \cite{mangudo2012}.
+\paragraph{Resultados.}
+Los resultados mostraron que Crystal Clear permitió rescatar el proyecto y mejorar de manera progresiva la satisfacción del patrocinador. Los autores concluyeron que la comunicación eficiente del equipo y la entrega frecuente de código utilizable contribuyeron notablemente al éxito de la nueva fase del sistema. Además, señalaron que Crystal Clear pudo aplicarse en un período corto sin mayores dificultades, lo que refuerza su utilidad en proyectos pequeños o medianos \cite{mangudo2012}.
+\paragraph{Trabajo de investigación 2.}
+        \datosestudio{A Reliable Hybrid Software Development Model: CRUP (Crystal Clear \& RUP)}{Taghi Javdani Gandomani y Mohammadreza Mollahoseini Ardakani}{2021}{\textit{International Conference on Emerging Applications and Technologies for Industry 4.0}, Springer}{10.1007/978-3-030-80216-5\_5}
+\paragraph{Contexto del estudio.}
+El estudio se desarrolló en el contexto de proyectos de software de pequeña y mediana escala, donde los autores identificaron limitaciones tanto en enfoques tradicionales como en métodos ágiles puros. A partir de ello propusieron un modelo híbrido que combina elementos de RUP con Crystal Clear, buscando aprovechar la disciplina del primero y la flexibilidad centrada en personas del segundo \cite{gandomani2021}.
+\paragraph{Método de implementación.}
+La implementación consistió en diseñar el modelo CRUP, basado en la integración de prácticas de RUP y Crystal Clear, y después emplearlo en un caso de estudio. El propósito fue evaluar si esta combinación podía ofrecer mejores resultados en proyectos pequeños y medianos, donde se necesita equilibrio entre estructura y flexibilidad. En la lógica del modelo, Crystal Clear aportó el componente humano, adaptativo y comunicativo, mientras que RUP aportó mayor formalización del proceso \cite{gandomani2021}.
+\paragraph{Valores referenciales.}
+Los valores referenciales del estudio estuvieron relacionados con la capacidad del modelo para adaptarse a proyectos pequeños y medianos, la mejora del proceso de desarrollo, la confiabilidad del modelo, la adecuación metodológica y el equilibrio entre disciplina y flexibilidad. Aunque el artículo se orienta a un modelo híbrido, el aporte de Crystal Clear se refleja en la importancia concedida a la comunicación, a la simplicidad y a la adaptabilidad del trabajo \cite{gandomani2021}.
+\paragraph{Resultados.}
+Los resultados mostraron que el modelo CRUP presentó capacidades considerables para proyectos pequeños y medianos en comparación con sus metodologías base. El estudio concluye que la combinación de la disciplina de RUP con la orientación humana y flexible de Crystal Clear puede mejorar la adecuación del proceso de desarrollo. Aunque no se trata de una aplicación de Crystal puro, sí constituye una evidencia relevante del valor práctico de Crystal Clear cuando se incorpora en un entorno real de mejora metodológica \cite{gandomani2021}.
+    
 \subsection{Resultados obtenidos}
-De acuerdo con el tipo de trabajo, se plasmarán los resultados alcanzados en la guía tarea una vez ejecutadas las actividades. Se pueden emplear figuras y tablas las cuales deben ser numeradas. 
+El análisis permitió identificar que no existe una metodología universalmente superior, sino enfoques más convenientes según el contexto del proyecto. Scrum sobresale en proyectos cambiantes que requieren iteraciones cortas y fuerte coordinación del equipo; Kanban es especialmente útil cuando se desea optimizar el flujo continuo y reducir cuellos de botella; XP destaca por su orientación a la calidad técnica y a la retroalimentación rápida; Scrumban ofrece una combinación equilibrada entre estructura y flexibilidad; FDD resulta más apropiada en contextos con mayor necesidad de control técnico y funcionalidades claramente definidas; y Crystal muestra gran valor en equipos que priorizan la comunicación humana y la adaptación del proceso \cite{tanjung2024,senapathi2021,rogers2023,gea2024,aftab2019,mangudo2012}.
 
+Los trabajos investigativos revisados también evidencian que la efectividad de cada metodología depende de factores como la madurez organizacional, el tamaño del equipo, la criticidad del sistema, la participación del cliente y la claridad en la implementación. De forma general, las investigaciones reportan mejoras en coordinación, visibilidad del trabajo, eficiencia del flujo, calidad del software, motivación o adaptabilidad, aunque también señalan limitaciones cuando la metodología se aplica en contextos no compatibles con su lógica de trabajo \cite{taufiq2020,shania2024,pairprogramming2024,yilmaz2025,firdaus2013,gandomani2021}.
 
-%Especifique las TAC's utilizadas en la Tarea. 
 \subsection{Habilidades blandas empleadas en la tarea}
 \begin{itemize}
     \item[$\square$] Liderazgo
     \item[$\square$] Trabajo en equipo
-    \item[$\square$] Comunicación asertiva
-    \item[$\square$] La empatía
-    \item[$\square$] Pensamiento crítico
+    \item[$\boxtimes$] Comunicación asertiva
+    \item[$\square$] Empatía
+    \item[$\boxtimes$] Pensamiento crítico
     \item[$\square$] Flexibilidad
-    \item[$\square$] La resolución de conflictos
+    \item[$\square$] Resolución de conflictos
     \item[$\square$] Adaptabilidad
-    \item[$\square$] Responsabilidad
+    \item[$\boxtimes$] Responsabilidad
 \end{itemize}
 
-
-
 \subsection{Conclusiones}
-Constituye la respuesta que propone el o los estudiantes para el problema que originó el trabajo desarrollado, de acuerdo con los datos recogidos y la teoría aplicada. 
+El estudio comparativo demuestra que las metodologías ágiles no deben seleccionarse por popularidad, sino por su adecuación al contexto del proyecto. Scrum, Kanban, XP, Scrumban, FDD y Crystal comparten principios ágiles, pero difieren en su nivel de estructura, en su enfoque técnico, en su tratamiento del flujo de trabajo y en la forma de coordinación del equipo. Por ello, la elección metodológica debe considerar tamaño del equipo, criticidad del sistema, necesidad de control técnico, ritmo de cambio de requisitos y cultura organizacional \cite{hema2020,castillo2024,tracz2002,donthi2025,nawaz2017,cockburn2004}.
+
+Además, la evidencia investigativa revisada confirma que la implementación adecuada de una metodología influye significativamente en la calidad de los resultados. Cuando la adopción está alineada con el contexto, se observan mejoras en productividad, tiempo de entrega, comunicación, visibilidad del trabajo y satisfacción de las partes interesadas; cuando no existe esa alineación, aparecen limitaciones, resistencias o bajo desempeño. En consecuencia, el valor de una metodología depende tanto de sus principios como de la madurez con la que se la implemente dentro de la organización \cite{tanjung2024,senapathi2021,rogers2023,gea2024,aftab2019,mangudo2012}.
 
 \subsection{Recomendaciones}
-Redactar las sugerencias o acciones concretas que se derivan de la tarea desarrollada. \cite{greenwade93}
+Se recomienda seleccionar la metodología de desarrollo después de analizar el contexto real del proyecto y no únicamente por preferencia teórica. Para proyectos con alta incertidumbre y necesidad de iteración frecuente, Scrum o XP pueden resultar convenientes; cuando se necesita control del flujo y visibilidad permanente, Kanban o Scrumban ofrecen ventajas; si el proyecto requiere mayor organización técnica basada en funcionalidades, FDD puede ser útil; y en equipos pequeños con fuerte comunicación, Crystal puede aportar buenos resultados \cite{hema2020,castillo2024,tracz2002,donthi2025,nawaz2017,cockburn2004}.
 
+También se recomienda fortalecer la capacitación del equipo antes de adoptar cualquier metodología, definir claramente prácticas y responsabilidades, y acompañar la implementación con evaluación continua. La revisión de estudios empíricos demuestra que muchas fallas no provienen de la metodología en sí, sino de una adopción incompleta, poco madura o desalineada con la realidad organizacional \cite{taufiq2020,shania2024,yilmaz2025,firdaus2013,gandomani2021}.
 
 \subsection{Referencias}
-Insertar las referencias bibliográficas empleadas aplicando la norma IEEE.
-
-\vspace{-3em} %reduce el espacio causado por refname vacío
+\vspace{-2em}
 \renewcommand{\refname}{}
 \bibliographystyle{ieeetr}
 \bibliography{sample}
 
 \subsection{Anexos}
-\vfill
+
 \end{document}
