@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
-\usepackage[letterpaper,top=2cm,bottom=5cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage[letterpaper,top=2cm,bottom=3cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -12,6 +12,9 @@
 \usepackage{enumitem}
 \usepackage{setspace}
 \usepackage{titlesec}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
 
 \hypersetup{colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue}
 \setlength{\parindent}{0pt}
@@ -78,7 +81,7 @@
 \begin{flushleft}
 \begin{tabular}{ l l }
     \textbf{Tema:} & Análisis comparativo de seis metodologías\\
-                   &  ágiles de desarrollo de software \\
+                    &   ágiles de desarrollo de software \\
     \textbf{Unidad de Organización Curricular:} & Profesional \\
     \textbf{Nivel y Paralelo:} & 4to Semestre ``B'' \\
     \textbf{Alumnos participantes:} & Guatemal Avilez Bryan Stalin \\
@@ -243,15 +246,15 @@ Los valores referenciales considerados incluyeron colaboración, comunicación, 
 \paragraph{Resultados.}
 Los resultados mostraron que un mayor uso de XP se relacionó con mayor confianza dentro del equipo y menor nivel de estrés. También se identificó una relación positiva entre prácticas de XP, valores ágiles y desempeño colaborativo del equipo, lo que refuerza el aporte de XP más allá del plano puramente técnico \cite{rogers2023}.
 \paragraph{Trabajo de investigación 2.}
-        \datosestudio{Enhancing Collaboration and Code Quality using Pair Programming}{Autor no especificado}{2024}{Zenodo}{10.5281/zenodo.14557575}
+        \datosestudio{Enhancing Collaboration and Code Quality Using Pair Programming}{Gustavo de la Cruz Martínez y Selene Marisol Martínez Ramírez}{2024}{\textit{International Journal of Software Engineering \& Applications (IJSEA)}, vol. 15, no. 6, pp. 47--61}{10.5121/ijsea.2024.15604}
 \paragraph{Contexto del estudio.}
-El estudio se sitúa en equipos de desarrollo de software que trabajan en entornos tradicionales, ágiles y remotos o híbridos. El eje central de la investigación es la aplicación de \textit{pair programming}, considerada una de las prácticas más representativas de XP, dentro de contextos reales de colaboración técnica \cite{pairprogramming2024}.
+El artículo presenta un caso aplicado en el contexto de una universidad mexicana, específicamente en el proceso de modernización de un sistema web académico y administrativo. El proyecto se desarrolló bajo un modelo de trabajo híbrido, con un equipo base de tres desarrolladores y la incorporación temporal de estudiantes colaboradores. Este escenario resulta relevante porque muestra la aplicación de prácticas de XP y \textit{pair programming} en un entorno real con rotación de integrantes, trabajo distribuido y necesidad de mantener productividad y calidad del código \cite{pairprogramming2024}.
 \paragraph{Método de implementación.}
-La implementación consistió en la aplicación de programación en pareja, con colaboración en tiempo real entre desarrolladores y apoyo de herramientas colaborativas modernas. Esta práctica se integró con enfoques ágiles de trabajo, observando cómo influía en la construcción del software, en la resolución conjunta de problemas y en la interacción técnica entre miembros del equipo \cite{pairprogramming2024}.
+La implementación se apoyó en varias prácticas propias de XP. Primero, se impartió una capacitación inicial de 40 horas a los estudiantes sobre Laravel, Git, Visual Studio Code y fundamentos de XP. Después, la programación en pareja se aplicó como práctica central, utilizando Discord para la colaboración en tiempo real y Zoom para sesiones de resolución de dudas. El proceso también incorporó reuniones semanales, integración continua con Git, retroalimentación iterativa a partir del rol de cliente interno, diseño simple, refactorización y pruebas funcionales durante las integraciones. Para evaluar la experiencia, el equipo respondió un cuestionario con escala Likert sobre las prácticas implementadas \cite{pairprogramming2024}.
 \paragraph{Valores referenciales.}
-Los valores e indicadores analizados incluyen comunicación constante, colaboración, aprendizaje compartido, calidad del código, mantenibilidad del software, coordinación del equipo y resolución de problemas. Estos elementos permitieron evaluar tanto el impacto técnico como el colaborativo de la práctica \cite{pairprogramming2024}.
+Los valores referenciales considerados en el estudio abarcan tanto aspectos técnicos como colaborativos. Se evaluó la percepción general sobre XP, la utilidad de las pequeñas liberaciones, el valor del \textit{on-site customer}, el costo de los cambios solicitados, la experiencia con \textit{pair programming}, la satisfacción con el diseño simple, el nivel de colaboración y respeto entre pares, la frecuencia de refactorización, la regularidad de la integración continua y la calidad de las pruebas realizadas. Estos indicadores permitieron valorar la práctica desde una perspectiva más amplia que la simple calidad del código \cite{pairprogramming2024}.
 \paragraph{Resultados.}
-Los resultados muestran una mejora en la calidad del software, una mayor mantenibilidad del código y mejores niveles de resolución de problemas. También se identificaron beneficios adicionales como la transferencia de conocimiento y una mejor coordinación del equipo. No obstante, el estudio señala ciertas limitaciones, entre ellas el mayor esfuerzo requerido y la necesidad de coordinación constante entre quienes participan en la programación en pareja \cite{pairprogramming2024}.
+Los resultados mostraron una percepción positiva del uso de XP y de la programación en pareja dentro del proyecto. El estudio destaca mejoras en la colaboración, el aprendizaje compartido, la claridad del código y la capacidad de adaptación frente a cambios. También se identificaron beneficios concretos como mejor integración de nuevos miembros, mayor cohesión del equipo, desarrollo de habilidades en estudiantes colaboradores y una base de código más mantenible. No obstante, el artículo también señala áreas de mejora, especialmente en integración continua y en uniformidad de las pruebas, lo que sugiere que la práctica es valiosa, pero requiere disciplina y seguimiento constante para sostener su efectividad \cite{pairprogramming2024}.
     
 \subsubsection{Scrumban}
 \paragraph{Descripción general.}
@@ -285,7 +288,7 @@ El estudio tomó como referentes principales la colaboración entre equipos, la 
 \paragraph{Resultados.}
 Los resultados mostraron mejora en la coordinación del equipo, mayor visibilidad del proceso, reducción del tiempo de entrega, mejor integración entre ventas y desarrollo y mayor satisfacción del cliente. En términos generales, el estudio evidenció que Scrumban permitió hacer más flexible y eficiente el trabajo organizacional de PT. Labani \cite{gea2024}.
 \paragraph{Trabajo de investigación 2.}
-        \datosestudio{A Scrumban Integrated Gamification Approach to Guide Software Process Improvement: A Turkish Case Study}{Murat Yilmaz y Rory V. O'Connor}{2025}{Documento académico con DOI registrado}{10.34961/1083}
+        \datosestudio{A Scrumban Integrated Gamification Approach to Guide Software Process Improvement: A Turkish Case Study}{Murat Yilmaz y Rory V. O'Connor}{2016}{\textit{Tehnički vjesnik / Technical Gazette}, vol. 23, no. 1, pp. 237--245}{10.17559/TV-20140922220409}
 \paragraph{Contexto del estudio.}
 La investigación se realizó en una empresa tecnológica pequeña o mediana dedicada al desarrollo de software, donde existía la necesidad de mejorar procesos, incrementar la eficiencia y fortalecer la motivación del equipo. El trabajo se orientó a evaluar no solo la utilidad de Scrumban, sino también el efecto adicional de integrar gamificación en el proceso \cite{yilmaz2025}.
 \paragraph{Método de implementación.}
@@ -359,7 +362,7 @@ Entre las principales ventajas de Crystal se encuentra su alta adaptabilidad, ya
 \paragraph{Desventajas.}
 A pesar de sus fortalezas, Crystal también presenta algunas limitaciones. Su menor estructura formal puede generar ambigüedad si el equipo no tiene suficiente experiencia o madurez para autogestionarse. Además, depende en gran medida de la calidad de la comunicación y de la colaboración entre los miembros, por lo que puede resultar difícil de aplicar en entornos distribuidos, en organizaciones muy rígidas o en equipos donde no exista confianza y coordinación \cite{anwer2017,dingsoyr2012}.
 \paragraph{Trabajo de investigación 1.}
-        \datosestudio{Rescue of a Whole-Farm System: Crystal Clear in Action}{Pablo Mangudo, Mauricio Arroqui, Claudia Marcos y Claudio F. Machado}{2012}{\textit{International Journal of Agile and Extreme Software Development}}{Sin DOI especificado en la bibliografía utilizada}
+        \datosestudio{Rescue of a Whole-Farm System: Crystal Clear in Action}{Pablo Mangudo, Mauricio Arroqui, Claudia Marcos y Claudio F. Machado}{2012}{\textit{International Journal of Agile and Extreme Software Development}, vol. 1, no. 1, pp. 6--22}{10.1504/IJAESD.2012.048306}
 \paragraph{Contexto del estudio.}
 El estudio se desarrolló en un proyecto del sector agrícola, orientado a construir un simulador web de sistema productivo integral. Inicialmente el proyecto había avanzado con un enfoque tradicional tipo cascada, pero se detectaron diversos problemas y el desarrollo fracasó. Ante esta situación, los autores retomaron el proyecto y aplicaron Crystal Clear como alternativa más adecuada a los requisitos y al contexto del sistema \cite{mangudo2012}.
 \paragraph{Método de implementación.}
@@ -379,10 +382,44 @@ Los valores referenciales del estudio estuvieron relacionados con la capacidad d
 \paragraph{Resultados.}
 Los resultados mostraron que el modelo CRUP presentó capacidades considerables para proyectos pequeños y medianos en comparación con sus metodologías base. El estudio concluye que la combinación de la disciplina de RUP con la orientación humana y flexible de Crystal Clear puede mejorar la adecuación del proceso de desarrollo. Aunque no se trata de una aplicación de Crystal puro, sí constituye una evidencia relevante del valor práctico de Crystal Clear cuando se incorpora en un entorno real de mejora metodológica \cite{gandomani2021}.
     
-\subsection{Resultados obtenidos}
-El análisis permitió identificar que no existe una metodología universalmente superior, sino enfoques más convenientes según el contexto del proyecto. Scrum sobresale en proyectos cambiantes que requieren iteraciones cortas y fuerte coordinación del equipo; Kanban es especialmente útil cuando se desea optimizar el flujo continuo y reducir cuellos de botella; XP destaca por su orientación a la calidad técnica y a la retroalimentación rápida; Scrumban ofrece una combinación equilibrada entre estructura y flexibilidad; FDD resulta más apropiada en contextos con mayor necesidad de control técnico y funcionalidades claramente definidas; y Crystal muestra gran valor en equipos que priorizan la comunicación humana y la adaptación del proceso \cite{tanjung2024,senapathi2021,rogers2023,gea2024,aftab2019,mangudo2012}.
 
-Los trabajos investigativos revisados también evidencian que la efectividad de cada metodología depende de factores como la madurez organizacional, el tamaño del equipo, la criticidad del sistema, la participación del cliente y la claridad en la implementación. De forma general, las investigaciones reportan mejoras en coordinación, visibilidad del trabajo, eficiencia del flujo, calidad del software, motivación o adaptabilidad, aunque también señalan limitaciones cuando la metodología se aplica en contextos no compatibles con su lógica de trabajo \cite{taufiq2020,shania2024,pairprogramming2024,yilmaz2025,firdaus2013,gandomani2021}.
+\subsubsection{Tabla comparativa sintética}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.1cm}>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}p{2.7cm}}
+\toprule
+\textbf{Metodología} & \hspace{0.15cm}\textbf{Enfoque principal} & \hspace{0.1cm}\textbf{Estructura y roles} & \textbf{Fortalezas destacadas} & \textbf{Contexto recomendado y límites} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Metodología} & \hspace{0.15cm}\textbf{Enfoque principal} & \hspace{0.1cm}\textbf{Estructura y roles} & \textbf{Fortalezas destacadas} & \textbf{Contexto recomendado y límites} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Scrum & Gestión iterativa e incremental por sprints. & Roles bien definidos: Product Owner, Scrum Master y Developers. & Alta adaptabilidad, visibilidad del avance, retroalimentación frecuente y cercanía con el cliente. & Conveniente en proyectos cambiantes y con necesidad de coordinación continua. Puede fallar si el equipo no tiene disciplina colaborativa. \\
+Kanban & Gestión visual del trabajo y optimización del flujo continuo. & No exige roles rígidos; prioriza responsabilidad compartida. & Identificación temprana de cuellos de botella, control del WIP y mejora continua del proceso. & Útil en contextos operativos y de mantenimiento donde importa estabilizar el flujo. Puede quedarse corto cuando se necesita planificación más estructurada. \\
+XP & Calidad técnica del software y retroalimentación rápida. & Cliente, programadores, tester, coach, tracker y manager. & Mejora de código, detección temprana de errores, refactorización e integración continua. & Adecuada en equipos pequeños o medianos con fuerte compromiso técnico. Su exigencia técnica puede dificultar la adopción en equipos poco maduros. \\
+Scrumban & Equilibrio entre la estructura de Scrum y la fluidez de Kanban. & Roles flexibles; conserva cierta organización sin rigidez excesiva. & Flexibilidad, visibilidad del trabajo y mejor ajuste entre planificación y flujo continuo. & Recomendable cuando Scrum resulta rígido y Kanban demasiado abierto. Requiere claridad para no generar ambigüedad metodológica. \\
+FDD & Desarrollo incremental guiado por funcionalidades medibles. & Roles técnicos definidos y responsabilidad explícita. & Progreso visible, control arquitectónico y buena escalabilidad en proyectos medianos o grandes. & Útil en proyectos con dominio claro y funcionalidades bien delimitadas. Puede resultar pesado en proyectos pequeños o muy cambiantes. \\
+Crystal & Adaptación del proceso según personas, tamaño del equipo y criticidad. & Roles flexibles y fuerte dependencia de la comunicación del equipo. & Flexibilidad metodológica, menor burocracia y orientación humanocéntrica. & Adecuada en equipos pequeños o medianos con buena comunicación. Puede ser difícil en entornos rígidos o muy distribuidos. \\
+\end{longtable}
+\normalsize
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1}
+
+\subsubsection{Análisis comparativo integrador}
+\paragraph{Comparación entre metodologías.}
+Desde una perspectiva comparativa, Scrum y Scrumban comparten la intención de organizar el trabajo de manera visible y sostenida, pero difieren en el nivel de formalidad: Scrum establece roles y eventos claramente definidos, mientras que Scrumban relaja esa estructura para favorecer un flujo más continuo. Kanban, por su parte, se distancia de ambos al priorizar la visualización del trabajo y la estabilidad del flujo por encima de la iteración fija. En contraste, XP no se distingue tanto por la gestión del trabajo como por la profundidad de sus prácticas técnicas, ya que pone el mayor énfasis en pruebas, refactorización, integración continua y programación en pareja. FDD se aparta de estos enfoques al introducir una organización más técnica y jerárquica alrededor de funcionalidades, mientras que Crystal se ubica en el extremo más flexible y humanocéntrico, pues subordina el proceso a las características reales del equipo y del proyecto.
+
+\paragraph{Criterio de selección metodológica.}
+A partir de esta comparación, puede sostenerse que no todas las metodologías responden al mismo tipo de necesidad. Scrum y XP resultan especialmente valiosas cuando existe alta incertidumbre y se requiere retroalimentación frecuente; Kanban y Scrumban son más convenientes cuando la prioridad está en mejorar el flujo, reducir bloqueos y mantener flexibilidad operativa; FDD adquiere mayor sentido cuando el proyecto demanda control técnico, modelado previo y seguimiento por funcionalidades; y Crystal ofrece mejores resultados cuando el éxito depende de equipos pequeños o medianos con comunicación cercana y capacidad de adaptación. En consecuencia, la selección metodológica no debería hacerse por tendencia o popularidad, sino a partir del tipo de proyecto, la madurez del equipo, la complejidad técnica y el grado de cambio esperado en los requisitos.
+
+\subsection{Resultados obtenidos}
+El análisis permitió identificar que no existe una metodología universalmente superior, sino enfoques más convenientes según el contexto del proyecto. Scrum sobresale en proyectos cambiantes que requieren iteraciones cortas y coordinación intensiva; Kanban es especialmente útil cuando se desea optimizar el flujo continuo y reducir cuellos de botella; XP destaca más que las demás por su orientación a la calidad técnica y a la retroalimentación rápida; Scrumban ofrece una combinación equilibrada entre estructura y flexibilidad; FDD resulta más apropiada en contextos con mayor necesidad de control técnico y funcionalidades claramente definidas; y Crystal muestra gran valor en equipos que priorizan la comunicación humana y la adaptación del proceso. En términos comparativos, puede afirmarse que Scrum y XP son más fuertes cuando el proyecto necesita retroalimentación frecuente, Kanban y Scrumban cuando se busca eficiencia operacional del flujo, FDD cuando se requiere control por funcionalidades y Crystal cuando el éxito depende más de la dinámica del equipo que de una estructura metodológica rígida \cite{tanjung2024,senapathi2021,rogers2023,gea2024,aftab2019,mangudo2012}.
+
+Los trabajos investigativos revisados también evidencian que la efectividad de cada metodología depende de factores como la madurez organizacional, el tamaño del equipo, la criticidad del sistema, la participación del cliente y la claridad en la implementación. De forma general, las investigaciones reportan mejoras en coordinación, visibilidad del trabajo, eficiencia del flujo, calidad del software, motivación o adaptabilidad, aunque también señalan limitaciones cuando la metodología se aplica en contextos no compatibles con su lógica de trabajo. Esto confirma que el rendimiento metodológico no depende solo de la teoría del enfoque, sino también de la calidad de su adopción práctica y de su ajuste al entorno organizacional \cite{taufiq2020,shania2024,pairprogramming2024,yilmaz2025,firdaus2013,gandomani2021}.
 
 \subsection{Habilidades blandas empleadas en la tarea}
 \begin{itemize}
@@ -414,5 +451,6 @@ También se recomienda fortalecer la capacitación del equipo antes de adoptar c
 \bibliography{sample}
 
 \subsection{Anexos}
+Se pueden incorporar como anexos la guía APE proporcionada por el docente, la matriz de análisis bibliográfico, capturas de las búsquedas académicas realizadas y la versión digital del presente informe en formato \LaTeX{}.
 
 \end{document}
