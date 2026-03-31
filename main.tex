@@ -269,7 +269,7 @@ Como resultado del desarrollo de la guía, se obtuvieron modelos entidad/relaci�
 \begin{table}[H]
 \centering
 \caption{Resumen de resultados por ejercicio}
-\begin{tabular}{p{1.8cm} p{4.4cm} p{4.8cm} p{2.4cm} p{1.7cm}}
+\begin{tabular}{p{1.8cm} p{4.0cm} p{4.2cm} p{2.0cm} p{1.7cm}}
 \toprule
 \textbf{Ejercicio} & \textbf{Modelo E/R} & \textbf{Modelo relacional} & \textbf{Modelo físico} & \textbf{Registros} \\
 \midrule
@@ -277,6 +277,7 @@ Como resultado del desarrollo de la guía, se obtuvieron modelos entidad/relaci�
 2 & Profesor, Alumno, Módulo y relaciones de matrícula, docencia y supervisión & Tablas Profesor, Alumno, Módulo y Matrícula & Oracle & 3 por tabla \\
 3 & Cliente, Producto, Proveedor y relaciones Compra y Entrega con atributos propios & Tablas Cliente, Producto, Proveedor, Compra y Entrega & Oracle & 3 por tabla \\
 4 & Centro\_Trabajo, Departamento, Empleado, Hijo y Habilidad & Tablas Centro\_Trabajo, Departamento, Empleado, Hijo, Habilidad y Empleado\_Habilidad & Oracle & 3 por tabla \\
+Adic. 1 & Cliente, Compra, Detalle\_Compra, Producto y Proveedor & Tablas Clientes, Compras, Detalle\_Compra, Productos y Proveedores & Oracle & 3 o más \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -484,7 +485,632 @@ CREATE TABLE EMPLEADO_HABILIDAD_E4 (
         CHECK (PORCENTAJE >= 0 AND PORCENTAJE <= 100)
 );
 \end{lstlisting}
+\subsection{Ejercicio adicional 1: modelo transaccional de ventas}
 
+\subsubsection*{Enunciado}
+
+``Una empresa vende productos a sus clientes. Se necesita conocer los datos personales de los clientes (nombre, apellidos, CI, dirección y fecha de nacimiento). Cada producto tiene un código y un nombre, así como un precio unitario y una marca. Un cliente puede comprar varios productos, y un mismo producto puede ser comprado por varios clientes. Los productos son suministrados por diferentes proveedores. Se debe tener en cuenta que un proveedor puede suministrar diferentes productos y que un producto sólo puede ser suministrado por un proveedor. De cada proveedor se conoce el RUC, nombre y dirección.''
+
+
+\subsubsection*{1. Analisis del problema}
+
+Del enunciado se identifican primero los objetos principales del negocio:
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item Cliente
+    \item Producto
+    \item Proveedor
+\end{itemize}
+
+Ademas, para representar correctamente la operacion de compra, conviene agregar dos entidades transaccionales:
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item Compra
+    \item Detalle\_Compra
+\end{itemize}
+
+Esto se hace porque:
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item un cliente puede comprar muchos productos;
+    \item un producto puede ser comprado por muchos clientes;
+    \item esa relacion es de tipo muchos a muchos (N:M);
+    \item y en el modelo relacional una relacion N:M debe resolverse con una tabla intermedia.
+\end{itemize}
+
+\subsubsection*{2. Modelo conceptual}
+
+\paragraph{2.1 Entidades del negocio}
+
+\textbf{Cliente}
+
+Representa a las personas que compran productos.
+
+Atributos:
+\begin{itemize}[leftmargin=1.2cm]
+    \item CI
+    \item Nombre
+    \item Apellidos
+    \item Direccion
+    \item Fecha de nacimiento
+\end{itemize}
+
+\textbf{Proveedor}
+
+Representa a las empresas o personas que suministran productos.
+
+Atributos:
+\begin{itemize}[leftmargin=1.2cm]
+    \item RUC
+    \item Nombre
+    \item Direccion
+\end{itemize}
+
+\textbf{Producto}
+
+Representa los bienes que la empresa vende.
+
+Atributos:
+\begin{itemize}[leftmargin=1.2cm]
+    \item Codigo
+    \item Nombre
+    \item Precio unitario
+    \item Marca
+\end{itemize}
+
+\textbf{Compra}
+
+Representa una transaccion realizada por un cliente.
+
+Atributos:
+\begin{itemize}[leftmargin=1.2cm]
+    \item IdCompra
+    \item FechaCompra
+\end{itemize}
+
+\textbf{Detalle\_Compra}
+
+Representa los productos incluidos en una compra.
+
+Atributos:
+\begin{itemize}[leftmargin=1.2cm]
+    \item Cantidad
+    \item PrecioVenta
+\end{itemize}
+
+\paragraph{2.2 Reglas de negocio}
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item Un cliente puede realizar muchas compras.
+    \item Una compra pertenece a un solo cliente.
+    \item Una compra puede incluir uno o varios productos.
+    \item Un producto puede aparecer en muchas compras.
+    \item Un proveedor puede suministrar muchos productos.
+    \item Un producto es suministrado por un solo proveedor.
+\end{itemize}
+
+\subsubsection*{3. Modelo Entidad-Relacion (ER)}
+
+\paragraph{3.1 Entidades con sus claves}
+
+\textbf{CLIENTE}
+\begin{itemize}[leftmargin=1.2cm]
+    \item CI (clave primaria)
+    \item Nombre
+    \item Apellidos
+    \item Direccion
+    \item FechaNacimiento
+\end{itemize}
+
+\textbf{PROVEEDOR}
+\begin{itemize}[leftmargin=1.2cm]
+    \item RUC (clave primaria)
+    \item Nombre
+    \item Direccion
+\end{itemize}
+
+\textbf{PRODUCTO}
+\begin{itemize}[leftmargin=1.2cm]
+    \item CodigoProducto (clave primaria)
+    \item NombreProducto
+    \item PrecioUnitario
+    \item Marca
+\end{itemize}
+
+\textbf{COMPRA}
+\begin{itemize}[leftmargin=1.2cm]
+    \item IdCompra (clave primaria)
+    \item FechaCompra
+\end{itemize}
+
+\textbf{DETALLE\_COMPRA}
+\begin{itemize}[leftmargin=1.2cm]
+    \item IdCompra (parte de clave primaria y clave foranea)
+    \item CodigoProducto (parte de clave primaria y clave foranea)
+    \item Cantidad
+    \item PrecioVenta
+\end{itemize}
+
+\paragraph{3.2 Relaciones y cardinalidades}
+
+\textbf{PROVEEDOR --- SUMINISTRA --- PRODUCTO}
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item Un proveedor suministra muchos productos.
+    \item Un producto es suministrado por un solo proveedor.
+\end{itemize}
+
+Cardinalidad:
+
+\begin{center}
+\texttt{PROVEEDOR (1) ----- (N) PRODUCTO}
+\end{center}
+
+\textbf{CLIENTE --- REALIZA --- COMPRA}
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item Un cliente realiza muchas compras.
+    \item Una compra corresponde a un solo cliente.
+\end{itemize}
+
+Cardinalidad:
+
+\begin{center}
+\texttt{CLIENTE (1) ----- (N) COMPRA}
+\end{center}
+
+\textbf{COMPRA --- CONTIENE --- DETALLE\_COMPRA}
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item Una compra tiene varios detalles.
+    \item Cada detalle pertenece a una sola compra.
+\end{itemize}
+
+Cardinalidad:
+
+\begin{center}
+\texttt{COMPRA (1) ----- (N) DETALLE\_COMPRA}
+\end{center}
+
+\textbf{PRODUCTO --- APARECE\_EN --- DETALLE\_COMPRA}
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item Un producto puede aparecer en muchos detalles.
+    \item Cada detalle hace referencia a un solo producto.
+\end{itemize}
+
+Cardinalidad:
+
+\begin{center}
+\texttt{PRODUCTO (1) ----- (N) DETALLE\_COMPRA}
+\end{center}
+
+\subsubsection*{4. Paso del modelo ER al modelo relacional}
+
+\textbf{Regla 1. Cada entidad fuerte se convierte en una tabla}
+
+Por lo tanto se crean las tablas:
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item CLIENTES
+    \item PROVEEDORES
+    \item PRODUCTOS
+    \item COMPRAS
+\end{itemize}
+
+\textbf{Regla 2. Relacion 1:N}
+
+En una relacion 1:N, la clave primaria del lado 1 pasa como clave foranea al lado N.
+
+\textbf{PROVEEDOR 1:N PRODUCTO}
+
+La clave primaria de PROVEEDORES pasa a PRODUCTOS.
+
+Entonces:
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item RUC\_PROV sera FK en PRODUCTOS
+\end{itemize}
+
+\textbf{CLIENTE 1:N COMPRA}
+
+La clave primaria de CLIENTES pasa a COMPRAS.
+
+Entonces:
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item CI\_CLI sera FK en COMPRAS
+\end{itemize}
+
+\textbf{Regla 3. Relacion N:M}
+
+La relacion N:M se transforma en una tabla intermedia.
+
+La compra de productos se resuelve con:
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item COMPRAS
+    \item DETALLE\_COMPRA
+\end{itemize}
+
+En DETALLE\_COMPRA se almacenan:
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item ID\_COMPRA
+    \item COD\_PROD
+    \item CANTIDAD
+    \item PRECIO\_VENTA
+\end{itemize}
+
+La clave primaria sera compuesta:
+
+\begin{center}
+\texttt{(ID\_COMPRA, COD\_PROD)}
+\end{center}
+
+\subsubsection*{5. Modelo relacional}
+
+\textbf{Esquema relacional final}
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item \texttt{CLIENTES(CI\_CLI PK, NOM\_CLI, APE\_CLI, DIR\_CLI, FEC\_NAC)}
+    \item \texttt{PROVEEDORES(RUC\_PROV PK, NOM\_PROV, DIR\_PROV)}
+    \item \texttt{PRODUCTOS(COD\_PROD PK, NOM\_PROD, PRE\_UNIT, MARCA, RUC\_PROV FK)}
+    \item \texttt{COMPRAS(ID\_COMPRA PK, FEC\_COMPRA, CI\_CLI FK)}
+    \item \texttt{DETALLE\_COMPRA(ID\_COMPRA FK, COD\_PROD FK, CANTIDAD, PRECIO\_VENTA, PK(ID\_COMPRA, COD\_PROD))}
+\end{itemize}
+
+\subsubsection*{6. Modelo fisico en Oracle}
+
+Aqui ya se definen:
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item tipos de datos Oracle;
+    \item restricciones;
+    \item nombres de claves primarias;
+    \item claves foraneas;
+    \item validaciones con CHECK.
+\end{itemize}
+
+\paragraph{7.1 Eliminacion previa de tablas si ya existen}
+
+Esto sirve para volver a ejecutar el script.
+
+\begin{lstlisting}[language=SQL, caption={Eliminacion previa de tablas del ejercicio adicional 1}]
+DROP TABLE DETALLE_COMPRA CASCADE CONSTRAINTS;
+DROP TABLE COMPRAS CASCADE CONSTRAINTS;
+DROP TABLE PRODUCTOS CASCADE CONSTRAINTS;
+DROP TABLE CLIENTES CASCADE CONSTRAINTS;
+DROP TABLE PROVEEDORES CASCADE CONSTRAINTS;
+\end{lstlisting}
+
+\paragraph{7.2 Creacion de tablas}
+
+\begin{lstlisting}[language=SQL, caption={Creacion de tablas del ejercicio adicional 1}]
+CREATE TABLE PROVEEDORES (
+    RUC_PROV    VARCHAR2(13) PRIMARY KEY,
+    NOM_PROV    VARCHAR2(20) NOT NULL,
+    DIR_PROV    VARCHAR2(30) NOT NULL
+);
+
+CREATE TABLE CLIENTES (
+    CI_CLI      VARCHAR2(10) PRIMARY KEY,
+    NOM_CLI     VARCHAR2(15) NOT NULL,
+    APE_CLI     VARCHAR2(20) NOT NULL,
+    DIR_CLI     VARCHAR2(30) NOT NULL,
+    FEC_NAC     DATE NOT NULL
+);
+
+CREATE TABLE PRODUCTOS (
+    COD_PROD    VARCHAR2(5) PRIMARY KEY,
+    NOM_PROD    VARCHAR2(20) NOT NULL,
+    PRE_UNIT    NUMBER(8,2) NOT NULL,
+    MARCA       VARCHAR2(15) NOT NULL,
+    RUC_PROV    VARCHAR2(13) NOT NULL,
+    CONSTRAINT FK_PROD_PROV
+        FOREIGN KEY (RUC_PROV) REFERENCES PROVEEDORES(RUC_PROV),
+    CONSTRAINT CHK_PRE_UNIT
+        CHECK (PRE_UNIT > 0)
+);
+
+CREATE TABLE COMPRAS (
+    ID_COMPRA   NUMBER(5) PRIMARY KEY,
+    FEC_COMPRA  DATE NOT NULL,
+    CI_CLI      VARCHAR2(10) NOT NULL,
+    CONSTRAINT FK_COMP_CLI
+        FOREIGN KEY (CI_CLI) REFERENCES CLIENTES(CI_CLI)
+);
+
+CREATE TABLE DETALLE_COMPRA (
+    ID_COMPRA      NUMBER(5) NOT NULL,
+    COD_PROD       VARCHAR2(5) NOT NULL,
+    CANTIDAD       NUMBER(5) NOT NULL,
+    PRECIO_VENTA   NUMBER(8,2) NOT NULL,
+    CONSTRAINT PK_DET_COMPRA
+        PRIMARY KEY (ID_COMPRA, COD_PROD),
+    CONSTRAINT FK_DET_COMPRA_COMP
+        FOREIGN KEY (ID_COMPRA) REFERENCES COMPRAS(ID_COMPRA),
+    CONSTRAINT FK_DET_COMPRA_PROD
+        FOREIGN KEY (COD_PROD) REFERENCES PRODUCTOS(COD_PROD),
+    CONSTRAINT CHK_CANTIDAD
+        CHECK (CANTIDAD > 0),
+    CONSTRAINT CHK_PRECIO_VENTA
+        CHECK (PRECIO_VENTA > 0)
+);
+\end{lstlisting}
+
+\subsubsection*{8. DML en Oracle}
+
+\paragraph{8.1 Insercion de datos en PROVEEDORES}
+\paragraph{8.2 Insercion de datos en CLIENTES}
+\paragraph{8.3 Insercion de datos en PRODUCTOS}
+\paragraph{8.4 Insercion de datos en COMPRAS}
+\paragraph{8.5 Insercion de datos en DETALLE\_COMPRA}
+\paragraph{8.6 Confirmar cambios}
+
+\begin{lstlisting}[language=SQL, caption={Insercion de datos del ejercicio adicional 1}]
+-- PROVEEDORES
+INSERT INTO PROVEEDORES VALUES ('1790012345001', 'TecnoSur', 'Quito Norte');
+INSERT INTO PROVEEDORES VALUES ('1790012345002', 'AndesComp', 'Ambato Centro');
+INSERT INTO PROVEEDORES VALUES ('1790012345004', 'DataPlus', 'Cuenca Sur');
+
+-- CLIENTES
+INSERT INTO CLIENTES VALUES ('1801112223', 'Ana', 'Perez', 'Ambato Huachi', DATE '2001-05-10');
+INSERT INTO CLIENTES VALUES ('1802223334', 'Carlos', 'Mena', 'Quito Centro', DATE '2000-08-14');
+INSERT INTO CLIENTES VALUES ('1803334445', 'Sofia', 'Lara', 'Latacunga Norte', DATE '2003-11-02');
+
+-- PRODUCTOS
+INSERT INTO PRODUCTOS VALUES ('PR01', 'Laptop Lenovo', 850, 'Lenovo', '1790012345001');
+INSERT INTO PRODUCTOS VALUES ('PR02', 'Mouse Logitech', 25, 'Logitech', '1790012345002');
+INSERT INTO PRODUCTOS VALUES ('PR03', 'Teclado Redragon', 60, 'Redragon', '1790012345002');
+
+-- COMPRAS
+INSERT INTO COMPRAS VALUES (1, DATE '2026-04-01', '1801112223');
+INSERT INTO COMPRAS VALUES (2, DATE '2026-04-02', '1802223334');
+
+-- DETALLE_COMPRA
+INSERT INTO DETALLE_COMPRA VALUES (1, 'PR01', 1, 870);
+INSERT INTO DETALLE_COMPRA VALUES (1, 'PR02', 2, 28);
+INSERT INTO DETALLE_COMPRA VALUES (2, 'PR03', 1, 65);
+
+COMMIT;
+\end{lstlisting}
+
+\subsubsection*{9. Consultas de comprobacion}
+
+\textbf{Ver clientes, productos y compras}
+
+\begin{lstlisting}[language=SQL, caption={Consultas de comprobacion del ejercicio adicional 1}]
+SELECT * FROM CLIENTES;
+SELECT * FROM PRODUCTOS;
+SELECT * FROM COMPRAS;
+\end{lstlisting}
+
+\textbf{Consulta integrada}
+
+Muestra que compro cada cliente.
+
+\begin{lstlisting}[language=SQL, caption={Consulta integrada del ejercicio adicional 1}]
+SELECT
+    c.CI_CLI,
+    c.NOM_CLI,
+    c.APE_CLI,
+    co.ID_COMPRA,
+    co.FEC_COMPRA,
+    p.COD_PROD,
+    p.NOM_PROD,
+    d.CANTIDAD,
+    d.PRECIO_VENTA
+FROM CLIENTES c
+JOIN COMPRAS co ON c.CI_CLI = co.CI_CLI
+JOIN DETALLE_COMPRA d ON co.ID_COMPRA = d.ID_COMPRA
+JOIN PRODUCTOS p ON d.COD_PROD = p.COD_PROD
+ORDER BY co.ID_COMPRA;
+\end{lstlisting}
+
+\subsubsection*{10. Operaciones DML adicionales}
+
+\paragraph{10.1 UPDATE}
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item Cambiar direccion de un cliente.
+    \item Cambiar precio unitario de un producto.
+    \item Cambiar marca de un producto.
+\end{itemize}
+
+\paragraph{10.2 DELETE}
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item Eliminar un detalle de compra.
+    \item Eliminar una compra si ya no tiene detalles.
+\end{itemize}
+
+\paragraph{10.3 Guardar cambios}
+
+\begin{lstlisting}[language=SQL, caption={Operaciones UPDATE y DELETE del ejercicio adicional 1}]
+UPDATE CLIENTES
+SET DIR_CLI = 'Ambato Ficoa'
+WHERE CI_CLI = '1801112223';
+
+UPDATE PRODUCTOS
+SET PRE_UNIT = 27
+WHERE COD_PROD = 'PR02';
+
+UPDATE PRODUCTOS
+SET MARCA = 'Logitech G'
+WHERE COD_PROD = 'PR02';
+
+DELETE FROM DETALLE_COMPRA
+WHERE ID_COMPRA = 2 AND COD_PROD = 'PR03';
+
+DELETE FROM COMPRAS
+WHERE ID_COMPRA = 2;
+
+COMMIT;
+\end{lstlisting}
+
+\subsubsection*{11. Pruebas de errores de integridad en Oracle}
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item Error 1: clave primaria duplicada
+    \item Error 2: clave foranea inexistente
+    \item Error 3: eliminacion de registro padre con hijos
+    \item Error 4: violacion de CHECK
+\end{itemize}
+
+\begin{lstlisting}[language=SQL, caption={Pruebas de errores de integridad del ejercicio adicional 1}]
+-- Error 1: clave primaria duplicada
+INSERT INTO CLIENTES VALUES ('1801112223', 'Pedro', 'Lopez', 'Riobamba', DATE '2002-01-01');
+
+-- Error 2: clave foranea inexistente
+INSERT INTO PRODUCTOS VALUES ('PR99', 'Tablet', 300, 'Samsung', '1790000000000');
+
+-- Error 3: eliminacion de registro padre con hijos
+DELETE FROM COMPRAS WHERE ID_COMPRA = 1;
+
+-- Error 4: violacion de CHECK
+INSERT INTO DETALLE_COMPRA VALUES (1, 'PR02', -1, 20);
+\end{lstlisting}
+
+\subsubsection*{12. Ejercicios practicos en Oracle}
+
+\paragraph{12.1 Ejercicio practico 1}
+
+Insertar un nuevo proveedor llamado ElectroGlobal, con RUC 1790012345003, direccion Guayaquil Norte.
+
+\textbf{Solucion}
+
+\begin{lstlisting}[language=SQL]
+INSERT INTO PROVEEDORES VALUES ('1790012345003', 'ElectroGlobal', 'Guayaquil Norte');
+\end{lstlisting}
+
+\paragraph{12.2 Ejercicio practico 2}
+
+Registrar un nuevo producto llamado Disco SSD 1TB, marca Kingston, precio 95, suministrado por 1790012345003.
+
+\textbf{Solucion}
+
+\begin{lstlisting}[language=SQL]
+INSERT INTO PRODUCTOS VALUES ('PR06', 'Disco SSD 1TB', 95, 'Kingston', '1790012345003');
+\end{lstlisting}
+
+\paragraph{12.3 Ejercicio practico 3}
+
+Registrar un nuevo cliente:
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item CI: 1809998887
+    \item Nombre: Luis
+    \item Apellidos: Mora
+    \item Direccion: Riobamba Centro
+    \item Fecha de nacimiento: 2002-03-22
+\end{itemize}
+
+\textbf{Solucion}
+
+\begin{lstlisting}[language=SQL]
+INSERT INTO CLIENTES VALUES ('1809998887', 'Luis', 'Mora', 'Riobamba Centro', DATE '2002-03-22');
+\end{lstlisting}
+
+\paragraph{12.4 Ejercicio practico 4}
+
+Registrar una compra del cliente 1809998887 con ID\_COMPRA = 3 y fecha 2026-04-03.
+
+\textbf{Solucion}
+
+\begin{lstlisting}[language=SQL]
+INSERT INTO COMPRAS VALUES (3, DATE '2026-04-03', '1809998887');
+\end{lstlisting}
+
+\paragraph{12.5 Ejercicio practico 5}
+
+Registrar en la compra 3 los productos:
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item PR03 cantidad 1, precio 60
+    \item PR06 cantidad 2, precio 95
+\end{itemize}
+
+\textbf{Solucion}
+
+\begin{lstlisting}[language=SQL]
+INSERT INTO DETALLE_COMPRA VALUES (3, 'PR03', 1, 60);
+INSERT INTO DETALLE_COMPRA VALUES (3, 'PR06', 2, 95);
+\end{lstlisting}
+
+\paragraph{12.6 Ejercicio practico 6}
+
+Crear dos nuevos clientes y registrar al menos una compra para cada uno.
+
+\textbf{Solucion}
+
+\begin{lstlisting}[language=SQL]
+INSERT INTO CLIENTES VALUES ('1807776665', 'Marta', 'Vega', 'Ambato Sur', DATE '2001-07-11');
+INSERT INTO CLIENTES VALUES ('1806665554', 'Diego', 'Paz', 'Quito Norte', DATE '2000-10-19');
+
+INSERT INTO COMPRAS VALUES (4, DATE '2026-04-04', '1807776665');
+INSERT INTO COMPRAS VALUES (5, DATE '2026-04-05', '1806665554');
+
+INSERT INTO DETALLE_COMPRA VALUES (4, 'PR01', 1, 860);
+INSERT INTO DETALLE_COMPRA VALUES (5, 'PR02', 3, 27);
+\end{lstlisting}
+
+\paragraph{12.7 Ejercicio practico 7}
+
+Insertar tres productos nuevos, todos asociados a proveedores ya existentes.
+
+\textbf{Solucion}
+
+\begin{lstlisting}[language=SQL]
+INSERT INTO PRODUCTOS VALUES ('PR07', 'Monitor 24', 180, 'LG', '1790012345001');
+INSERT INTO PRODUCTOS VALUES ('PR08', 'Memoria USB 64GB', 18, 'Sandisk', '1790012345002');
+INSERT INTO PRODUCTOS VALUES ('PR09', 'Webcam HD', 45, 'Genius', '1790012345004');
+\end{lstlisting}
+
+\paragraph{12.8 Ejercicio practico 8}
+
+Actualizar el precio unitario de todos los productos de un proveedor especifico.
+
+\textbf{Solucion}
+
+\begin{lstlisting}[language=SQL]
+UPDATE PRODUCTOS
+SET PRE_UNIT = PRE_UNIT * 1.05
+WHERE RUC_PROV = '1790012345002';
+\end{lstlisting}
+
+\paragraph{12.9 Ejercicio practico 9}
+
+Eliminar correctamente una compra completa, considerando primero sus detalles.
+
+\textbf{Solucion}
+
+\begin{lstlisting}[language=SQL]
+DELETE FROM DETALLE_COMPRA WHERE ID_COMPRA = 4;
+DELETE FROM COMPRAS WHERE ID_COMPRA = 4;
+\end{lstlisting}
+
+\paragraph{12.10 Ejercicio practico 10}
+
+Intentar insertar:
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item un producto con proveedor inexistente;
+    \item un cliente con CI repetida;
+    \item un detalle con cantidad negativa.
+\end{itemize}
+
+\textbf{Solucion}
+
+\begin{lstlisting}[language=SQL]
+INSERT INTO PRODUCTOS VALUES ('PR10', 'Impresora', 220, 'HP', '1790099999999');
+INSERT INTO CLIENTES VALUES ('1809998887', 'Luis', 'Mora', 'Riobamba Centro', DATE '2002-03-22');
+INSERT INTO DETALLE_COMPRA VALUES (3, 'PR06', -2, 95);
+\end{lstlisting}
+
+\textbf{Luego, explicar por que Oracle genera error:}
+
+Oracle genera error en el primer caso porque se intenta registrar un producto con un proveedor que no existe en la tabla \texttt{PROVEEDORES}; por lo tanto, se viola la clave foranea. En el segundo caso, se intenta insertar un cliente con una clave primaria ya registrada, por lo que se incumple la restriccion de unicidad de la llave primaria. En el tercer caso, Oracle genera error porque la cantidad es negativa y la tabla \texttt{DETALLE\_COMPRA} tiene una restriccion \texttt{CHECK} que solo permite valores mayores que cero.
 \subsection{Habilidades blandas empleadas en la tarea}
 \begin{itemize}
     \item[$\square$] Liderazgo
@@ -595,6 +1221,20 @@ También se recomienda continuar con ejercicios prácticos similares, complement
     \centering
     \includegraphics[width=0.92\textwidth]{ejer4_registro_de_datos.png}
     \caption{Registros de datos del ejercicio 4}
+\end{figure}
+
+\clearpage
+\subsubsection*{Anexo E. Ejercicio adicional 1}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{ejer_Adicional1_modelo_Entidad_Relacion.png}
+    \caption{Modelo entidad/relación del ejercicio adicional 1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{ejer_Adicional1_modelo_relacional.png}
+    \caption{Modelo relacional del ejercicio adicional 1}
 \end{figure}
 
 \end{document}
