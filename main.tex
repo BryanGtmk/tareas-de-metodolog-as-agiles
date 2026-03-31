@@ -1,138 +1,600 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 
-% Language setting
-% Replace `english' with e.g. `spanish' to change the document language
-\usepackage[english]{babel}
+% Idioma y codificación
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
-\usepackage[letterpaper,top=2cm,bottom=5cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+% Márgenes
+\usepackage[letterpaper,top=2cm,bottom=3cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 
-% Useful packages
+% Paquetes útiles
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{float}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{url}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{amssymb} 
 \usepackage{fancyhdr}
-\usepackage{lipsum} % Para generar texto de ejemplo
 \usepackage{multicol}
-\pagestyle{fancy} 
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{listings}
 
-\fancyhf{} % Limpiar encabezado y pie de página por defecto
-\setlength{\headheight}{70pt} % Ajuste del tamaño del encabezado (puedes aumentar este valor si es necesario)
+\graphicspath{{imagenes/}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.4em}
+\renewcommand{\arraystretch}{1.2}
 
-% Definición del encabezado
+% Configuración de listings para código SQL
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    frame=single,
+    showstringspaces=false,
+    columns=fullflexible,
+    tabsize=4
+}
 
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{70pt}
+
+% Encabezado
 \fancyhead[C]{%
     \begin{minipage}[c]{2.0cm}
         \centering
-        \includegraphics[width=2.0cm]{imagenes/uta.png}
+        \includegraphics[width=2.0cm]{uta.png}
     \end{minipage}%
     \hfill
-    \begin{minipage}[c]{8cm} 
+    \begin{minipage}[c]{8cm}
         \centering
-        \small {\textbf{UNIVERSIDAD TÉCNICA DE AMBATO}} \\[0.1cm]
-        \scriptsize \textit{FACULTAD DE INGENIERÍA EN SISTEMAS ELECTRÓNICA E INDUSTRIAL} \\[0.1cm]
-        \scriptsize \textbf{CARRERA SOFTWARE - METODOLOGÍAS AGILES} \\[0.1cm]
+        \small \textbf{UNIVERSIDAD TÉCNICA DE AMBATO}\\[0.1cm]
+        \scriptsize \textit{FACULTAD DE INGENIERÍA EN SISTEMAS, ELECTRÓNICA E INDUSTRIAL}\\[0.1cm]
+        \scriptsize \textbf{CARRERA SOFTWARE - BASE DE DATOS}\\[0.1cm]
         \scriptsize \textbf{CICLO ACADÉMICO: ENERO 2026 - JULIO 2026}
     \end{minipage}%
     \hfill
     \begin{minipage}[c]{2.0cm}
         \centering
-        \includegraphics[width=2.0cm]{imagenes/fisei.png}
+        \includegraphics[width=2.0cm]{fisei.png}
     \end{minipage}%
 }
 
+\fancyfoot[C]{\thepage}
+
 \begin{document}
+
 \begin{center}
-    {\large \textbf{INFORME DE TAREA}} \\    
+    {\large \textbf{INFORME DE GUÍA PRÁCTICA}}\\
 \end{center}
 
 \section{Portada}
 \begin{flushleft}
-\begin{tabular}{ l l }
-    \textbf{Tema:} & \\
-    \textbf{Unidad de Organización Curricular:} & PROFECIONAL\\
-    \textbf{Nivel y Paralelo:} & 4to Semestre "B" \\
-    \textbf{Alumnos participantes:} & Guatemal Avilez Bryan Stalin \\
-    \textbf{Asignatura:} & Metodologias Agiles \\
-    \textbf{Docente:} & Ing.Naranjo Avalos Hernan Fabricio, Mg. \\
+\begin{tabular}{>{\bfseries}p{6.2cm} p{8.5cm}}
+Tema: & APE2. Formas Normales y Normalización \\
+Unidad de Organización Curricular: & PROFESIONAL \\
+Nivel y Paralelo: & 4to Semestre ``B'' \\
+Alumno participante: & Guatemal Avilez Bryan Stalin \\
+Asignatura: & Base de Datos \\
+Docente: & Ing. Jose Ruben Caiza Caizabuano Mg. \\
+Modalidad: & Presencial \\
 \end{tabular}
 \end{flushleft}
 
+\section{Informe de guía práctica}
 
-\section{Informe de la Tarea}
 \subsection{Objetivos}
-\subsubsection{General}
-(Especificado en la guía tarea proporcionada por el docente).
-\subsubsection{Específicos}
-\begin{itemize}
-    \item (Se recomienda máximo 3).
-    \item 
-    \item 
-\end{itemize}
 
+\subsubsection{General}
+Analizar las formas normales y las dependencias funcionales para construir esquemas lógicos relacionales normalizados e implementar su estructura física básica en Oracle.
+
+\subsubsection{Específicos}
+\begin{itemize}[leftmargin=1.2cm]
+    \item Identificar entidades, atributos, relaciones y cardinalidades en los ejercicios propuestos.
+    \item Analizar dependencias funcionales y aplicar las reglas de normalización hasta Tercera Forma Normal.
+    \item Transformar los modelos obtenidos en esquemas relacionales e implementarlos físicamente en Oracle mediante tablas con claves primarias y foráneas.
+\end{itemize}
 
 \subsection{Instrucciones}
+La actividad consiste en desarrollar un documento en formato PDF con la resolución de la guía APE. Para ello, se realizó el análisis de los cuatro enunciados propuestos, identificando los componentes del modelo entidad/relación y su posterior traducción al modelo relacional. Además, se organizó la información de forma técnica y ordenada, considerando la lógica de diseño de bases de datos, la consistencia de las relaciones establecidas entre tablas y la implementación del modelo físico en Oracle.
 
-Detalladas en la asignación de la tarea proporcionada por el docente.
+\subsection{Fundamento teórico de normalización}
 
+La normalización es un proceso de organización de datos que permite estructurar correctamente una base de datos relacional, reduciendo redundancia, evitando anomalías de inserción, actualización y eliminación, y mejorando la integridad de la información. Su propósito principal consiste en descomponer relaciones complejas en tablas más pequeñas y coherentes, sin perder la capacidad de reconstruir la información necesaria.
+
+\subsubsection{Dependencias funcionales}
+
+Una dependencia funcional se presenta cuando el valor de un atributo determina de manera única el valor de otro atributo dentro de una relación. En otras palabras, si se conoce el valor del atributo determinante, entonces se puede conocer con precisión el valor del atributo dependiente.
+
+De forma general, una dependencia funcional se representa como:
+
+\[
+X \rightarrow Y
+\]
+
+donde \(X\) es el atributo o conjunto de atributos determinantes, y \(Y\) es el atributo o conjunto de atributos dependientes.
+
+Las dependencias funcionales son importantes porque permiten identificar:
+\begin{itemize}[leftmargin=1.2cm]
+    \item claves candidatas y claves primarias;
+    \item dependencias parciales;
+    \item dependencias transitivas;
+    \item posibles problemas de redundancia en una relación.
+\end{itemize}
+
+\subsubsection{Primera Forma Normal (1FN)}
+
+Una relación se encuentra en Primera Forma Normal cuando todos sus atributos contienen valores atómicos, es decir, indivisibles, y no existen grupos repetitivos ni listas dentro de un mismo campo. En esta forma, cada intersección fila-columna debe almacenar un único valor.
+
+La 1FN exige que:
+\begin{itemize}[leftmargin=1.2cm]
+    \item cada atributo contenga un solo valor por celda;
+    \item no existan atributos multivaluados;
+    \item cada fila pueda identificarse de manera única mediante una clave.
+\end{itemize}
+
+\subsubsection{Segunda Forma Normal (2FN)}
+
+Una relación se encuentra en Segunda Forma Normal cuando ya cumple con la 1FN y, además, todos los atributos no clave dependen completamente de la clave primaria. Esto significa que no deben existir dependencias parciales respecto de una clave compuesta.
+
+La 2FN se aplica especialmente cuando la clave primaria está formada por más de un atributo. Si un atributo no clave depende solo de una parte de la clave compuesta, entonces existe una dependencia parcial y la relación no cumple con 2FN.
+
+\subsubsection{Tercera Forma Normal (3FN)}
+
+Una relación se encuentra en Tercera Forma Normal cuando cumple con la 2FN y no presenta dependencias transitivas. Esto significa que ningún atributo no clave debe depender de otro atributo no clave.
+
+La 3FN busca eliminar relaciones indirectas entre atributos no clave, con el fin de evitar redundancia y mejorar la consistencia del diseño. En esta forma, cada atributo no clave debe depender únicamente de la clave primaria.
+
+\subsubsection{Proceso de normalización}
+
+El proceso de normalización se desarrolla de manera progresiva. Primero, se parte de una relación inicial obtenida del análisis del problema. Después, se identifican los atributos clave y las dependencias funcionales. A continuación, se verifica el cumplimiento de la Primera Forma Normal eliminando grupos repetitivos y valores no atómicos. Luego, se analiza si existen dependencias parciales para pasar a Segunda Forma Normal. Finalmente, se revisa la presencia de dependencias transitivas para alcanzar la Tercera Forma Normal.
+
+En términos generales, el procedimiento aplicado es el siguiente:
+\begin{enumerate}[leftmargin=1.2cm]
+    \item Identificar la relación inicial y sus atributos.
+    \item Determinar la clave primaria.
+    \item Establecer las dependencias funcionales.
+    \item Verificar el cumplimiento de 1FN.
+    \item Eliminar dependencias parciales para obtener 2FN.
+    \item Eliminar dependencias transitivas para obtener 3FN.
+    \item Construir el esquema lógico normalizado.
+\end{enumerate}
+
+\subsubsection{Ejemplo de esquema normalizado}
+
+Como ejemplo de normalización, se puede tomar una relación inicial asociada al ejercicio 2 del instituto:
+
+\begin{center}
+\texttt{INSCRIPCION(ID\_ALUMNO, NOM\_ALUMNO, APE\_ALUMNO, COD\_MODULO, NOM\_MODULO, HORARIO, AULA, CI\_PROFESOR, NOM\_PROFESOR)}
+\end{center}
+
+En esta relación, la clave compuesta puede representarse mediante:
+
+\[
+(ID\_ALUMNO, COD\_MODULO)
+\]
+
+A partir de su análisis, se identifican las siguientes dependencias funcionales:
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item \texttt{ID\_ALUMNO \(\rightarrow\) NOM\_ALUMNO, APE\_ALUMNO}
+    \item \texttt{COD\_MODULO \(\rightarrow\) NOM\_MODULO, HORARIO, AULA, CI\_PROFESOR}
+    \item \texttt{CI\_PROFESOR \(\rightarrow\) NOM\_PROFESOR}
+\end{itemize}
+
+\textbf{Aplicación de 1FN:}  
+La relación cumple 1FN porque cada atributo almacena valores atómicos y no existen grupos repetitivos dentro de una celda.
+
+\textbf{Aplicación de 2FN:}  
+No cumple 2FN, ya que existen dependencias parciales. Por ejemplo, \texttt{NOM\_ALUMNO} y \texttt{APE\_ALUMNO} dependen solo de \texttt{ID\_ALUMNO}, mientras que \texttt{NOM\_MODULO}, \texttt{HORARIO} y \texttt{AULA} dependen solo de \texttt{COD\_MODULO}. Para corregirlo, la relación se descompone.
+
+\textbf{Aplicación de 3FN:}  
+Tampoco cumple inicialmente 3FN, porque existe una dependencia transitiva: \texttt{COD\_MODULO \(\rightarrow\) CI\_PROFESOR} y \texttt{CI\_PROFESOR \(\rightarrow\) NOM\_PROFESOR}. Por ello, la información del profesor debe almacenarse en una relación independiente.
+
+El esquema lógico normalizado hasta Tercera Forma Normal queda así:
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item \texttt{ALUMNO(ID\_ALUMNO, NOM\_ALUMNO, APE\_ALUMNO)}
+    \item \texttt{PROFESOR(CI\_PROFESOR, NOM\_PROFESOR)}
+    \item \texttt{MODULO(COD\_MODULO, NOM\_MODULO, HORARIO, AULA, CI\_PROFESOR)}
+    \item \texttt{MATRICULA(ID\_ALUMNO, COD\_MODULO)}
+\end{itemize}
+
+De esta manera, la información queda distribuida en relaciones independientes, evitando redundancia y garantizando mayor integridad estructural en la base de datos.
 
 \subsection{Listado de equipos, materiales y recursos}
+
 \textbf{Listado de equipos y materiales generales empleados en la tarea:}
-\begin{itemize}
-    \item  
+\begin{itemize}[leftmargin=1.2cm]
+    \item Computador personal.
+    \item Editor de texto \LaTeX{} en Visual Studio Code.
+    \item Compilador PDF para documentos académicos.
+    \item PlantUML para el diseño de diagramas.
+    \item Oracle como sistema gestor de base de datos.
+    \item Guía práctica proporcionada por el docente.
+    \item Material bibliográfico de apoyo sobre modelo entidad/relación, modelo relacional y normalización.
 \end{itemize}
 
-\textbf{TAC (Tecnologías para el Aprendizaje y Conocimiento) empleados en la tarea:}
+\textbf{TAC (Tecnologías para el Aprendizaje y el Conocimiento) empleadas en la tarea:}
 \begin{itemize}
-    \item[$\square$] Plataformas educativas
+    \item[$\boxtimes$] Plataformas educativas
     \item[$\square$] Simuladores y laboratorios virtuales
-    \item[$\square$] Aplicaciones educativas
+    \item[$\boxtimes$] Aplicaciones educativas
     \item[$\square$] Recursos audiovisuales
     \item[$\square$] Gamificación
-    \item[$\square$] Inteligencia Artificial
-    \item Otros (Especifique): \underline{\hspace{5cm}}
+    \item[$\boxtimes$] Inteligencia Artificial
+    \item Otros (Especifique): editor \LaTeX{}, PlantUML y Oracle
 \end{itemize}
-
 
 \subsection{Desarrollo de la Tarea (Actividades a Desarrollar)}
 
-Detalladas en las instrucciones proporcionadas por el docente.
+Para resolver la guía se analizaron los cuatro enunciados propuestos, identificando en cada caso las entidades principales, sus atributos, las relaciones entre ellas y las cardinalidades correspondientes. Posteriormente, cada modelo entidad/relación fue transformado al modelo relacional, incorporando claves primarias y claves foráneas para garantizar integridad y coherencia estructural. Finalmente, se añadieron registros de ejemplo por tabla y se construyó el modelo físico en Oracle mediante sentencias \texttt{CREATE TABLE}.
+
+\subsubsection{Ejercicio 1}
+En el primer ejercicio se modeló una empresa que vende productos a clientes y trabaja con proveedores. Se identificaron como entidades principales \textbf{Cliente}, \textbf{Producto} y \textbf{Proveedor}. La relación \textbf{Compra} se estableció entre Cliente y Producto con cardinalidad muchos a muchos, mientras que la relación de suministro se definió entre Proveedor y Producto. A partir de ello se construyó el esquema relacional correspondiente, incluyendo la tabla intermedia para representar la compra.
+
+\subsubsection{Ejercicio 2}
+En el segundo ejercicio se diseñó la base de datos de un instituto. Se determinaron las entidades \textbf{Profesor}, \textbf{Alumno} y \textbf{Módulo}. La relación \textbf{Matrícula} se modeló entre Alumno y Módulo, mientras que la relación \textbf{Imparte} se estableció entre Profesor y Módulo. Además, se consideró una autorrelación de supervisión dentro de la entidad Profesor, ya que un profesor puede supervisar a otros profesores.
+
+\subsubsection{Ejercicio 3}
+En el tercer ejercicio se desarrolló el modelo para una tienda informática. Se identificaron las entidades \textbf{Cliente}, \textbf{Producto} y \textbf{Proveedor}. La relación \textbf{Compra} incorporó atributos propios como número de compra, fecha de compra y forma de pago. Del mismo modo, la relación \textbf{Entrega} entre Proveedor y Producto incluyó atributos adicionales como fecha de entrega, cantidad suministrada y precio de adquisición. Después se construyó el esquema relacional con sus claves correspondientes.
+
+\subsubsection{Ejercicio 4}
+En el cuarto ejercicio se modeló la organización interna de una empresa. Las entidades principales fueron \textbf{Centro\_Trabajo}, \textbf{Departamento}, \textbf{Empleado}, \textbf{Hijo} y \textbf{Habilidad}. Las relaciones definidas fueron de uno a muchos entre Centro\_Trabajo y Departamento, entre Departamento y Empleado, y entre Empleado e Hijo. Además, se definió una relación muchos a muchos entre Empleado y Habilidad, agregando el atributo \textbf{porcentaje} como característica de la relación.
+
+\subsection{Aplicación de normalización en los ejercicios}
+
+\subsubsection{Normalización del ejercicio 1}
+En el ejercicio 1, la estructura obtenida cumple con la Primera Forma Normal porque todos los atributos almacenan valores atómicos. Además, la separación de las entidades \texttt{CLIENTE}, \texttt{PRODUCTO} y \texttt{PROVEEDOR}, junto con la tabla intermedia \texttt{COMPRA}, permite evitar grupos repetitivos. La relación también puede considerarse en Segunda y Tercera Forma Normal, ya que los atributos dependen de sus respectivas claves primarias y no se presentan dependencias transitivas entre atributos no clave.
+
+\subsubsection{Normalización del ejercicio 2}
+En el ejercicio 2, la normalización se evidencia al descomponer la información académica en las relaciones \texttt{PROFESOR}, \texttt{ALUMNO}, \texttt{MODULO} y \texttt{MATRICULA}. La relación inicial de inscripción podía generar redundancia, especialmente al repetir datos del alumno, módulo y profesor. Al separar estas entidades, se eliminan dependencias parciales y transitivas, obteniéndose un esquema coherente hasta Tercera Forma Normal.
+
+\subsubsection{Normalización del ejercicio 3}
+En el ejercicio 3, la información de clientes, productos y proveedores se organizó en relaciones independientes, mientras que las transacciones de compra y entrega se representaron mediante tablas específicas con atributos propios. Esta estructura evita repetir datos descriptivos dentro de cada operación y permite que cada atributo dependa únicamente de la clave correspondiente. Por ello, el esquema resultante cumple con 1FN, 2FN y 3FN.
+
+\subsubsection{Normalización del ejercicio 4}
+En el ejercicio 4, la normalización se logró separando las entidades \texttt{CENTRO\_TRABAJO}, \texttt{DEPARTAMENTO}, \texttt{EMPLEADO}, \texttt{HIJO} y \texttt{HABILIDAD}. La relación muchos a muchos entre empleado y habilidad se resolvió mediante la tabla intermedia \texttt{EMPLEADO\_HABILIDAD}, lo que evita redundancias y facilita el control del atributo \texttt{PORCENTAJE}. De esta forma, cada relación mantiene dependencias adecuadas respecto de su clave primaria y el esquema puede considerarse normalizado hasta Tercera Forma Normal.
 
 \subsection{Resultados obtenidos}
-De acuerdo con el tipo de trabajo, se plasmarán los resultados alcanzados en la guía tarea una vez ejecutadas las actividades. Se pueden emplear figuras y tablas las cuales deben ser numeradas. 
 
+Como resultado del desarrollo de la guía, se obtuvieron modelos entidad/relación y modelos relacionales coherentes para los cuatro ejercicios propuestos. En cada caso se identificaron correctamente las entidades, atributos, relaciones y cardinalidades, y se logró traducir la información a esquemas de tablas con claves primarias y foráneas. También se generaron registros de ejemplo para comprobar la estructura lógica de las bases de datos diseñadas.
 
-%Especifique las TAC's utilizadas en la Tarea. 
+\begin{table}[H]
+\centering
+\caption{Resumen de resultados por ejercicio}
+\begin{tabular}{p{1.8cm} p{4.4cm} p{4.8cm} p{2.4cm} p{1.7cm}}
+\toprule
+\textbf{Ejercicio} & \textbf{Modelo E/R} & \textbf{Modelo relacional} & \textbf{Modelo físico} & \textbf{Registros} \\
+\midrule
+1 & Cliente, Producto, Proveedor y relaciones de compra y suministro & Tablas Cliente, Proveedor, Producto y Compra & Oracle & 3 por tabla \\
+2 & Profesor, Alumno, Módulo y relaciones de matrícula, docencia y supervisión & Tablas Profesor, Alumno, Módulo y Matrícula & Oracle & 3 por tabla \\
+3 & Cliente, Producto, Proveedor y relaciones Compra y Entrega con atributos propios & Tablas Cliente, Producto, Proveedor, Compra y Entrega & Oracle & 3 por tabla \\
+4 & Centro\_Trabajo, Departamento, Empleado, Hijo y Habilidad & Tablas Centro\_Trabajo, Departamento, Empleado, Hijo, Habilidad y Empleado\_Habilidad & Oracle & 3 por tabla \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Modelo físico en Oracle}
+
+Como complemento del modelo entidad/relación y del modelo relacional, se desarrolló el modelo físico en Oracle para los cuatro ejercicios propuestos. En esta fase se definieron usuarios, tablas, claves primarias y claves foráneas, siguiendo la estructura lógica obtenida en el análisis previo.
+
+\subsubsection{Script inicial de creación de usuario}
+\begin{lstlisting}[language=SQL, caption={Creación del usuario en Oracle}]
+CREATE USER FISEI IDENTIFIED BY FISEI123;
+GRANT CONNECT, RESOURCE, UNLIMITED TABLESPACE TO FISEI;
+
+CONNECT FISEI/FISEI123;
+\end{lstlisting}
+
+\subsubsection{Modelo físico en Oracle del ejercicio 1}
+\begin{lstlisting}[language=SQL, caption={Creación de tablas del ejercicio 1}]
+CREATE TABLE CLIENTE_E1 (
+    CI                VARCHAR2(10) PRIMARY KEY,
+    NOMBRE            VARCHAR2(15) NOT NULL,
+    APELLIDOS         VARCHAR2(20) NOT NULL,
+    DIRECCION         VARCHAR2(30) NOT NULL,
+    FECHA_NACIMIENTO  DATE NOT NULL
+);
+
+CREATE TABLE PROVEEDOR_E1 (
+    RUC               VARCHAR2(13) PRIMARY KEY,
+    NOMBRE            VARCHAR2(20) NOT NULL,
+    DIRECCION         VARCHAR2(30) NOT NULL
+);
+
+CREATE TABLE PRODUCTO_E1 (
+    COD_PRODUCTO      VARCHAR2(5) PRIMARY KEY,
+    NOMBRE            VARCHAR2(20) NOT NULL,
+    PRECIO_UNITARIO   NUMBER(8,2) NOT NULL,
+    MARCA             VARCHAR2(15) NOT NULL,
+    RUC_PROVEEDOR     VARCHAR2(13) NOT NULL,
+    CONSTRAINT FK_PROD_E1_PROV
+        FOREIGN KEY (RUC_PROVEEDOR) REFERENCES PROVEEDOR_E1(RUC)
+);
+
+CREATE TABLE COMPRA_E1 (
+    CI_CLIENTE        VARCHAR2(10) NOT NULL,
+    COD_PRODUCTO      VARCHAR2(5) NOT NULL,
+    CONSTRAINT PK_COMPRA_E1
+        PRIMARY KEY (CI_CLIENTE, COD_PRODUCTO),
+    CONSTRAINT FK_COMPRA_E1_CLI
+        FOREIGN KEY (CI_CLIENTE) REFERENCES CLIENTE_E1(CI),
+    CONSTRAINT FK_COMPRA_E1_PROD
+        FOREIGN KEY (COD_PRODUCTO) REFERENCES PRODUCTO_E1(COD_PRODUCTO)
+);
+\end{lstlisting}
+
+\subsubsection{Modelo físico en Oracle del ejercicio 2}
+\begin{lstlisting}[language=SQL, caption={Creación de tablas del ejercicio 2}]
+CREATE TABLE PROFESOR_E2 (
+    CI                VARCHAR2(10) PRIMARY KEY,
+    NOMBRE            VARCHAR2(15) NOT NULL,
+    APELLIDO          VARCHAR2(15) NOT NULL,
+    DIRECCION         VARCHAR2(30) NOT NULL,
+    TELEFONO          VARCHAR2(10) NOT NULL,
+    CI_JEFE           VARCHAR2(10),
+    CONSTRAINT FK_PROF_E2_JEFE
+        FOREIGN KEY (CI_JEFE) REFERENCES PROFESOR_E2(CI)
+);
+
+CREATE TABLE ALUMNO_E2 (
+    ID_ALUMNO         VARCHAR2(5) PRIMARY KEY,
+    NOMBRE            VARCHAR2(15) NOT NULL,
+    APELLIDO          VARCHAR2(15) NOT NULL,
+    FECHA_NACIMIENTO  DATE NOT NULL
+);
+
+CREATE TABLE MODULO_E2 (
+    COD_MODULO        VARCHAR2(5) PRIMARY KEY,
+    NOMBRE            VARCHAR2(20) NOT NULL,
+    HORARIO           VARCHAR2(20) NOT NULL,
+    AULA              VARCHAR2(10) NOT NULL,
+    CI_PROFESOR       VARCHAR2(10) NOT NULL,
+    CONSTRAINT FK_MOD_E2_PROF
+        FOREIGN KEY (CI_PROFESOR) REFERENCES PROFESOR_E2(CI)
+);
+
+CREATE TABLE MATRICULA_E2 (
+    ID_ALUMNO         VARCHAR2(5) NOT NULL,
+    COD_MODULO        VARCHAR2(5) NOT NULL,
+    CONSTRAINT PK_MATRICULA_E2
+        PRIMARY KEY (ID_ALUMNO, COD_MODULO),
+    CONSTRAINT FK_MAT_E2_ALU
+        FOREIGN KEY (ID_ALUMNO) REFERENCES ALUMNO_E2(ID_ALUMNO),
+    CONSTRAINT FK_MAT_E2_MOD
+        FOREIGN KEY (COD_MODULO) REFERENCES MODULO_E2(COD_MODULO)
+);
+\end{lstlisting}
+
+\subsubsection{Modelo físico en Oracle del ejercicio 3}
+\begin{lstlisting}[language=SQL, caption={Creación de tablas del ejercicio 3}]
+CREATE TABLE CLIENTE_E3 (
+    COD_CLIENTE       VARCHAR2(5) PRIMARY KEY,
+    NOMBRE            VARCHAR2(15) NOT NULL,
+    APELLIDO          VARCHAR2(15) NOT NULL,
+    DIRECCION         VARCHAR2(30) NOT NULL,
+    TELEFONO          VARCHAR2(10) NOT NULL
+);
+
+CREATE TABLE PRODUCTO_E3 (
+    COD_PRODUCTO      VARCHAR2(5) PRIMARY KEY,
+    DESCRIPCION       VARCHAR2(30) NOT NULL,
+    PRECIO            NUMBER(8,2) NOT NULL,
+    EXISTENCIAS       NUMBER(5) NOT NULL
+);
+
+CREATE TABLE PROVEEDOR_E3 (
+    COD_PROVEEDOR     VARCHAR2(5) PRIMARY KEY,
+    NOMBRE            VARCHAR2(15) NOT NULL,
+    APELLIDOS         VARCHAR2(20) NOT NULL,
+    DIRECCION         VARCHAR2(30) NOT NULL,
+    PROVINCIA         VARCHAR2(20) NOT NULL,
+    TELEFONO          VARCHAR2(10) NOT NULL
+);
+
+CREATE TABLE COMPRA_E3 (
+    NUMERO_COMPRA     VARCHAR2(5) PRIMARY KEY,
+    COD_CLIENTE       VARCHAR2(5) NOT NULL,
+    COD_PRODUCTO      VARCHAR2(5) NOT NULL,
+    FECHA_COMPRA      DATE NOT NULL,
+    FORMA_PAGO        VARCHAR2(15) NOT NULL,
+    CONSTRAINT FK_COMPRA_E3_CLI
+        FOREIGN KEY (COD_CLIENTE) REFERENCES CLIENTE_E3(COD_CLIENTE),
+    CONSTRAINT FK_COMPRA_E3_PROD
+        FOREIGN KEY (COD_PRODUCTO) REFERENCES PRODUCTO_E3(COD_PRODUCTO)
+);
+
+CREATE TABLE ENTREGA_E3 (
+    ID_ENTREGA              VARCHAR2(5) PRIMARY KEY,
+    COD_PROVEEDOR           VARCHAR2(5) NOT NULL,
+    COD_PRODUCTO            VARCHAR2(5) NOT NULL,
+    FECHA_ENTREGA           DATE NOT NULL,
+    CANTIDAD_SUMINISTRADA   NUMBER(5) NOT NULL,
+    PRECIO_ADQUISICION      NUMBER(8,2) NOT NULL,
+    CONSTRAINT FK_ENTREGA_E3_PROV
+        FOREIGN KEY (COD_PROVEEDOR) REFERENCES PROVEEDOR_E3(COD_PROVEEDOR),
+    CONSTRAINT FK_ENTREGA_E3_PROD
+        FOREIGN KEY (COD_PRODUCTO) REFERENCES PRODUCTO_E3(COD_PRODUCTO)
+);
+\end{lstlisting}
+
+\subsubsection{Modelo físico en Oracle del ejercicio 4}
+\begin{lstlisting}[language=SQL, caption={Creación de tablas del ejercicio 4}]
+CREATE TABLE CENTRO_TRABAJO_E4 (
+    COD_CENTRO        VARCHAR2(5) PRIMARY KEY,
+    NOMBRE            VARCHAR2(20) NOT NULL,
+    POBLACION         VARCHAR2(20) NOT NULL,
+    DIRECCION         VARCHAR2(30) NOT NULL
+);
+
+CREATE TABLE DEPARTAMENTO_E4 (
+    COD_DEPARTAMENTO  VARCHAR2(5) PRIMARY KEY,
+    NOMBRE            VARCHAR2(20) NOT NULL,
+    PRESUPUESTO_ANUAL NUMBER(10,2) NOT NULL,
+    COD_CENTRO        VARCHAR2(5) NOT NULL,
+    CONSTRAINT FK_DEP_E4_CENTRO
+        FOREIGN KEY (COD_CENTRO) REFERENCES CENTRO_TRABAJO_E4(COD_CENTRO)
+);
+
+CREATE TABLE EMPLEADO_E4 (
+    CI                VARCHAR2(10) PRIMARY KEY,
+    NOMBRE            VARCHAR2(15) NOT NULL,
+    APELLIDO          VARCHAR2(15) NOT NULL,
+    TELEFONO          VARCHAR2(10) NOT NULL,
+    FECHA_ALTA        DATE NOT NULL,
+    SALARIO           NUMBER(8,2) NOT NULL,
+    COD_DEPARTAMENTO  VARCHAR2(5) NOT NULL,
+    CONSTRAINT FK_EMP_E4_DEP
+        FOREIGN KEY (COD_DEPARTAMENTO) REFERENCES DEPARTAMENTO_E4(COD_DEPARTAMENTO)
+);
+
+CREATE TABLE HIJO_E4 (
+    COD_HIJO          VARCHAR2(5) PRIMARY KEY,
+    NOMBRE            VARCHAR2(15) NOT NULL,
+    APELLIDO          VARCHAR2(15) NOT NULL,
+    FECHA_NACIMIENTO  DATE NOT NULL,
+    CI_EMPLEADO       VARCHAR2(10) NOT NULL,
+    CONSTRAINT FK_HIJO_E4_EMP
+        FOREIGN KEY (CI_EMPLEADO) REFERENCES EMPLEADO_E4(CI)
+);
+
+CREATE TABLE HABILIDAD_E4 (
+    COD_HABILIDAD     VARCHAR2(5) PRIMARY KEY,
+    DESCRIPCION       VARCHAR2(30) NOT NULL
+);
+
+CREATE TABLE EMPLEADO_HABILIDAD_E4 (
+    CI_EMPLEADO       VARCHAR2(10) NOT NULL,
+    COD_HABILIDAD     VARCHAR2(5) NOT NULL,
+    PORCENTAJE        NUMBER(5,2) NOT NULL,
+    CONSTRAINT PK_EMP_HAB_E4
+        PRIMARY KEY (CI_EMPLEADO, COD_HABILIDAD),
+    CONSTRAINT FK_EMP_HAB_E4_EMP
+        FOREIGN KEY (CI_EMPLEADO) REFERENCES EMPLEADO_E4(CI),
+    CONSTRAINT FK_EMP_HAB_E4_HAB
+        FOREIGN KEY (COD_HABILIDAD) REFERENCES HABILIDAD_E4(COD_HABILIDAD),
+    CONSTRAINT CHK_PORC_E4
+        CHECK (PORCENTAJE >= 0 AND PORCENTAJE <= 100)
+);
+\end{lstlisting}
+
 \subsection{Habilidades blandas empleadas en la tarea}
 \begin{itemize}
     \item[$\square$] Liderazgo
     \item[$\square$] Trabajo en equipo
-    \item[$\square$] Comunicación asertiva
+    \item[$\boxtimes$] Comunicación asertiva
     \item[$\square$] La empatía
-    \item[$\square$] Pensamiento crítico
-    \item[$\square$] Flexibilidad
+    \item[$\boxtimes$] Pensamiento crítico
+    \item[$\boxtimes$] Flexibilidad
     \item[$\square$] La resolución de conflictos
-    \item[$\square$] Adaptabilidad
-    \item[$\square$] Responsabilidad
+    \item[$\boxtimes$] Adaptabilidad
+    \item[$\boxtimes$] Responsabilidad
 \end{itemize}
 
-
-
 \subsection{Conclusiones}
-Constituye la respuesta que propone el o los estudiantes para el problema que originó el trabajo desarrollado, de acuerdo con los datos recogidos y la teoría aplicada. 
+El desarrollo de la guía permitió reforzar la comprensión del modelo entidad/relación, del modelo relacional, de las dependencias funcionales y del proceso de normalización, evidenciando que un buen análisis de los enunciados facilita la correcta identificación de entidades, relaciones y restricciones. Asimismo, la traducción de los modelos conceptuales a esquemas de tablas permitió consolidar el uso de claves primarias y foráneas como elementos esenciales de integridad en bases de datos relacionales.
+
+Por otra parte, el trabajo realizado demuestra que la organización adecuada de la información constituye una base importante para procesos posteriores de normalización, ya que reduce ambigüedades, mejora la consistencia del diseño lógico y facilita su implementación en Oracle.
 
 \subsection{Recomendaciones}
-Redactar las sugerencias o acciones concretas que se derivan de la tarea desarrollada. \cite{greenwade93}
+Se recomienda revisar cuidadosamente cada enunciado antes de construir el modelo, a fin de distinguir correctamente entidades, atributos y relaciones. Además, es conveniente validar las cardinalidades antes de pasar al modelo relacional, ya que de ello depende la correcta definición de claves foráneas y tablas intermedias.
 
+También se recomienda continuar con ejercicios prácticos similares, complementar el análisis lógico con la implementación física en un gestor de base de datos y verificar el cumplimiento de 1FN, 2FN y 3FN para obtener esquemas mejor organizados y consistentes.
 
 \subsection{Referencias}
-Insertar las referencias bibliográficas empleadas aplicando la norma IEEE.
-
-\vspace{-3em} %reduce el espacio causado por refname vacío
 \renewcommand{\refname}{}
+\vspace{-2em}
+\nocite{martinez2019,ahijado2023,capacho2017}
 \bibliographystyle{ieeetr}
 \bibliography{sample}
 
+\clearpage
 \subsection{Anexos}
-\vfill
+
+\subsubsection*{Anexo A. Ejercicio 1}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{ejer1_modelo_Entidad_Relacion.png}
+    \caption{Modelo entidad/relación del ejercicio 1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{ejer1_modelo_relacional.png}
+    \caption{Modelo relacional del ejercicio 1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{ejer1_registro_de_datos.png}
+    \caption{Registros de datos del ejercicio 1}
+\end{figure}
+
+\clearpage
+\subsubsection*{Anexo B. Ejercicio 2}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{ejer2_modelo_Entidad_Relacion.png}
+    \caption{Modelo entidad/relación del ejercicio 2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{ejer2_modelo_relacional.png}
+    \caption{Modelo relacional del ejercicio 2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{ejer2_registro_de_datos.png}
+    \caption{Registros de datos del ejercicio 2}
+\end{figure}
+
+\clearpage
+\subsubsection*{Anexo C. Ejercicio 3}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{ejer3_modelo_Entidad_Relacion.png}
+    \caption{Modelo entidad/relación del ejercicio 3}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{ejer3_modelo_relacional.png}
+    \caption{Modelo relacional del ejercicio 3}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{ejer3_registro_de_datos.png}
+    \caption{Registros de datos del ejercicio 3}
+\end{figure}
+
+\clearpage
+\subsubsection*{Anexo D. Ejercicio 4}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{ejer4_modelo_Entidad_Relacion.png}
+    \caption{Modelo entidad/relación del ejercicio 4}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{ejer4_modelo_relacional.png}
+    \caption{Modelo relacional del ejercicio 4}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{ejer4_registro_de_datos.png}
+    \caption{Registros de datos del ejercicio 4}
+\end{figure}
+
 \end{document}
