@@ -1,37 +1,41 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 
-% Language setting
-% Replace `english' with e.g. `spanish' to change the document language
-\usepackage[english]{babel}
+% Idioma
+\usepackage[spanish, es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
+% Tamaño de hoja y márgenes
 \usepackage[letterpaper,top=2cm,bottom=5cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 
-% Useful packages
+% Paquetes útiles
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{amssymb} 
 \usepackage{fancyhdr}
-\usepackage{lipsum} % Para generar texto de ejemplo
 \usepackage{multicol}
-\pagestyle{fancy} 
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{float}
+\usepackage{setspace}
 
-\fancyhf{} % Limpiar encabezado y pie de página por defecto
-\setlength{\headheight}{70pt} % Ajuste del tamaño del encabezado (puedes aumentar este valor si es necesario)
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{70pt}
 
-% Definición del encabezado
-
+% Encabezado
 \fancyhead[C]{%
     \begin{minipage}[c]{2.0cm}
         \centering
         \includegraphics[width=2.0cm]{imagenes/uta.png}
     \end{minipage}%
     \hfill
-    \begin{minipage}[c]{8cm} 
+    \begin{minipage}[c]{8cm}
         \centering
         \small {\textbf{UNIVERSIDAD TÉCNICA DE AMBATO}} \\[0.1cm]
-        \scriptsize \textit{FACULTAD DE INGENIERÍA EN SISTEMAS ELECTRÓNICA E INDUSTRIAL} \\[0.1cm]
-        \scriptsize \textbf{CARRERA SOFTWARE - METODOLOGÍAS AGILES} \\[0.1cm]
+        \scriptsize \textit{FACULTAD DE INGENIERÍA EN SISTEMAS, ELECTRÓNICA E INDUSTRIAL} \\[0.1cm]
+        \scriptsize \textbf{CARRERA DE SOFTWARE - METODOLOGÍAS ÁGILES} \\[0.1cm]
         \scriptsize \textbf{CICLO ACADÉMICO: ENERO 2026 - JULIO 2026}
     \end{minipage}%
     \hfill
@@ -42,97 +46,234 @@
 }
 
 \begin{document}
+
 \begin{center}
-    {\large \textbf{INFORME DE TAREA}} \\    
+    {\large \textbf{INFORME DE TAREA}} \\[0.2cm]
+    {\normalsize \textbf{APE 2}} \\[0.2cm]
 \end{center}
 
 \section{Portada}
 \begin{flushleft}
-\begin{tabular}{ l l }
-    \textbf{Tema:} & \\
-    \textbf{Unidad de Organización Curricular:} & PROFECIONAL\\
-    \textbf{Nivel y Paralelo:} & 4to Semestre "B" \\
-    \textbf{Alumnos participantes:} & Guatemal Avilez Bryan Stalin \\
-    \textbf{Asignatura:} & Metodologias Agiles \\
-    \textbf{Docente:} & Ing.Naranjo Avalos Hernan Fabricio, Mg. \\
+\begin{tabular}{>{\bfseries}p{5.5cm} p{9cm}}
+Tema: & Inclusión de las Metodologías Ágiles en la construcción de Productos de Software \\[0.2cm]
+Unidad de Organización Curricular: & Unidad Profesional \\[0.2cm]
+Nivel: & Cuarto Semestre \\[0.2cm]
+Alumno participante: & Guatemal Avilez Bryan Stalin \\[0.2cm]
+Asignatura: & Metodologías Ágiles \\[0.2cm]
+Docente: & Ing. Hernan Fabricio Naranjo Avalos, Mg. \\
 \end{tabular}
 \end{flushleft}
 
-
 \section{Informe de la Tarea}
-\subsection{Objetivos}
-\subsubsection{General}
-(Especificado en la guía tarea proporcionada por el docente).
-\subsubsection{Específicos}
-\begin{itemize}
-    \item (Se recomienda máximo 3).
-    \item 
-    \item 
-\end{itemize}
 
+\subsection{Objetivos}
+
+\subsubsection{Objetivo general}
+Analizar la relevancia de los principios ágiles en la implementación de productos de software en la industria.
+
+\subsubsection{Objetivos específicos}
+\begin{itemize}[leftmargin=1.2cm]
+    \item Evaluar la relevancia de los principios ágiles en la industria de software y sus impactos demostrados en el desarrollo de productos.
+    \item Identificar y sintetizar los factores críticos de éxito y las barreras que afectan la implementación de metodologías ágiles, con énfasis en la cultura organizacional, el cliente y el equipo de trabajo.
+    \item Proponer estrategias de mejora y recomendaciones para una adopción exitosa y sostenible de metodologías ágiles en diversos contextos de desarrollo de software.
+\end{itemize}
 
 \subsection{Instrucciones}
+\begin{enumerate}[leftmargin=1.2cm]
+    \item \textbf{Búsqueda de artículos:}
+    \begin{itemize}
+        \item Localizar tres artículos indexados en Scopus, redactados en inglés.
+        \item Los artículos deben evidenciar la implementación y relevancia de las metodologías ágiles en proyectos de investigación.
+        \item La antigüedad de los artículos no debe ser mayor a cinco años.
+    \end{itemize}
 
-Detalladas en la asignación de la tarea proporcionada por el docente.
+    \item \textbf{Información requerida por cada artículo:}
+    \begin{itemize}
+        \item Título.
+        \item Autores.
+        \item DOI.
+        \item Descripción de la problemática abordada.
+        \item Descripción del experimento realizado.
+        \item Descripción de los resultados obtenidos.
+        \item Impacto de las metodologías ágiles en el estudio.
+        \item Análisis crítico personal del artículo.
+        \item Propuestas de al menos dos posibles implementaciones que usted sugeriría a partir del estudio.
+    \end{itemize}
 
+    \item \textbf{Formato de entrega:}
+    \begin{itemize}
+        \item Elaborar el trabajo en formato \LaTeX.
+        \item Generar y entregar también la versión final en PDF.
+    \end{itemize}
+\end{enumerate}
 
 \subsection{Listado de equipos, materiales y recursos}
+
 \textbf{Listado de equipos y materiales generales empleados en la tarea:}
-\begin{itemize}
-    \item  
+\begin{itemize}[leftmargin=1.2cm]
+    \item Computadora.
+    \item Herramientas ofimáticas.
+    \item Aula virtual.
+    \item Editor \LaTeX.
+    \item Acceso a internet.
+    \item Recursos de inteligencia artificial para apoyo en la búsqueda y organización inicial de información.
 \end{itemize}
 
-\textbf{TAC (Tecnologías para el Aprendizaje y Conocimiento) empleados en la tarea:}
-\begin{itemize}
-    \item[$\square$] Plataformas educativas
-    \item[$\square$] Simuladores y laboratorios virtuales
-    \item[$\square$] Aplicaciones educativas
-    \item[$\square$] Recursos audiovisuales
-    \item[$\square$] Gamificación
-    \item[$\square$] Inteligencia Artificial
-    \item Otros (Especifique): \underline{\hspace{5cm}}
+\textbf{TAC (Tecnologías para el Aprendizaje y el Conocimiento) empleadas en la tarea:}
+\begin{itemize}[leftmargin=1.2cm]
+    \item[$\checkmark$] Plataformas educativas.
+    \item[$\square$] Simuladores y laboratorios virtuales.
+    \item[$\checkmark$] Aplicaciones educativas.
+    \item[$\square$] Recursos audiovisuales.
+    \item[$\square$] Gamificación.
+    \item[$\checkmark$] Inteligencia Artificial.
+    \item Otros: \underline{\hspace{5cm}}
 \end{itemize}
-
 
 \subsection{Desarrollo de la Tarea (Actividades a Desarrollar)}
 
-Detalladas en las instrucciones proporcionadas por el docente.
+El presente Análisis de Puesta en Ejecución se desarrolló mediante una búsqueda y selección de literatura científica reciente relacionada con la implementación de metodologías ágiles en el desarrollo de software. Para ello, se priorizaron artículos redactados en inglés, con DOI identificado, publicados dentro del rango de vigencia solicitado en la guía y enfocados en la adopción, los factores de éxito y el impacto de los principios ágiles en proyectos de software.
+
+\paragraph{Proceso de búsqueda y selección}
+La selección de los estudios se orientó a trabajos publicados en revistas científicas reconocidas del área de ingeniería de software. Como criterios de inclusión se consideraron: publicaciones recientes, relación directa con metodologías ágiles en entornos reales o con evidencia empírica, disponibilidad de DOI y aportes claros sobre adopción, resultados, barreras o factores críticos de éxito. Bajo estos criterios se eligieron tres artículos que abordan dimensiones complementarias del fenómeno ágil: adopción organizacional, factores humanos de éxito e impacto de los principios ágiles en el éxito de los proyectos.
+
+\paragraph{Proceso de análisis}
+Una vez seleccionados los artículos, se realizó una lectura analítica de cada estudio para identificar la problemática abordada, el método o experimento aplicado, los resultados obtenidos, el impacto atribuido a las metodologías ágiles y los aportes que pueden trasladarse a contextos reales de desarrollo de software. Posteriormente, se elaboró un análisis crítico personal y se formularon dos propuestas de implementación por cada artículo, con el propósito de extender sus hallazgos a otros escenarios de aplicación.
 
 \subsection{Resultados obtenidos}
-De acuerdo con el tipo de trabajo, se plasmarán los resultados alcanzados en la guía tarea una vez ejecutadas las actividades. Se pueden emplear figuras y tablas las cuales deben ser numeradas. 
 
+A continuación, se presenta el análisis de los tres artículos seleccionados, enfocados en la inclusión de las metodologías ágiles en la construcción de productos de software y en la relevancia práctica de sus principios en contextos organizacionales reales.
 
-%Especifique las TAC's utilizadas en la Tarea. 
-\subsection{Habilidades blandas empleadas en la tarea}
-\begin{itemize}
-    \item[$\square$] Liderazgo
-    \item[$\square$] Trabajo en equipo
-    \item[$\square$] Comunicación asertiva
-    \item[$\square$] La empatía
-    \item[$\square$] Pensamiento crítico
-    \item[$\square$] Flexibilidad
-    \item[$\square$] La resolución de conflictos
-    \item[$\square$] Adaptabilidad
-    \item[$\square$] Responsabilidad
+\subsubsection{Artículo 1: Factores que afectan la adopción ágil en la industria del software}
+
+\paragraph{Identificación del artículo}
+\begin{itemize}[leftmargin=1.2cm]
+    \item \textbf{Título:} Factors affecting Agile adoption: An industry research study of the mobile app sector in Saudi Arabia.
+    \item \textbf{Autores:} Fahad S. Altuwaijri y Maria Angela Ferrario.
+    \item \textbf{DOI:} 10.1016/j.jss.2022.111347.
 \end{itemize}
 
+\paragraph{Problemática abordada}
+El estudio analiza los factores que influyen en la adopción de metodologías ágiles dentro del sector de desarrollo de aplicaciones móviles en Arabia Saudita. La problemática se centra en que muchas organizaciones reconocen los beneficios potenciales de Agile, pero enfrentan dificultades al momento de adoptarlo de forma efectiva. Estas dificultades no dependen únicamente de herramientas o procesos, sino también de factores humanos, organizacionales y culturales \cite{altuwaijri2022agile}.
 
+\paragraph{Experimento realizado}
+La investigación se desarrolló mediante entrevistas en profundidad a profesionales pertenecientes a pequeñas y medianas empresas del sector software. A partir de esta evidencia empírica, los autores construyeron un marco clasificatorio de factores que influyen en la adopción ágil. El estudio permitió identificar elementos vinculados con la cultura organizacional, la cultura nacional, el rol del cliente, las capacidades del equipo y la disposición institucional al cambio \cite{altuwaijri2022agile}.
+
+\paragraph{Resultados obtenidos}
+Los resultados muestran que la adopción ágil no depende solo de aplicar ceremonias o artefactos, sino de la existencia de un entorno organizacional compatible con los valores ágiles. Se encontró que la cultura organizacional y nacional tiene una influencia decisiva, así como la participación del cliente y la preparación de los equipos. En consecuencia, se concluye que la adopción exitosa de Agile requiere una transformación organizacional más profunda que una simple sustitución metodológica \cite{altuwaijri2022agile}.
+
+\paragraph{Impacto de las metodologías ágiles en el estudio}
+El estudio evidencia que las metodologías ágiles generan valor cuando son asumidas como un cambio integral en la forma de trabajo. Su impacto se refleja en una mayor capacidad de adaptación, mejor comunicación entre actores del proyecto y una orientación más clara hacia la entrega continua de valor. Sin embargo, también se demuestra que, si no existe una cultura adecuada, la implementación puede quedarse en una adopción superficial \cite{altuwaijri2022agile}.
+
+\paragraph{Análisis crítico personal del artículo}
+El artículo aporta una visión especialmente valiosa porque demuestra que la adopción ágil no fracasa, en la mayoría de los casos, por deficiencias del marco metodológico, sino por la ausencia de condiciones organizacionales que permitan su puesta en práctica real. Este hallazgo es importante porque evita una interpretación reduccionista de Agile como un conjunto de ceremonias o herramientas y lo sitúa como un cambio estructural en la cultura de trabajo. Desde una valoración crítica, uno de sus mayores aciertos es destacar la influencia de factores humanos, culturales y del cliente, ya que estos suelen ser subestimados en implementaciones que se concentran solo en aspectos operativos. Como limitación, el estudio se desarrolla en un contexto sectorial y geográfico específico, por lo que sus hallazgos no deberían generalizarse mecánicamente a todos los entornos. Aun así, el artículo es muy pertinente porque explica con claridad por qué algunas organizaciones adoptan Agile en el discurso, pero no logran materializar sus beneficios en la práctica.
+
+\paragraph{Propuestas de implementación}
+\begin{enumerate}[leftmargin=1.2cm]
+    \item \textbf{Diseño de un plan de adopción progresiva:} Se propone implementar Agile de forma gradual mediante equipos piloto, con el fin de evaluar barreras culturales, ajustar prácticas y fortalecer capacidades internas antes de escalar la adopción al resto de la organización.
+    \item \textbf{Fortalecimiento de la participación del cliente:} Se sugiere formalizar mecanismos de interacción continua con el cliente, como revisiones periódicas de entregables y validación iterativa de requisitos, para alinear mejor el producto con las necesidades reales del usuario.
+\end{enumerate}
+
+\subsubsection{Artículo 2: Factores humanos críticos para el éxito de proyectos ágiles}
+
+\paragraph{Identificación del artículo}
+\begin{itemize}[leftmargin=1.2cm]
+    \item \textbf{Título:} Agile software development projects--Unveiling the human-related critical success factors.
+    \item \textbf{Autores:} Leonor Barros, Carlos Tam y João Varajão.
+    \item \textbf{DOI:} 10.1016/j.infsof.2024.107432.
+\end{itemize}
+
+\paragraph{Problemática abordada}
+El artículo parte de la necesidad de identificar cuáles son los factores humanos que tienen mayor influencia en el éxito de los proyectos desarrollados bajo metodologías ágiles. Aunque Agile suele asociarse a prácticas, iteraciones y entregas frecuentes, los autores sostienen que el verdadero diferencial puede encontrarse en las capacidades humanas del equipo y en la forma en que se relacionan los participantes del proyecto \cite{barros2024human}.
+
+\paragraph{Experimento realizado}
+El estudio se desarrolló mediante un análisis empírico basado en 177 respuestas válidas obtenidas de profesionales vinculados a proyectos ágiles. Con base en esos datos, los autores evaluaron el efecto de distintos factores humanos sobre el éxito del proyecto, considerando variables como la capacidad del equipo, la implicación del cliente, la seguridad psicológica y la autonomía del grupo de trabajo \cite{barros2024human}.
+
+\paragraph{Resultados obtenidos}
+Los resultados muestran que la capacidad del equipo y la participación del cliente son los factores con mayor efecto sobre el éxito del proyecto ágil. Asimismo, la seguridad psicológica aparece como un factor indirecto relevante, ya que favorece la comunicación abierta, la confianza y la colaboración. El estudio también sugiere que la autonomía del equipo puede tener dinámicas complejas cuando no está acompañada de condiciones adecuadas de interacción y apoyo \cite{barros2024human}.
+
+\paragraph{Impacto de las metodologías ágiles en el estudio}
+La investigación confirma que el valor de Agile no se limita a la rapidez de entrega o a la flexibilidad del proceso, sino que también reside en la capacidad de crear entornos colaborativos de alto rendimiento. El impacto de las metodologías ágiles se observa en la promoción de equipos con mayor capacidad de respuesta, mejor coordinación interna y mayor cercanía con el cliente, elementos que incrementan la probabilidad de éxito del producto de software \cite{barros2024human}.
+
+\paragraph{Análisis crítico personal del artículo}
+Este artículo resulta uno de los más sólidos del conjunto analizado, debido a que aporta evidencia empírica reciente sobre un elemento decisivo del desarrollo ágil: la dimensión humana del proyecto. Su principal fortaleza consiste en demostrar que la efectividad de Agile no depende exclusivamente del marco utilizado, sino de la calidad de las interacciones entre equipo, cliente y entorno organizacional. Desde una mirada crítica, el estudio permite cuestionar la idea de que basta con aplicar Scrum o prácticas iterativas para asegurar el éxito, ya que evidencia que sin capacidad del equipo, implicación del cliente y seguridad psicológica, la metodología puede perder efectividad. Como limitación, varios de estos factores pueden variar según el tamaño de la empresa, la cultura organizacional o el país, por lo que sería útil contar con validaciones comparativas adicionales. A pesar de ello, el artículo es altamente relevante porque ofrece una base convincente para defender que la implementación ágil debe priorizar el fortalecimiento humano del equipo y no solo la definición de procesos.
+
+\paragraph{Propuestas de implementación}
+\begin{enumerate}[leftmargin=1.2cm]
+    \item \textbf{Fortalecimiento de competencias del equipo:} Se propone implementar programas internos de capacitación técnica y colaborativa para mejorar la capacidad del equipo, integrando formación en comunicación, trabajo iterativo, revisión de código y resolución conjunta de problemas.
+    \item \textbf{Promoción de seguridad psicológica en el entorno de trabajo:} Se recomienda establecer dinámicas de retroalimentación respetuosa, retrospectivas sin culpabilización y espacios de participación abierta, con el objetivo de que los miembros del equipo puedan expresar riesgos, errores e ideas con confianza.
+\end{enumerate}
+
+\subsubsection{Artículo 3: Impacto percibido de los principios ágiles en el éxito de proyectos de software}
+
+\paragraph{Identificación del artículo}
+\begin{itemize}[leftmargin=1.2cm]
+    \item \textbf{Título:} Perceived impact of agile principles: Insights from a survey-based study on agile software development project success.
+    \item \textbf{Autores:} Yulianus Palopak y Sun-Jen Huang.
+    \item \textbf{DOI:} 10.1016/j.infsof.2024.107552.
+\end{itemize}
+
+\paragraph{Problemática abordada}
+El trabajo estudia cómo los principios ágiles influyen en el éxito de los proyectos de desarrollo de software. La problemática se fundamenta en que, aunque las organizaciones adoptan marcos como Scrum o XP, no siempre existe claridad respecto a qué principios ágiles generan mayor impacto real en los resultados del proyecto. En este sentido, el estudio busca conectar la aplicación de principios ágiles con indicadores de éxito organizacional y técnico \cite{palopak2024principles}.
+
+\paragraph{Experimento realizado}
+La investigación se desarrolló mediante un estudio basado en encuesta, con participación de 298 profesionales vinculados a proyectos ágiles. Los autores utilizaron un modelo de análisis estadístico para examinar la relación entre la aplicación de principios ágiles y el éxito del proyecto. Entre los principios evaluados se encuentran la entrega frecuente, la excelencia técnica, la proactividad del equipo y la colaboración con el cliente \cite{palopak2024principles}.
+
+\paragraph{Resultados obtenidos}
+Los resultados indican que existe una relación significativa entre la aplicación de los principios ágiles y el éxito del proyecto. Entre los principios con mayor impacto destacan la entrega regular de valor, la excelencia técnica, la proactividad de los miembros del equipo y la colaboración continua con el cliente. Esto refuerza la idea de que el éxito de Agile no depende solo de adoptar un marco formal, sino de aplicar coherentemente sus principios en la práctica diaria \cite{palopak2024principles}.
+
+\paragraph{Impacto de las metodologías ágiles en el estudio}
+El estudio confirma que las metodologías ágiles generan mejores resultados cuando sus principios orientadores son asumidos de manera auténtica dentro del proyecto. El impacto se traduce en mayor alineación con el cliente, mejor calidad técnica, capacidad de respuesta frente al cambio y una orientación constante a la entrega de valor. Por tanto, el artículo muestra que la relevancia de Agile está directamente vinculada a la vivencia de sus principios y no solo a la adopción de ceremonias o roles \cite{palopak2024principles}.
+
+\paragraph{Análisis crítico personal del artículo}
+Este artículo es especialmente pertinente para el objetivo de la guía porque vincula de manera directa la aplicación de los principios ágiles con el éxito de los proyectos de software. Su mayor fortaleza radica en que no se limita a defender la utilidad general de Agile, sino que identifica con mayor precisión cuáles principios generan más impacto real en los resultados del proyecto. Desde una valoración crítica, el estudio contribuye a desmontar una práctica frecuente en algunas organizaciones: adoptar ceremonias, roles o tableros sin interiorizar los principios que les dan sentido. En ese aspecto, su aporte es especialmente valioso, ya que permite distinguir entre una implementación superficial y una implementación auténtica de Agile. Como limitación, el hecho de basarse en percepciones de los participantes puede introducir sesgos subjetivos; sin embargo, esto no reduce su relevancia, sino que señala la necesidad de complementar este tipo de evidencia con mediciones observacionales o longitudinales. En conjunto, el artículo sustenta de forma convincente que el verdadero valor de Agile depende de la vivencia consistente de sus principios y no de la simple adopción formal del marco metodológico.
+
+\paragraph{Propuestas de implementación}
+\begin{enumerate}[leftmargin=1.2cm]
+    \item \textbf{Gestión enfocada en principios ágiles:} Se propone que las organizaciones complementen la adopción de marcos como Scrum con mecanismos de seguimiento que evalúen la presencia real de principios ágiles, tales como colaboración con el cliente, excelencia técnica y entrega iterativa de valor.
+    \item \textbf{Medición continua de éxito basada en valor:} Se sugiere incorporar indicadores que no solo midan cumplimiento de cronograma, sino también satisfacción del cliente, calidad técnica, capacidad de respuesta al cambio y valor entregado en cada iteración.
+\end{enumerate}
+
+\subsubsection{Síntesis analítica y evaluación de la relevancia de las metodologías ágiles}
+
+El análisis comparado de los tres artículos permite sostener que las metodologías ágiles conservan una alta relevancia en la construcción de productos de software, aunque su efectividad depende de una implementación integral. En los tres estudios se observa una coincidencia central: Agile no funciona como una solución automática por el solo hecho de adoptar un marco de trabajo, sino como un enfoque que requiere coherencia entre cultura organizacional, capacidades humanas, principios operativos y participación continua del cliente.
+
+El primer artículo se concentra en la adopción ágil y demuestra que las principales barreras son de carácter cultural y organizacional. El segundo profundiza en los factores humanos que explican el éxito del proyecto, destacando el peso de la capacidad del equipo, la participación del cliente y la seguridad psicológica. El tercero, por su parte, aporta una validación cuantitativa de que el éxito del proyecto se relaciona directamente con la aplicación real de principios ágiles como la entrega frecuente, la excelencia técnica y la colaboración continua. Por tanto, aunque cada estudio aborda una dimensión distinta, los tres convergen en una misma idea: la agilidad efectiva depende menos de la formalidad metodológica y más de la calidad de su implementación.
+
+A partir de esta comparación, se concluye que la relevancia actual de Agile en la industria no proviene únicamente de su flexibilidad, sino de su capacidad para articular adaptación, valor de negocio, trabajo colaborativo y aprendizaje continuo. En consecuencia, la inclusión de metodologías ágiles en la construcción de productos de software no debe reducirse al uso mecánico de prácticas visibles, sino que debe entenderse como una transformación integral en la forma de planificar, coordinar, construir y validar el producto con el cliente.
+
+\subsection{Habilidades blandas empleadas en la tarea}
+\begin{itemize}[leftmargin=1.2cm]
+    \item[$\checkmark$] Pensamiento crítico
+    \item[$\checkmark$] Responsabilidad
+\end{itemize}
 
 \subsection{Conclusiones}
-Constituye la respuesta que propone el o los estudiantes para el problema que originó el trabajo desarrollado, de acuerdo con los datos recogidos y la teoría aplicada. 
+
+El análisis de los tres artículos permite concluir que las metodologías ágiles continúan siendo altamente relevantes en la industria del software, no solo por su capacidad de adaptación al cambio, sino por su contribución a la entrega continua de valor, la mejora de la interacción con el cliente y la consolidación de dinámicas de trabajo más colaborativas. Sin embargo, la evidencia revisada demuestra que sus beneficios no se obtienen automáticamente, sino que dependen de una implementación coherente y sostenida.
+
+Asimismo, se concluye que la adopción exitosa de Agile está fuertemente condicionada por factores organizacionales y humanos. La cultura institucional, la preparación del equipo, la implicación del cliente y la existencia de un entorno de confianza influyen de manera decisiva en los resultados del proyecto. En este sentido, la metodología por sí sola no garantiza el éxito; lo determinante es la calidad con la que sus principios son comprendidos, asumidos y aplicados en la práctica.
+
+Finalmente, se determina que la inclusión de metodologías ágiles en la construcción de productos de software debe entenderse como una transformación integral en la forma de planificar, coordinar, desarrollar y validar soluciones. Por ello, la verdadera fortaleza de Agile no reside únicamente en sus ceremonias o artefactos, sino en la aplicación consistente de sus principios y en la capacidad de la organización para convertirlos en una forma real de trabajo.
 
 \subsection{Recomendaciones}
-Redactar las sugerencias o acciones concretas que se derivan de la tarea desarrollada. \cite{greenwade93}
+\begin{enumerate}[leftmargin=1.2cm]
+    \item \textbf{Implementar la adopción ágil de forma progresiva:} Se recomienda iniciar la incorporación de metodologías ágiles mediante equipos piloto y procesos controlados de retroalimentación, con el fin de identificar barreras culturales y ajustar la estrategia antes de una adopción a gran escala.
 
+    \item \textbf{Invertir en el fortalecimiento humano del equipo:} Se recomienda desarrollar competencias técnicas y colaborativas en los miembros del equipo, incluyendo capacitación en comunicación, trabajo iterativo, gestión del cambio y resolución compartida de problemas.
+
+    \item \textbf{Consolidar la participación continua del cliente:} Resulta recomendable institucionalizar mecanismos de colaboración frecuente con el cliente para garantizar una validación iterativa del producto y una mejor alineación con las necesidades reales del usuario.
+
+    \item \textbf{Evaluar la implementación ágil desde sus principios:} Se sugiere que la organización no mida únicamente el cumplimiento de ceremonias o cronogramas, sino también la presencia efectiva de principios como entrega frecuente de valor, excelencia técnica, colaboración continua y respuesta al cambio.
+\end{enumerate}
 
 \subsection{Referencias}
-Insertar las referencias bibliográficas empleadas aplicando la norma IEEE.
 
-\vspace{-3em} %reduce el espacio causado por refname vacío
+\vspace{-2em}
 \renewcommand{\refname}{}
-\bibliographystyle{ieeetr}
+\bibliographystyle{ieeetran}
 \bibliography{sample}
 
-\subsection{Anexos}
 \vfill
+
 \end{document}
