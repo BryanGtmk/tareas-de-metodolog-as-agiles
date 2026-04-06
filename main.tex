@@ -520,7 +520,9 @@ Esto se hace porque:
 
 \subsubsection*{2. Modelo conceptual}
 
-\paragraph{2.1 Entidades del negocio}
+\noindent\textbf{2.1 Entidades del negocio}
+
+\vspace{0.2cm}
 
 \textbf{Cliente}
 
@@ -578,7 +580,9 @@ Atributos:
     \item PrecioVenta
 \end{itemize}
 
-\paragraph{2.2 Reglas de negocio}
+\noindent\textbf{2.2 Reglas de negocio}
+
+\vspace{0.2cm}
 
 \begin{itemize}[leftmargin=1.2cm]
     \item Un cliente puede realizar muchas compras.
@@ -591,7 +595,9 @@ Atributos:
 
 \subsubsection*{3. Modelo Entidad-Relacion (ER)}
 
-\paragraph{3.1 Entidades con sus claves}
+\noindent\textbf{3.1 Entidades con sus claves}
+
+\vspace{0.2cm}
 
 \textbf{CLIENTE}
 \begin{itemize}[leftmargin=1.2cm]
@@ -631,7 +637,9 @@ Atributos:
     \item PrecioVenta
 \end{itemize}
 
-\paragraph{3.2 Relaciones y cardinalidades}
+\noindent\textbf{3.2 Relaciones y cardinalidades}
+
+\vspace{0.2cm}
 
 \textbf{PROVEEDOR --- SUMINISTRA --- PRODUCTO}
 
@@ -772,7 +780,9 @@ Aqui ya se definen:
     \item validaciones con CHECK.
 \end{itemize}
 
-\paragraph{7.1 Eliminacion previa de tablas si ya existen}
+\noindent\textbf{7.1 Eliminacion previa de tablas si ya existen}
+
+\vspace{0.3cm}
 
 Esto sirve para volver a ejecutar el script.
 
@@ -784,7 +794,9 @@ DROP TABLE CLIENTES CASCADE CONSTRAINTS;
 DROP TABLE PROVEEDORES CASCADE CONSTRAINTS;
 \end{lstlisting}
 
-\paragraph{7.2 Creacion de tablas}
+\noindent\textbf{7.2 Creacion de tablas}
+
+\vspace{0.3cm}
 
 \begin{lstlisting}[language=SQL, caption={Creacion de tablas del ejercicio adicional 1}]
 CREATE TABLE PROVEEDORES (
@@ -841,12 +853,19 @@ CREATE TABLE DETALLE_COMPRA (
 
 \subsubsection*{8. DML en Oracle}
 
-\paragraph{8.1 Insercion de datos en PROVEEDORES}
-\paragraph{8.2 Insercion de datos en CLIENTES}
-\paragraph{8.3 Insercion de datos en PRODUCTOS}
-\paragraph{8.4 Insercion de datos en COMPRAS}
-\paragraph{8.5 Insercion de datos en DETALLE\_COMPRA}
-\paragraph{8.6 Confirmar cambios}
+\noindent\textbf{8.1 Insercion de datos en PROVEEDORES}
+
+\noindent\textbf{8.2 Insercion de datos en CLIENTES}
+
+\noindent\textbf{8.3 Insercion de datos en PRODUCTOS}
+
+\noindent\textbf{8.4 Insercion de datos en COMPRAS}
+
+\noindent\textbf{8.5 Insercion de datos en DETALLE\_COMPRA}
+
+\noindent\textbf{8.6 Confirmar cambios}
+
+\vspace{0.4cm}
 
 \begin{lstlisting}[language=SQL, caption={Insercion de datos del ejercicio adicional 1}]
 -- PROVEEDORES
@@ -910,7 +929,7 @@ ORDER BY co.ID_COMPRA;
 
 \subsubsection*{10. Operaciones DML adicionales}
 
-\paragraph{10.1 UPDATE}
+\noindent\textbf{10.1 UPDATE}
 
 \begin{itemize}[leftmargin=1.2cm]
     \item Cambiar direccion de un cliente.
@@ -918,14 +937,16 @@ ORDER BY co.ID_COMPRA;
     \item Cambiar marca de un producto.
 \end{itemize}
 
-\paragraph{10.2 DELETE}
+\noindent\textbf{10.2 DELETE}
 
 \begin{itemize}[leftmargin=1.2cm]
     \item Eliminar un detalle de compra.
     \item Eliminar una compra si ya no tiene detalles.
 \end{itemize}
 
-\paragraph{10.3 Guardar cambios}
+\noindent\textbf{10.3 Guardar cambios}
+
+\vspace{0.3cm}
 
 \begin{lstlisting}[language=SQL, caption={Operaciones UPDATE y DELETE del ejercicio adicional 1}]
 UPDATE CLIENTES
@@ -974,7 +995,7 @@ INSERT INTO DETALLE_COMPRA VALUES (1, 'PR02', -1, 20);
 
 \subsubsection*{12. Ejercicios practicos en Oracle}
 
-\paragraph{12.1 Ejercicio practico 1}
+\noindent\textbf{12.1 Ejercicio practico 1}
 
 Insertar un nuevo proveedor llamado ElectroGlobal, con RUC 1790012345003, direccion Guayaquil Norte.
 
@@ -984,7 +1005,7 @@ Insertar un nuevo proveedor llamado ElectroGlobal, con RUC 1790012345003, direcc
 INSERT INTO PROVEEDORES VALUES ('1790012345003', 'ElectroGlobal', 'Guayaquil Norte');
 \end{lstlisting}
 
-\paragraph{12.2 Ejercicio practico 2}
+\noindent\textbf{12.2 Ejercicio practico 2}
 
 Registrar un nuevo producto llamado Disco SSD 1TB, marca Kingston, precio 95, suministrado por 1790012345003.
 
@@ -994,7 +1015,7 @@ Registrar un nuevo producto llamado Disco SSD 1TB, marca Kingston, precio 95, su
 INSERT INTO PRODUCTOS VALUES ('PR06', 'Disco SSD 1TB', 95, 'Kingston', '1790012345003');
 \end{lstlisting}
 
-\paragraph{12.3 Ejercicio practico 3}
+\noindent\textbf{12.3 Ejercicio practico 3}
 
 Registrar un nuevo cliente:
 
@@ -1012,7 +1033,7 @@ Registrar un nuevo cliente:
 INSERT INTO CLIENTES VALUES ('1809998887', 'Luis', 'Mora', 'Riobamba Centro', DATE '2002-03-22');
 \end{lstlisting}
 
-\paragraph{12.4 Ejercicio practico 4}
+\noindent\textbf{12.4 Ejercicio practico 4}
 
 Registrar una compra del cliente 1809998887 con ID\_COMPRA = 3 y fecha 2026-04-03.
 
@@ -1022,7 +1043,7 @@ Registrar una compra del cliente 1809998887 con ID\_COMPRA = 3 y fecha 2026-04-0
 INSERT INTO COMPRAS VALUES (3, DATE '2026-04-03', '1809998887');
 \end{lstlisting}
 
-\paragraph{12.5 Ejercicio practico 5}
+\noindent\textbf{12.5 Ejercicio practico 5}
 
 Registrar en la compra 3 los productos:
 
@@ -1038,7 +1059,7 @@ INSERT INTO DETALLE_COMPRA VALUES (3, 'PR03', 1, 60);
 INSERT INTO DETALLE_COMPRA VALUES (3, 'PR06', 2, 95);
 \end{lstlisting}
 
-\paragraph{12.6 Ejercicio practico 6}
+\noindent\textbf{12.6 Ejercicio practico 6}
 
 Crear dos nuevos clientes y registrar al menos una compra para cada uno.
 
@@ -1055,7 +1076,7 @@ INSERT INTO DETALLE_COMPRA VALUES (4, 'PR01', 1, 860);
 INSERT INTO DETALLE_COMPRA VALUES (5, 'PR02', 3, 27);
 \end{lstlisting}
 
-\paragraph{12.7 Ejercicio practico 7}
+\noindent\textbf{12.7 Ejercicio practico 7}
 
 Insertar tres productos nuevos, todos asociados a proveedores ya existentes.
 
@@ -1067,7 +1088,7 @@ INSERT INTO PRODUCTOS VALUES ('PR08', 'Memoria USB 64GB', 18, 'Sandisk', '179001
 INSERT INTO PRODUCTOS VALUES ('PR09', 'Webcam HD', 45, 'Genius', '1790012345004');
 \end{lstlisting}
 
-\paragraph{12.8 Ejercicio practico 8}
+\noindent\textbf{12.8 Ejercicio practico 8}
 
 Actualizar el precio unitario de todos los productos de un proveedor especifico.
 
@@ -1079,7 +1100,7 @@ SET PRE_UNIT = PRE_UNIT * 1.05
 WHERE RUC_PROV = '1790012345002';
 \end{lstlisting}
 
-\paragraph{12.9 Ejercicio practico 9}
+\noindent\textbf{12.9 Ejercicio practico 9}
 
 Eliminar correctamente una compra completa, considerando primero sus detalles.
 
@@ -1090,7 +1111,7 @@ DELETE FROM DETALLE_COMPRA WHERE ID_COMPRA = 4;
 DELETE FROM COMPRAS WHERE ID_COMPRA = 4;
 \end{lstlisting}
 
-\paragraph{12.10 Ejercicio practico 10}
+\noindent\textbf{12.10 Ejercicio practico 10}
 
 Intentar insertar:
 
@@ -1110,8 +1131,7 @@ INSERT INTO DETALLE_COMPRA VALUES (3, 'PR06', -2, 95);
 
 \textbf{Luego, explicar por que Oracle genera error:}
 
-Oracle genera error en el primer caso porque se intenta registrar un producto con un proveedor que no existe en la tabla \texttt{PROVEEDORES}; por lo tanto, se viola la clave foranea. En el segundo caso, se intenta insertar un cliente con una clave primaria ya registrada, por lo que se incumple la restriccion de unicidad de la llave primaria. En el tercer caso, Oracle genera error porque la cantidad es negativa y la tabla \texttt{DETALLE\_COMPRA} tiene una restriccion \texttt{CHECK} que solo permite valores mayores que cero.
-\subsection{Habilidades blandas empleadas en la tarea}
+Oracle genera error en el primer caso porque se intenta registrar un producto con un proveedor que no existe en la tabla \texttt{PROVEEDORES}; por lo tanto, se viola la clave foranea. En el segundo caso, se intenta insertar un cliente con una clave primaria ya registrada, por lo que se incumple la restriccion de unicidad de la llave primaria. En el tercer caso, Oracle genera error porque la cantidad es negativa y la tabla \texttt{DETALLE\_COMPRA} tiene una restriccion \texttt{CHECK} que solo permite valores mayores que cero.\subsection{Habilidades blandas empleadas en la tarea}
 \begin{itemize}
     \item[$\square$] Liderazgo
     \item[$\square$] Trabajo en equipo
