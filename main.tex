@@ -1,37 +1,42 @@
 \documentclass{article}
 
-% Language setting
-% Replace `english' with e.g. `spanish' to change the document language
-\usepackage[english]{babel}
+% Idioma y codificación
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
+% Márgenes
 \usepackage[letterpaper,top=2cm,bottom=5cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 
-% Useful packages
+% Paquetes útiles
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{amssymb} 
+\usepackage{amssymb}
 \usepackage{fancyhdr}
-\usepackage{lipsum} % Para generar texto de ejemplo
 \usepackage{multicol}
-\pagestyle{fancy} 
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{url}
 
-\fancyhf{} % Limpiar encabezado y pie de página por defecto
-\setlength{\headheight}{70pt} % Ajuste del tamaño del encabezado (puedes aumentar este valor si es necesario)
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{70pt}
 
 % Definición del encabezado
-
 \fancyhead[C]{%
     \begin{minipage}[c]{2.0cm}
         \centering
         \includegraphics[width=2.0cm]{imagenes/uta.png}
     \end{minipage}%
     \hfill
-    \begin{minipage}[c]{8cm} 
+    \begin{minipage}[c]{8cm}
         \centering
         \small {\textbf{UNIVERSIDAD TÉCNICA DE AMBATO}} \\[0.1cm]
-        \scriptsize \textit{FACULTAD DE INGENIERÍA EN SISTEMAS ELECTRÓNICA E INDUSTRIAL} \\[0.1cm]
-        \scriptsize \textbf{CARRERA SOFTWARE - METODOLOGÍAS AGILES} \\[0.1cm]
+        \scriptsize \textit{FACULTAD DE INGENIERÍA EN SISTEMAS, ELECTRÓNICA E INDUSTRIAL} \\[0.1cm]
+        \scriptsize \textbf{CARRERA DE SOFTWARE - METODOLOGÍAS ÁGILES} \\[0.1cm]
         \scriptsize \textbf{CICLO ACADÉMICO: ENERO 2026 - JULIO 2026}
     \end{minipage}%
     \hfill
@@ -42,97 +47,439 @@
 }
 
 \begin{document}
+
 \begin{center}
-    {\large \textbf{INFORME DE TAREA}} \\    
+    {\large \textbf{INFORME DE TAREA}} \\[0.3cm]
+    {\large \textbf{Investigación sobre técnicas de retrospectivas en Scrum}}
 \end{center}
 
 \section{Portada}
+
 \begin{flushleft}
-\begin{tabular}{ l l }
-    \textbf{Tema:} & \\
-    \textbf{Unidad de Organización Curricular:} & PROFECIONAL\\
-    \textbf{Nivel y Paralelo:} & 4to Semestre "B" \\
-    \textbf{Alumnos participantes:} & Guatemal Avilez Bryan Stalin \\
-    \textbf{Asignatura:} & Metodologias Agiles \\
-    \textbf{Docente:} & Ing.Naranjo Avalos Hernan Fabricio, Mg. \\
+\begin{tabular}{ l p{9cm} }
+    \textbf{Tema:} & Investigación sobre cinco tipos de retrospectivas aplicables en Scrum \\
+    \textbf{Unidad de Organización Curricular:} & Profesional \\
+    \textbf{Nivel y Paralelo:} & 4to Semestre ``B'' \\
+    \textbf{Alumno participante:} & Guatemal Avilez Bryan Stalin \\
+    \textbf{Asignatura:} & Metodologías Ágiles \\
+    \textbf{Docente:} & Ing. Naranjo Ávalos Hernán Fabricio, Mg. \\
 \end{tabular}
 \end{flushleft}
 
-
 \section{Informe de la Tarea}
-\subsection{Objetivos}
-\subsubsection{General}
-(Especificado en la guía tarea proporcionada por el docente).
-\subsubsection{Específicos}
-\begin{itemize}
-    \item (Se recomienda máximo 3).
-    \item 
-    \item 
-\end{itemize}
 
+\subsection{Objetivos}
+
+\subsubsection{General}
+
+Investigar cinco técnicas de retrospectivas aplicables en Scrum, mediante el análisis de fuentes bibliográficas, académicas y técnicas, con el propósito de comprender su objetivo, resultados esperados, procedimiento, materiales necesarios y aplicación práctica dentro de un equipo ágil.
+
+\subsubsection{Específicos}
+
+\begin{itemize}
+    \item Describir el propósito de la retrospectiva dentro del marco de trabajo Scrum y su relación con la mejora continua.
+    \item Analizar cinco técnicas de retrospectiva considerando su objetivo, resultados, procedimiento, insumos y ejemplo práctico.
+    \item Relacionar las técnicas seleccionadas con el rol del Scrum Master en la gestión de impedimentos, motivación, productividad y autoorganización del equipo.
+\end{itemize}
 
 \subsection{Instrucciones}
 
-Detalladas en la asignación de la tarea proporcionada por el docente.
-
+La tarea consiste en realizar una investigación sobre retrospectivas en Scrum, considerando cinco tipos diferentes de reuniones o dinámicas retrospectivas. Para cada técnica se debe definir su objetivo, los resultados esperados, el procedimiento de aplicación, los insumos o materiales requeridos y un ejemplo práctico. Además, se debe considerar como fuente principal el libro \textit{Agile Retrospectives: Making Good Teams Great}, recomendado por el docente, y complementar la investigación con fuentes académicas relacionadas con retrospectivas ágiles.
 
 \subsection{Listado de equipos, materiales y recursos}
+
 \textbf{Listado de equipos y materiales generales empleados en la tarea:}
 \begin{itemize}
-    \item  
+    \item Computador personal.
+    \item Conexión a Internet.
+    \item Editor de texto o procesador de documentos.
+    \item Fuentes bibliográficas digitales.
+    \item Artículos académicos relacionados con retrospectivas ágiles.
+    \item Libro \textit{Agile Retrospectives: Making Good Teams Great}.
+    \item Guía Scrum 2020.
 \end{itemize}
 
 \textbf{TAC (Tecnologías para el Aprendizaje y Conocimiento) empleados en la tarea:}
 \begin{itemize}
-    \item[$\square$] Plataformas educativas
-    \item[$\square$] Simuladores y laboratorios virtuales
-    \item[$\square$] Aplicaciones educativas
-    \item[$\square$] Recursos audiovisuales
-    \item[$\square$] Gamificación
-    \item[$\square$] Inteligencia Artificial
-    \item Otros (Especifique): \underline{\hspace{5cm}}
+    \item[$\boxtimes$] Plataformas educativas.
+    \item[$\square$] Simuladores y laboratorios virtuales.
+    \item[$\square$] Aplicaciones educativas.
+    \item[$\boxtimes$] Recursos audiovisuales.
+    \item[$\square$] Gamificación.
+    \item[$\boxtimes$] Inteligencia Artificial.
+    \item Otros: \underline{SciSpace, Google Scholar, documentación oficial de Scrum.}
 \end{itemize}
 
+\subsection{Desarrollo de la Tarea}
 
-\subsection{Desarrollo de la Tarea (Actividades a Desarrollar)}
+\subsubsection{Contexto general de la retrospectiva en Scrum}
 
-Detalladas en las instrucciones proporcionadas por el docente.
+En Scrum, la retrospectiva del Sprint es un evento que se realiza al finalizar cada Sprint con la finalidad de inspeccionar la forma en que el equipo trabajó y planificar mejoras para el siguiente ciclo. A diferencia del Sprint Review, que se centra en revisar el incremento del producto, la retrospectiva se enfoca en analizar el proceso de trabajo, las interacciones, las herramientas, los problemas encontrados y las oportunidades de mejora del equipo Scrum \cite{scrumguide2020}.
+
+La retrospectiva no debe entenderse como una reunión para buscar culpables, sino como un espacio de aprendizaje, adaptación y mejora continua. Desde la perspectiva de un futuro Scrum Master, esta reunión permite facilitar la conversación del equipo, identificar impedimentos, fortalecer la autoorganización y promover acuerdos concretos que ayuden a incrementar la productividad y la calidad del trabajo.
+
+El libro \textit{Agile Retrospectives: Making Good Teams Great}, escrito por Esther Derby y Diana Larsen, plantea que una retrospectiva efectiva debe ser preparada y facilitada de manera estructurada. Las autoras proponen un proceso compuesto por cinco momentos: preparar el escenario, recopilar datos, generar ideas, decidir qué hacer y cerrar la retrospectiva \cite{derby2006agile}. Esta estructura permite evitar que la reunión se convierta únicamente en una conversación informal y ayuda a que el equipo llegue a acciones de mejora concretas.
+
+\subsubsection{Tipo de investigación}
+
+El presente trabajo corresponde a una investigación descriptiva documental, debido a que se analizan fuentes bibliográficas, guías oficiales y artículos académicos relacionados con retrospectivas ágiles. Su finalidad es describir cinco técnicas de retrospectiva aplicables en Scrum, considerando su objetivo, resultados esperados, procedimiento, materiales y ejemplo práctico de aplicación.
+
+\subsubsection{Metodología de búsqueda de información}
+
+Para la elaboración del informe se realizó una búsqueda documental en fuentes oficiales, libros especializados y artículos académicos. Primero, se revisó la Guía Scrum 2020 para comprender el propósito formal de la retrospectiva dentro del marco Scrum. Luego, se consultó el libro \textit{Agile Retrospectives: Making Good Teams Great}, considerado una fuente base para la facilitación de retrospectivas ágiles. Finalmente, se buscaron artículos científicos en SciSpace y Google Scholar utilizando palabras clave como \textit{agile retrospectives}, \textit{sprint retrospective}, \textit{Scrum retrospective impediments}, \textit{retrospective games}, \textit{team learning} y \textit{continuous improvement}.
+
+Como criterios de selección, se priorizaron fuentes relacionadas con ingeniería de software, Scrum, mejora continua, impedimentos, participación del equipo y aprendizaje organizacional. También se consideraron artículos con DOI, estudios de caso, investigaciones empíricas y trabajos publicados en conferencias o revistas vinculadas al desarrollo de software.
+
+El uso de inteligencia artificial se limitó al apoyo en la organización de ideas, revisión de redacción y contraste de fuentes bibliográficas. La selección final de las técnicas, el análisis de su utilidad en Scrum y la adaptación de los ejemplos prácticos fueron desarrollados considerando el contexto de la asignatura y el rol del Scrum Master. De esta manera, la IA fue utilizada como una TAC de apoyo y no como sustituto del análisis académico.
+
+\subsubsection{Importancia de las retrospectivas ágiles}
+
+Las retrospectivas ágiles son importantes porque permiten que el equipo inspeccione su propio proceso de trabajo y adapte su comportamiento en función de los problemas encontrados. Matthies y Dobrigkeit señalan que las retrospectivas pueden presentar problemas recurrentes o \textit{headaches}, por lo cual es necesario aplicar dinámicas adecuadas para mejorar la participación y la utilidad de estas reuniones \cite{matthies2020retrospective}.
+
+Asimismo, Erdoğan, Pekkaya y Gök indican que las retrospectivas pueden fortalecerse mediante el análisis de datos del Sprint, ya que las métricas permiten tomar decisiones más objetivas sobre el rendimiento, los impedimentos y las acciones de mejora \cite{erdogan2018statistical}. Otros estudios también han demostrado que las retrospectivas basadas en juegos o dinámicas colaborativas pueden incrementar la creatividad, la comunicación y la participación del equipo \cite{przybylek2017awesome,marshburn2019build,mich2020intel}.
+
+Por lo tanto, una retrospectiva bien facilitada no solo permite conversar sobre lo ocurrido, sino que ayuda al equipo a transformar la experiencia del Sprint en aprendizaje y acciones concretas de mejora.
+
+\subsubsection{Criterio de selección de las técnicas}
+
+Las cinco técnicas seleccionadas no fueron escogidas al azar. Se eligieron porque responden a necesidades diferentes dentro de un equipo Scrum. Algunas se enfocan en productividad, otras en identificación de impedimentos, aprendizaje, análisis de causa raíz y motivación del equipo. De esta manera, la selección responde al propósito de formar criterio como futuro Scrum Master, ya que no todos los equipos necesitan la misma dinámica ni atraviesan los mismos problemas.
+
+\begin{table}[H]
+\centering
+\caption{Criterio de selección de las técnicas de retrospectiva}
+\begin{tabular}{p{4cm} p{8cm}}
+\toprule
+\textbf{Técnica} & \textbf{Necesidad que atiende} \\
+\midrule
+Start, Stop, Continue & Mejora de productividad y hábitos de trabajo. \\
+Sailboat o Velero & Identificación de impedimentos, riesgos y elementos que impulsan al equipo. \\
+4Ls & Reflexión sobre aprendizaje, satisfacción y necesidades del equipo. \\
+5 Porqués & Análisis de causa raíz de problemas repetitivos dentro de una retrospectiva. \\
+Histograma de satisfacción o motivación & Medición del estado emocional, motivación y percepción del equipo. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Relación con la estructura del libro \textit{Agile Retrospectives}}
+
+Las técnicas seleccionadas pueden integrarse dentro de la estructura propuesta por Derby y Larsen. Esto significa que una dinámica no debe aplicarse de forma aislada, sino como parte de una retrospectiva ordenada. Primero se prepara el ambiente de confianza, luego se recopila información del Sprint, después se analizan patrones o causas, posteriormente se decide qué acción tomar y, finalmente, se cierra la reunión con acuerdos claros \cite{derby2006agile}.
+
+\begin{table}[H]
+\centering
+\caption{Relación entre la estructura de Derby y Larsen y las técnicas seleccionadas}
+\begin{tabular}{p{4cm} p{8cm}}
+\toprule
+\textbf{Fase de la retrospectiva} & \textbf{Aplicación en las técnicas seleccionadas} \\
+\midrule
+Preparar el escenario & Explicar el objetivo de la dinámica y generar un ambiente de confianza. \\
+Recopilar datos & Usar post-its, escalas, preguntas o dibujos para recoger información del Sprint. \\
+Generar ideas & Agrupar patrones, discutir causas, impedimentos y percepciones del equipo. \\
+Decidir qué hacer & Priorizar problemas y definir una o dos acciones concretas de mejora. \\
+Cerrar la retrospectiva & Registrar acuerdos, confirmar el seguimiento e incorporar mejoras relevantes al Sprint Backlog. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Tipos de retrospectivas investigadas}
+
+\subsubsection{Retrospectiva Start, Stop, Continue}
+
+\textbf{Objetivo:}  
+La retrospectiva \textit{Start, Stop, Continue} tiene como objetivo identificar qué acciones debe empezar a realizar el equipo, qué prácticas debe dejar de hacer y qué comportamientos positivos debe continuar aplicando. Esta técnica es útil para mejorar la productividad y establecer acuerdos simples para el siguiente Sprint.
+
+\textbf{Resultados esperados:}  
+Al finalizar la dinámica, el equipo obtiene una lista clara de acciones clasificadas en tres categorías: iniciar, detener y continuar. El resultado principal es una priorización de prácticas que pueden mejorar la forma de trabajo del equipo en el siguiente Sprint. Esta técnica se relaciona con la mejora continua porque permite convertir la reflexión del equipo en acciones observables y evaluables.
+
+\textbf{Procedimiento:}
+\begin{enumerate}
+    \item El Scrum Master explica el objetivo de la dinámica y recuerda que la finalidad es mejorar el proceso, no buscar culpables.
+    \item Se divide la pizarra en tres columnas: \textit{Start}, \textit{Stop} y \textit{Continue}.
+    \item Cada integrante escribe sus ideas de manera individual para evitar que las primeras opiniones condicionen al resto.
+    \item Las ideas se colocan en la columna correspondiente.
+    \item El equipo agrupa ideas repetidas o similares.
+    \item Se realiza una votación para seleccionar las acciones más importantes.
+    \item Se definen una o dos acciones concretas para aplicar en el siguiente Sprint.
+    \item Las mejoras más importantes se incorporan al Sprint Backlog del siguiente Sprint para asegurar su visibilidad.
+    \item El Scrum Master registra los acuerdos para revisarlos en la siguiente retrospectiva.
+\end{enumerate}
+
+\textbf{Insumos o materiales:}
+\begin{itemize}
+    \item Pizarra física o digital.
+    \item Post-its.
+    \item Marcadores.
+    \item Stickers para votación.
+    \item Herramientas digitales como Miro, Trello, Jira, FigJam o Jamboard.
+\end{itemize}
+
+\textbf{Ejemplo práctico:}  
+En un equipo Scrum que desarrolla un módulo de inicio de sesión, se identifica que varias tareas se retrasaron porque los criterios de aceptación no estaban claros. En la columna \textit{Start}, el equipo propone revisar los criterios antes de iniciar cada historia. En \textit{Stop}, se coloca dejar de programar sin validar los requisitos. En \textit{Continue}, se mantiene la práctica de realizar reuniones diarias porque permitió detectar bloqueos técnicos. La acción final consiste en incluir una revisión breve de criterios de aceptación antes de iniciar historias complejas e incorporarla al Sprint Backlog del siguiente Sprint.
+
+\textbf{Aporte para el Scrum Master:}  
+Esta técnica ayuda al Scrum Master a transformar opiniones generales en compromisos concretos. Además, permite observar si el equipo está identificando mejoras de forma autónoma o si necesita mayor acompañamiento para priorizar acciones.
+
+\subsubsection{Retrospectiva Sailboat o Velero}
+
+\textbf{Objetivo:}  
+La retrospectiva del Velero tiene como objetivo identificar los factores que impulsan al equipo hacia su meta, los impedimentos que lo detienen y los riesgos que pueden afectar el avance del proyecto. Es una técnica visual que ayuda a representar el Sprint como un viaje hacia un objetivo.
+
+\textbf{Resultados esperados:}  
+El equipo obtiene una visión clara de los elementos que favorecen el trabajo, los obstáculos presentes y los riesgos futuros. Esta técnica permite priorizar impedimentos y definir acciones de mejora. Se relaciona con la necesidad de gestionar problemas recurrentes dentro de las retrospectivas Scrum, debido a que ayuda a visualizar aquello que frena el avance del equipo \cite{matthies2020retrospective}.
+
+\textbf{Procedimiento:}
+\begin{enumerate}
+    \item El Scrum Master dibuja un velero en la pizarra.
+    \item Se define la isla o destino como la meta del Sprint.
+    \item El viento representa los factores que ayudan al equipo.
+    \item Las anclas representan impedimentos o problemas actuales.
+    \item Las rocas representan riesgos que podrían afectar al proyecto.
+    \item Cada integrante escribe sus ideas en post-its.
+    \item El equipo ubica las ideas en el dibujo.
+    \item Se priorizan los impedimentos más importantes.
+    \item Se define una acción para eliminar o reducir el principal obstáculo.
+    \item Se asigna un responsable de seguimiento para verificar la acción acordada.
+\end{enumerate}
+
+\textbf{Insumos o materiales:}
+\begin{itemize}
+    \item Pizarra.
+    \item Marcadores.
+    \item Post-its de colores.
+    \item Plantilla de velero.
+    \item Herramienta digital colaborativa.
+\end{itemize}
+
+\textbf{Ejemplo práctico:}  
+En un equipo que desarrolla un sistema de gestión académica, la isla representa la entrega del módulo de matrícula. El viento corresponde a la buena comunicación entre los desarrolladores. El ancla principal es la falta de acceso a la base de datos de prueba. Las rocas representan posibles cambios de requisitos. Como acción de mejora, el Scrum Master gestiona con el Product Owner un ambiente de pruebas estable antes del siguiente Sprint.
+
+\textbf{Aporte para el Scrum Master:}  
+Esta retrospectiva es útil para socializar los beneficios de gestionar impedimentos. El Scrum Master puede usarla para que el equipo comprenda que un impedimento no es solamente un problema individual, sino un obstáculo que afecta el logro del objetivo del Sprint.
+
+Además, la eliminación de las ``anclas'' identificadas puede contribuir a mejorar métricas ágiles como la velocidad del equipo, el flujo de trabajo y la estabilidad del Burndown Chart. Si un impedimento se repite durante varios Sprints, puede afectar la capacidad del equipo para completar los elementos comprometidos, por lo que hacerlo visible en la retrospectiva facilita su gestión oportuna.
+
+\subsubsection{Retrospectiva 4Ls: Liked, Learned, Lacked, Longed For}
+
+\textbf{Objetivo:}  
+La retrospectiva 4Ls tiene como objetivo analizar el Sprint desde cuatro perspectivas: lo que al equipo le gustó, lo que aprendió, lo que le faltó y lo que desearía tener en futuros Sprints. Esta técnica permite revisar tanto aspectos técnicos como humanos del trabajo realizado.
+
+\textbf{Resultados esperados:}  
+El equipo obtiene información sobre satisfacción, aprendizaje, carencias y expectativas. Esta dinámica permite identificar oportunidades de mejora relacionadas con conocimiento, herramientas, comunicación y necesidades del equipo. También se relaciona con el aprendizaje colectivo, aspecto estudiado en investigaciones sobre andamiaje metacognitivo en retrospectivas ágiles \cite{tariq2025scaffolding}.
+
+\textbf{Procedimiento:}
+\begin{enumerate}
+    \item El Scrum Master divide la pizarra en cuatro secciones: \textit{Liked}, \textit{Learned}, \textit{Lacked} y \textit{Longed For}.
+    \item Se explica el significado de cada sección.
+    \item Cada integrante escribe sus aportes de forma individual.
+    \item Las ideas se colocan en la sección correspondiente.
+    \item El equipo analiza patrones o temas repetidos.
+    \item Se votan los puntos más importantes.
+    \item Se define una acción de mejora para el siguiente Sprint.
+    \item Se registra qué aprendizaje será útil para futuros Sprints.
+\end{enumerate}
+
+\textbf{Insumos o materiales:}
+\begin{itemize}
+    \item Pizarra física o digital.
+    \item Notas adhesivas.
+    \item Marcadores.
+    \item Temporizador.
+    \item Herramientas de votación.
+\end{itemize}
+
+\textbf{Ejemplo práctico:}  
+En un Sprint dedicado al desarrollo de un sistema de facturación, el equipo coloca en \textit{Liked} que la interfaz fue terminada correctamente. En \textit{Learned}, indica que aprendió a manejar validaciones en el backend. En \textit{Lacked}, señala que faltaron pruebas unitarias. En \textit{Longed For}, propone contar con documentación más clara de los endpoints. La acción final consiste en crear una guía corta de pruebas para el siguiente Sprint.
+
+\textbf{Aporte para el Scrum Master:}  
+Esta técnica permite que el Scrum Master identifique necesidades de aprendizaje, capacitación o apoyo técnico dentro del equipo. También ayuda a equilibrar la conversación, ya que no se limita a problemas, sino que reconoce aprendizajes y fortalezas.
+
+\subsubsection{Técnica de análisis de causa raíz dentro de una retrospectiva: 5 Porqués}
+
+Es importante aclarar que los 5 Porqués no constituyen una retrospectiva completa por sí misma, sino una técnica de análisis de causa raíz que puede utilizarse dentro de una retrospectiva, principalmente en la fase de generación de ideas o análisis de problemas. Su utilidad dentro de Scrum radica en que ayuda al equipo a identificar el origen real de un impedimento, evitando que las acciones de mejora se basen únicamente en síntomas superficiales.
+
+\textbf{Objetivo:}  
+La técnica de los 5 Porqués tiene como objetivo encontrar la causa raíz de un problema ocurrido durante el Sprint. Su propósito es evitar que el equipo se quede únicamente en síntomas superficiales y pueda identificar el verdadero origen de un impedimento.
+
+\textbf{Resultados esperados:}  
+El equipo obtiene una explicación más profunda sobre un problema específico y define una acción correctiva para evitar que vuelva a repetirse. Esta técnica resulta útil cuando existen impedimentos frecuentes, errores repetitivos o retrasos constantes en el Sprint.
+
+\textbf{Procedimiento:}
+\begin{enumerate}
+    \item El equipo selecciona un problema concreto ocurrido durante el Sprint.
+    \item El Scrum Master escribe el problema en la pizarra.
+    \item Se pregunta: ``¿Por qué ocurrió esto?''.
+    \item A cada respuesta se le vuelve a preguntar ``¿por qué?''.
+    \item El proceso se repite hasta encontrar una causa más profunda.
+    \item El equipo valida si la causa encontrada tiene sentido.
+    \item Se define una acción correctiva concreta.
+    \item Se acuerda cómo se comprobará si la acción funcionó en el siguiente Sprint.
+\end{enumerate}
+
+\textbf{Insumos o materiales:}
+\begin{itemize}
+    \item Pizarra.
+    \item Marcadores.
+    \item Post-its.
+    \item Plantilla de análisis causa-raíz.
+    \item Registro de acuerdos.
+\end{itemize}
+
+\textbf{Ejemplo práctico:}  
+
+Problema: la historia de usuario relacionada con el login no se terminó en el Sprint.  
+\begin{itemize}
+    \item ¿Por qué no se terminó? Porque el equipo empezó tarde.
+    \item ¿Por qué empezó tarde? Porque no entendía bien los criterios de aceptación.
+    \item ¿Por qué no los entendía? Porque no se revisaron con el Product Owner.
+    \item ¿Por qué no se revisaron? Porque no hubo una sesión de refinamiento suficiente.
+    \item ¿Por qué no hubo refinamiento? Porque el equipo no lo planificó antes del Sprint Planning.
+\end{itemize}
+
+La causa raíz es la falta de refinamiento previo. Como acción de mejora, el equipo acuerda realizar una sesión corta de refinamiento antes de planificar historias complejas. Esta acción debe incorporarse al Sprint Backlog del siguiente Sprint para que sea visible durante el trabajo diario del equipo.
+
+\textbf{Aporte para el Scrum Master:}  
+Esta técnica ayuda al Scrum Master a guiar al equipo hacia el análisis de causas y no solo hacia la descripción de síntomas. De esta manera, se reduce el riesgo de aplicar soluciones rápidas que no corrigen el problema real.
+
+\subsubsection{Retrospectiva de motivación o histograma de satisfacción}
+
+\textbf{Objetivo:}  
+La retrospectiva de motivación o histograma de satisfacción tiene como objetivo medir el nivel de motivación, energía o satisfacción del equipo respecto al Sprint, el proyecto o la forma de trabajo. Esta técnica permite identificar señales tempranas de cansancio, desmotivación o frustración.
+
+\textbf{Resultados esperados:}  
+El equipo obtiene una representación visual del estado emocional de sus integrantes. Esta información permite conversar sobre factores que afectan la motivación y definir acciones para mejorar el ambiente de trabajo. Las investigaciones sobre juegos y dinámicas retrospectivas muestran que estas actividades pueden favorecer la comunicación, la participación y el compromiso del equipo \cite{przybylek2017awesome,mich2020intel}.
+
+\textbf{Procedimiento:}
+\begin{enumerate}
+    \item El Scrum Master define la pregunta de reflexión, por ejemplo: ``¿Cómo se sintió el equipo durante el Sprint?''.
+    \item Se prepara una escala visual o una representación gráfica del estado del equipo.
+    \item Cada integrante coloca un punto, círculo o post-it en el nivel o símbolo que representa su percepción.
+    \item El equipo observa la distribución de respuestas.
+    \item Se conversa sobre las razones de los niveles bajos o altos.
+    \item Se identifican factores que afectan la motivación.
+    \item Se acuerda una acción para mejorar el ambiente de trabajo.
+    \item Se decide si la medición se repetirá en futuros Sprints para observar cambios.
+\end{enumerate}
+
+\textbf{Insumos o materiales:}
+\begin{itemize}
+    \item Pizarra.
+    \item Marcadores.
+    \item Stickers o círculos adhesivos.
+    \item Post-its.
+    \item Herramienta digital de votación anónima, si la retrospectiva es virtual.
+    \item Opcionalmente, herramientas como Mentimeter, Miro o FigJam.
+\end{itemize}
+
+\textbf{Ejemplo práctico:}  
+En un equipo que desarrolla una aplicación web, el Scrum Master aplica una variante denominada ``clima del equipo''. En lugar de usar únicamente una escala numérica, dibuja cuatro símbolos en la pizarra: sol, nube, lluvia y tormenta. Cada integrante coloca un post-it en el símbolo que representa cómo se sintió durante el Sprint. La mayoría ubica sus notas entre nube y lluvia, indicando cansancio por cambios frecuentes en los requisitos. Al conversar, el equipo identifica que la falta de estabilidad en las historias generó frustración y retrabajo. Como acción de mejora, se acuerda que el Product Owner validará las historias prioritarias antes del Sprint Planning y que esta acción será incluida en el Sprint Backlog del siguiente Sprint.
+
+\textbf{Aporte para el Scrum Master:}  
+Esta técnica permite identificar aspectos humanos del equipo que no siempre aparecen en métricas técnicas. Para el Scrum Master, resulta útil porque ayuda a detectar señales de agotamiento, frustración o baja participación antes de que afecten directamente la productividad.
 
 \subsection{Resultados obtenidos}
-De acuerdo con el tipo de trabajo, se plasmarán los resultados alcanzados en la guía tarea una vez ejecutadas las actividades. Se pueden emplear figuras y tablas las cuales deben ser numeradas. 
 
+Como resultado de la investigación, se identificaron cinco técnicas de retrospectiva que pueden ser utilizadas por un Scrum Master según la necesidad del equipo. Cada técnica permite abordar una dimensión diferente de la mejora continua: productividad, impedimentos, aprendizaje, análisis de causas y motivación.
 
-%Especifique las TAC's utilizadas en la Tarea. 
+\begin{table}[H]
+\centering
+\caption{Resultados obtenidos por cada técnica de retrospectiva}
+\begin{tabular}{p{4cm} p{8cm}}
+\toprule
+\textbf{Técnica} & \textbf{Resultado principal} \\
+\midrule
+Start, Stop, Continue & Lista priorizada de acciones que el equipo debe iniciar, detener o continuar. \\
+Sailboat o Velero & Identificación visual de impulsos, impedimentos y riesgos. \\
+4Ls & Reflexión sobre satisfacción, aprendizaje, carencias y expectativas. \\
+5 Porqués & Identificación de la causa raíz de un problema dentro de una retrospectiva. \\
+Histograma de motivación & Medición visual del nivel de motivación o satisfacción del equipo. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Estas técnicas permiten que la retrospectiva no sea una reunión improvisada, sino una actividad estructurada de inspección y adaptación. Además, ayudan a que el equipo Scrum participe activamente en la identificación de sus problemas y en la construcción de soluciones. Como buena práctica, las acciones de mejora más importantes deben incorporarse al Sprint Backlog del siguiente Sprint, con el fin de asegurar su visibilidad, seguimiento y cumplimiento durante el trabajo diario.
+
+\subsection{Comparación de las técnicas desde el rol del Scrum Master}
+
+\begin{table}[H]
+\centering
+\caption{Comparación de retrospectivas según su aplicación en Scrum}
+\begin{tabular}{p{3.2cm} p{4cm} p{5cm}}
+\toprule
+\textbf{Técnica} & \textbf{Uso principal} & \textbf{Cuándo aplicarla} \\
+\midrule
+Start, Stop, Continue & Productividad y hábitos de trabajo & Cuando el equipo necesita mejorar prácticas concretas para el siguiente Sprint. \\
+Sailboat o Velero & Impedimentos y riesgos & Cuando existen bloqueos que frenan el avance hacia el objetivo del Sprint. \\
+4Ls & Aprendizaje y satisfacción & Cuando se desea reflexionar sobre experiencias, carencias y aprendizajes del equipo. \\
+5 Porqués & Causa raíz & Cuando un problema se repite constantemente y se necesita entender su origen dentro de la retrospectiva. \\
+Histograma de motivación & Estado emocional del equipo & Cuando se necesita medir motivación, energía o satisfacción de los integrantes. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+La comparación permite evidenciar que cada técnica responde a una necesidad distinta. Por ello, el Scrum Master debe seleccionar la dinámica según el contexto del equipo y no aplicar siempre la misma retrospectiva. Esta decisión facilita que la reunión sea más útil, participativa y orientada a resultados.
+
 \subsection{Habilidades blandas empleadas en la tarea}
+
 \begin{itemize}
-    \item[$\square$] Liderazgo
-    \item[$\square$] Trabajo en equipo
-    \item[$\square$] Comunicación asertiva
-    \item[$\square$] La empatía
-    \item[$\square$] Pensamiento crítico
-    \item[$\square$] Flexibilidad
-    \item[$\square$] La resolución de conflictos
-    \item[$\square$] Adaptabilidad
-    \item[$\square$] Responsabilidad
+    \item[$\boxtimes$] Liderazgo.
+    \item[$\boxtimes$] Trabajo en equipo.
+    \item[$\boxtimes$] Comunicación asertiva.
+    \item[$\boxtimes$] La empatía.
+    \item[$\boxtimes$] Pensamiento crítico.
+    \item[$\boxtimes$] Flexibilidad.
+    \item[$\boxtimes$] La resolución de conflictos.
+    \item[$\boxtimes$] Adaptabilidad.
+    \item[$\boxtimes$] Responsabilidad.
 \end{itemize}
 
+\subsection{Análisis como futuro Scrum Master}
 
+Desde la perspectiva de un futuro Scrum Master, conocer diferentes tipos de retrospectivas es importante porque cada equipo presenta necesidades distintas. Un equipo puede tener problemas de productividad, otro puede presentar desmotivación, mientras que otro puede necesitar identificar impedimentos técnicos o analizar causas raíz.
+
+El Scrum Master debe seleccionar la técnica más adecuada según el contexto del equipo. Por ejemplo, si el equipo necesita mejorar hábitos de trabajo, puede aplicar \textit{Start, Stop, Continue}. Si requiere identificar bloqueos, puede usar la retrospectiva del Velero. Si necesita reflexionar sobre aprendizaje y carencias, puede aplicar 4Ls. Si el problema es repetitivo, puede usar los 5 Porqués como técnica de análisis dentro de la retrospectiva. Finalmente, si se desea conocer el estado emocional del equipo, puede aplicar un histograma de satisfacción o motivación.
+
+Además, el Scrum Master debe procurar que la retrospectiva finalice con acuerdos verificables. Una retrospectiva pierde valor si el equipo conversa sobre problemas, pero no define acciones concretas. Por ello, es recomendable que cada acción tenga una descripción clara, un responsable de seguimiento y un momento de revisión en el siguiente Sprint. De esta manera, la retrospectiva se convierte en un mecanismo real de inspección y adaptación.
+
+De acuerdo con la lógica de inspección y adaptación de Scrum, las acciones de mejora más importantes identificadas durante la retrospectiva no deben quedarse únicamente registradas en un acta o en una pizarra. Cuando una mejora es relevante para el siguiente Sprint, debe incorporarse al Sprint Backlog para que sea visible, gestionable y revisada durante el trabajo diario del equipo. Esto permite que los acuerdos de la retrospectiva tengan seguimiento real y no se olviden después de la reunión.
+
+Como Scrum Master, para asegurar que los acuerdos generados en una dinámica como \textit{Start, Stop, Continue} no se olviden, se deben convertir en acciones concretas, visibles y verificables. Para ello, el equipo puede seleccionar una o dos mejoras prioritarias e incorporarlas al Sprint Backlog del siguiente Sprint. Además, estas acciones deben colocarse en el tablero de trabajo del equipo, ya sea en Jira, Trello o una pizarra física, para que puedan ser revisadas durante los Daily Scrums. De esta manera, la retrospectiva no termina como una simple conversación, sino que se transforma en un compromiso visible que acompaña el trabajo diario del equipo.
+
+También es importante que el Scrum Master fomente un ambiente de respeto y confianza. Cuando los integrantes sienten que pueden expresar bloqueos, errores o preocupaciones sin ser juzgados, la retrospectiva se vuelve más honesta y útil. Esto fortalece la autoorganización del equipo, ya que las soluciones no dependen únicamente del Scrum Master, sino que son construidas por todos los miembros del equipo Scrum.
 
 \subsection{Conclusiones}
-Constituye la respuesta que propone el o los estudiantes para el problema que originó el trabajo desarrollado, de acuerdo con los datos recogidos y la teoría aplicada. 
+
+Las retrospectivas en Scrum son eventos fundamentales para la mejora continua, ya que permiten inspeccionar la forma de trabajo del equipo y definir acciones concretas para mejorar en el siguiente Sprint.
+
+Las cinco técnicas investigadas permiten abordar diferentes necesidades del equipo Scrum, como productividad, impedimentos, aprendizaje, análisis de causa raíz y motivación. Por esta razón, no deben aplicarse de forma mecánica, sino de acuerdo con el problema o necesidad que presente el equipo.
+
+El libro \textit{Agile Retrospectives} proporciona una base importante para comprender que las retrospectivas deben ser facilitadas de manera estructurada. Su propuesta de preparar el escenario, recopilar datos, generar ideas, decidir acciones y cerrar la reunión permite que la retrospectiva no sea una conversación improvisada.
+
+El Scrum Master cumple un papel clave en la retrospectiva, debido a que facilita la participación del equipo, promueve la comunicación, ayuda a gestionar impedimentos y orienta la conversación hacia acciones de mejora verificables.
+
+Las fuentes académicas revisadas permiten afirmar que las retrospectivas no son únicamente una práctica teórica, sino una herramienta utilizada en equipos ágiles para mejorar la comunicación, la creatividad, el aprendizaje y la toma de decisiones dentro del proceso de desarrollo de software.
+
+Las acciones de mejora definidas en una retrospectiva deben tener seguimiento real. Por ello, cuando una acción impacta directamente en el siguiente Sprint, debe incorporarse al Sprint Backlog para que sea visible durante la planificación, el trabajo diario y los Daily Scrums.
 
 \subsection{Recomendaciones}
-Redactar las sugerencias o acciones concretas que se derivan de la tarea desarrollada. \cite{greenwade93}
 
+Se recomienda seleccionar la técnica de retrospectiva de acuerdo con la necesidad real del equipo y no aplicarla únicamente por costumbre.
+
+Es importante que cada retrospectiva finalice con una o dos acciones concretas, ya que demasiados compromisos pueden dificultar el seguimiento en el siguiente Sprint.
+
+Se recomienda que el Scrum Master promueva un ambiente de confianza para que los integrantes puedan expresar problemas, impedimentos y oportunidades de mejora sin temor a ser juzgados.
+
+También se sugiere realizar seguimiento a las acciones definidas en retrospectivas anteriores, con el fin de verificar si las mejoras acordadas realmente fueron aplicadas.
+
+Se recomienda que las acciones de mejora más relevantes identificadas en la retrospectiva sean incorporadas al Sprint Backlog del siguiente Sprint, con el fin de asegurar su visibilidad, seguimiento y cumplimiento durante los Daily Scrums.
+
+Finalmente, se recomienda variar las técnicas de retrospectiva a lo largo del proyecto, debido a que el uso repetitivo de una sola dinámica puede reducir la participación del equipo y limitar la identificación de nuevos problemas.
 
 \subsection{Referencias}
-Insertar las referencias bibliográficas empleadas aplicando la norma IEEE.
 
-\vspace{-3em} %reduce el espacio causado por refname vacío
+\vspace{-3em}
 \renewcommand{\refname}{}
-\bibliographystyle{ieeetr}
+\bibliographystyle{IEEEtran}
 \bibliography{sample}
 
-\subsection{Anexos}
+
 \vfill
 \end{document}
