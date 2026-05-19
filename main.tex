@@ -1,138 +1,470 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 
-% Language setting
-% Replace `english' with e.g. `spanish' to change the document language
-\usepackage[english]{babel}
+%========================================================
+% CONFIGURACIÓN GENERAL
+%========================================================
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[
+    letterpaper,
+    top=1.4cm,
+    bottom=2.5cm,
+    left=3cm,
+    right=3cm,
+    marginparwidth=1.75cm,
+    includehead,
+    headheight=55pt,
+    headsep=10pt
+]{geometry}
 
-\usepackage[letterpaper,top=2cm,bottom=5cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
-
-% Useful packages
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{amssymb} 
 \usepackage{fancyhdr}
-\usepackage{lipsum} % Para generar texto de ejemplo
 \usepackage{multicol}
-\pagestyle{fancy} 
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{xcolor}
 
-\fancyhf{} % Limpiar encabezado y pie de página por defecto
-\setlength{\headheight}{70pt} % Ajuste del tamaño del encabezado (puedes aumentar este valor si es necesario)
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{55pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\renewcommand{\arraystretch}{1.25}
+\sloppy
 
-% Definición del encabezado
-
+%========================================================
+% ENCABEZADO
+%========================================================
 \fancyhead[C]{%
-    \begin{minipage}[c]{2.0cm}
+    \begin{minipage}[c]{1.7cm}
         \centering
         \includegraphics[width=2.0cm]{imagenes/uta.png}
     \end{minipage}%
     \hfill
-    \begin{minipage}[c]{8cm} 
+    \begin{minipage}[c]{9cm}
         \centering
         \small {\textbf{UNIVERSIDAD TÉCNICA DE AMBATO}} \\[0.1cm]
-        \scriptsize \textit{FACULTAD DE INGENIERÍA EN SISTEMAS ELECTRÓNICA E INDUSTRIAL} \\[0.1cm]
-        \scriptsize \textbf{CARRERA SOFTWARE - METODOLOGÍAS AGILES} \\[0.1cm]
+        \scriptsize \textit{FACULTAD DE INGENIERÍA EN SISTEMAS, ELECTRÓNICA E INDUSTRIAL} \\[0.1cm]
+        \scriptsize \textbf{CARRERA DE SOFTWARE - METODOLOGÍAS ÁGILES} \\[0.1cm]
         \scriptsize \textbf{CICLO ACADÉMICO: ENERO 2026 - JULIO 2026}
+        \vspace{0.1cm}
     \end{minipage}%
     \hfill
-    \begin{minipage}[c]{2.0cm}
+    \begin{minipage}[c]{1.7cm}
         \centering
         \includegraphics[width=2.0cm]{imagenes/fisei.png}
     \end{minipage}%
 }
 
-\begin{document}
-\begin{center}
-    {\large \textbf{INFORME DE TAREA}} \\    
-\end{center}
+\fancyfoot[C]{\thepage}
 
+\begin{document}
+
+\begin{center}
+    {\large \textbf{INFORME DE TAREA}} \\
+\end{center}
+\vspace{-3em}
+%========================================================
 \section{Portada}
+%========================================================
+
 \begin{flushleft}
-\begin{tabular}{ l l }
-    \textbf{Tema:} & \\
-    \textbf{Unidad de Organización Curricular:} & PROFECIONAL\\
-    \textbf{Nivel y Paralelo:} & 4to Semestre "B" \\
-    \textbf{Alumnos participantes:} & Guatemal Avilez Bryan Stalin \\
-    \textbf{Asignatura:} & Metodologias Agiles \\
-    \textbf{Docente:} & Ing.Naranjo Avalos Hernan Fabricio, Mg. \\
+\begin{tabular}{p{5cm}p{9cm}}
+    \textbf{Tema:} & Integración de OKR en Scrum para mejorar la alineación estratégica y el rendimiento del equipo. \\
+    \textbf{Unidad de Organización Curricular:} & Profesional \\
+    \textbf{Nivel y Paralelo:} & 4to Semestre ``B'' \\
+    \textbf{Alumno participante:} & Guatemal Avilez Bryan Stalin \\
+    \textbf{Asignatura:} & Metodologías Ágiles \\
+    \textbf{Docente:} & Ing. Naranjo Ávalos Hernán Fabricio, Mg. \\
 \end{tabular}
 \end{flushleft}
-
-
+%========================================================
 \section{Informe de la Tarea}
-\subsection{Objetivos}
-\subsubsection{General}
-(Especificado en la guía tarea proporcionada por el docente).
-\subsubsection{Específicos}
-\begin{itemize}
-    \item (Se recomienda máximo 3).
-    \item 
-    \item 
-\end{itemize}
+%========================================================
 
+\subsection{Objetivos}
+
+\subsubsection{General}
+
+Investigar y detallar cómo se integran los Objetivos y Resultados Clave (OKR) en un entorno de Scrum, con el fin de mejorar la alineación estratégica, la calidad de entrega y el rendimiento del equipo.
+
+\subsubsection{Específicos}
+
+\begin{itemize}
+    \item Analizar el origen, propósito y componentes principales de los OKR como sistema de gestión de metas.
+    \item Diferenciar los OKR de otros mecanismos de establecimiento de objetivos, como KPI y metas SMART.
+    \item Proponer una forma práctica de integrar OKR en los eventos, artefactos y responsabilidades de Scrum, considerando beneficios, desafíos y casos documentados.
+\end{itemize}
 
 \subsection{Instrucciones}
 
-Detalladas en la asignación de la tarea proporcionada por el docente.
+Para el desarrollo de la tarea se consideran las siguientes instrucciones académicas:
 
+\begin{enumerate}
+    \item Investigar el concepto de Objetivos y Resultados Clave (OKR), considerando su origen, propósito y componentes principales.
 
+    \item Analizar la diferencia entre OKR y otros mecanismos de establecimiento o medición de metas, como los KPI y las metas SMART.
+
+    \item Explicar cómo los OKR pueden aplicarse en entornos ágiles y, de manera específica, dentro del marco Scrum.
+
+    \item Relacionar los OKR con elementos propios de Scrum, tales como Product Goal, Product Backlog, Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective y Definition of Done.
+
+    \item Investigar al menos dos casos de empresas u organizaciones que hayan aplicado OKR en prácticas ágiles o Scrum, identificando el problema abordado, la forma de implementación, los beneficios obtenidos y los desafíos enfrentados.
+
+    \item Presentar ejemplos prácticos que expliquen cómo los OKR pueden incorporarse en el proceso Scrum para orientar la entrega hacia resultados medibles, evidencia verificable y generación de valor.
+\end{enumerate}
 \subsection{Listado de equipos, materiales y recursos}
+
 \textbf{Listado de equipos y materiales generales empleados en la tarea:}
+
 \begin{itemize}
-    \item  
+    \item Computador portátil o de escritorio.
+    \item Editor de texto y compilador \LaTeX.
+    \item Conexión a Internet para consulta bibliográfica.
+    \item Libro base: \textit{OKR Certified Professional} de CertiProf.
+    \item Fuentes académicas y técnicas sobre OKR, Scrum y gestión ágil.
 \end{itemize}
 
 \textbf{TAC (Tecnologías para el Aprendizaje y Conocimiento) empleados en la tarea:}
+
 \begin{itemize}
-    \item[$\square$] Plataformas educativas
-    \item[$\square$] Simuladores y laboratorios virtuales
-    \item[$\square$] Aplicaciones educativas
-    \item[$\square$] Recursos audiovisuales
-    \item[$\square$] Gamificación
-    \item[$\square$] Inteligencia Artificial
-    \item Otros (Especifique): \underline{\hspace{5cm}}
+    \item[$\boxtimes$] Plataformas educativas.
+    \item[$\square$] Simuladores y laboratorios virtuales.
+    \item[$\boxtimes$] Aplicaciones educativas.
+    \item[$\boxtimes$] Recursos audiovisuales.
+    \item[$\square$] Gamificación.
+    \item[$\square$] Inteligencia Artificial.
+    \item Otros: \underline{SciSpace, Google Scholar, ACM Digital Library, Scrum Guides}
 \end{itemize}
 
+%========================================================
+\subsection{Desarrollo de la Tarea}
+%========================================================
 
-\subsection{Desarrollo de la Tarea (Actividades a Desarrollar)}
+\subsubsection{Concepto de OKR}
 
-Detalladas en las instrucciones proporcionadas por el docente.
+Los OKR, por sus siglas en inglés \textit{Objectives and Key Results}, son un sistema de gestión de metas que permite alinear los esfuerzos de una organización, equipo o proyecto hacia objetivos concretos y resultados medibles. A diferencia de una lista de tareas, un OKR no se enfoca únicamente en ejecutar actividades, sino en demostrar progreso mediante resultados observables y verificables \cite{certiprof2020okr,googlereworkokr}.
 
+Un OKR está compuesto por dos elementos principales:
+
+\begin{itemize}
+    \item \textbf{Objetivo:} describe qué se desea lograr. Debe ser claro, inspirador, retador y comprensible para el equipo.
+    \item \textbf{Resultados clave:} indican cómo se comprobará el logro del objetivo. Deben ser medibles, verificables y orientados a resultados, no solo a actividades.
+\end{itemize}
+
+Por ejemplo, en un equipo Scrum no sería suficiente establecer como meta ``terminar el módulo de usuarios''. Una formulación más adecuada sería:
+
+\begin{quote}
+\textbf{Objetivo:} mejorar la calidad de entrega del módulo de usuarios. \\
+\textbf{KR1:} reducir los errores funcionales detectados en pruebas de 10 a 3. \\
+\textbf{KR2:} lograr que el 90\% de historias de usuario cumplan la Definition of Done. \\
+\textbf{KR3:} alcanzar una calificación mínima de 4/5 en la revisión del Sprint por parte de los interesados.
+\end{quote}
+
+Esta diferencia permite que el equipo no solo mida la cantidad de trabajo terminado, sino también el valor y la calidad generada.
+
+\subsubsection{Origen y propósito de los OKR}
+
+El origen de los OKR se asocia con Intel y con las ideas de gestión por objetivos desarrolladas por Andy Grove. Posteriormente, John Doerr difundió este enfoque en Google, donde se consolidó como una práctica para comunicar prioridades, alinear equipos y medir resultados de forma periódica \cite{grove1983high,doerr2018measure,googlereworkokr}.
+
+El propósito principal de los OKR es conectar la estrategia con la ejecución. En un contexto de desarrollo de software, esto significa que las tareas del equipo, las historias de usuario, el Sprint Backlog y los incrementos entregados deben relacionarse con resultados clave que evidencien impacto, calidad o valor para el usuario.
+
+Según el material de CertiProf, una de las ideas centrales de OKR es que los equipos no deben actuar como una ``fábrica de características'', sino como equipos orientados a resolver problemas reales mediante métricas accionables \cite{certiprof2020okr}. Esta visión se relaciona directamente con Scrum, ya que cada Sprint debe convertir ideas en valor y producir un incremento útil para los interesados \cite{scrumguide2020}.
+
+Además, enfoques modernos como el de Wodtke destacan que el valor de OKR está en mantener el foco del equipo sobre las metas más importantes, evitando que la organización disperse su esfuerzo en demasiadas iniciativas al mismo tiempo \cite{wodtke2016radical}.
+
+\subsubsection{Diferencia entre OKR, KPI y SMART}
+
+Aunque OKR, KPI y SMART se relacionan con la gestión de objetivos, no cumplen la misma función. Los KPI son indicadores de desempeño que miden el comportamiento de un proceso, mientras que los OKR definen una dirección estratégica y resultados esperados. Por su parte, SMART es una guía para redactar metas específicas, medibles, alcanzables, relevantes y temporales \cite{certiprof2020okr}.
+
+\begin{table}[H]
+\centering
+\caption{Diferencias entre OKR, KPI y SMART}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.8cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Elemento} & \textbf{Enfoque principal} & \textbf{Ejemplo en Scrum} \\
+\midrule
+OKR & Define una meta estratégica y los resultados clave que permiten comprobar si se logró. & Mejorar la calidad de entrega del Sprint reduciendo defectos y aumentando cumplimiento de la Definition of Done. \\
+\midrule
+KPI & Mide el desempeño continuo de un proceso o área. & Tiempo promedio de resolución de errores, velocidad del equipo o cantidad de defectos por Sprint. \\
+\midrule
+SMART & Ayuda a redactar metas claras y delimitadas. & Entregar el módulo de autenticación antes del final del Sprint con pruebas funcionales aprobadas. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+La diferencia esencial es que los KPI permiten observar el desempeño, SMART ayuda a redactar metas correctamente y OKR permite alinear el trabajo del equipo con resultados estratégicos. En Scrum, esta diferencia es importante porque un equipo puede tener buena velocidad, pero aun así no generar valor si sus entregas no responden a objetivos relevantes.
+
+\subsubsection{Relación entre OKR y Scrum}
+
+Scrum es un marco de trabajo ágil que organiza el desarrollo mediante responsabilidades, eventos, artefactos y compromisos. La Scrum Guide establece que el Scrum Team está conformado por Product Owner, Scrum Master y Developers, y que el equipo trabaja en Sprints para generar incrementos de valor \cite{scrumguide2020}.
+
+OKR no reemplaza a Scrum. Más bien, lo complementa. Scrum responde principalmente a cómo organizar el trabajo iterativo e incremental, mientras que OKR ayuda a responder hacia qué resultados estratégicos debe orientarse ese trabajo. Por ello, la integración OKR-Scrum puede interpretarse como una conexión entre estrategia y ejecución.
+
+\begin{table}[H]
+\centering
+\caption{Integración de OKR con elementos de Scrum}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.5cm} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Elemento Scrum} & \textbf{Forma de integración con OKR} \\
+\midrule
+Product Goal & Se relaciona con el objetivo estratégico del OKR. Define el estado futuro del producto que se desea alcanzar. \\
+\midrule
+Product Backlog & Se prioriza considerando qué historias de usuario contribuyen más a los resultados clave. \\
+\midrule
+Sprint Planning & El equipo selecciona trabajo que aporte al Sprint Goal y a los OKR vigentes. \\
+\midrule
+Daily Scrum & Se inspecciona el avance diario y se identifican impedimentos que afectan los resultados clave. \\
+\midrule
+Sprint Review & Se valida evidencia de valor, métricas de avance y resultados obtenidos, no solo funcionalidades terminadas. \\
+\midrule
+Sprint Retrospective & Se analizan obstáculos y acciones para mejorar el OKR. \\
+\midrule
+Definition of Done & Se utiliza como criterio de calidad para asegurar que los incrementos entregados sean verificables. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+La literatura reciente sobre OKR en equipos ágiles muestra que su uso se ha convertido en un tema de interés para la investigación en desarrollo de software, especialmente por su relación con coordinación, alineación y seguimiento de resultados \cite{stray2022okrwork,silva2024okrupdate}.
+
+La integración puede realizarse en tres niveles:
+
+\begin{enumerate}
+    \item \textbf{Nivel estratégico:} se establecen OKR trimestrales o semestrales relacionados con el producto, la calidad o la satisfacción del usuario.
+    \item \textbf{Nivel táctico:} el Product Owner prioriza el Product Backlog según los resultados clave definidos.
+    \item \textbf{Nivel operativo:} durante cada Sprint, el equipo revisa si las historias seleccionadas aportan al cumplimiento de los OKR.
+\end{enumerate}
+
+\subsubsection{Aplicación de OKR dentro de los eventos Scrum}
+
+\textbf{Sprint Planning.} En la planificación del Sprint, el equipo debe revisar el OKR vigente antes de seleccionar las historias de usuario. Esto permite que el Sprint Goal no sea una simple agrupación de tareas, sino una intención clara de valor. Por ejemplo, si el OKR busca mejorar la satisfacción del usuario, se deberían priorizar historias relacionadas con usabilidad, corrección de errores críticos o reducción de tiempos de respuesta.
+
+\textbf{Daily Scrum.} En la reunión diaria, los Developers no solo deben indicar qué hicieron, qué harán y qué impedimentos tienen. También pueden revisar si el avance diario acerca o aleja al equipo de los resultados clave. Esto evita que el equipo trabaje mecánicamente en tareas sin revisar su impacto.
+
+\textbf{Sprint Review.} En la revisión del Sprint se debe presentar evidencia. Esta evidencia puede incluir funcionalidades implementadas, resultados de pruebas, métricas de defectos, satisfacción del usuario, tiempos de respuesta o retroalimentación de interesados. De esta manera, el Sprint Review deja de ser una demostración superficial y se convierte en una validación del valor entregado.
+
+\textbf{Sprint Retrospective.} En la retrospectiva se pueden analizar los OKR no alcanzados, las causas de desviación y las acciones correctivas. CertiProf menciona que los OKR de alta frecuencia pueden prepararse en planificación y discutirse en el contexto de la retrospectiva de Scrum \cite{certiprof2020okr}. Esto fortalece la mejora continua del equipo.
+
+\subsubsection{Casos de implementación de OKR en entornos ágiles y Scrum}
+
+Para responder de forma directa a la consigna, se seleccionaron dos casos principales que relacionan OKR con prácticas ágiles, Scrum, Kanban o desarrollo de software. Aunque existen referentes empresariales conocidos como Google y Zalando en el uso de OKR, estos se consideran únicamente como antecedentes complementarios, debido a que no presentan una integración específica con Scrum dentro del alcance de este informe. Por ello, el análisis se centra en ergovia y en el caso del sector ferroviario con proceso Scrum basado en OKR.
+
+\textbf{Caso 1: ergovia, integración de OKR con prácticas Scrum y Kanban.}
+
+ergovia es una empresa de servicios de IT que ya utilizaba métodos ágiles como Scrum y Kanban dentro de su área tecnológica. Sin embargo, la organización identificó un problema frecuente en proyectos interdisciplinarios: un departamento no siempre conocía con claridad en qué estaba trabajando otro, lo que dificultaba la visibilidad global de los proyectos y la alineación entre equipos \cite{goalscape2020ergovia}.
+
+Ante esta situación, la empresa decidió introducir un proceso de OKR para extender la lógica ágil más allá del área de IT y aplicarla a toda la organización. El objetivo era conectar las metas estratégicas con el trabajo operativo, hacer visibles los proyectos y permitir que los equipos comprendieran mejor cómo sus actividades contribuían a objetivos más amplios \cite{goalscape2020ergovia}.
+
+El beneficio principal fue el aumento de la visibilidad y la capacidad de seguimiento. La empresa pudo estructurar objetivos de alto nivel, descomponerlos en subobjetivos y acciones específicas, y revisar el estado de avance mediante una representación visual. Además, el uso de niveles de confianza permitió detectar riesgos antes de que afectaran fechas de entrega o hitos importantes.
+
+El desafío más importante fue aprender a formular objetivos y métricas de forma clara. Según el caso, cuando todos los miembros de una empresa son ambiciosos, el proceso OKR puede volverse complejo o abrumador si no existe una forma clara de visualizar prioridades, responsables y avances. Este aprendizaje es importante para Scrum, porque demuestra que OKR no debe ser una carga burocrática adicional, sino una herramienta para mejorar la transparencia y la toma de decisiones.
+
+\textbf{Caso 2: Organización del sector ferroviario con proceso Scrum basado en OKR.}
+
+Sowkasem y Kirawanich propusieron un proceso Scrum basado en OKR para gestionar retrasos en entregables de un proyecto de software ferroviario \cite{sowkasem2021okr}. Este caso es relevante porque no se limita a explicar OKR de forma general, sino que lo relaciona directamente con un proceso Scrum aplicado a desarrollo de software.
+
+El problema principal era que el seguimiento tradicional de tareas no resultaba suficiente para anticipar retrasos ni para demostrar si el trabajo aportaba a resultados concretos. En otras palabras, el equipo podía conocer qué actividades estaban pendientes, pero no necesariamente si esas actividades contribuían a objetivos verificables del proyecto.
+
+La solución consistió en integrar OKR dentro del proceso Scrum, de manera que los entregables pudieran relacionarse con objetivos y resultados clave. Con ello, la planificación dejó de enfocarse únicamente en tareas y pasó a considerar resultados medibles, fechas objetivo y seguimiento del avance.
+
+El beneficio más importante de este caso es que OKR ayudó a controlar la entrega desde una perspectiva de resultados. El equipo podía revisar no solo qué actividades fueron terminadas, sino también qué avance real se produjo respecto a las metas acordadas. El desafío principal fue formular resultados clave adecuados, porque una mala definición de KR puede convertir el OKR en una lista de actividades y no en una herramienta de gestión de valor.
+
+\textbf{Referencia complementaria: Google y Zalando.}
+
+Google y Zalando se consideran referencias complementarias porque muestran el uso de OKR para mejorar alineación, transparencia y seguimiento organizacional. Sin embargo, no se toman como casos principales en este informe, debido a que la consigna solicita casos relacionados con OKR en prácticas Scrum. Por esa razón, el análisis central se mantiene en ergovia y en el caso del sector ferroviario, que presentan una relación más directa con entornos ágiles y Scrum \cite{googlereworkokr,infoq2018zalando}.
+
+\begin{table}[H]
+\centering
+\caption{Comparación de casos principales de implementación de OKR}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Caso} & \textbf{Problema identificado} & \textbf{Aplicación de OKR} & \textbf{Aprendizaje principal} \\
+\midrule
+ergovia & Baja visibilidad entre departamentos y proyectos interdisciplinarios. & Introducción de OKR para extender prácticas ágiles como Scrum y Kanban desde IT hacia toda la organización. & OKR permite conectar objetivos estratégicos con acciones, pero requiere claridad visual, responsables definidos y métricas bien formuladas. \\
+\midrule
+Sector ferroviario & Retrasos y baja visibilidad de entregables en un proyecto de software. & Integración de OKR en un proceso Scrum para controlar entregables, fechas objetivo y resultados. & Los Sprint deben evaluarse por resultados verificables, no solo por tareas terminadas. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection{Análisis crítico de la integración OKR-Scrum}
+
+La integración entre OKR y Scrum puede mejorar la calidad de entrega, pero no debe aplicarse de manera mecánica. Su principal aporte consiste en conectar el trabajo del Sprint con resultados medibles; sin embargo, también puede generar efectos negativos si se interpreta como un mecanismo de presión numérica.
+
+Un riesgo frecuente es que el equipo formule resultados clave como actividades. Por ejemplo, ``crear la pantalla de tickets'' no es un KR adecuado, porque solo describe una tarea. En cambio, ``reducir el tiempo de registro de un ticket de 2 minutos a 45 segundos'' sí expresa un resultado observable. Esta diferencia es importante porque Scrum ya organiza el trabajo mediante historias, tareas y Sprint Backlog; OKR debe aportar dirección estratégica y medición de valor, no duplicar la planificación operativa.
+
+Otro riesgo es que los OKR se usen para castigar al equipo cuando no se alcanza un resultado. Si esto ocurre, los Developers podrían seleccionar metas fáciles o maquillar métricas para evitar una mala evaluación. En un equipo Scrum universitario, esto se vería reflejado cuando se priorizan tareas sencillas solo para mostrar avance, aunque no aporten al producto final. Por esa razón, los OKR deben revisarse como evidencia de aprendizaje y mejora, no como una herramienta punitiva.
+
+También debe considerarse que no todo resultado puede medirse en un solo Sprint. Algunos resultados, como satisfacción del usuario, reducción de defectos o mejora de rendimiento, pueden requerir varios ciclos para observar cambios confiables. Por ello, se recomienda trabajar con OKR trimestrales o por conjunto de Sprints, y usar cada Sprint como una oportunidad de avance parcial.
+
+En síntesis, OKR fortalece Scrum cuando ayuda a priorizar mejor, medir valor y revisar evidencia. Pero puede debilitarlo si se convierte en burocracia, presión individual o una lista adicional de tareas sin relación con el Product Goal.
+
+\subsubsection{Beneficios de integrar OKR con Scrum}
+
+La integración de OKR con Scrum genera beneficios importantes para la calidad de entrega y el rendimiento del equipo:
+
+\begin{itemize}
+    \item \textbf{Mayor alineación estratégica:} el equipo comprende cómo cada Sprint contribuye a objetivos de negocio o producto.
+    \item \textbf{Priorización basada en valor:} el Product Backlog se ordena según el impacto esperado en los resultados clave.
+    \item \textbf{Mejor medición del avance:} el progreso no se mide solo por tareas completadas, sino por resultados verificables.
+    \item \textbf{Transparencia:} los OKR hacen visible qué se busca lograr, cómo se medirá y qué evidencia se presentará.
+    \item \textbf{Mejora continua:} la retrospectiva permite ajustar prácticas, eliminar impedimentos y mejorar el cumplimiento de resultados.
+    \item \textbf{Mayor enfoque del equipo:} se evita trabajar en demasiadas iniciativas sin conexión con un objetivo común.
+\end{itemize}
+
+\subsubsection{Desafíos de integrar OKR con Scrum}
+
+Aunque la integración OKR-Scrum es útil, también presenta desafíos:
+
+\begin{itemize}
+    \item \textbf{Confundir resultados clave con tareas:} un KR no debe ser ``crear una pantalla'', sino una evidencia medible de mejora.
+    \item \textbf{Definir demasiados OKR:} si existen muchos objetivos, el equipo pierde enfoque y se dificulta el seguimiento.
+    \item \textbf{Usar métricas de vanidad:} métricas como número de reuniones, cantidad de pantallas o número de commits no siempre reflejan valor.
+    \item \textbf{Vincular OKR con castigos o bonos rígidos:} esto puede provocar metas poco ambiciosas y reducir la innovación.
+    \item \textbf{Falta de evidencia:} sin datos, pruebas o retroalimentación, el OKR se convierte en una declaración subjetiva.
+    \item \textbf{Desalineación con el Product Backlog:} si las historias priorizadas no aportan al OKR, Scrum se vuelve operativo pero no estratégico.
+\end{itemize}
+
+\subsubsection{Ejemplo práctico de implementación de OKR en Scrum}
+
+A continuación, se propone un ejemplo aplicado a un equipo Scrum que desarrolla un sistema web de gestión de tickets o mesa de ayuda.
+
+\begin{table}[H]
+\centering
+\caption{Ejemplo de OKR aplicado a un equipo Scrum}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.3cm} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Elemento} & \textbf{Propuesta} \\
+\midrule
+Objetivo OKR & Mejorar la calidad de entrega del módulo de gestión de tickets para aumentar el valor percibido por los usuarios. \\
+\midrule
+KR1 & Reducir los defectos críticos detectados en revisión de 8 a 2 durante el Sprint. \\
+\midrule
+KR2 & Lograr que el 90\% de historias de usuario cumplan la Definition of Done. \\
+\midrule
+KR3 & Alcanzar una satisfacción mínima de 4/5 en la Sprint Review con los interesados. \\
+\midrule
+KR4 & Disminuir el tiempo promedio de respuesta del módulo de tickets de 3 segundos a 1.5 segundos, medido en un ambiente de pruebas bajo una carga simulada de 20 usuarios concurrentes y consultas sobre una base de datos de prueba. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Para evitar ambigüedad en la medición del KR4, se establece que el tiempo de respuesta será evaluado en un ambiente de pruebas controlado, utilizando una base de datos de prueba y una carga simulada de 20 usuarios concurrentes. La medición deberá realizarse con una herramienta de monitoreo o pruebas de rendimiento, registrando el promedio de respuesta de varias solicitudes al módulo de tickets. De esta manera, el resultado clave no queda como una afirmación general, sino como una métrica verificable bajo condiciones definidas.
+
+\textbf{Aplicación durante Scrum:}
+
+\begin{enumerate}
+    \item En el \textbf{Product Backlog}, el Product Owner prioriza historias relacionadas con calidad, estabilidad y experiencia de usuario.
+    \item En el \textbf{Sprint Planning}, el equipo selecciona historias que aporten directamente a los KR.
+    \item En el \textbf{Daily Scrum}, los Developers revisan impedimentos que puedan afectar los resultados clave.
+    \item En la \textbf{Sprint Review}, se presenta evidencia: pruebas, métricas, funcionalidades, retroalimentación y cumplimiento de KR.
+    \item En la \textbf{Sprint Retrospective}, se analizan los KR no alcanzados y se definen acciones de mejora para el siguiente Sprint.
+\end{enumerate}
+
+En el contexto de un proyecto universitario de software, esta propuesta ayuda a que el equipo no presente únicamente pantallas terminadas. También obliga a demostrar si la entrega tiene menos errores, cumple criterios de calidad, responde mejor al usuario y puede justificarse con evidencias.
+
+\subsubsection{Matriz de relación entre OKR, Scrum y calidad de entrega}
+
+\begin{table}[H]
+\centering
+\caption{Relación entre OKR, Scrum y calidad de entrega}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.2cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Dimensión} & \textbf{Aporte de OKR} & \textbf{Aporte de Scrum} \\
+\midrule
+Estrategia & Define objetivos medibles y alineados al valor. & Conecta el Product Goal y Sprint Goal con el trabajo iterativo. \\
+\midrule
+Calidad & Establece resultados clave verificables. & Usa Definition of Done e Increment para asegurar calidad técnica. \\
+\midrule
+Seguimiento & Permite revisar avance mediante métricas. & Usa Daily Scrum, Sprint Review y Retrospective para inspección y adaptación. \\
+\midrule
+Priorización & Ayuda a decidir qué resultados importan más. & Ordena el Product Backlog según valor y necesidad del producto. \\
+\midrule
+Mejora continua & Analiza resultados no alcanzados como aprendizaje. & Usa retrospectivas para mejorar procesos, herramientas y colaboración. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+%========================================================
 \subsection{Resultados obtenidos}
-De acuerdo con el tipo de trabajo, se plasmarán los resultados alcanzados en la guía tarea una vez ejecutadas las actividades. Se pueden emplear figuras y tablas las cuales deben ser numeradas. 
+%========================================================
 
+Como resultado de la investigación, se determinó que los OKR pueden integrarse en Scrum como un mecanismo de alineación estratégica y control de resultados. Mientras Scrum organiza el trabajo mediante Sprints, eventos, artefactos y responsabilidades, OKR permite definir qué resultados deben alcanzarse y cómo se comprobará su cumplimiento.
 
-%Especifique las TAC's utilizadas en la Tarea. 
-\subsection{Habilidades blandas empleadas en la tarea}
+El principal resultado de la tarea es una propuesta de integración OKR-Scrum basada en los siguientes puntos:
+
 \begin{itemize}
-    \item[$\square$] Liderazgo
-    \item[$\square$] Trabajo en equipo
-    \item[$\square$] Comunicación asertiva
-    \item[$\square$] La empatía
-    \item[$\square$] Pensamiento crítico
-    \item[$\square$] Flexibilidad
-    \item[$\square$] La resolución de conflictos
-    \item[$\square$] Adaptabilidad
-    \item[$\square$] Responsabilidad
+    \item Los objetivos OKR deben alinearse con el Product Goal.
+    \item Los resultados clave deben influir en la priorización del Product Backlog.
+    \item El Sprint Goal debe relacionarse con un resultado verificable.
+    \item La Sprint Review debe presentar evidencia de valor, no solo funcionalidades.
+    \item La Sprint Retrospective debe analizar causas de incumplimiento y acciones de mejora.
 \end{itemize}
 
+Además, se evidenció que una entrega de calidad no se limita a completar historias de usuario. Una entrega de calidad debe demostrar cumplimiento de criterios técnicos, valor para el usuario, reducción de errores, retroalimentación positiva y trazabilidad entre el trabajo realizado y los objetivos estratégicos.
 
+%========================================================
+\subsection{Habilidades blandas empleadas en la tarea}
+%========================================================
 
+\begin{itemize}
+    \item[$\boxtimes$] Liderazgo.
+    \item[$\square$] Trabajo en equipo.
+    \item[$\boxtimes$] Comunicación asertiva.
+    \item[$\square$] La empatía.
+    \item[$\boxtimes$] Pensamiento crítico.
+    \item[$\boxtimes$] Flexibilidad.
+    \item[$\square$] La resolución de conflictos.
+    \item[$\boxtimes$] Adaptabilidad.
+    \item[$\boxtimes$] Responsabilidad.
+\end{itemize}
+
+%========================================================
 \subsection{Conclusiones}
-Constituye la respuesta que propone el o los estudiantes para el problema que originó el trabajo desarrollado, de acuerdo con los datos recogidos y la teoría aplicada. 
+%========================================================
 
+La integración de OKR en Scrum permite fortalecer la alineación estratégica y el rendimiento del equipo, debido a que conecta el trabajo desarrollado en cada Sprint con objetivos medibles y orientados al valor. A partir de la investigación realizada, se concluye que los OKR no reemplazan a Scrum, sino que lo complementan al proporcionar una dirección clara para priorizar el Product Backlog, formular Sprint Goals más enfocados y evaluar los resultados obtenidos mediante evidencias verificables.
+
+Asimismo, se identificó que la principal diferencia entre OKR, KPI y SMART radica en su propósito: mientras los KPI permiten medir el desempeño de un proceso y SMART ayuda a redactar metas claras, los OKR permiten definir objetivos de cambio acompañados de resultados clave que demuestran avance real. Esta característica resulta útil en equipos Scrum, ya que evita que la entrega se mida únicamente por tareas completadas y promueve una evaluación basada en calidad, impacto y valor para el usuario.
+
+Los casos revisados evidencian que la aplicación de OKR en entornos ágiles puede mejorar la visibilidad, la coordinación, la priorización y el seguimiento del trabajo. Sin embargo, también se concluye que su implementación requiere cuidado, porque una mala formulación de resultados clave puede convertir los OKR en simples listas de actividades. Por ello, los KR deben ser medibles, verificables y relacionados con resultados reales, no con tareas aisladas.
+
+En general, la integración OKR-Scrum contribuye a mejorar la calidad de entrega cuando se utiliza como una herramienta de aprendizaje, transparencia y mejora continua. Su aplicación debe evitar enfoques punitivos o de presión individual, ya que el verdadero valor de los OKR está en ayudar al equipo a enfocarse en lo importante, revisar evidencias y tomar mejores decisiones durante el desarrollo del producto.
+%========================================================
 \subsection{Recomendaciones}
-Redactar las sugerencias o acciones concretas que se derivan de la tarea desarrollada. \cite{greenwade93}
+%========================================================
 
+\begin{enumerate}
+    \item Definir pocos OKR por ciclo para evitar pérdida de enfoque y facilitar el seguimiento.
+    \item Formular resultados clave con números, rangos o evidencias verificables, evitando métricas de vanidad.
+    \item Relacionar cada historia priorizada del Product Backlog con al menos un resultado clave relevante.
+    \item Usar la Sprint Review para presentar evidencia de valor y no únicamente una demostración funcional.
+    \item Utilizar la Sprint Retrospective para analizar OKR no alcanzados y definir acciones concretas de mejora.
+    \item Evitar vincular los OKR con castigos o recompensas rígidas, ya que esto puede reducir la transparencia y generar metas poco ambiciosas.
+    \item En proyectos universitarios, acompañar cada resultado clave con capturas, pruebas, métricas o retroalimentación para demostrar que la entrega tiene calidad verificable.
+\end{enumerate}
 
+%========================================================
 \subsection{Referencias}
-Insertar las referencias bibliográficas empleadas aplicando la norma IEEE.
-
-\vspace{-3em} %reduce el espacio causado por refname vacío
+%========================================================
+\vspace{-3em}
+\begingroup
 \renewcommand{\refname}{}
 \bibliographystyle{ieeetr}
 \bibliography{sample}
+\endgroup
 
+%========================================================
 \subsection{Anexos}
+
+
 \vfill
 \end{document}
