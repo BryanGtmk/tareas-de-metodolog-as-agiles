@@ -1,138 +1,717 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 
-% Language setting
-% Replace `english' with e.g. `spanish' to change the document language
-\usepackage[english]{babel}
-
-\usepackage[letterpaper,top=2cm,bottom=5cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
-
-% Useful packages
+% ------------------------------------------------------------
+% PAQUETES
+% ------------------------------------------------------------
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,top=2cm,bottom=5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{amssymb} 
+\usepackage{amssymb}
 \usepackage{fancyhdr}
-\usepackage{lipsum} % Para generar texto de ejemplo
 \usepackage{multicol}
-\pagestyle{fancy} 
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{makecell}
+\usepackage{ragged2e}
+\usepackage{caption}
 
-\fancyhf{} % Limpiar encabezado y pie de página por defecto
-\setlength{\headheight}{70pt} % Ajuste del tamaño del encabezado (puedes aumentar este valor si es necesario)
-
-% Definición del encabezado
+% ------------------------------------------------------------
+% ENCABEZADO
+% ------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{72pt}
 
 \fancyhead[C]{%
-    \begin{minipage}[c]{2.0cm}
+\begin{minipage}[c]{2.0cm}
+\centering
+\includegraphics[width=1.8cm]{imagenes/uta.png}
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{8.5cm}
+\centering
+\small {\textbf{UNIVERSIDAD TÉCNICA DE AMBATO}} \\[0.1cm]
+\scriptsize \textit{FACULTAD DE INGENIERÍA EN SISTEMAS ELECTRÓNICA E INDUSTRIAL} \\[0.1cm]
+\scriptsize \textbf{CARRERA SOFTWARE - METODOLOGÍAS ÁGILES} \\[0.1cm]
+\scriptsize \textbf{CICLO ACADÉMICO: ENERO 2026 - JULIO 2026}
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{2.0cm}
+\centering
+\includegraphics[width=1.8cm]{imagenes/fisei.png}
+\end{minipage}%
+}
+
+\fancyfoot[C]{\thepage}
+
+% ------------------------------------------------------------
+% CONFIGURACIÓN DE TABLAS
+% ------------------------------------------------------------
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\renewcommand{\arraystretch}{1.25}
+
+% ------------------------------------------------------------
+% CONFIGURACIÓN DE CÓDIGO
+% ------------------------------------------------------------
+\definecolor{codegray}{rgb}{0.95,0.95,0.95}
+\definecolor{codeblue}{rgb}{0.0,0.2,0.6}
+
+\lstdefinelanguage{CSharp}{
+    morekeywords={using,namespace,public,private,static,class,void,double,var,return,new,foreach,in,if,throw,null},
+    sensitive=true,
+    morecomment=[l]{//},
+    morestring=[b]"
+}
+
+\lstset{
+    backgroundcolor=\color{codegray},
+    basicstyle=\ttfamily\scriptsize,
+    keywordstyle=\color{codeblue}\bfseries,
+    commentstyle=\color{gray},
+    stringstyle=\color{red!60!black},
+    breaklines=true,
+    breakatwhitespace=false,
+    columns=fullflexible,
+    keepspaces=false,
+    showspaces=false,
+    showstringspaces=false,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny,
+    tabsize=4,
+    captionpos=b
+}
+
+% ------------------------------------------------------------
+% COMANDO PARA CAPTURAS
+% ------------------------------------------------------------
+\newcommand{\captura}[3][0.99\linewidth]{
+    \begin{figure}[H]
         \centering
-        \includegraphics[width=2.0cm]{imagenes/uta.png}
-    \end{minipage}%
-    \hfill
-    \begin{minipage}[c]{8cm} 
-        \centering
-        \small {\textbf{UNIVERSIDAD TÉCNICA DE AMBATO}} \\[0.1cm]
-        \scriptsize \textit{FACULTAD DE INGENIERÍA EN SISTEMAS ELECTRÓNICA E INDUSTRIAL} \\[0.1cm]
-        \scriptsize \textbf{CARRERA SOFTWARE - METODOLOGÍAS AGILES} \\[0.1cm]
-        \scriptsize \textbf{CICLO ACADÉMICO: ENERO 2026 - JULIO 2026}
-    \end{minipage}%
-    \hfill
-    \begin{minipage}[c]{2.0cm}
-        \centering
-        \includegraphics[width=2.0cm]{imagenes/fisei.png}
-    \end{minipage}%
+        \includegraphics[width=#1,height=0.80\textheight,keepaspectratio]{#2}
+        \caption{#3}
+    \end{figure}
 }
 
 \begin{document}
+
 \begin{center}
-    {\large \textbf{INFORME DE TAREA}} \\    
+{\large \textbf{INFORME DE TAREA}} \\[0.3cm]
+{\large \textbf{APE 4: Aplicación de TDD en C\# para el desarrollo progresivo del estadístico T-Student}}
 \end{center}
 
+% ------------------------------------------------------------
 \section{Portada}
+
 \begin{flushleft}
-\begin{tabular}{ l l }
-    \textbf{Tema:} & \\
-    \textbf{Unidad de Organización Curricular:} & PROFECIONAL\\
-    \textbf{Nivel y Paralelo:} & 4to Semestre "B" \\
-    \textbf{Alumnos participantes:} & Guatemal Avilez Bryan Stalin \\
-    \textbf{Asignatura:} & Metodologias Agiles \\
-    \textbf{Docente:} & Ing.Naranjo Avalos Hernan Fabricio, Mg. \\
+\begin{tabular}{>{\bfseries}p{6cm} p{8cm}}
+Tema: & Aplicación de TDD en C\# para el desarrollo progresivo del estadístico T-Student. \\
+Unidad de Organización Curricular: & PROFESIONAL. \\
+Nivel y Paralelo: & 4to Semestre ``B''. \\
+Alumnos participantes: & Guatemal Avilez Bryan Stalin. \\
+Asignatura: & Metodologías Ágiles. \\
+Docente: & Ing. Naranjo Avalos Hernan Fabricio, Mg. \\
+Carrera: & Software. \\
+Ciclo académico: & Enero 2026 - Julio 2026. \\
 \end{tabular}
 \end{flushleft}
 
-
+% ------------------------------------------------------------
 \section{Informe de la Tarea}
+
 \subsection{Objetivos}
-\subsubsection{General}
-(Especificado en la guía tarea proporcionada por el docente).
-\subsubsection{Específicos}
+
+\subsubsection{Objetivo general}
+
+Aplicar el ciclo TDD Red, Green y Refactor mediante el desarrollo progresivo de una calculadora estadística en C\# para el cálculo del estadístico T-Student, validando cada funcionalidad mediante pruebas unitarias con xUnit.
+
+\subsubsection{Objetivos específicos}
+
 \begin{itemize}
-    \item (Se recomienda máximo 3).
-    \item 
-    \item 
+    \item Configurar una solución en .NET con un proyecto principal y un proyecto de pruebas unitarias.
+    \item Implementar progresivamente los cálculos de media, varianza muestral, desviación estándar muestral y estadístico T-Student aplicando TDD.
+    \item Validar los resultados obtenidos mediante pruebas unitarias, casos límite y comparación contra un cálculo manual.
 \end{itemize}
 
-
+% ------------------------------------------------------------
 \subsection{Instrucciones}
 
-Detalladas en la asignación de la tarea proporcionada por el docente.
+Para el desarrollo de la práctica se siguió una secuencia de actividades orientadas a la aplicación de TDD en un proyecto real de C\# y .NET. El proceso se realizó de la siguiente manera:
 
+\begin{enumerate}
+    \item Se configuró el entorno de trabajo con C\#, .NET SDK y Visual Studio Code.
+    \item Se creó la solución \texttt{APE4-TStudent-TDD}.
+    \item Se creó el proyecto principal \texttt{TStudent.Core}.
+    \item Se creó el proyecto de pruebas \texttt{TStudent.Tests} utilizando xUnit.
+    \item Se referenció el proyecto principal desde el proyecto de pruebas.
+    \item Se aplicó el ciclo Red, Green y Refactor para cada funcionalidad.
+    \item Se ejecutaron los comandos \texttt{dotnet build} y \texttt{dotnet test}.
+    \item Se documentaron resultados, errores encontrados, correcciones realizadas y evidencias de ejecución.
+\end{enumerate}
 
+% ------------------------------------------------------------
 \subsection{Listado de equipos, materiales y recursos}
-\textbf{Listado de equipos y materiales generales empleados en la tarea:}
+
+\textbf{Equipos, materiales y recursos empleados:}
+
 \begin{itemize}
-    \item  
+    \item Computadora.
+    \item Visual Studio Code.
+    \item .NET SDK.
+    \item Lenguaje de programación C\#.
+    \item Framework de pruebas xUnit.
+    \item PowerShell.
+    \item Internet.
+    \item Herramientas ofimáticas.
+    \item Inteligencia artificial como Tecnología para el Aprendizaje y Conocimiento.
 \end{itemize}
 
-\textbf{TAC (Tecnologías para el Aprendizaje y Conocimiento) empleados en la tarea:}
+\textbf{TAC empleadas en la tarea:}
+
 \begin{itemize}
-    \item[$\square$] Plataformas educativas
-    \item[$\square$] Simuladores y laboratorios virtuales
-    \item[$\square$] Aplicaciones educativas
-    \item[$\square$] Recursos audiovisuales
-    \item[$\square$] Gamificación
-    \item[$\square$] Inteligencia Artificial
-    \item Otros (Especifique): \underline{\hspace{5cm}}
+    \item[$\square$] Plataformas educativas.
+    \item[$\square$] Simuladores y laboratorios virtuales.
+    \item[$\boxtimes$] Aplicaciones educativas.
+    \item[$\boxtimes$] Recursos audiovisuales.
+    \item[$\square$] Gamificación.
+    \item[$\boxtimes$] Inteligencia Artificial.
+    \item Otros: Visual Studio Code, .NET SDK y xUnit.
 \end{itemize}
 
+% ------------------------------------------------------------
+\subsection{Desarrollo de la Tarea}
 
-\subsection{Desarrollo de la Tarea (Actividades a Desarrollar)}
+\subsubsection{Fundamento de TDD}
 
-Detalladas en las instrucciones proporcionadas por el docente.
+El desarrollo guiado por pruebas, conocido como TDD, es una práctica de desarrollo de software en la que primero se define una prueba automatizada y posteriormente se implementa el código necesario para que dicha prueba sea superada. Esta práctica se relaciona con las metodologías ágiles porque favorece la entrega incremental, la retroalimentación temprana y la mejora continua del código \cite{beck2003tdd,agilepracticeguide2017}.
 
+El ciclo TDD se compone de tres fases principales:
+
+\begin{itemize}
+    \item \textbf{Red:} se escribe una prueba que falla porque la funcionalidad aún no existe o no cumple el comportamiento esperado.
+    \item \textbf{Green:} se implementa el código mínimo necesario para que la prueba pase.
+    \item \textbf{Refactor:} se mejora la estructura interna del código sin alterar el resultado esperado.
+\end{itemize}
+
+La práctica desarrollada aplicó este ciclo sobre el proyecto \texttt{TStudent.Core} y el proyecto de pruebas \texttt{TStudent.Tests}. La solución fue construida de forma progresiva, validando cada cálculo estadístico mediante pruebas unitarias con xUnit \cite{xunit2026docs}.
+
+\subsubsection{Configuración del entorno}
+
+Se utilizó Visual Studio Code como editor de código, .NET SDK como plataforma de desarrollo y xUnit como framework de pruebas unitarias. .NET permite crear aplicaciones con C\# y ejecutar proyectos desde la línea de comandos mediante herramientas como \texttt{dotnet build} y \texttt{dotnet test} \cite{microsoft2026dotnet}.
+
+\captura{imagenes/01_configuracion_solucion.png}{Configuración inicial de la solución en .NET, creación de proyectos y compilación exitosa.}
+
+\subsubsection{Estructura del proyecto}
+
+La solución final quedó organizada de la siguiente manera:
+
+\begin{lstlisting}[caption={Estructura final del proyecto}]
+APE4-TStudent-TDD/
+- APE4-TStudent-TDD.sln
+- README.md
+- DOCUMENTACION_APE4_TSTUDENT_TDD.md
+- TStudent.Core/
+  - TStudent.Core.csproj
+  - TStudentCalculator.cs
+- TStudent.Tests/
+  - TStudent.Tests.csproj
+  - TStudentCalculatorTests.cs
+\end{lstlisting}
+
+La carpeta \texttt{TStudent.Core} contiene la lógica principal de la calculadora estadística. En ella se encuentra la clase \texttt{TStudentCalculator}, responsable de calcular la media, la varianza muestral, la desviación estándar muestral y el estadístico T-Student. La carpeta \texttt{TStudent.Tests} contiene las pruebas unitarias desarrolladas con xUnit para comprobar el comportamiento esperado de cada método.
+
+\subsubsection{Comandos utilizados}
+
+Los comandos empleados permitieron crear la solución, generar los proyectos, establecer la referencia entre ellos, compilar el código y ejecutar las pruebas unitarias.
+
+\begin{lstlisting}[caption={Comandos utilizados durante la práctica}]
+dotnet new sln -n APE4-TStudent-TDD -o APE4-TStudent-TDD
+cd APE4-TStudent-TDD
+dotnet new classlib -n TStudent.Core
+dotnet new xunit -n TStudent.Tests
+dotnet sln add .\TStudent.Core\TStudent.Core.csproj
+dotnet sln add .\TStudent.Tests\TStudent.Tests.csproj
+dotnet add .\TStudent.Tests\TStudent.Tests.csproj reference .\TStudent.Core\TStudent.Core.csproj
+New-Item -ItemType File README.md
+dotnet build
+dotnet test
+\end{lstlisting}
+
+\subsubsection{Fórmulas estadísticas utilizadas}
+
+El cálculo del estadístico T-Student se desarrolló a partir de conceptos estadísticos básicos. La prueba t se fundamenta en la comparación entre una media muestral y una media hipotética \cite{student1908probable}.
+
+\begin{equation}
+\bar{x} = \frac{\sum x_i}{n}
+\end{equation}
+
+\begin{equation}
+s^2 = \frac{\sum (x_i - \bar{x})^2}{n - 1}
+\end{equation}
+
+\begin{equation}
+s = \sqrt{s^2}
+\end{equation}
+
+\begin{equation}
+t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}
+\end{equation}
+
+Donde:
+
+\begin{itemize}
+    \item $x_i$: cada dato de la muestra.
+    \item $n$: cantidad de datos.
+    \item $\bar{x}$: media muestral.
+    \item $s^2$: varianza muestral.
+    \item $s$: desviación estándar muestral.
+    \item $\mu_0$: media hipotética.
+    \item $t$: estadístico T-Student.
+\end{itemize}
+
+% ------------------------------------------------------------
+\subsubsection{Aplicación del ciclo Red-Green-Refactor}
+
+En cada funcionalidad se aplicó el ciclo TDD. Primero se creó una prueba que fallaba, luego se implementó el código mínimo para aprobarla y finalmente se refactorizó el código para mejorar su legibilidad. Este proceso permitió mantener una verificación constante del comportamiento del sistema.
+
+\begin{table}[H]
+\centering
+\caption{Resumen general del ciclo TDD aplicado}
+\footnotesize
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\textwidth}{|p{1.1cm}|p{2.8cm}|p{2.2cm}|Y|}
+\hline
+\textbf{Nro.} & \textbf{Funcionalidad} & \textbf{Fase} & \textbf{Resultado} \\ \hline
+01 & Configuración & Configuración & Se creó la solución, los proyectos y la referencia entre proyectos. \\ \hline
+02--04 & Media & \makecell[l]{Red\\Green\\Refactor} & Se creó la prueba, se implementó el cálculo y se refactorizó la suma. \\ \hline
+05--07 & Varianza muestral & \makecell[l]{Red\\Green\\Refactor} & Se implementó la varianza muestral con divisor $n-1$ y se separó el cálculo de diferencias cuadradas. \\ \hline
+08--10 & Desviación estándar & \makecell[l]{Red\\Green\\Refactor} & Se implementó la raíz cuadrada de la varianza muestral y se mejoró la legibilidad. \\ \hline
+11--13 & T-Student & \makecell[l]{Red\\Green\\Refactor} & Se implementó la fórmula del estadístico T-Student y se separó el error estándar. \\ \hline
+14--19 & Validaciones & \makecell[l]{Red\\Green} & Se validaron muestras vacías, nulas y con un solo dato. \\ \hline
+20--24 & Verificación final & Evidencia & Se verificaron las pruebas finales, el código y la estructura del proyecto. \\ \hline
+\end{tabularx}
+\end{table}
+
+\subsubsection{Desarrollo del cálculo de la media}
+
+En la fase Red se creó una prueba para calcular la media de la muestra \texttt{[2, 4, 6, 8]}. La prueba falló inicialmente porque el método \texttt{CalcularMedia} todavía no existía. En la fase Green se implementó el cálculo mínimo dividiendo la suma de los valores para la cantidad de elementos. En la fase Refactor se separó el cálculo de la suma en un método privado.
+
+\captura{imagenes/02_media_red_prueba_fallida.png}{Fase Red del cálculo de la media: prueba fallida antes de implementar el método correspondiente.}
+
+\captura{imagenes/03_media_green_prueba_pasada.png}{Fase Green del cálculo de la media: implementación mínima validada mediante xUnit.}
+
+\captura{imagenes/04_media_refactor_prueba_pasada.png}{Fase Refactor del cálculo de la media: mejora interna sin alterar el resultado esperado.}
+
+\subsubsection{Desarrollo del cálculo de la varianza muestral}
+
+En la fase Red se creó una prueba para validar la varianza muestral de la muestra \texttt{[2, 4, 6, 8]}. La prueba falló porque el método \texttt{CalcularVarianzaMuestral} todavía no estaba implementado. En la fase Green se calculó la media, se sumaron las diferencias cuadradas y se dividió para $n-1$. En la fase Refactor se separó el cálculo de diferencias cuadradas en un método privado.
+
+\captura{imagenes/05_varianza_red_prueba_fallida.png}{Fase Red del cálculo de la varianza muestral: prueba fallida antes de implementar el método.}
+
+\captura{imagenes/06_varianza_green_prueba_pasada.png}{Fase Green del cálculo de la varianza muestral: implementación validada con dos pruebas aprobadas.}
+
+\captura{imagenes/07_varianza_refactor_prueba_pasada.png}{Fase Refactor del cálculo de la varianza muestral: separación de diferencias cuadradas sin alterar resultados.}
+
+\subsubsection{Desarrollo del cálculo de la desviación estándar muestral}
+
+En la fase Red se agregó una prueba para validar la desviación estándar muestral. La prueba falló debido a que el método correspondiente aún no existía. En la fase Green se reutilizó la varianza muestral y se aplicó \texttt{Math.Sqrt}. En la fase Refactor se utilizó una variable intermedia para mejorar la lectura del cálculo.
+
+\captura{imagenes/08_desviacion_red_prueba_fallida.png}{Fase Red del cálculo de la desviación estándar muestral: prueba fallida antes de implementar el método.}
+
+\captura{imagenes/09_desviacion_green_prueba_pasada.png}{Fase Green del cálculo de la desviación estándar muestral: implementación de la raíz cuadrada de la varianza.}
+
+\captura{imagenes/10_desviacion_refactor_prueba_pasada.png}{Fase Refactor del cálculo de la desviación estándar muestral: uso de una variable intermedia para mejorar la legibilidad.}
+
+\subsubsection{Desarrollo del cálculo del estadístico T-Student}
+
+En la fase Red se agregó una prueba para calcular el estadístico T-Student con una muestra válida y una media hipotética. La prueba falló porque el método \texttt{CalcularTStudent} aún no estaba implementado. En la fase Green se implementó la fórmula del estadístico T-Student. En la fase Refactor se separó el error estándar en una variable local, mejorando la legibilidad del método. La refactorización se realizó sin modificar los resultados esperados, siguiendo principios de código limpio \cite{martin2008clean}.
+
+\captura{imagenes/11_tstudent_red_prueba_fallida.png}{Fase Red del cálculo T-Student: prueba fallida antes de implementar el método.}
+
+\captura{imagenes/12_tstudent_green_prueba_pasada.png}{Fase Green del cálculo T-Student: implementación de la fórmula principal.}
+
+\captura{imagenes/13_tstudent_refactor_prueba_pasada.png}{Fase Refactor del cálculo T-Student: separación del error estándar en una variable.}
+
+\subsubsection{Validaciones implementadas}
+
+Se agregaron validaciones para controlar casos límite. Primero se validó una muestra vacía, luego una muestra nula y finalmente una muestra con un solo dato para el cálculo de varianza muestral. Estas validaciones permitieron evitar resultados inválidos y errores de ejecución no controlados.
+
+\captura{imagenes/14_validacion_muestra_vacia_red.png}{Fase Red de validación: muestra vacía sin excepción controlada.}
+
+\captura{imagenes/15_validacion_muestra_vacia_green.png}{Fase Green de validación: muestra vacía controlada mediante \texttt{ArgumentException}.}
+
+\captura{imagenes/16_validacion_muestra_nula_red.png}{Fase Red de validación: muestra nula produciendo un error no controlado.}
+
+\captura{imagenes/17_validacion_muestra_nula_green.png}{Fase Green de validación: muestra nula controlada mediante \texttt{ArgumentNullException}.}
+
+\captura{imagenes/18_validacion_un_solo_dato_red.png}{Fase Red de validación: muestra con un solo dato sin control para varianza muestral.}
+
+\captura{imagenes/19_validacion_un_solo_dato_green.png}{Fase Green de validación: control de muestra con menos de dos datos.}
+
+\subsubsection{Comparación contra cálculo manual}
+
+Se agregó una prueba para comparar el resultado generado por el método \texttt{CalcularTStudent} contra un cálculo manual. Este procedimiento permitió comprobar que el resultado automatizado coincidía con el procedimiento estadístico aplicado paso a paso.
+
+\captura{imagenes/20_comparacion_calculo_manual.png}{Comparación del resultado automático del estadístico T-Student contra un cálculo manual.}
+
+\subsubsection{Refactorización final}
+
+En la refactorización final se organizaron las validaciones en métodos privados y se mantuvieron los métodos públicos sin cambios. Esta mejora permitió reducir duplicación, mejorar legibilidad y conservar el comportamiento esperado.
+
+\captura{imagenes/22_refactorizacion_final_sin_cambios_resultado.png}{Refactorización final del código sin alterar los resultados esperados de las pruebas unitarias.}
+
+\subsubsection{Ejecución final de pruebas}
+
+La ejecución final de \texttt{dotnet test} confirmó que todas las pruebas unitarias fueron superadas correctamente. El resultado final fue de ocho pruebas correctas, cero errores y cero pruebas omitidas.
+
+\captura{imagenes/21_pruebas_finales_todas_pasando.png}{Ejecución final de pruebas unitarias con resultado exitoso.}
+
+% ------------------------------------------------------------
+\subsection{Pruebas implementadas}
+
+\begin{table}[H]
+\centering
+\caption{Pruebas unitarias implementadas}
+\scriptsize
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{|p{3.3cm}|p{2.6cm}|p{2.4cm}|p{3.1cm}|Y|}
+\hline
+\textbf{Nombre de la prueba} & \textbf{Funcionalidad evaluada} & \textbf{Datos utilizados} & \textbf{Resultado esperado} & \textbf{Resultado obtenido} \\ \hline
+\makecell[l]{CalcularMedia\_Con\\MuestraValida\_Retorna\\Promedio} & Media & \texttt{[2,4,6,8]} & Media igual a 5.0 & Prueba aprobada. \\ \hline
+\makecell[l]{CalcularVarianza\\Muestral\_ConMuestra\\Valida\_Retorna\\Varianza} & Varianza muestral & \texttt{[2,4,6,8]} & Varianza igual a 6.66667 & Prueba aprobada. \\ \hline
+\makecell[l]{CalcularDesviacion\\EstandarMuestral\\\_ConMuestraValida} & Desviación estándar & \texttt{[2,4,6,8]} & Desviación igual a 2.58199 & Prueba aprobada. \\ \hline
+\makecell[l]{CalcularTStudent\\\_ConMuestraValida\\\_RetornaEstadistico} & Estadístico T-Student & \texttt{[2,4,6,8]}, $\mu_0=4$ & T igual a 0.77460 & Prueba aprobada. \\ \hline
+\makecell[l]{CalcularMedia\\\_ConMuestraVacia\\\_LanzaArgument\\Exception} & Validación de muestra vacía & \texttt{[]} & Lanzar \texttt{ArgumentException} & Prueba aprobada. \\ \hline
+\makecell[l]{CalcularMedia\\\_ConMuestraNula\\\_LanzaArgumentNull\\Exception} & Validación de muestra nula & \texttt{null} & Lanzar \texttt{ArgumentNullException} & Prueba aprobada. \\ \hline
+\makecell[l]{CalcularVarianza\\Muestral\_ConUnSolo\\Dato\_LanzaArgument\\Exception} & Validación de un solo dato & \texttt{[5]} & Lanzar \texttt{ArgumentException} & Prueba aprobada. \\ \hline
+\makecell[l]{CalcularTStudent\\\_CoincideConCalculo\\Manual} & Comparación manual & \texttt{[2,4,6,8]}, $\mu_0=4$ & Coincidencia con cálculo manual & Prueba aprobada. \\ \hline
+\end{tabularx}
+\end{table}
+
+% ------------------------------------------------------------
+\subsection{Errores encontrados y correcciones}
+
+\begin{table}[H]
+\centering
+\caption{Errores encontrados y correcciones aplicadas}
+\scriptsize
+\renewcommand{\arraystretch}{1.45}
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{|p{3.1cm}|p{1.6cm}|p{4.1cm}|Y|}
+\hline
+\textbf{Error encontrado} & \textbf{Fase} & \textbf{Causa} & \textbf{Corrección aplicada} \\ \hline
+
+Métodos no implementados en la primera ejecución de pruebas. 
+& Red 
+& Las pruebas llamaban métodos que todavía no existían, generando errores de compilación tipo \texttt{CS1061}. 
+& Se implementaron progresivamente los métodos requeridos: \texttt{CalcularMedia}, \texttt{CalcularVarianzaMuestral}, \texttt{CalcularDesviacionEstandarMuestral} y \texttt{CalcularTStudent}. \\ \hline
+
+Falta de validación para muestras vacías. 
+& Red 
+& El método \texttt{CalcularMedia} no verificaba si la muestra tenía longitud cero. 
+& Se agregó una validación para lanzar \texttt{ArgumentException} cuando la muestra se encuentra vacía. \\ \hline
+
+Excepción no controlada al recibir muestra nula. 
+& Red 
+& Se intentaba acceder al arreglo sin validar previamente si la muestra era nula, lo que generaba una excepción no controlada. 
+& Se agregó una validación para lanzar \texttt{ArgumentNullException} cuando la muestra recibida es nula. \\ \hline
+
+Falta de validación para muestra con un solo dato. 
+& Red 
+& La varianza muestral requiere al menos dos datos para aplicar correctamente el divisor $n-1$. 
+& Se agregó una validación para rechazar muestras con menos de dos datos mediante \texttt{ArgumentException}. \\ \hline
+
+Código con responsabilidades repetidas. 
+& Refactor 
+& Algunas validaciones y cálculos auxiliares podían organizarse mejor para mejorar la lectura del código. 
+& Se refactorizó el código mediante métodos privados, manteniendo los mismos resultados en las pruebas unitarias. \\ \hline
+
+\end{tabularx}
+\end{table}
+
+% ------------------------------------------------------------
+\subsection{Resultado final de pruebas}
+
+El resultado final confirmado con \texttt{dotnet test} fue el siguiente:
+
+\begin{itemize}
+    \item Correctas: 8.
+    \item Con error: 0.
+    \item Superado: 8.
+    \item Omitido: 0.
+    \item Total: 8.
+\end{itemize}
+
+Este resultado evidencia que las funcionalidades implementadas fueron validadas correctamente y que la refactorización final no alteró el comportamiento esperado del proyecto.
+
+% ------------------------------------------------------------
+\subsection{Código relevante}
+
+\subsubsection{\texttt{TStudentCalculator.cs}}
+
+\begin{lstlisting}[language=CSharp, caption={Código final de la clase TStudentCalculator}]
+namespace TStudent.Core;
+
+public class TStudentCalculator
+{
+    public double CalcularMedia(double[] muestra)
+    {
+        ValidarMuestraConDatos(muestra);
+
+        return CalcularSuma(muestra) / muestra.Length;
+    }
+
+    public double CalcularVarianzaMuestral(double[] muestra)
+    {
+        ValidarMuestraParaVarianza(muestra);
+
+        double media = CalcularMedia(muestra);
+
+        return CalcularSumaDiferenciasCuadradas(muestra, media) / (muestra.Length - 1);
+    }
+
+    public double CalcularDesviacionEstandarMuestral(double[] muestra)
+    {
+        double varianza = CalcularVarianzaMuestral(muestra);
+
+        return Math.Sqrt(varianza);
+    }
+
+    public double CalcularTStudent(double[] muestra, double mediaHipotetica)
+    {
+        double media = CalcularMedia(muestra);
+        double desviacion = CalcularDesviacionEstandarMuestral(muestra);
+        double errorEstandar = desviacion / Math.Sqrt(muestra.Length);
+
+        return (media - mediaHipotetica) / errorEstandar;
+    }
+
+    private static void ValidarMuestraConDatos(double[] muestra)
+    {
+        if (muestra is null)
+        {
+            throw new ArgumentNullException(nameof(muestra));
+        }
+
+        if (muestra.Length == 0)
+        {
+            throw new ArgumentException("La muestra no puede estar vacia.", nameof(muestra));
+        }
+    }
+
+    private static void ValidarMuestraParaVarianza(double[] muestra)
+    {
+        ValidarMuestraConDatos(muestra);
+
+        if (muestra.Length < 2)
+        {
+            throw new ArgumentException("La muestra debe tener al menos dos datos.", nameof(muestra));
+        }
+    }
+
+    private static double CalcularSuma(double[] muestra)
+    {
+        double suma = 0;
+
+        foreach (double valor in muestra)
+        {
+            suma += valor;
+        }
+
+        return suma;
+    }
+
+    private static double CalcularSumaDiferenciasCuadradas(double[] muestra, double media)
+    {
+        double suma = 0;
+
+        foreach (double valor in muestra)
+        {
+            double diferencia = valor - media;
+            suma += diferencia * diferencia;
+        }
+
+        return suma;
+    }
+}
+\end{lstlisting}
+
+\subsubsection{\texttt{TStudentCalculatorTests.cs}}
+
+\begin{lstlisting}[language=CSharp, caption={Pruebas unitarias implementadas con xUnit}]
+using TStudent.Core;
+
+namespace TStudent.Tests;
+
+public class TStudentCalculatorTests
+{
+    [Fact]
+    public void CalcularMedia_ConMuestraValida_RetornaPromedio()
+    {
+        var calculator = new TStudentCalculator();
+        double[] muestra = [2, 4, 6, 8];
+
+        double resultado = calculator.CalcularMedia(muestra);
+
+        Assert.Equal(5.0, resultado, precision: 5);
+    }
+
+    [Fact]
+    public void CalcularVarianzaMuestral_ConMuestraValida_RetornaVarianza()
+    {
+        var calculator = new TStudentCalculator();
+        double[] muestra = [2, 4, 6, 8];
+
+        double resultado = calculator.CalcularVarianzaMuestral(muestra);
+
+        Assert.Equal(6.66667, resultado, precision: 5);
+    }
+
+    [Fact]
+    public void CalcularDesviacionEstandarMuestral_ConMuestraValida_RetornaRaizDeVarianza()
+    {
+        var calculator = new TStudentCalculator();
+        double[] muestra = [2, 4, 6, 8];
+
+        double resultado = calculator.CalcularDesviacionEstandarMuestral(muestra);
+
+        Assert.Equal(2.58199, resultado, precision: 5);
+    }
+
+    [Fact]
+    public void CalcularTStudent_ConMuestraValida_RetornaEstadistico()
+    {
+        var calculator = new TStudentCalculator();
+        double[] muestra = [2, 4, 6, 8];
+        double mediaHipotetica = 4;
+
+        double resultado = calculator.CalcularTStudent(muestra, mediaHipotetica);
+
+        Assert.Equal(0.77460, resultado, precision: 5);
+    }
+
+    [Fact]
+    public void CalcularMedia_ConMuestraVacia_LanzaArgumentException()
+    {
+        var calculator = new TStudentCalculator();
+        double[] muestra = [];
+
+        Assert.Throws<ArgumentException>(() => calculator.CalcularMedia(muestra));
+    }
+
+    [Fact]
+    public void CalcularMedia_ConMuestraNula_LanzaArgumentNullException()
+    {
+        var calculator = new TStudentCalculator();
+        double[]? muestra = null;
+
+        Assert.Throws<ArgumentNullException>(() => calculator.CalcularMedia(muestra!));
+    }
+
+    [Fact]
+    public void CalcularVarianzaMuestral_ConUnSoloDato_LanzaArgumentException()
+    {
+        var calculator = new TStudentCalculator();
+        double[] muestra = [5];
+
+        Assert.Throws<ArgumentException>(() => calculator.CalcularVarianzaMuestral(muestra));
+    }
+
+    [Fact]
+    public void CalcularTStudent_CoincideConCalculoManual()
+    {
+        var calculator = new TStudentCalculator();
+        double[] muestra = [2, 4, 6, 8];
+        double mediaHipotetica = 4;
+
+        double mediaManual = (2.0 + 4.0 + 6.0 + 8.0) / 4.0;
+        double varianzaManual = (9.0 + 1.0 + 1.0 + 9.0) / 3.0;
+        double desviacionManual = Math.Sqrt(varianzaManual);
+        double tStudentManual = (mediaManual - mediaHipotetica) / (desviacionManual / Math.Sqrt(muestra.Length));
+
+        double resultado = calculator.CalcularTStudent(muestra, mediaHipotetica);
+
+        Assert.Equal(tStudentManual, resultado, precision: 5);
+    }
+}
+\end{lstlisting}
+
+% ------------------------------------------------------------
 \subsection{Resultados obtenidos}
-De acuerdo con el tipo de trabajo, se plasmarán los resultados alcanzados en la guía tarea una vez ejecutadas las actividades. Se pueden emplear figuras y tablas las cuales deben ser numeradas. 
 
+Como resultado de la práctica se obtuvo un proyecto funcional en C\# orientado al cálculo del estadístico T-Student. La solución quedó organizada en un proyecto principal y un proyecto de pruebas unitarias, lo que permitió separar la lógica estadística de su validación automatizada.
 
-%Especifique las TAC's utilizadas en la Tarea. 
+Los resultados obtenidos fueron los siguientes:
+
+\begin{itemize}
+    \item Proyecto funcional en C\#.
+    \item Proyecto de pruebas unitarias con xUnit.
+    \item Implementación del cálculo del estadístico T-Student.
+    \item Aplicación del ciclo TDD en las fases Red, Green y Refactor.
+    \item Ocho pruebas ejecutadas correctamente.
+    \item Cero errores finales en la ejecución de pruebas.
+    \item Código organizado en proyecto principal y proyecto de pruebas.
+\end{itemize}
+
+% ------------------------------------------------------------
 \subsection{Habilidades blandas empleadas en la tarea}
+
 \begin{itemize}
     \item[$\square$] Liderazgo
     \item[$\square$] Trabajo en equipo
     \item[$\square$] Comunicación asertiva
     \item[$\square$] La empatía
-    \item[$\square$] Pensamiento crítico
+    \item[$\boxtimes$] Pensamiento crítico
     \item[$\square$] Flexibilidad
     \item[$\square$] La resolución de conflictos
     \item[$\square$] Adaptabilidad
-    \item[$\square$] Responsabilidad
+    \item[$\boxtimes$] Responsabilidad
 \end{itemize}
 
+El pensamiento crítico se evidenció al diseñar pruebas antes de implementar la lógica, analizar los errores obtenidos y corregir los casos límite. La responsabilidad se evidenció al documentar cada fase del proceso y validar el funcionamiento final con la ejecución completa de pruebas unitarias.
 
-
+% ------------------------------------------------------------
 \subsection{Conclusiones}
-Constituye la respuesta que propone el o los estudiantes para el problema que originó el trabajo desarrollado, de acuerdo con los datos recogidos y la teoría aplicada. 
 
+La aplicación de TDD permitió desarrollar el cálculo del estadístico T-Student de manera progresiva, controlada y verificable. Al trabajar primero con pruebas fallidas, luego con implementaciones mínimas y finalmente con refactorizaciones, se consiguió evidenciar el ciclo Red, Green y Refactor dentro de una solución real en C\#.
+
+Las pruebas unitarias permitieron detectar errores durante el proceso de desarrollo, especialmente en métodos que aún no estaban implementados y en casos límite como muestras vacías, muestras nulas y muestras con un solo dato. Esto permitió corregir el comportamiento del sistema antes de considerar finalizada la funcionalidad, fortaleciendo la calidad del código.
+
+La organización del proyecto en \texttt{TStudent.Core} y \texttt{TStudent.Tests} facilitó la separación entre la lógica estadística y su validación mediante pruebas automatizadas. Como resultado, se obtuvo una solución funcional, documentada y coherente con las prácticas ágiles aplicadas en la asignatura.
+
+% ------------------------------------------------------------
 \subsection{Recomendaciones}
-Redactar las sugerencias o acciones concretas que se derivan de la tarea desarrollada. \cite{greenwade93}
 
+\begin{enumerate}
+    \item Mantener pruebas unitarias en futuras funcionalidades para asegurar que cada cambio del sistema sea validado de forma automática.
+    \item Ampliar los casos de prueba con otras muestras para verificar la precisión del cálculo T-Student en diferentes escenarios estadísticos.
+    \item Documentar las fórmulas, los errores encontrados y los cambios de refactorización para facilitar el mantenimiento académico y técnico del proyecto.
+\end{enumerate}
 
+% ------------------------------------------------------------
 \subsection{Referencias}
-Insertar las referencias bibliográficas empleadas aplicando la norma IEEE.
 
-\vspace{-3em} %reduce el espacio causado por refname vacío
-\renewcommand{\refname}{}
 \bibliographystyle{ieeetr}
 \bibliography{sample}
 
+% ------------------------------------------------------------
+\clearpage
 \subsection{Anexos}
-\vfill
+
+\captura[0.92\linewidth]{imagenes/23_codigo_final_tstudent_calculator.png}{Código final de la clase \texttt{TStudentCalculator}.}
+
+\captura[0.90\linewidth]{imagenes/24_carpeta_final_del_proyecto.png}{Estructura final de la carpeta del proyecto en Visual Studio Code.}
+
 \end{document}
